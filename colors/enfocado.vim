@@ -7,7 +7,7 @@
 " -----------------------------------------------------------------------------
 
 " Encoding of this vim script.
-set fileencoding=utf-8
+scriptencoding utf-8
 
 " First check if the 'termguicolors' option has been activated.
 if &termguicolors == 'notermguicolors'
