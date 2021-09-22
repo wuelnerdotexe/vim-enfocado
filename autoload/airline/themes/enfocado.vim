@@ -71,7 +71,7 @@ let g:airline#themes#enfocado#palette.normal = airline#themes#generate_color_map
 \ )
 
 " Insert mode.
-let s:airline_a_insert = [ s:background, s:green, 	 17,  45 ]
+let s:airline_a_insert = [ s:black,      s:green, 	 17,  45 ]
 let s:airline_b_insert = [ s:white,      s:bright_black, 255, 47 ]
 let s:airline_c_insert = [ s:white,      s:black, 	 15,  17 ] 
 let g:airline#themes#enfocado#palette.insert = airline#themes#generate_color_map(
@@ -79,9 +79,9 @@ let g:airline#themes#enfocado#palette.insert = airline#themes#generate_color_map
 \ )
 
 " Visual mode.
-let s:airline_a_visual = [ s:bright_white, s:black, 232 , 214 ]
-let s:airline_b_visual = [ s:white,        s:black, 232 , 202 ]
-let s:airline_c_visual = [ s:white, 	   s:black, 15  , 52  ]
+let s:airline_a_visual = [ s:bright_white, s:white, 232 , 214 ]
+let s:airline_b_visual = [ s:bright_black, s:black, 232 , 202 ]
+let s:airline_c_visual = [ s:bright_black, s:black, 15  , 52  ]
 let g:airline#themes#enfocado#palette.visual = airline#themes#generate_color_map(
   \ s:airline_a_visual, s:airline_b_visual, s:airline_c_visual
 \ )

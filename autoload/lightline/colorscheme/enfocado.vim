@@ -54,27 +54,30 @@ let s:bright_red    = "#FF5E56"
 let s:bright_white  = "#DEDEDE"
 let s:bright_yellow = "#EFC541"
 
+" Text type variables.
+let s:bold          = "bold"
+
 " Lightline modes.
 let s:p = { 'normal' : { }, 'inactive' : { }, 'insert' : { },
   \ 'replace' : { }, 'visual' : { }, 'tabline' : { }
 \ }
 
 " Normal mode.
-let s:p.normal.left    = [ [ s:bright_white, s:white, 'bold' ], [ s:white, s:black ] ]
+let s:p.normal.left    = [ [ s:bright_white, s:white, s:bold ], [ s:white, s:black ] ]
 let s:p.normal.middle  = [ [ s:white, s:black ] ]
-let s:p.normal.right   = [ [ s:bright_white, s:white, 'bold' ], [ s:white, s:bright_black ], [ s:white, s:black ] ]
+let s:p.normal.right   = [ [ s:bright_white, s:white, s:bold ], [ s:white, s:bright_black ], [ s:white, s:black ] ]
 let s:p.normal.error   = [ [ s:black, s:bright_red ] ]
 let s:p.normal.warning = [ [ s:black, s:bright_yellow ] ]
 
 " Insert mode.
-let s:p.insert.left    = [ [ s:black, s:green, 'bold' ], [ s:white, s:black ] ]
+let s:p.insert.left    = [ [ s:black, s:green, s:bold ], [ s:white, s:black ] ]
 let s:p.insert.middle  = [ [ s:white, s:black ] ]
-let s:p.insert.right   = [ [ s:bright_white, s:white, 'bold' ], [ s:white, s:bright_black ], [ s:white, s:black ] ]
+let s:p.insert.right   = [ [ s:bright_white, s:white, s:bold ], [ s:white, s:bright_black ], [ s:white, s:black ] ]
 
 " Visual mode.
-let s:p.visual.left    = [ [ s:bright_white, s:black, 'bold'], [ s:white, s:black ] ]
-let s:p.visual.middle  = [ [ s:white, s:black ] ]
-let s:p.visual.right   = [ [ s:bright_white, s:black, 'bold' ], [ s:white, s:black ], [ s:white, s:black ] ]
+let s:p.visual.left    = [ [ s:bright_white, s:white, s:bold ], [ s:bright_black, s:black ] ]
+let s:p.visual.middle  = [ [ s:bright_black, s:black ] ]
+let s:p.visual.right   = [ [ s:bright_white, s:white, s:bold ], [ s:bright_black, s:black ], [ s:bright_black, s:black ] ]
 
 " Replace mode.
 let s:p.replace.left   = s:p.normal.left
@@ -86,10 +89,10 @@ let s:p.inactive.right = [ [ s:white , s:black ], [ s:white, s:black ], [ s:whit
 let s:p.inactive.left  = s:p.inactive.right[1:]
 
 " Tabline.
-let s:p.tabline.left   = [ [ s:white, s:bright_black ] ]
-let s:p.tabline.tabsel = [ [ s:bright_white, s:white, 'bold' ] ]
+let s:p.tabline.left   = [ [ s:white, s:black ] ]
+let s:p.tabline.tabsel = [ [ s:bright_white, s:white, s:bold ] ]
 let s:p.tabline.middle = [ [ s:white, s:black ] ]
-let s:p.tabline.right  = [ [ s:white, s:black ] ]
+let s:p.tabline.right  = [ [ s:white, s:bright_black ] ]
 
 " Lightline name theme.
 let g:lightline#colorscheme#enfocado#palette = lightline#colorscheme#fill(s:p)
