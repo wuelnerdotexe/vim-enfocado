@@ -98,8 +98,8 @@ exe "hi ErrorMsg              gui=".s:bold_italic."   guibg=".s:none."          
 exe "hi FoldColumn            gui=".s:bold."          guibg=".s:none."          guifg=".s:none
 exe "hi Folded                gui=".s:italic."        guibg=".s:bright_black."  guifg=".s:white
 exe "hi LineNr                gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
-exe "hi ModeMsg               gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_green
-exe "hi MoreMsg               gui=".s:none."          guibg=".s:none."          guifg=".s:bright_green
+exe "hi ModeMsg               gui=".s:bold."          guibg=".s:none."          guifg=".s:green
+exe "hi MoreMsg               gui=".s:none."          guibg=".s:none."          guifg=".s:green
 exe "hi NonText               gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
 exe "hi Pmenu                 gui=".s:none."          guibg=".s:black."         guifg=".s:white 
 exe "hi PmenuSbar             gui=".s:none."          guibg=".s:bright_black."  guifg=".s:bright_black
