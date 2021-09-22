@@ -119,6 +119,7 @@ exe "hi TabLineSel            gui=".s:none."          guibg=".s:bright_black."  
 exe "hi ToolbarButton         gui=".s:none."          guibg=".s:bright_black."  guifg=".s:white
 exe "hi ToolbarLine           gui=".s:none."          guibg=".s:black."         guifg=".s:black
 exe "hi VertSplit             gui=".s:none."          guibg=".s:black."         guifg=".s:black
+exe "hi Visual                gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:none
 exe "hi WarningMsg            gui=".s:bold_italic."   guibg=".s:none."          guifg=".s:bright_yellow
 exe "hi WildMenu              gui=".s:bold."          guibg=".s:black."         guifg=".s:white
 
@@ -139,9 +140,11 @@ exe "hi DiffDelete            gui=".s:bold."          guibg=".s:none."          
 exe "hi DiffText              gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_white
 
 " Main code syntax.
+exe "hi Comment               gui=".s:italic."        guibg=".s:none."          guifg=".s:white
 exe "hi Constant              gui=".s:none."          guibg=".s:none."          guifg=".s:orange
 exe "hi Identifier            gui=".s:bold."          guibg=".s:none."          guifg=".s:cyan
 exe "hi Ignore                gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
+exe "hi MatchParen            gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:none
 exe "hi PreProc               gui=".s:none."          guibg=".s:none."          guifg=".s:purple
 exe "hi Special               gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_orange
 exe "hi Statement             gui=".s:none."          guibg=".s:none."          guifg=".s:purple
@@ -157,10 +160,14 @@ exe "hi Operator              gui=".s:none."          guibg=".s:none."          
 exe "hi StorageClass          gui=".s:none."          guibg=".s:none."          guifg=".s:bright_white
 exe "hi Keyword               gui=".s:none."          guibg=".s:none."          guifg=".s:blue
 
-
 " Vim / Neovim differences.
 if has('nvim')
 
+  " Cursors and visual selections.
+  exe "hi Cursor                gui=".s:bold."          guibg=".s:white."         guifg=".s:none
+  exe "hi lCursor               gui=".s:bold."          guibg=".s:white."         guifg=".s:none
+  exe "hi TermCursor            gui=".s:bold."          guibg=".s:white."         guifg=".s:none
+  
   " Neovim exclusive.
   exe "hi FloatShadow           gui=".s:none."          guibg=".s:bright_black."  blend=80"
   exe "hi FloatShadowThrough    gui=".s:none."          guibg=".s:bright_black."  blend=100"
@@ -169,24 +176,5 @@ if has('nvim')
   exe "hi RedrawDebugComposed   gui=".s:none."          guibg=".s:bright_green."  guifg=".s:bright_white
   exe "hi RedrawDebugNormal     gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
   exe "hi RedrawDebugRecompose  gui=".s:none."          guibg=".s:bright_red."    guifg=".s:bright_white
-
-  " Cursors and visual selections.
-  exe "hi Cursor                gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
-  exe "hi lCursor               gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
-  exe "hi MatchParen            gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
-  exe "hi TermCursor            gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
-  exe "hi Visual                gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
-  
-  " Comments.
-  exe "hi Comment               gui=".s:italic."        guibg=".s:none."          guifg=".s:white
-
-else
-
-  " Cursors and visual selections.
-  exe "hi MatchParen            gui=".s:none."          guibg=".s:bright_black."  guifg=".s:none
-  exe "hi Visual                gui=".s:none."          guibg=".s:bright_black."  guifg=".s:none
-
-  " Comments.
-  exe "hi Comment               gui=".s:none."          guibg=".s:none."          guifg=".s:green
 
 endif
