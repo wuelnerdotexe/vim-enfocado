@@ -2,8 +2,32 @@
 " Name:     VIM ENFOCADO
 " Author:   Wuelner Martínez <wuelnerdotexe@gmail.com>
 " URL:      https://github.com/wuelnerdotexe/vim-enfocado
-" License:  MIT
-" About:    Vim theme ENFOCADO with Selenized Black colorscheme.
+" License:  MIT. Copyright (C) 2021 Wuelner Martínez.
+" About:    How the themes should be.
+" -----------------------------------------------------------------------------
+" Philosophy:
+" I decided to create this theme, because all the themes I had
+" used were built to be attractive, but not entirely useful. This is how
+" VIM ENFOCADO was born, the topic that focuses only on what is important for
+" programmers, the code and nothing else." - Wuelner Martínez.
+" -----------------------------------------------------------------------------
+" Features:
+" - Focused on coding and nothing more than coding.
+" - Use of well-founded Selenized Black color scheme. Learn more about the
+"   project in https://github.com/jan-warchol/selenized
+" - Syntax highlight inspired by VS Code's default dark+ theme.
+" - The important colors (Red & Yellow) are reserved for important alerts only,
+"   as they should be.
+" - What is not important, is B&W, truly minimalist.
+" -----------------------------------------------------------------------------
+" Contributing:
+" All your ideas and suggestions are welcome!
+" Let me see your captures and know what you think with the
+" hashtag #HowTheThemesShouldBe
+" And of course, if you want to motivate me to constantly improve this topic,
+" your donations are welcome at PayPal: https://paypal.me/wuelnerdotexe
+" -----------------------------------------------------------------------------
+"               CON AMOR <3 DE LATINOAMÉRICA PARA EL MUNDO.
 " -----------------------------------------------------------------------------
 
 " Encoding of this vim script.
@@ -98,22 +122,6 @@ exe "hi VertSplit             gui=".s:none."          guibg=".s:black."         
 exe "hi WarningMsg            gui=".s:bold_italic."   guibg=".s:none."          guifg=".s:bright_yellow
 exe "hi WildMenu              gui=".s:bold."          guibg=".s:black."         guifg=".s:white
 
-" Cursors and visual selections.
-if has('nvim')
-
-  exe "hi Cursor                gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
-  exe "hi lCursor               gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
-  exe "hi MatchParen            gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
-  exe "hi TermCursor            gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
-  exe "hi Visual                gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
-
-else
-
-  exe "hi MatchParen            gui=".s:none."          guibg=".s:bright_black."  guifg=".s:none
-  exe "hi Visual                gui=".s:none."          guibg=".s:bright_black."  guifg=".s:none
-
-endif
-
 " Spell check.
 exe "hi SpellBad              gui=".s:underline."     guibg=".s:none."          guifg=".s:none."          guisp=".s:bright_red
 exe "hi SpellCap              gui=".s:underline."     guibg=".s:none."          guifg=".s:none."          guisp=".s:bright_yellow
@@ -131,7 +139,6 @@ exe "hi DiffDelete            gui=".s:bold."          guibg=".s:none."          
 exe "hi DiffText              gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_white
 
 " Main code syntax.
-exe "hi Comment               gui=".s:italic."        guibg=".s:none."          guifg=".s:white
 exe "hi Constant              gui=".s:none."          guibg=".s:none."          guifg=".s:orange
 exe "hi Identifier            gui=".s:bold."          guibg=".s:none."          guifg=".s:cyan
 exe "hi Ignore                gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
@@ -150,9 +157,11 @@ exe "hi Operator              gui=".s:none."          guibg=".s:none."          
 exe "hi StorageClass          gui=".s:none."          guibg=".s:none."          guifg=".s:bright_white
 exe "hi Keyword               gui=".s:none."          guibg=".s:none."          guifg=".s:blue
 
-" Neovim exclusive.
+
+" Vim / Neovim differences.
 if has('nvim')
 
+  " Neovim exclusive.
   exe "hi FloatShadow           gui=".s:none."          guibg=".s:bright_black."  blend=80"
   exe "hi FloatShadowThrough    gui=".s:none."          guibg=".s:bright_black."  blend=100"
   exe "hi NvimInternalError     gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_red
@@ -160,5 +169,24 @@ if has('nvim')
   exe "hi RedrawDebugComposed   gui=".s:none."          guibg=".s:bright_green."  guifg=".s:bright_white
   exe "hi RedrawDebugNormal     gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
   exe "hi RedrawDebugRecompose  gui=".s:none."          guibg=".s:bright_red."    guifg=".s:bright_white
+
+  " Cursors and visual selections.
+  exe "hi Cursor                gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
+  exe "hi lCursor               gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
+  exe "hi MatchParen            gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
+  exe "hi TermCursor            gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
+  exe "hi Visual                gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
+  
+  " Comments.
+  exe "hi Comment               gui=".s:italic."        guibg=".s:none."          guifg=".s:white
+
+else
+
+  " Cursors and visual selections.
+  exe "hi MatchParen            gui=".s:none."          guibg=".s:bright_black."  guifg=".s:none
+  exe "hi Visual                gui=".s:none."          guibg=".s:bright_black."  guifg=".s:none
+
+  " Comments.
+  exe "hi Comment               gui=".s:none."          guibg=".s:none."          guifg=".s:green
 
 endif
