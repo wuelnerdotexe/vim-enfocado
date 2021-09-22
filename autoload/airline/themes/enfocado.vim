@@ -57,6 +57,11 @@ let s:bright_yellow = "#EFC541"
 " Airline name theme.
 let g:airline#themes#enfocado#palette = { }
 
+" Accent colors.
+let g:airline#themes#enfocado#palette.accents = {
+  \ 'red': [ s:bright_red, '', 160, '' ]
+\ }
+
 " Normal mode.
 let s:airline_a_normal = [ s:bright_white, s:white,        17,  190 ]
 let s:airline_b_normal = [ s:white, 	   s:bright_black, 255, 238 ]
@@ -73,36 +78,12 @@ let g:airline#themes#enfocado#palette.insert = airline#themes#generate_color_map
   \ s:airline_a_insert, s:airline_b_insert, s:airline_c_insert
 \ )
 
-" Insert (paste) mode.
-let g:airline#themes#enfocado#palette.insert_paste = {
-  \ 'airline_a' : [ s:airline_a_insert[0], s:airline_a_insert[1], s:airline_a_insert[2], 172, '' ]
-\ }
-
-" Terminal mode.
-let g:airline#themes#enfocado#palette.terminal = airline#themes#generate_color_map(
-  \ s:airline_a_insert, s:airline_b_insert, s:airline_c_insert
-\ )
-
-" Replace mode.
-let g:airline#themes#enfocado#palette.replace = copy(g:airline#themes#enfocado#palette.insert)
-let g:airline#themes#enfocado#palette.replace.airline_a = [
-  \ s:airline_b_insert[0], s:airline_b_insert[1], s:airline_b_insert[2], 124, ''
-\ ]
-
 " Visual mode.
 let s:airline_a_visual = [ s:bright_white, s:black, 232 , 214 ]
 let s:airline_b_visual = [ s:white,        s:black, 232 , 202 ]
 let s:airline_c_visual = [ s:white, 	   s:black, 15  , 52  ]
 let g:airline#themes#enfocado#palette.visual = airline#themes#generate_color_map(
   \ s:airline_a_visual, s:airline_b_visual, s:airline_c_visual
-\ )
-
-" Inactive mode.
-let s:airline_a_inactive = [ s:white, 	     s:black, 239, 234, '' ]
-let s:airline_b_inactive = [ s:bright_black, s:black, 239, 235, '' ]
-let s:airline_c_inactive = [ s:white,        s:black, 239, 236, '' ]
-let g:airline#themes#enfocado#palette.inactive = airline#themes#generate_color_map(
-  \ s:airline_a_inactive, s:airline_b_inactive, s:airline_c_inactive
 \ )
 
 " Command mode.
@@ -113,8 +94,27 @@ let g:airline#themes#enfocado#palette.commandline = airline#themes#generate_colo
   \ s:airline_a_commandline, s:airline_b_commandline, s:airline_c_commandline
 \ )
 
-" Accent colors.
-let g:airline#themes#enfocado#palette.accents = {
-  \ 'red': [ s:bright_red, '', 160, '' ]
+" Insert (paste) mode.
+let g:airline#themes#enfocado#palette.insert_paste = {
+  \ 'airline_a' : [ s:airline_a_insert[0], s:airline_a_insert[1], s:airline_a_insert[2], 172, '' ]
 \ }
+
+" Replace mode.
+let g:airline#themes#enfocado#palette.replace = copy(g:airline#themes#enfocado#palette.insert)
+let g:airline#themes#enfocado#palette.replace.airline_a = [
+  \ s:airline_b_insert[0], s:airline_b_insert[1], s:airline_b_insert[2], 124, ''
+\ ]
+
+" Terminal mode.
+let g:airline#themes#enfocado#palette.terminal = airline#themes#generate_color_map(
+  \ s:airline_a_insert, s:airline_b_insert, s:airline_c_insert
+\ )
+
+" Inactive mode.
+let s:airline_a_inactive = [ s:white, 	     s:black, 239, 234, '' ]
+let s:airline_b_inactive = [ s:white,        s:black, 239, 235, '' ]
+let s:airline_c_inactive = [ s:white,        s:black, 239, 236, '' ]
+let g:airline#themes#enfocado#palette.inactive = airline#themes#generate_color_map(
+  \ s:airline_a_inactive, s:airline_b_inactive, s:airline_c_inactive
+\ )
 
