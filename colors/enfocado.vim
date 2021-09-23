@@ -143,24 +143,24 @@ exe "hi DiffText              gui=".s:bold."          guibg=".s:bright_yellow." 
 
 " Main code syntax.
 exe "hi Comment               gui=".s:italic."        guibg=".s:none."          guifg=".s:dim
-exe "hi Constant              gui=".s:none."          guibg=".s:none."          guifg=".s:orange
-exe "hi Identifier            gui=".s:bold."          guibg=".s:none."          guifg=".s:cyan
+exe "hi Constant              gui=".s:none."          guibg=".s:none."          guifg=".s:cyan
+exe "hi Identifier            gui=".s:none."          guibg=".s:none."          guifg=".s:foreground
 exe "hi Ignore                gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
 exe "hi MatchParen            gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:none
-exe "hi PreProc               gui=".s:none."          guibg=".s:none."          guifg=".s:purple
-exe "hi Special               gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_orange
-exe "hi Statement             gui=".s:none."          guibg=".s:none."          guifg=".s:purple
-exe "hi Title                 gui=".s:bold."          guibg=".s:none."          guifg=".s:blue
+exe "hi PreProc               gui=".s:none."          guibg=".s:none."          guifg=".s:red
+exe "hi Special               gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_purple
+exe "hi Statement             gui=".s:none."          guibg=".s:none."          guifg=".s:red
+exe "hi Title                 gui=".s:bold."          guibg=".s:none."          guifg=".s:background
 exe "hi Todo                  gui=".s:bold."          guibg=".s:yellow."        guifg=".s:background
-exe "hi Type                  gui=".s:none."          guibg=".s:none."          guifg=".s:blue
+exe "hi Type                  gui=".s:none."          guibg=".s:none."          guifg=".s:red
 exe "hi Underlined            gui=".s:underline."     guibg=".s:none."          guifg=".s:none."          guisp=".s:none
 
 " Specific code syntax.
 exe "hi Boolean               gui=".s:none."          guibg=".s:none."          guifg=".s:blue
-exe "hi Number                gui=".s:none."          guibg=".s:none."          guifg=".s:green
+exe "hi Float                 gui=".s:none."          guibg=".s:none."          guifg=".s:blue
+exe "hi Function              gui=".s:bold."          guibg=".s:none."          guifg=".s:purple
+exe "hi Number                gui=".s:none."          guibg=".s:none."          guifg=".s:blue
 exe "hi Operator              gui=".s:none."          guibg=".s:none."          guifg=".s:foreground
-exe "hi StorageClass          gui=".s:none."          guibg=".s:none."          guifg=".s:foreground
-exe "hi Keyword               gui=".s:none."          guibg=".s:none."          guifg=".s:blue
 
 " Vim / Neovim differences.
 if has('nvim')
