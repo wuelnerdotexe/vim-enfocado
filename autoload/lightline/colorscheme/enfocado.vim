@@ -35,27 +35,36 @@ scriptencoding utf-8
 
 " Selenized black colorscheme.
 let s:background    = "#181818"
+let s:foreground    = "#DEDEDE"
 let s:black         = "#252525"
-let s:blue          = "#368AEB"
-let s:cyan          = "#3FC5B7"
-let s:green         = "#70B433"
-let s:orange        = "#E67F43"
-let s:purple        = "#A580E2"
 let s:red           = "#Ed4A46"
-let s:white         = "#777777"
+let s:green         = "#70B433"
 let s:yellow        = "#DBB32D"
+let s:blue          = "#368AEB"
+let s:purple        = "#EB6EB7"
+let s:cyan          = "#3FC5B7"
+let s:orange        = "#E67F43"
+let s:violet        = "#A580E2"
 let s:bright_black  = "#3B3B3B"
-let s:bright_blue   = "#4F9CFE"
-let s:bright_cyan   = "#56D8C9"
-let s:bright_green  = "#83C746"
-let s:bright_purple = "#B891F5"
-let s:bright_orange = "#FA9153"
 let s:bright_red    = "#FF5E56"
-let s:bright_white  = "#DEDEDE"
+let s:bright_green  = "#83C746"
 let s:bright_yellow = "#EFC541"
+let s:bright_blue   = "#4F9CFE"
+let s:bright_purple = "#FF81CA"
+let s:bright_cyan   = "#56D8C9"
+let s:bright_orange = "#FA9153"
+let s:bright_violet = "#B891F5"
+let s:dim           = "#777777"
+
+" Highlight variables.
+let s:none          = "NONE"
+let s:reverse       = "reverse"
 
 " Text type variables.
 let s:bold          = "bold"
+let s:bold_italic   = "bold,italic"
+let s:italic        = "italic"
+let s:underline     = "underline"
 
 " Lightline modes.
 let s:p = { 'normal' : { }, 'inactive' : { }, 'insert' : { },
@@ -63,21 +72,21 @@ let s:p = { 'normal' : { }, 'inactive' : { }, 'insert' : { },
 \ }
 
 " Normal mode.
-let s:p.normal.left    = [ [ s:bright_white, s:white, s:bold ], [ s:white, s:black ] ]
-let s:p.normal.middle  = [ [ s:white, s:black ] ]
-let s:p.normal.right   = [ [ s:bright_white, s:white, s:bold ], [ s:white, s:bright_black ], [ s:white, s:black ] ]
+let s:p.normal.left    = [ [ s:background, s:dim, s:bold ], [ s:dim, s:black ] ]
+let s:p.normal.middle  = [ [ s:dim, s:black ] ]
+let s:p.normal.right   = [ [ s:background, s:dim, s:bold ], [ s:dim, s:bright_black ], [ s:dim, s:black ] ]
 let s:p.normal.error   = [ [ s:black, s:bright_red ] ]
-let s:p.normal.warning = [ [ s:black, s:bright_yellow ] ]
+let s:p.normal.warning = [ [ s:black, s:bright_orange ] ]
 
 " Insert mode.
-let s:p.insert.left    = [ [ s:black, s:green, s:bold ], [ s:white, s:black ] ]
-let s:p.insert.middle  = [ [ s:white, s:black ] ]
-let s:p.insert.right   = [ [ s:bright_white, s:white, s:bold ], [ s:white, s:bright_black ], [ s:white, s:black ] ]
+let s:p.insert.left    = [ [ s:background, s:bright_yellow, s:bold ], [ s:dim, s:black ] ]
+let s:p.insert.middle  = [ [ s:dim, s:black ] ]
+let s:p.insert.right   = [ [ s:background, s:bright_yellow, s:bold ], [ s:dim, s:bright_black ], [ s:dim, s:black ] ]
 
 " Visual mode.
-let s:p.visual.left    = [ [ s:bright_white, s:white, s:bold ], [ s:bright_black, s:black ] ]
+let s:p.visual.left    = [ [ s:background, s:bright_violet, s:bold ], [ s:bright_black, s:black ] ]
 let s:p.visual.middle  = [ [ s:bright_black, s:black ] ]
-let s:p.visual.right   = [ [ s:bright_white, s:white, s:bold ], [ s:bright_black, s:black ], [ s:bright_black, s:black ] ]
+let s:p.visual.right   = [ [ s:background, s:bright_violet, s:bold ], [ s:bright_black, s:black ], [ s:bright_black, s:black ] ]
 
 " Replace mode.
 let s:p.replace.left   = s:p.normal.left
@@ -85,14 +94,14 @@ let s:p.replace.middle = s:p.normal.middle
 let s:p.replace.right  = s:p.normal.right
 
 " Inactive mode.
-let s:p.inactive.right = [ [ s:white , s:black ], [ s:white, s:black ], [ s:white, s:black ] ]
+let s:p.inactive.right = [ [ s:dim , s:black ], [ s:dim, s:black ], [ s:dim, s:black ] ]
 let s:p.inactive.left  = s:p.inactive.right[1:]
 
 " Tabline.
-let s:p.tabline.left   = [ [ s:white, s:black ] ]
-let s:p.tabline.tabsel = [ [ s:bright_white, s:white, s:bold ] ]
-let s:p.tabline.middle = [ [ s:white, s:black ] ]
-let s:p.tabline.right  = [ [ s:white, s:bright_black ] ]
+let s:p.tabline.left   = [ [ s:dim, s:black ] ]
+let s:p.tabline.tabsel = [ [ s:background, s:dim, s:bold ] ]
+let s:p.tabline.middle = [ [ s:dim, s:black ] ]
+let s:p.tabline.right  = [ [ s:dim, s:bright_black ] ]
 
 " Lightline name theme.
 let g:lightline#colorscheme#enfocado#palette = lightline#colorscheme#fill(s:p)
