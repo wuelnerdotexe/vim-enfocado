@@ -94,12 +94,13 @@ exe "hi Conceal               gui=".s:none."          guibg=".s:none."          
 exe "hi CursorColumn          gui=".s:none."          guibg=".s:black."         guifg=".s:none
 exe "hi CursorLine            gui=".s:none."          guibg=".s:black."         guifg=".s:none
 exe "hi CursorLineNr          gui=".s:bold."          guibg=".s:black."         guifg=".s:dim
-exe "hi Directory             gui=".s:bold."          guibg=".s:none."          guifg=".s:cyan
+exe "hi Directory             gui=".s:none."          guibg=".s:none."          guifg=".s:bright_green
 exe "hi Error                 gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_red
-exe "hi ErrorMsg              gui=".s:bold_italic."   guibg=".s:none."          guifg=".s:bright_red
-exe "hi FoldColumn            gui=".s:bold."          guibg=".s:none."          guifg=".s:none
-exe "hi Folded                gui=".s:italic."        guibg=".s:bright_black."  guifg=".s:dim
+exe "hi ErrorMsg              gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_red
+exe "hi FoldColumn            gui=".s:none."          guibg=".s:none."          guifg=".s:none
+exe "hi Folded                gui=".s:none."          guibg=".s:bright_black."  guifg=".s:dim
 exe "hi LineNr                gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
+exe "hi MsgArea               gui=".s:none."          guibg=".s:none."          guifg=".s:dim
 exe "hi ModeMsg               gui=".s:bold."          guibg=".s:none."          guifg=".s:foreground
 exe "hi MoreMsg               gui=".s:none."          guibg=".s:none."          guifg=".s:green
 exe "hi NonText               gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
@@ -107,7 +108,7 @@ exe "hi Pmenu                 gui=".s:none."          guibg=".s:black."         
 exe "hi PmenuSbar             gui=".s:none."          guibg=".s:bright_black."  guifg=".s:bright_black
 exe "hi PmenuSel              gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:foreground
 exe "hi PmenuThumb            gui=".s:none."          guibg=".s:dim."           guifg=".s:dim
-exe "hi Question              gui=".s:bold_italic."   guibg=".s:none."          guifg=".s:bright_yellow
+exe "hi Question              gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_yellow
 exe "hi QuickFixLine          gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:none
 exe "hi SignColumn            gui=".s:bold."          guibg=".s:none."          guifg=".s:none
 exe "hi SpecialKey            gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
@@ -121,8 +122,8 @@ exe "hi TabLineSel            gui=".s:none."          guibg=".s:bright_black."  
 exe "hi ToolbarButton         gui=".s:none."          guibg=".s:bright_black."  guifg=".s:dim
 exe "hi ToolbarLine           gui=".s:none."          guibg=".s:black."         guifg=".s:black
 exe "hi VertSplit             gui=".s:none."          guibg=".s:black."         guifg=".s:black
-exe "hi Visual                gui=".s:bold."          guibg=".s:bright_violet." guifg=".s:background
-exe "hi WarningMsg            gui=".s:bold_italic."   guibg=".s:none."          guifg=".s:bright_orange
+exe "hi Visual                gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:none
+exe "hi WarningMsg            gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_orange
 exe "hi WildMenu              gui=".s:bold."          guibg=".s:black."         guifg=".s:dim
 
 " Spell check.
@@ -143,32 +144,25 @@ exe "hi DiffText              gui=".s:bold."          guibg=".s:bright_yellow." 
 
 " Main code syntax.
 exe "hi Comment               gui=".s:italic."        guibg=".s:none."          guifg=".s:dim
-exe "hi Constant              gui=".s:none."          guibg=".s:none."          guifg=".s:cyan
-exe "hi Identifier            gui=".s:none."          guibg=".s:none."          guifg=".s:foreground
+exe "hi Constant              gui=".s:none."          guibg=".s:none."          guifg=".s:foreground
+exe "hi Identifier            gui=".s:none."          guibg=".s:none."          guifg=".s:bright_green
 exe "hi Ignore                gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
 exe "hi MatchParen            gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:none
-exe "hi PreProc               gui=".s:none."          guibg=".s:none."          guifg=".s:red
-exe "hi Special               gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_purple
-exe "hi Statement             gui=".s:none."          guibg=".s:none."          guifg=".s:red
-exe "hi Title                 gui=".s:bold."          guibg=".s:none."          guifg=".s:background
-exe "hi Todo                  gui=".s:bold."          guibg=".s:yellow."        guifg=".s:background
-exe "hi Type                  gui=".s:none."          guibg=".s:none."          guifg=".s:red
+exe "hi PreProc               gui=".s:none."          guibg=".s:none."          guifg=".s:bright_cyan
+exe "hi Special               gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_yellow
+exe "hi Statement             gui=".s:none."          guibg=".s:none."          guifg=".s:bright_cyan
+exe "hi Title                 gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_blue
+exe "hi Todo                  gui=".s:bold_italic."   guibg=".s:yellow."        guifg=".s:background
+exe "hi Type                  gui=".s:none."          guibg=".s:none."          guifg=".s:bright_blue
 exe "hi Underlined            gui=".s:underline."     guibg=".s:none."          guifg=".s:none."          guisp=".s:none
-
-" Specific code syntax.
-exe "hi Boolean               gui=".s:none."          guibg=".s:none."          guifg=".s:blue
-exe "hi Float                 gui=".s:none."          guibg=".s:none."          guifg=".s:blue
-exe "hi Function              gui=".s:bold."          guibg=".s:none."          guifg=".s:purple
-exe "hi Number                gui=".s:none."          guibg=".s:none."          guifg=".s:blue
-exe "hi Operator              gui=".s:none."          guibg=".s:none."          guifg=".s:foreground
 
 " Vim / Neovim differences.
 if has('nvim')
 
   " Cursors and visual selections.
-  exe "hi Cursor                gui=".s:bold."          guibg=".s:bright_violet." guifg=".s:background
-  exe "hi lCursor               gui=".s:bold."          guibg=".s:bright_violet." guifg=".s:background
-  exe "hi TermCursor            gui=".s:bold."          guibg=".s:bright_violet." guifg=".s:background
+  exe "hi Cursor                gui=".s:bold."          guibg=".s:dim."           guifg=".s:none
+  exe "hi lCursor               gui=".s:bold."          guibg=".s:dim."           guifg=".s:none
+  exe "hi TermCursor            gui=".s:bold."          guibg=".s:dim."           guifg=".s:none
   
   " Neovim exclusive.
   exe "hi FloatShadow           gui=".s:none."          guibg=".s:bright_black."  blend=80"

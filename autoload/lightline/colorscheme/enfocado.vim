@@ -84,14 +84,14 @@ let s:p.insert.middle  = [ [ s:dim, s:black ] ]
 let s:p.insert.right   = [ [ s:background, s:bright_yellow, s:bold ], [ s:dim, s:bright_black ], [ s:dim, s:black ] ]
 
 " Visual mode.
-let s:p.visual.left    = [ [ s:background, s:bright_violet, s:bold ], [ s:bright_black, s:black ] ]
+let s:p.visual.left    = [ [ s:background, s:dim, s:bold ], [ s:bright_black, s:black ] ]
 let s:p.visual.middle  = [ [ s:bright_black, s:black ] ]
-let s:p.visual.right   = [ [ s:background, s:bright_violet, s:bold ], [ s:bright_black, s:black ], [ s:bright_black, s:black ] ]
+let s:p.visual.right   = [ [ s:background, s:dim, s:bold ], [ s:bright_black, s:black ], [ s:bright_black, s:black ] ]
 
 " Replace mode.
-let s:p.replace.left   = s:p.normal.left
-let s:p.replace.middle = s:p.normal.middle
-let s:p.replace.right  = s:p.normal.right
+let s:p.replace.left   = s:p.insert.left
+let s:p.replace.middle = s:p.insert.middle
+let s:p.replace.right  = s:p.insert.right
 
 " Inactive mode.
 let s:p.inactive.right = [ [ s:dim , s:black ], [ s:dim, s:black ], [ s:dim, s:black ] ]

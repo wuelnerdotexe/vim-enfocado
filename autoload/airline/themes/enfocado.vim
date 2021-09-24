@@ -89,9 +89,9 @@ let g:airline#themes#enfocado#palette.normal.airline_error   = s:airline_error_n
 " Insert mode.
 let s:airline_a_insert     = [ s:background, s:bright_yellow, 17,  45  ]
 let s:airline_b_insert     = [ s:dim,        s:bright_black,  255, 47  ]
-let s:airline_c_insert     = [ s:dim,        s:black, 	 15,  17  ] 
+let s:airline_c_insert     = [ s:dim,        s:black, 	      15,  17  ] 
 let s:airline_warn_insert  = [ s:black,      s:bright_orange, 232, 166 ]
-let s:airline_error_insert = [ s:black, s:bright_red,    232, 160 ]
+let s:airline_error_insert = [ s:black, s:bright_red,         232, 160 ]
 let g:airline#themes#enfocado#palette.insert = airline#themes#generate_color_map(
   \ s:airline_a_insert, s:airline_b_insert, s:airline_c_insert
 \ )
@@ -99,7 +99,7 @@ let g:airline#themes#enfocado#palette.insert.airline_warning = s:airline_warn_in
 let g:airline#themes#enfocado#palette.insert.airline_error   = s:airline_error_insert
 
 " Visual mode.
-let s:airline_a_visual     = [ s:background,    s:bright_violet, 232, 214 ]
+let s:airline_a_visual     = [ s:background,    s:dim,           232, 214 ]
 let s:airline_b_visual     = [ s:bright_black,  s:black,         232, 202 ]
 let s:airline_c_visual     = [ s:bright_black,  s:black,         15,  52  ]
 let s:airline_warn_visual  = [ s:black,         s:bright_orange, 232, 166 ]
@@ -124,13 +124,13 @@ let g:airline#themes#enfocado#palette.commandline.airline_error   = s:airline_er
 
 " Insert (paste) mode.
 let g:airline#themes#enfocado#palette.insert_paste = {
-  \ 'airline_a' : [ s:airline_a_insert[0], s:airline_a_insert[1], s:airline_a_insert[2], 172, '' ]
+  \ 'airline_a' : [ s:airline_a_insert[0], s:airline_a_insert[1], s:airline_a_insert[2], s:airline_a_insert[3], '' ]
 \ }
 
 " Replace mode.
 let g:airline#themes#enfocado#palette.replace = copy( g:airline#themes#enfocado#palette.insert )
 let g:airline#themes#enfocado#palette.replace.airline_a = [
-  \ s:airline_b_insert[0], s:airline_b_insert[1], s:airline_b_insert[2], 124, ''
+  \ s:airline_a_insert[0], s:airline_a_insert[1], s:airline_a_insert[2], s:airline_a_insert[3], ''
 \ ]
 
 " Terminal mode.
