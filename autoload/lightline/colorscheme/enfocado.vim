@@ -8,17 +8,18 @@
 " Philosophy:
 " I decided to create this theme, because all the themes I had
 " used were built to be attractive, but not entirely useful. This is how
-" VIM ENFOCADO was born, the topic that focuses only on what is important for
+" ENFOCADO was born, the topic that focuses only on what is important for
 " programmers, the code and nothing else." - Wuelner Martínez.
 " -----------------------------------------------------------------------------
 " Features:
 " - Focused on coding and nothing more than coding.
-" - Use of well-founded Selenized Black color scheme. Learn more about the
+" - Use of well-founded Selenized black color scheme. Learn more about the
 "   project in https://github.com/jan-warchol/selenized
-" - Syntax highlight inspired by VS Code's default enfocado+ theme.
-" - The important colors (Red & Yellow) are reserved for important alerts only,
+" - Use of only three nature-inspired colors (Blue, Cyan, & Green) for
+"   syntax highlighting.
+" - The important colors (Orange & Red) are reserved for important alerts only,
 "   as they should be.
-" - What is not important, is B&W, truly minimalist.
+" - What is not important, is Black & White, truly minimalist.
 " -----------------------------------------------------------------------------
 " Contributing:
 " All your ideas and suggestions are welcome!
