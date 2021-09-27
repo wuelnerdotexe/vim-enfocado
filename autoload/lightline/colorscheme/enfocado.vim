@@ -31,9 +31,6 @@
 "               CON AMOR <3 DE LATINOAMÉRICA PARA EL MUNDO.
 " -----------------------------------------------------------------------------
 
-" Encoding of this vim script.
-scriptencoding utf-8
-
 " Selenized black colorscheme.
 let s:background    = "#181818"
 let s:foreground    = "#DEDEDE"

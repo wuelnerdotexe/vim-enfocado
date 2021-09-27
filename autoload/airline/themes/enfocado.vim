@@ -31,9 +31,6 @@
 "               CON AMOR <3 DE LATINOAMÉRICA PARA EL MUNDO.
 " -----------------------------------------------------------------------------
 
-" Encoding of this vim script.
-scriptencoding utf-8
-
 " Selenized black colorscheme.
 let s:background    = "#181818"
 let s:foreground    = "#DEDEDE"
@@ -79,49 +76,33 @@ let g:airline#themes#enfocado#palette.accents = {
 let s:airline_a_normal     = [ s:background, s:dim,           17,  190 ]
 let s:airline_b_normal     = [ s:dim, 	     s:bright_black,  255, 238 ]
 let s:airline_c_normal     = [ s:dim,        s:black,         85,  234 ]
-let s:airline_warn_normal  = [ s:black,      s:bright_orange, 232, 166 ]
-let s:airline_error_normal = [ s:black,      s:bright_red,    232, 160 ]
 let g:airline#themes#enfocado#palette.normal = airline#themes#generate_color_map(
   \ s:airline_a_normal, s:airline_b_normal, s:airline_c_normal
 \ )
-let g:airline#themes#enfocado#palette.normal.airline_warning = s:airline_warn_normal
-let g:airline#themes#enfocado#palette.normal.airline_error   = s:airline_error_normal
 
 " Insert mode.
-let s:airline_a_insert     = [ s:background, s:bright_yellow, 17,  45  ]
-let s:airline_b_insert     = [ s:dim,        s:bright_black,  255, 47  ]
-let s:airline_c_insert     = [ s:dim,        s:black, 	      15,  17  ] 
-let s:airline_warn_insert  = [ s:black,      s:bright_orange, 232, 166 ]
-let s:airline_error_insert = [ s:black, s:bright_red,         232, 160 ]
+let s:airline_a_insert = [ s:background, s:bright_yellow, 17,  45  ]
+let s:airline_b_insert = [ s:dim,        s:bright_black,  255, 47  ]
+let s:airline_c_insert = [ s:dim,        s:black, 	  15,  17  ] 
 let g:airline#themes#enfocado#palette.insert = airline#themes#generate_color_map(
   \ s:airline_a_insert, s:airline_b_insert, s:airline_c_insert
 \ )
-let g:airline#themes#enfocado#palette.insert.airline_warning = s:airline_warn_insert
-let g:airline#themes#enfocado#palette.insert.airline_error   = s:airline_error_insert
 
 " Visual mode.
-let s:airline_a_visual     = [ s:background,    s:dim,           232, 214 ]
-let s:airline_b_visual     = [ s:bright_black,  s:black,         232, 202 ]
-let s:airline_c_visual     = [ s:bright_black,  s:black,         15,  52  ]
-let s:airline_warn_visual  = [ s:black,         s:bright_orange, 232, 166 ]
-let s:airline_error_visual = [ s:black,         s:bright_red,    232, 160 ]
+let s:airline_a_visual = [ s:background,    s:dim,   232, 214 ]
+let s:airline_b_visual = [ s:bright_black,  s:black, 232, 202 ]
+let s:airline_c_visual = [ s:bright_black,  s:black, 15,  52  ]
 let g:airline#themes#enfocado#palette.visual = airline#themes#generate_color_map(
   \ s:airline_a_visual, s:airline_b_visual, s:airline_c_visual
 \ )
-let g:airline#themes#enfocado#palette.visual.airline_warning = s:airline_warn_visual
-let g:airline#themes#enfocado#palette.visual.airline_error   = s:airline_error_visual
 
 " Command mode.
-let s:airline_a_commandline     = [ s:background, s:dim,           17,  40  ]
-let s:airline_b_commandline     = [ s:dim,        s:bright_black,  255, 238 ]
-let s:airline_c_commandline     = [ s:dim, 	  s:black, 	   85,  234 ]
-let s:airline_warn_commandline  = [ s:black,      s:bright_orange, 232, 166 ]
-let s:airline_error_commandline = [ s:black,      s:bright_red,    232, 160 ]
+let s:airline_a_commandline = [ s:background, s:dim,          17,  40  ]
+let s:airline_b_commandline = [ s:dim,        s:bright_black, 255, 238 ]
+let s:airline_c_commandline = [ s:dim, 	      s:black, 	      85,  234 ]
 let g:airline#themes#enfocado#palette.commandline = airline#themes#generate_color_map(
   \ s:airline_a_commandline, s:airline_b_commandline, s:airline_c_commandline
 \ )
-let g:airline#themes#enfocado#palette.commandline.airline_warning = s:airline_warn_commandline
-let g:airline#themes#enfocado#palette.commandline.airline_error   = s:airline_error_commandline
 
 " Insert (paste) mode.
 let g:airline#themes#enfocado#palette.insert_paste = {
@@ -140,14 +121,45 @@ let g:airline#themes#enfocado#palette.terminal = airline#themes#generate_color_m
 \ )
 
 " Inactive mode.
-let s:airline_a_inactive     = [ s:dim,   s:black,         239, 234, '' ]
-let s:airline_b_inactive     = [ s:dim,   s:black,         239, 235, '' ]
-let s:airline_c_inactive     = [ s:dim,   s:black,         239, 236, '' ]
-let s:airline_warn_inactive  = [ s:black, s:bright_orange, 232, 166, '' ]
-let s:airline_error_inactive = [ s:black, s:bright_red,    232, 160, '' ]
+let s:airline_a_inactive = [ s:dim,   s:black, 239, 234, '' ]
+let s:airline_b_inactive = [ s:dim,   s:black, 239, 235, '' ]
+let s:airline_c_inactive = [ s:dim,   s:black, 239, 236, '' ]
 let g:airline#themes#enfocado#palette.inactive = airline#themes#generate_color_map(
   \ s:airline_a_inactive, s:airline_b_inactive, s:airline_c_inactive
 \ )
-let g:airline#themes#enfocado#palette.inactive.airline_warning = s:airline_warn_inactive
-let g:airline#themes#enfocado#palette.inactive.airline_error   = s:airline_error_inactive
+" -----------------------------------------------------------------------------
+" Error & Warning colors.
+let s:airline_error = [ s:black, s:bright_red,    232, 160, '' ]
+let s:airline_warn  = [ s:black, s:bright_orange, 232, 166, '' ]
 
+" Error & Warning in normal mode.
+let g:airline#themes#enfocado#palette.normal.airline_error   = s:airline_error
+let g:airline#themes#enfocado#palette.normal.airline_warning = s:airline_warn
+
+" Error & Warning in insert mode.
+let g:airline#themes#enfocado#palette.insert.airline_error   = s:airline_error
+let g:airline#themes#enfocado#palette.insert.airline_warning = s:airline_warn
+
+" Error & Warning in visual mode.
+let g:airline#themes#enfocado#palette.visual.airline_error   = s:airline_error
+let g:airline#themes#enfocado#palette.visual.airline_warning = s:airline_warn
+
+" Error & Warning in insert (paste) mode.
+let g:airline#themes#enfocado#palette.insert_paste.airline_error   = s:airline_error
+let g:airline#themes#enfocado#palette.insert_paste.airline_warning = s:airline_warn
+
+" Error & Warning in replace mode.
+let g:airline#themes#enfocado#palette.replace.airline_error   = s:airline_error
+let g:airline#themes#enfocado#palette.replace.airline_warning = s:airline_warn
+
+" Error & Warning in terminal mode.
+let g:airline#themes#enfocado#palette.terminal.airline_error   = s:airline_error
+let g:airline#themes#enfocado#palette.terminal.airline_warning = s:airline_warn
+
+" Error & Warning in commandline mode.
+let g:airline#themes#enfocado#palette.commandline.airline_error   = s:airline_error
+let g:airline#themes#enfocado#palette.commandline.airline_warning = s:airline_warn
+
+" Error & Warning in inactive mode.
+let g:airline#themes#enfocado#palette.inactive.airline_error   = s:airline_error
+let g:airline#themes#enfocado#palette.inactive.airline_warning = s:airline_warn
