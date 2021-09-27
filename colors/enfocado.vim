@@ -31,9 +31,6 @@
 "               CON AMOR <3 DE LATINOAMÉRICA PARA EL MUNDO.
 " -----------------------------------------------------------------------------
 
-" Encoding of this vim script.
-scriptencoding utf-8
-
 " First check if the 'termguicolors' option has been activated.
 if &termguicolors == 'notermguicolors'
   echoerr 'The colorscheme has not been applied because the
@@ -144,17 +141,17 @@ exe "hi DiffDelete            gui=".s:bold."          guibg=".s:none."          
 exe "hi DiffText              gui=".s:bold."          guibg=".s:bright_yellow." guifg=".s:background
 
 " Main code syntax.
-exe "hi Comment               gui=".s:italic."        guibg=".s:none."          guifg=".s:dim
+exe "hi Comment               gui=".s:none."          guibg=".s:none."          guifg=".s:dim
 exe "hi Constant              gui=".s:none."          guibg=".s:none."          guifg=".s:foreground
-exe "hi Identifier            gui=".s:none."          guibg=".s:none."          guifg=".s:bright_green
-exe "hi Ignore                gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
+exe "hi Identifier            gui=".s:italic."        guibg=".s:none."          guifg=".s:bright_green
+exe "hi Ignore                gui=".s:none."          guibg=".s:none."          guifg=".s:black
 exe "hi MatchParen            gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:none
-exe "hi PreProc               gui=".s:none."          guibg=".s:none."          guifg=".s:bright_cyan
-exe "hi Special               gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_yellow
-exe "hi Statement             gui=".s:none."          guibg=".s:none."          guifg=".s:bright_cyan
+exe "hi PreProc               gui=".s:none."          guibg=".s:none."          guifg=".s:cyan
+exe "hi Special               gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_blue
+exe "hi Statement             gui=".s:none."          guibg=".s:none."          guifg=".s:cyan
 exe "hi Title                 gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_blue
-exe "hi Todo                  gui=".s:bold_italic."   guibg=".s:yellow."        guifg=".s:background
-exe "hi Type                  gui=".s:none."          guibg=".s:none."          guifg=".s:bright_blue
+exe "hi Todo                  gui=".s:bold."          guibg=".s:yellow."        guifg=".s:background
+exe "hi Type                  gui=".s:none."          guibg=".s:none."          guifg=".s:blue
 exe "hi Underlined            gui=".s:underline."     guibg=".s:none."          guifg=".s:none."          guisp=".s:none
 
 " Vim / Neovim differences.
