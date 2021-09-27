@@ -9,7 +9,7 @@
 " I decided to create this theme, because all the themes I had
 " used were built to be attractive, but not entirely useful. This is how
 " ENFOCADO was born, the topic that focuses only on what is important for
-" programmers, the code and nothing else." - Wuelner Martínez.
+" programmers, the code and nothing else.
 " -----------------------------------------------------------------------------
 " Features:
 " - Focused on coding and nothing more than coding.

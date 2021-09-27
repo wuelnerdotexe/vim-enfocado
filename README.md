@@ -1,10 +1,10 @@
 # 🎉 **INTRODUCING VIM ENFOCADO!**
 
-![VIM ENFOCADO](https://imgur.com/sjoLRxv.png)
+![VIM ENFOCADO](https://i.imgur.com/DfdKRjG.png)
 
 ## 🤯 **Philosophy.**
 
-> _"I decided to create this theme, because all the themes I had used were built to be attractive, but not entirely useful. This is how **ENFOCADO** was born, the topic that focuses only on what is important for programmers, the code and nothing else, because that is **how the themes should be**."_ - Wuelner Martínez.
+> _"I decided to create this theme, because all the themes I had used were built to be attractive, but not entirely useful. This is how **ENFOCADO** was born, the topic that focuses only on what is important for programmers, the code and nothing else, because that is **how the themes should be**."_
 
 ## ✨ **Features.**
 
