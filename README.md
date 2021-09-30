@@ -37,13 +37,25 @@ Plug 'wuelnerdotexe/vim-enfocado', { 'branch' : 'development' }
 
 ## 🚀 **Usage.**
 
-Enable the colorscheme in your .vimrc or init.vim:
+Enable the statusline theme:
 
 ```vim
-" Enable true colors (required).
+" Airline.
+let g:airline_theme = "enfocado"
+
+" Lightline.
+let g:lightline = {
+      \ 'colorscheme': 'enfocado',
+      \ }
+```
+
+Enable the colorscheme:
+
+```vim
+" First enable true colors (required).
 set termguicolors
 
-" Load the enfocado theme.
+" Then activate the enfocado theme.
 autocmd VimEnter * ++nested colorscheme enfocado
 ```
 
