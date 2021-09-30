@@ -130,7 +130,7 @@ exe "hi SpellCap              gui=".s:underline."     guibg=".s:none."          
 exe "hi SpellLocal            gui=".s:underline."     guibg=".s:none."          guifg=".s:none."          guisp=".s:bright_yellow
 exe "hi SpellRare             gui=".s:underline."     guibg=".s:none."          guifg=".s:none."          guisp=".s:bright_purple
 
-" Apply colorschemes to search.
+" Search.
 exe "hi IncSearch             gui=".s:bold."          guibg=".s:bright_cyan."   guifg=".s:background
 exe "hi Search                gui=".s:bold."          guibg=".s:bright_green."  guifg=".s:background
 
@@ -154,7 +154,7 @@ exe "hi Todo                  gui=".s:bold."          guibg=".s:yellow."        
 exe "hi Type                  gui=".s:none."          guibg=".s:none."          guifg=".s:blue
 exe "hi Underlined            gui=".s:underline."     guibg=".s:none."          guifg=".s:none."          guisp=".s:none
 
-" Vim / Neovim differences.
+" Only Neovim.
 if has('nvim')
 
   " Cursors and visual selections.
