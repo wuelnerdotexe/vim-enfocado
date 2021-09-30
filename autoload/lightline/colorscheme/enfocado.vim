@@ -60,8 +60,6 @@ let s:reverse       = "reverse"
 
 " Text type variables.
 let s:bold          = "bold"
-let s:bold_italic   = "bold,italic"
-let s:italic        = "italic"
 let s:underline     = "underline"
 
 " Lightline modes.

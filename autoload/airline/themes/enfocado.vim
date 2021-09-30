@@ -60,8 +60,6 @@ let s:reverse       = "reverse"
 
 " Text type variables.
 let s:bold          = "bold"
-let s:bold_italic   = "bold,italic"
-let s:italic        = "italic"
 let s:underline     = "underline"
 
 " Airline name theme.
@@ -81,9 +79,9 @@ let g:airline#themes#enfocado#palette.normal = airline#themes#generate_color_map
 \ )
 
 " Insert mode.
-let s:airline_a_insert = [ s:background, s:bright_yellow, 17,  45  ]
-let s:airline_b_insert = [ s:dim,        s:bright_black,  255, 47  ]
-let s:airline_c_insert = [ s:dim,        s:black, 	  15,  17  ] 
+let s:airline_a_insert = [ s:background, s:bright_yellow, 17,  45 ]
+let s:airline_b_insert = [ s:dim,        s:bright_black,  255, 47 ]
+let s:airline_c_insert = [ s:dim,        s:black, 	  15,  17 ] 
 let g:airline#themes#enfocado#palette.insert = airline#themes#generate_color_map(
   \ s:airline_a_insert, s:airline_b_insert, s:airline_c_insert
 \ )

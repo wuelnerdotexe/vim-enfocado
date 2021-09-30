@@ -32,7 +32,7 @@
 " -----------------------------------------------------------------------------
 
 " First check if the 'termguicolors' option has been activated.
-if &termguicolors == 'notermguicolors'
+if &termguicolors == "notermguicolors"
   echoerr 'The colorscheme has not been applied because the
         \ "termguicolors" option has not been previously activated.'
   finish
@@ -78,10 +78,8 @@ let s:none          = "NONE"
 let s:reverse       = "reverse"
 
 " Text type variables.
-let s:bold          = "bold"
-let s:bold_italic   = "bold,italic"
-let s:italic        = "italic"
-let s:underline     = "underline"
+let s:bold      = "bold"
+let s:underline = "underline"
 
 " All environment.
 exe "hi Normal                gui=".s:none."          guibg=".s:background."    guifg=".s:foreground
@@ -91,12 +89,12 @@ exe "hi ColorColumn           gui=".s:none."          guibg=".s:black."         
 exe "hi Conceal               gui=".s:none."          guibg=".s:none."          guifg=".s:dim
 exe "hi CursorColumn          gui=".s:none."          guibg=".s:black."         guifg=".s:none
 exe "hi CursorLine            gui=".s:none."          guibg=".s:black."         guifg=".s:none
-exe "hi CursorLineNr          gui=".s:bold."          guibg=".s:black."         guifg=".s:dim
+exe "hi CursorLineNr          gui=".s:none."          guibg=".s:black."         guifg=".s:dim
 exe "hi Directory             gui=".s:none."          guibg=".s:none."          guifg=".s:bright_green
 exe "hi Error                 gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_red
 exe "hi ErrorMsg              gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_red
 exe "hi FoldColumn            gui=".s:none."          guibg=".s:none."          guifg=".s:none
-exe "hi Folded                gui=".s:none."          guibg=".s:bright_black."  guifg=".s:dim
+exe "hi Folded                gui=".s:none."          guibg=".s:black."         guifg=".s:dim
 exe "hi LineNr                gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
 exe "hi MsgArea               gui=".s:none."          guibg=".s:none."          guifg=".s:dim
 exe "hi ModeMsg               gui=".s:bold."          guibg=".s:none."          guifg=".s:foreground
@@ -119,7 +117,7 @@ exe "hi TabLineFill           gui=".s:none."          guibg=".s:black."         
 exe "hi TabLineSel            gui=".s:none."          guibg=".s:bright_black."  guifg=".s:dim
 exe "hi ToolbarButton         gui=".s:none."          guibg=".s:bright_black."  guifg=".s:dim
 exe "hi ToolbarLine           gui=".s:none."          guibg=".s:black."         guifg=".s:black
-exe "hi VertSplit             gui=".s:none."          guibg=".s:black."         guifg=".s:black
+exe "hi VertSplit             gui=".s:none."          guibg=".s:bright_black."  guifg=".s:bright_black
 exe "hi Visual                gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:none
 exe "hi WarningMsg            gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_orange
 exe "hi WildMenu              gui=".s:bold."          guibg=".s:black."         guifg=".s:dim
@@ -135,7 +133,7 @@ exe "hi IncSearch             gui=".s:bold."          guibg=".s:bright_cyan."   
 exe "hi Search                gui=".s:bold."          guibg=".s:bright_green."  guifg=".s:background
 
 " Diff code.
-exe "hi DiffAdd               gui=".s:none."          guibg=".s:none."          guifg=".s:green
+exe "hi DiffAdd               gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_green
 exe "hi DiffChange            gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_yellow
 exe "hi DiffDelete            gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_red
 exe "hi DiffText              gui=".s:bold."          guibg=".s:bright_yellow." guifg=".s:background
@@ -143,12 +141,12 @@ exe "hi DiffText              gui=".s:bold."          guibg=".s:bright_yellow." 
 " Main code syntax.
 exe "hi Comment               gui=".s:none."          guibg=".s:none."          guifg=".s:dim
 exe "hi Constant              gui=".s:none."          guibg=".s:none."          guifg=".s:foreground
-exe "hi Identifier            gui=".s:italic."        guibg=".s:none."          guifg=".s:bright_green
+exe "hi Identifier            gui=".s:none."          guibg=".s:none."          guifg=".s:bright_green
 exe "hi Ignore                gui=".s:none."          guibg=".s:none."          guifg=".s:black
 exe "hi MatchParen            gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:none
-exe "hi PreProc               gui=".s:none."          guibg=".s:none."          guifg=".s:cyan
-exe "hi Special               gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_blue
-exe "hi Statement             gui=".s:none."          guibg=".s:none."          guifg=".s:cyan
+exe "hi PreProc               gui=".s:none."          guibg=".s:none."          guifg=".s:blue
+exe "hi Special               gui=".s:none."          guibg=".s:none."          guifg=".s:bright_cyan
+exe "hi Statement             gui=".s:none."          guibg=".s:none."          guifg=".s:blue
 exe "hi Title                 gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_blue
 exe "hi Todo                  gui=".s:bold."          guibg=".s:yellow."        guifg=".s:background
 exe "hi Type                  gui=".s:none."          guibg=".s:none."          guifg=".s:blue
@@ -167,7 +165,7 @@ if has('nvim')
   exe "hi FloatShadowThrough    gui=".s:none."          guibg=".s:bright_black."  blend=100"
   exe "hi NvimInternalError     gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_red
   exe "hi RedrawDebugClear      gui=".s:none."          guibg=".s:bright_orange." guifg=".s:background
-  exe "hi RedrawDebugComposed   gui=".s:none."          guibg=".s:green."         guifg=".s:background
+  exe "hi RedrawDebugComposed   gui=".s:none."          guibg=".s:bright_green."  guifg=".s:background
   exe "hi RedrawDebugNormal     gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
   exe "hi RedrawDebugRecompose  gui=".s:none."          guibg=".s:bright_red."    guifg=".s:background
 
