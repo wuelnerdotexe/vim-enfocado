@@ -74,8 +74,8 @@ let s:bright_violet = "#B891F5"
 let s:dim           = "#777777"
 
 " Highlight variables.
-let s:none          = "NONE"
-let s:reverse       = "reverse"
+let s:none    = "NONE"
+let s:reverse = "reverse"
 
 " Text type variables.
 let s:bold      = "bold"

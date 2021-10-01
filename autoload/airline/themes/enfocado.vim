@@ -32,35 +32,30 @@
 " -----------------------------------------------------------------------------
 
 " Selenized black colorscheme.
-let s:background    = "#181818"
-let s:foreground    = "#DEDEDE"
-let s:black         = "#252525"
-let s:red           = "#Ed4A46"
-let s:green         = "#70B433"
-let s:yellow        = "#DBB32D"
-let s:blue          = "#368AEB"
-let s:purple        = "#EB6EB7"
-let s:cyan          = "#3FC5B7"
-let s:orange        = "#E67F43"
-let s:violet        = "#A580E2"
-let s:bright_black  = "#3B3B3B"
-let s:bright_red    = "#FF5E56"
-let s:bright_green  = "#83C746"
-let s:bright_yellow = "#EFC541"
-let s:bright_blue   = "#4F9CFE"
-let s:bright_purple = "#FF81CA"
-let s:bright_cyan   = "#56D8C9"
-let s:bright_orange = "#FA9153"
-let s:bright_violet = "#B891F5"
-let s:dim           = "#777777"
+let s:background    = '#181818'
+let s:foreground    = '#DEDEDE'
+let s:black         = '#252525'
+let s:red           = '#Ed4A46'
+let s:green         = '#70B433'
+let s:yellow        = '#DBB32D'
+let s:blue          = '#368AEB'
+let s:purple        = '#EB6EB7'
+let s:cyan          = '#3FC5B7'
+let s:orange        = '#E67F43'
+let s:violet        = '#A580E2'
+let s:bright_black  = '#3B3B3B'
+let s:bright_red    = '#FF5E56'
+let s:bright_green  = '#83C746'
+let s:bright_yellow = '#EFC541'
+let s:bright_blue   = '#4F9CFE'
+let s:bright_purple = '#FF81CA'
+let s:bright_cyan   = '#56D8C9'
+let s:bright_orange = '#FA9153'
+let s:bright_violet = '#B891F5'
+let s:dim           = '#777777'
 
-" Highlight variables.
-let s:none          = "NONE"
-let s:reverse       = "reverse"
-
-" Text type variables.
-let s:bold          = "bold"
-let s:underline     = "underline"
+" Font types.
+let s:bold = 'bold'
 
 " Airline name theme.
 let g:airline#themes#enfocado#palette = { }
