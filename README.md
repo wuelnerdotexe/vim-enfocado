@@ -17,6 +17,7 @@
 ### **Statusline themes.**
 
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
+- [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
 - [vim-airline](https://github.com/vim-airline/vim-airline)
 
 ## ⚡️ **Requirements.**
@@ -32,7 +33,7 @@ Install the theme with your preferred package manager. With [vim-plug](https://g
 Plug 'wuelnerdotexe/vim-enfocado'
 
 " Development version.
-Plug 'wuelnerdotexe/vim-enfocado', { 'branch' : 'development' }
+Plug 'wuelnerdotexe/vim-enfocado', { 'branch': 'development' }
 ```
 
 ## 🚀 **Usage.**
@@ -47,6 +48,9 @@ let g:airline_theme = "enfocado"
 let g:lightline = {
       \ 'colorscheme': 'enfocado',
       \ }
+
+" Lualine.
+options = {theme = 'enfocado'}
 ```
 
 Enable the colorscheme:
