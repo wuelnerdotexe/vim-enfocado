@@ -1,6 +1,6 @@
 # 🎉 **INTRODUCING VIM ENFOCADO!**
 
-![VIM ENFOCADO](https://i.imgur.com/DfdKRjG.png)
+![VIM ENFOCADO](https://i.imgur.com/BzI2gUK.png)
 
 ## 🤯 **Philosophy.**
 
