@@ -79,6 +79,7 @@ let s:reverse = "reverse"
 
 " Text type variables.
 let s:bold      = "bold"
+let s:italic    = "italic"
 let s:underline = "underline"
 
 " All environment.
@@ -168,5 +169,10 @@ if has('nvim')
   exe "hi RedrawDebugComposed   gui=".s:none."          guibg=".s:bright_green."  guifg=".s:background
   exe "hi RedrawDebugNormal     gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
   exe "hi RedrawDebugRecompose  gui=".s:none."          guibg=".s:bright_red."    guifg=".s:background
+
+  " Nvim-Treesitter.
+  exe "hi TSComment             gui=".s:italic."        guibg=".s:none."          guifg=".s:dim
+  exe "hi TSMethod              gui=".s:italic."        guibg=".s:none."          guifg=".s:bright_green
+  exe "hi TSNote                gui=".s:italic."        guibg=".s:none."          guifg=".s:bright_cyan
 
 endif
