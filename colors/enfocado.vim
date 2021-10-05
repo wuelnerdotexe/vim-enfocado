@@ -48,7 +48,7 @@ if exists("syntax_on")
 endif
 
 " Colorscheme name.
-let g:colors_name   = "enfocado"
+let g:colors_name = "enfocado"
 
 " Selenized black colorscheme.
 let s:background    = "#181818"
@@ -78,16 +78,17 @@ let s:none    = "NONE"
 let s:reverse = "reverse"
 
 " Text type variables.
-let s:bold      = "bold"
-let s:italic    = "italic"
-let s:underline = "underline"
+let s:bold        = "bold"
+let s:bold_italic = "bold,italic"
+let s:italic      = "italic"
+let s:underline   = "underline"
 
 " All environment.
 exe "hi Normal                gui=".s:none."          guibg=".s:background."    guifg=".s:foreground
 
 " Interface elements.
 exe "hi ColorColumn           gui=".s:none."          guibg=".s:black."         guifg=".s:none
-exe "hi Conceal               gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
+exe "hi Conceal               gui=".s:none."          guibg=".s:none."          guifg=".s:dim
 exe "hi CursorColumn          gui=".s:none."          guibg=".s:black."         guifg=".s:none
 exe "hi CursorLine            gui=".s:none."          guibg=".s:black."         guifg=".s:none
 exe "hi CursorLineNr          gui=".s:none."          guibg=".s:black."         guifg=".s:dim
@@ -173,9 +174,18 @@ if has('nvim')
   exe "hi RedrawDebugNormal     gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
   exe "hi RedrawDebugRecompose  gui=".s:none."          guibg=".s:bright_red."    guifg=".s:background
 
-  " Neovim treesitter.
+  " Treesitter msg alerts.
+  hi! link TSDanger  ErrorMsg
+  hi! link TSWarning WarningMsg
+
+  " Treesitter human text.
+  exe "hi TSAnnotation          gui=".s:italic."        guibg=".s:none."          guifg=".s:blue
+  exe "hi TSBoolean             gui=".s:italic."        guibg=".s:none."          guifg=".s:foreground
   exe "hi TSComment             gui=".s:italic."        guibg=".s:none."          guifg=".s:dim
+  exe "hi TSLiteral             gui=".s:italic."        guibg=".s:none."          guifg=".s:foreground
   exe "hi TSMethod              gui=".s:italic."        guibg=".s:none."          guifg=".s:bright_green
   exe "hi TSNote                gui=".s:italic."        guibg=".s:none."          guifg=".s:bright_cyan
-
+  exe "hi TSTextReference       gui=".s:italic."        guibg=".s:none."          guifg=".s:foreground
+  exe "hi TSTitle               gui=".s:bold_italic."   guibg=".s:none."          guifg=".s:bright_blue
+  
 endif
