@@ -33,8 +33,8 @@
 
 " First check if the 'termguicolors' option has been activated.
 if &termguicolors == "notermguicolors"
-  echoerr 'The colorscheme has not been applied because the
-        \ "termguicolors" option has not been previously activated.'
+  echoerr 'The colorscheme has not been applied because the "termguicolors"
+        \ option has not been previously activated.'
   finish
 endif
 
@@ -87,7 +87,7 @@ exe "hi Normal                gui=".s:none."          guibg=".s:background."    
 
 " Interface elements.
 exe "hi ColorColumn           gui=".s:none."          guibg=".s:black."         guifg=".s:none
-exe "hi Conceal               gui=".s:none."          guibg=".s:none."          guifg=".s:dim
+exe "hi Conceal               gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
 exe "hi CursorColumn          gui=".s:none."          guibg=".s:black."         guifg=".s:none
 exe "hi CursorLine            gui=".s:none."          guibg=".s:black."         guifg=".s:none
 exe "hi CursorLineNr          gui=".s:none."          guibg=".s:black."         guifg=".s:dim
@@ -107,21 +107,21 @@ exe "hi PmenuSel              gui=".s:bold."          guibg=".s:bright_black."  
 exe "hi PmenuThumb            gui=".s:none."          guibg=".s:dim."           guifg=".s:dim
 exe "hi Question              gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_yellow
 exe "hi QuickFixLine          gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:none
-exe "hi SignColumn            gui=".s:bold."          guibg=".s:none."          guifg=".s:none
+exe "hi SignColumn            gui=".s:none."          guibg=".s:none."          guifg=".s:none
 exe "hi SpecialKey            gui=".s:none."          guibg=".s:none."          guifg=".s:bright_black
-exe "hi StatusLine            gui=".s:none."          guibg=".s:bright_black."  guifg=".s:dim
+exe "hi StatusLine            gui=".s:none."          guibg=".s:black."         guifg=".s:dim
 exe "hi StatusLineNC          gui=".s:none."          guibg=".s:black."         guifg=".s:bright_black
-exe "hi StatusLineTerm        gui=".s:none."          guibg=".s:bright_black."  guifg=".s:dim
+exe "hi StatusLineTerm        gui=".s:none."          guibg=".s:black."         guifg=".s:dim
 exe "hi StatusLineTermNC      gui=".s:none."          guibg=".s:black."         guifg=".s:bright_black
 exe "hi TabLine               gui=".s:none."          guibg=".s:black."         guifg=".s:bright_black
 exe "hi TabLineFill           gui=".s:none."          guibg=".s:black."         guifg=".s:bright_black
-exe "hi TabLineSel            gui=".s:none."          guibg=".s:bright_black."  guifg=".s:dim
-exe "hi ToolbarButton         gui=".s:none."          guibg=".s:bright_black."  guifg=".s:dim
-exe "hi ToolbarLine           gui=".s:none."          guibg=".s:black."         guifg=".s:black
-exe "hi VertSplit             gui=".s:none."          guibg=".s:bright_black."  guifg=".s:bright_black
+exe "hi TabLineSel            gui=".s:none."          guibg=".s:background."    guifg=".s:dim
+exe "hi ToolbarButton         gui=".s:none."          guibg=".s:black."         guifg=".s:dim
+exe "hi ToolbarLine           gui=".s:none."          guibg=".s:bright_black."  guifg=".s:bright_black
+exe "hi VertSplit             gui=".s:none."          guibg=".s:black."         guifg=".s:black
 exe "hi Visual                gui=".s:bold."          guibg=".s:bright_black."  guifg=".s:none
 exe "hi WarningMsg            gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_orange
-exe "hi WildMenu              gui=".s:bold."          guibg=".s:black."         guifg=".s:dim
+exe "hi WildMenu              gui=".s:bold."          guibg=".s:black."         guifg=".s:foreground
 
 " Spell check.
 exe "hi SpellBad              gui=".s:underline."     guibg=".s:none."          guifg=".s:none."          guisp=".s:bright_red
@@ -158,19 +158,22 @@ if has('nvim')
 
   " Cursors and visual selections.
   exe "hi Cursor                gui=".s:bold."          guibg=".s:dim."           guifg=".s:none
-  exe "hi lCursor               gui=".s:bold."          guibg=".s:dim."           guifg=".s:none
   exe "hi TermCursor            gui=".s:bold."          guibg=".s:dim."           guifg=".s:none
   
-  " Neovim exclusive.
-  exe "hi FloatShadow           gui=".s:none."          guibg=".s:bright_black."  blend=80"
-  exe "hi FloatShadowThrough    gui=".s:none."          guibg=".s:bright_black."  blend=100"
+  " Float windows.
+  exe "hi FloatShadow           gui=".s:none."          guibg=#000000             blend=80"
+  exe "hi FloatShadowThrough    gui=".s:none."          guibg=#000000             blend=100"
+  
+  " Neovim errors.
   exe "hi NvimInternalError     gui=".s:bold."          guibg=".s:none."          guifg=".s:bright_red
+
+  " Debug redraws.
   exe "hi RedrawDebugClear      gui=".s:none."          guibg=".s:bright_orange." guifg=".s:background
   exe "hi RedrawDebugComposed   gui=".s:none."          guibg=".s:bright_green."  guifg=".s:background
   exe "hi RedrawDebugNormal     gui=".s:reverse."       guibg=".s:none."          guifg=".s:none
   exe "hi RedrawDebugRecompose  gui=".s:none."          guibg=".s:bright_red."    guifg=".s:background
 
-  " Nvim-Treesitter.
+  " Neovim treesitter.
   exe "hi TSComment             gui=".s:italic."        guibg=".s:none."          guifg=".s:dim
   exe "hi TSMethod              gui=".s:italic."        guibg=".s:none."          guifg=".s:bright_green
   exe "hi TSNote                gui=".s:italic."        guibg=".s:none."          guifg=".s:bright_cyan
