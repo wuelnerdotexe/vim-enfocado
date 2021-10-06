@@ -38,13 +38,13 @@ let s:green         = [ '#70B433', 107 ]
 let s:yellow        = [ '#DBB32D', 179 ]
 let s:blue          = [ '#368AEB', 69  ]
 let s:purple        = [ '#EB6EB7', 205 ]
-let s:cyan          = [ '#3FC5B7', 73  ]
+let s:cyan          = [ '#3FC5B7', 79  ]
 let s:white         = [ '#B9B9B9', 250 ]
 let s:bright_black  = [ '#3B3B3B', 237 ]
 let s:bright_red    = [ '#FF5E56', 203 ]
 let s:bright_green  = [ '#83C746', 113 ]
-let s:bright_yellow = [ '#EFC541', 215 ]
-let s:bright_blue   = [ '#4F9CFE', 69  ]
+let s:bright_yellow = [ '#EFC541', 221 ]
+let s:bright_blue   = [ '#4F9CFE', 75  ]
 let s:bright_purple = [ '#FF81CA', 212 ]
 let s:bright_cyan   = [ '#56D8C9', 80  ]
 let s:bright_white  = [ '#DEDEDE', 253 ]
@@ -56,7 +56,7 @@ let s:violet        = [ '#A580E2', 140 ]
 let s:bright_orange = [ '#FA9153', 209 ]
 let s:bright_violet = [ '#B891F5', 141 ]
 
-" Font types.
+" Text types.
 let s:bold = 'bold'
 
 " Lightline modes.
