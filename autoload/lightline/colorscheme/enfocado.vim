@@ -32,33 +32,36 @@
 " -----------------------------------------------------------------------------
 
 " Selenized black colorscheme.
-let s:background    = '#181818'
-let s:foreground    = '#DEDEDE'
-let s:black         = '#252525'
-let s:red           = '#Ed4A46'
-let s:green         = '#70B433'
-let s:yellow        = '#DBB32D'
-let s:blue          = '#368AEB'
-let s:purple        = '#EB6EB7'
-let s:cyan          = '#3FC5B7'
-let s:orange        = '#E67F43'
-let s:violet        = '#A580E2'
-let s:bright_black  = '#3B3B3B'
-let s:bright_red    = '#FF5E56'
-let s:bright_green  = '#83C746'
-let s:bright_yellow = '#EFC541'
-let s:bright_blue   = '#4F9CFE'
-let s:bright_purple = '#FF81CA'
-let s:bright_cyan   = '#56D8C9'
-let s:bright_orange = '#FA9153'
-let s:bright_violet = '#B891F5'
-let s:dim           = '#777777'
+let s:black         = [ '#252525', 235 ]
+let s:red           = [ '#ED4A46', 203 ]
+let s:green         = [ '#70B433', 107 ]
+let s:yellow        = [ '#DBB32D', 179 ]
+let s:blue          = [ '#368AEB', 69  ]
+let s:purple        = [ '#EB6EB7', 205 ]
+let s:cyan          = [ '#3FC5B7', 73  ]
+let s:white         = [ '#B9B9B9', 250 ]
+let s:bright_black  = [ '#3B3B3B', 237 ]
+let s:bright_red    = [ '#FF5E56', 203 ]
+let s:bright_green  = [ '#83C746', 113 ]
+let s:bright_yellow = [ '#EFC541', 215 ]
+let s:bright_blue   = [ '#4F9CFE', 69  ]
+let s:bright_purple = [ '#FF81CA', 212 ]
+let s:bright_cyan   = [ '#56D8C9', 80  ]
+let s:bright_white  = [ '#DEDEDE', 253 ]
+let s:background    = [ '#181818', 234 ]
+let s:foreground    = [ '#DEDEDE', 253 ]
+let s:dim           = [ '#777777', 243 ]
+let s:orange        = [ '#E67F43', 173 ]
+let s:violet        = [ '#A580E2', 140 ]
+let s:bright_orange = [ '#FA9153', 209 ]
+let s:bright_violet = [ '#B891F5', 141 ]
 
 " Font types.
 let s:bold = 'bold'
 
 " Lightline modes.
-let s:p = { 'normal' : { }, 'inactive' : { }, 'insert' : { },
+let s:p = {
+  \ 'normal' : { }, 'inactive' : { }, 'insert' : { },
   \ 'replace' : { }, 'visual' : { }, 'tabline' : { }
 \ }
 
@@ -80,19 +83,19 @@ let s:p.visual.middle  = [ [ s:bright_black, s:black ] ]
 let s:p.visual.right   = [ [ s:background, s:dim, s:bold ], [ s:bright_black, s:black ], [ s:bright_black, s:black ] ]
 
 " Replace mode.
-let s:p.replace.left   = s:p.insert.left
-let s:p.replace.middle = s:p.insert.middle
-let s:p.replace.right  = s:p.insert.right
+let s:p.replace.left   = [ [ s:background, s:bright_yellow, s:bold ], [ s:dim, s:black ] ]
+let s:p.replace.middle = [ [ s:dim, s:black ] ]
+let s:p.replace.right  = [ [ s:background, s:bright_yellow, s:bold ], [ s:dim, s:bright_black ], [ s:dim, s:black ] ]
 
 " Inactive mode.
+let s:p.inactive.letf  = [ [ s:dim , s:black ], [ s:dim, s:black ], [ s:dim, s:black ] ]
 let s:p.inactive.right = [ [ s:dim , s:black ], [ s:dim, s:black ], [ s:dim, s:black ] ]
-let s:p.inactive.left  = s:p.inactive.right[1:]
 
 " Tabline.
 let s:p.tabline.left   = [ [ s:dim, s:black ] ]
-let s:p.tabline.tabsel = [ [ s:background, s:dim, s:bold ] ]
 let s:p.tabline.middle = [ [ s:dim, s:black ] ]
 let s:p.tabline.right  = [ [ s:dim, s:bright_black ] ]
+let s:p.tabline.tabsel = [ [ s:background, s:dim, s:bold ] ]
 
 " Lightline name theme.
-let g:lightline#colorscheme#enfocado#palette = lightline#colorscheme#fill(s:p)
+let g:lightline#colorscheme#enfocado#palette = lightline#colorscheme#flatten(s:p)

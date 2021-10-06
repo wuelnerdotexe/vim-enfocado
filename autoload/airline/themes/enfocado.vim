@@ -31,68 +31,101 @@
 "               CON AMOR <3 DE LATINOAMÉRICA PARA EL MUNDO.
 " -----------------------------------------------------------------------------
 
-" Selenized black colorscheme.
-let s:background    = '#181818'
-let s:foreground    = '#DEDEDE'
-let s:black         = '#252525'
-let s:red           = '#Ed4A46'
-let s:green         = '#70B433'
-let s:yellow        = '#DBB32D'
-let s:blue          = '#368AEB'
-let s:purple        = '#EB6EB7'
-let s:cyan          = '#3FC5B7'
-let s:orange        = '#E67F43'
-let s:violet        = '#A580E2'
-let s:bright_black  = '#3B3B3B'
-let s:bright_red    = '#FF5E56'
-let s:bright_green  = '#83C746'
-let s:bright_yellow = '#EFC541'
-let s:bright_blue   = '#4F9CFE'
-let s:bright_purple = '#FF81CA'
-let s:bright_cyan   = '#56D8C9'
-let s:bright_orange = '#FA9153'
-let s:bright_violet = '#B891F5'
-let s:dim           = '#777777'
+" Selenized black colorscheme (termguicolors).
+let s:colors_gui = {
+    \ 'black'         : '#252525',
+    \ 'red'           : '#ED4A46',
+    \ 'green'         : '#70B433',
+    \ 'yellow'        : '#DBB32D',
+    \ 'blue'          : '#368AEB',
+    \ 'purple'        : '#EB6EB7',
+    \ 'cyan'          : '#3FC5B7',
+    \ 'white'         : '#B9B9B9',
+    \ 'bright_black'  : '#3B3B3B',
+    \ 'bright_red'    : '#FF5E56',
+    \ 'bright_green'  : '#83C746',
+    \ 'bright_yellow' : '#EFC541',
+    \ 'bright_blue'   : '#4F9CFE',
+    \ 'bright_purple' : '#FF81CA',
+    \ 'bright_cyan'   : '#56D8C9',
+    \ 'bright_white'  : '#DEDEDE',
+    \ 'background'    : '#181818',
+    \ 'foreground'    : '#DEDEDE',
+    \ 'dim'           : '#777777',
+    \ 'orange'        : '#E67F43',
+    \ 'violet'        : '#A580E2',
+    \ 'bright_orange' : '#FA9153',
+    \ 'bright_violet' : '#B891F5'
+    \ }
 
-" Font types.
-let s:bold = 'bold'
+" Enfocado black colorscheme (cterm).
+let s:colors_term = {
+    \ 'black'         : 235,
+    \ 'red'           : 203,
+    \ 'green'         : 107,
+    \ 'yellow'        : 179,
+    \ 'blue'          : 69,
+    \ 'purple'        : 205,
+    \ 'cyan'          : 73,
+    \ 'white'         : 250,
+    \ 'bright_black'  : 237,
+    \ 'bright_red'    : 203,
+    \ 'bright_green'  : 113,
+    \ 'bright_yellow' : 215,
+    \ 'bright_blue'   : 69,
+    \ 'bright_purple' : 212,
+    \ 'bright_cyan'   : 80,
+    \ 'bright_white'  : 253,
+    \ 'background'    : 234,
+    \ 'foreground'    : 253,
+    \ 'dim'           : 243,
+    \ 'orange'        : 173,
+    \ 'violet'        : 140,
+    \ 'bright_orange' : 209,
+    \ 'bright_violet' : 141
+    \ }
+
+" Text types.
+let s:text_types = {
+    \ 'bold' : 'bold'
+    \ }
 
 " Airline name theme.
 let g:airline#themes#enfocado#palette = { }
 
 " Accent colors.
 let g:airline#themes#enfocado#palette.accents = {
-  \ 'red': [ s:bright_red, '', 160, '' ]
+  \ 'red': [ s:colors_gui.bright_red, '', s:colors_term.bright_red, '' ]
 \ }
 
 " Normal mode.
-let s:airline_a_normal = [ s:background, s:dim,          17,  190 ]
-let s:airline_b_normal = [ s:dim, 	 s:bright_black, 255, 238 ]
-let s:airline_c_normal = [ s:dim,        s:black,        85,  234 ]
+let s:airline_a_normal = [ s:colors_gui.background, s:colors_gui.dim,          s:colors_term.background, s:colors_term.dim          ]
+let s:airline_b_normal = [ s:colors_gui.dim, 	    s:colors_gui.bright_black, s:colors_term.dim,        s:colors_term.bright_black ]
+let s:airline_c_normal = [ s:colors_gui.dim,        s:colors_gui.black,        s:colors_term.dim,        s:colors_term.black        ]
 let g:airline#themes#enfocado#palette.normal = airline#themes#generate_color_map(
   \ s:airline_a_normal, s:airline_b_normal, s:airline_c_normal
 \ )
 
 " Insert mode.
-let s:airline_a_insert = [ s:background, s:bright_yellow, 17,  45 ]
-let s:airline_b_insert = [ s:dim,        s:bright_black,  255, 47 ]
-let s:airline_c_insert = [ s:dim,        s:black, 	  15,  17 ] 
+let s:airline_a_insert = [ s:colors_gui.background, s:colors_gui.bright_yellow, s:colors_term.background, s:colors_term.bright_yellow ]
+let s:airline_b_insert = [ s:colors_gui.dim,        s:colors_gui.bright_black,  s:colors_term.dim,        s:colors_term.bright_black  ]
+let s:airline_c_insert = [ s:colors_gui.dim,        s:colors_gui.black,         s:colors_term.dim,        s:colors_term.black         ] 
 let g:airline#themes#enfocado#palette.insert = airline#themes#generate_color_map(
   \ s:airline_a_insert, s:airline_b_insert, s:airline_c_insert
 \ )
 
 " Visual mode.
-let s:airline_a_visual = [ s:background,   s:dim,   232, 214 ]
-let s:airline_b_visual = [ s:bright_black, s:black, 232, 202 ]
-let s:airline_c_visual = [ s:bright_black, s:black, 15,  52  ]
+let s:airline_a_visual = [ s:colors_gui.background,   s:colors_gui.dim,   s:colors_term.background,   s:colors_term.dim    ]
+let s:airline_b_visual = [ s:colors_gui.bright_black, s:colors_gui.black, s:colors_term.bright_black, s:colors_term.black  ]
+let s:airline_c_visual = [ s:colors_gui.bright_black, s:colors_gui.black, s:colors_term.bright_black,  s:colors_term.black ]
 let g:airline#themes#enfocado#palette.visual = airline#themes#generate_color_map(
   \ s:airline_a_visual, s:airline_b_visual, s:airline_c_visual
 \ )
 
 " Command mode.
-let s:airline_a_commandline = [ s:background, s:dim,          17,  40  ]
-let s:airline_b_commandline = [ s:dim,        s:bright_black, 255, 238 ]
-let s:airline_c_commandline = [ s:dim, 	      s:black, 	      85,  234 ]
+let s:airline_a_commandline = [ s:colors_gui.background, s:colors_gui.dim,          s:colors_term.background, s:colors_term.dim          ]
+let s:airline_b_commandline = [ s:colors_gui.dim,        s:colors_gui.bright_black, s:colors_term.dim,        s:colors_term.bright_black ]
+let s:airline_c_commandline = [ s:colors_gui.dim, 	 s:colors_gui.black, 	    s:colors_term.dim, 	      s:colors_term.black        ]
 let g:airline#themes#enfocado#palette.commandline = airline#themes#generate_color_map(
   \ s:airline_a_commandline, s:airline_b_commandline, s:airline_c_commandline
 \ )
@@ -114,16 +147,16 @@ let g:airline#themes#enfocado#palette.terminal = airline#themes#generate_color_m
 \ )
 
 " Inactive mode.
-let s:airline_a_inactive = [ s:dim, s:black, 239, 234, '' ]
-let s:airline_b_inactive = [ s:dim, s:black, 239, 235, '' ]
-let s:airline_c_inactive = [ s:dim, s:black, 239, 236, '' ]
+let s:airline_a_inactive = [ s:colors_gui.dim, s:colors_gui.black, s:colors_term.dim, s:colors_term.black, '' ]
+let s:airline_b_inactive = [ s:colors_gui.dim, s:colors_gui.black, s:colors_term.dim, s:colors_term.black, '' ]
+let s:airline_c_inactive = [ s:colors_gui.dim, s:colors_gui.black, s:colors_term.dim, s:colors_term.black, '' ]
 let g:airline#themes#enfocado#palette.inactive = airline#themes#generate_color_map(
   \ s:airline_a_inactive, s:airline_b_inactive, s:airline_c_inactive
 \ )
 " -----------------------------------------------------------------------------
 " Error & Warning colors.
-let s:airline_error   = [ s:black, s:bright_red,    232, 160, '' ]
-let s:airline_warning = [ s:black, s:bright_orange, 232, 166, '' ]
+let s:airline_error   = [ s:colors_gui.black, s:colors_gui.bright_red,    s:colors_term.black, s:colors_term.bright_red,    '' ]
+let s:airline_warning = [ s:colors_gui.black, s:colors_gui.bright_orange, s:colors_term.black, s:colors_term.bright_orange, '' ]
 
 " Error & Warning in normal mode.
 let g:airline#themes#enfocado#palette.normal.airline_error   = s:airline_error
