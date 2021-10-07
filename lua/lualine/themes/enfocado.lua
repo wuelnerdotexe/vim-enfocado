@@ -63,27 +63,27 @@ local text_types = {
 
 return {
   normal = {
-    a = { fg = colors.background, bg = colors.dim, gui = text_types.bold },
+    a = { fg = colors.black, bg = colors.dim, gui = text_types.bold },
     b = { fg = colors.dim, bg = colors.black },
     c = { fg = colors.dim, bg = colors.black }
   },
   insert = {
-    a = { fg = colors.background, bg = colors.bright_yellow, gui = text_types.bold },
+    a = { fg = colors.black, bg = colors.bright_yellow, gui = text_types.bold },
     b = { fg = colors.dim, bg = colors.black },
     c = { fg = colors.dim, bg = colors.black }
   },
   visual = {
-    a = { fg = colors.background, bg = colors.dim, gui = text_types.bold },
+    a = { fg = colors.black, bg = colors.dim, gui = text_types.bold },
     b = { fg = colors.bright_black, bg = colors.black },
     c = { fg = colors.bright_black, bg = colors.black }
   },
   replace = {
-    a = { fg = colors.background, bg = colors.bright_yellow, gui = text_types.bold },
+    a = { fg = colors.black, bg = colors.bright_yellow, gui = text_types.bold },
     b = { fg = colors.dim, bg = colors.black },
     c = { fg = colors.dim, bg = colors.black }
   },
   command = {
-    a = { fg = colors.background, bg = colors.dim, gui = text_types.bold },
+    a = { fg = colors.black, bg = colors.dim, gui = text_types.bold },
     b = { fg = colors.dim, bg = colors.black },
     c = { fg = colors.dim, bg = colors.black }
   },

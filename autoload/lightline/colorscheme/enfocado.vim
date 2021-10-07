@@ -31,7 +31,7 @@
 "               CON AMOR <3 DE LATINOAMÉRICA PARA EL MUNDO.
 " -----------------------------------------------------------------------------
 
-" Selenized black colorscheme.
+" Selenized black colorscheme (termguicolors && 256 cterm colors).
 let s:black         = [ '#252525', 235 ]
 let s:red           = [ '#ED4A46', 203 ]
 let s:green         = [ '#70B433', 107 ]
@@ -66,26 +66,26 @@ let s:p = {
 \ }
 
 " Normal mode.
-let s:p.normal.left    = [ [ s:background, s:dim, s:bold ], [ s:dim, s:black ] ]
+let s:p.normal.left    = [ [ s:black, s:dim, s:bold ], [ s:dim, s:black ] ]
 let s:p.normal.middle  = [ [ s:dim, s:black ] ]
-let s:p.normal.right   = [ [ s:background, s:dim, s:bold ], [ s:dim, s:bright_black ], [ s:dim, s:black ] ]
+let s:p.normal.right   = [ [ s:black, s:dim, s:bold ], [ s:dim, s:bright_black ], [ s:dim, s:black ] ]
 let s:p.normal.error   = [ [ s:black, s:bright_red ] ]
 let s:p.normal.warning = [ [ s:black, s:bright_orange ] ]
 
 " Insert mode.
-let s:p.insert.left    = [ [ s:background, s:bright_yellow, s:bold ], [ s:dim, s:black ] ]
+let s:p.insert.left    = [ [ s:black, s:bright_yellow, s:bold ], [ s:dim, s:black ] ]
 let s:p.insert.middle  = [ [ s:dim, s:black ] ]
-let s:p.insert.right   = [ [ s:background, s:bright_yellow, s:bold ], [ s:dim, s:bright_black ], [ s:dim, s:black ] ]
+let s:p.insert.right   = [ [ s:black, s:bright_yellow, s:bold ], [ s:dim, s:bright_black ], [ s:dim, s:black ] ]
 
 " Visual mode.
-let s:p.visual.left    = [ [ s:background, s:dim, s:bold ], [ s:bright_black, s:black ] ]
+let s:p.visual.left    = [ [ s:black, s:dim, s:bold ], [ s:bright_black, s:black ] ]
 let s:p.visual.middle  = [ [ s:bright_black, s:black ] ]
-let s:p.visual.right   = [ [ s:background, s:dim, s:bold ], [ s:bright_black, s:black ], [ s:bright_black, s:black ] ]
+let s:p.visual.right   = [ [ s:black, s:dim, s:bold ], [ s:bright_black, s:black ], [ s:bright_black, s:black ] ]
 
 " Replace mode.
-let s:p.replace.left   = [ [ s:background, s:bright_yellow, s:bold ], [ s:dim, s:black ] ]
+let s:p.replace.left   = [ [ s:black, s:bright_yellow, s:bold ], [ s:dim, s:black ] ]
 let s:p.replace.middle = [ [ s:dim, s:black ] ]
-let s:p.replace.right  = [ [ s:background, s:bright_yellow, s:bold ], [ s:dim, s:bright_black ], [ s:dim, s:black ] ]
+let s:p.replace.right  = [ [ s:black, s:bright_yellow, s:bold ], [ s:dim, s:bright_black ], [ s:dim, s:black ] ]
 
 " Inactive mode.
 let s:p.inactive.letf  = [ [ s:dim , s:black ], [ s:dim, s:black ], [ s:dim, s:black ] ]
@@ -95,7 +95,7 @@ let s:p.inactive.right = [ [ s:dim , s:black ], [ s:dim, s:black ], [ s:dim, s:b
 let s:p.tabline.left   = [ [ s:dim, s:black ] ]
 let s:p.tabline.middle = [ [ s:dim, s:black ] ]
 let s:p.tabline.right  = [ [ s:dim, s:bright_black ] ]
-let s:p.tabline.tabsel = [ [ s:background, s:dim, s:bold ] ]
+let s:p.tabline.tabsel = [ [ s:black, s:dim, s:bold ] ]
 
 " Lightline name theme.
 let g:lightline#colorscheme#enfocado#palette = lightline#colorscheme#flatten(s:p)

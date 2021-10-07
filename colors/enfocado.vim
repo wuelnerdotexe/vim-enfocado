@@ -70,7 +70,7 @@ let s:colors_gui = {
     \ 'bright_violet' : '#B891F5'
     \ }
 
-" Enfocado black colorscheme (cterm).
+" Enfocado black colorscheme (256 cterm colors).
 let s:colors_term = {
     \ 'black'         : 235,
     \ 'red'           : 203,
@@ -159,14 +159,14 @@ exe "highlight SpellLocal            term=".s:text_types.underline."   cterm=".s
 exe "highlight SpellRare             term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:colors_gui.bright_purple
 
 " Search.
-exe "highlight IncSearch             term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_cyan."   guibg=".s:colors_gui.bright_cyan."   ctermfg=".s:colors_term.background."    guifg=".s:colors_gui.background
-exe "highlight Search                term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_green."  guibg=".s:colors_gui.bright_green."  ctermfg=".s:colors_term.background."    guifg=".s:colors_gui.background
+exe "highlight IncSearch             term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_cyan."   guibg=".s:colors_gui.bright_cyan."   ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
+exe "highlight Search                term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_green."  guibg=".s:colors_gui.bright_green."  ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
 
 " Diff code.
 exe "highlight DiffAdd               term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_green."  guifg=".s:colors_gui.bright_green
 exe "highlight DiffChange            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_yellow." guifg=".s:colors_gui.bright_yellow
 exe "highlight DiffDelete            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_red."    guifg=".s:colors_gui.bright_red
-exe "highlight DiffText              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_yellow." guibg=".s:colors_gui.bright_yellow." ctermfg=".s:colors_term.background."    guifg=".s:colors_gui.background
+exe "highlight DiffText              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_yellow." guibg=".s:colors_gui.bright_yellow." ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
 
 " Main code syntax.
 exe "highlight Comment               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
@@ -178,7 +178,7 @@ exe "highlight PreProc               term=".s:attributes.none."        cterm=".s
 exe "highlight Special               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_cyan."   guifg=".s:colors_gui.bright_cyan
 exe "highlight Statement             term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.blue."          guifg=".s:colors_gui.blue
 exe "highlight Title                 term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_blue."   guifg=".s:colors_gui.bright_blue
-exe "highlight Todo                  term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.yellow."        guibg=".s:colors_gui.yellow."        ctermfg=".s:colors_term.background."    guifg=".s:colors_gui.background
+exe "highlight Todo                  term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.yellow."        guibg=".s:colors_gui.yellow."        ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
 exe "highlight Type                  term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.blue."          guifg=".s:colors_gui.blue
 exe "highlight Underlined            term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:attributes.none
 
@@ -197,10 +197,10 @@ exe "highlight FloatShadowThrough    term=".s:attributes.none."        cterm=".s
 exe "highlight NvimInternalError     term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_red."    guifg=".s:colors_gui.bright_red
 
 " Debug redraws.
-exe "highlight RedrawDebugClear      term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_orange." guibg=".s:colors_gui.bright_orange." ctermfg=".s:colors_term.background."    guifg=".s:colors_gui.background
-exe "highlight RedrawDebugComposed   term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_green."  guibg=".s:colors_gui.bright_green."  ctermfg=".s:colors_term.background."    guifg=".s:colors_gui.background
+exe "highlight RedrawDebugClear      term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_orange." guibg=".s:colors_gui.bright_orange." ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
+exe "highlight RedrawDebugComposed   term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_green."  guibg=".s:colors_gui.bright_green."  ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
 exe "highlight RedrawDebugNormal     term=".s:attributes.reverse."     cterm=".s:attributes.reverse."     gui=".s:attributes.reverse."     ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none
-exe "highlight RedrawDebugRecompose  term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_red."    guibg=".s:colors_gui.bright_red."    ctermfg=".s:colors_term.background."    guifg=".s:colors_gui.background
+exe "highlight RedrawDebugRecompose  term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_red."    guibg=".s:colors_gui.bright_red."    ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
 
 " Treesitter msg alerts.
 highlight! link TSDanger  ErrorMsg
