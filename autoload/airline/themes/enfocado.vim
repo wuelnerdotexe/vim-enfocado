@@ -99,33 +99,33 @@ let g:airline#themes#enfocado#palette.accents = {
 \ }
 
 " Normal mode.
-let s:airline_a_normal = [ s:colors_gui.black,      s:colors_gui.dim,          s:colors_term.black,      s:colors_term.dim          ]
-let s:airline_b_normal = [ s:colors_gui.dim, 	    s:colors_gui.bright_black, s:colors_term.dim,        s:colors_term.bright_black ]
-let s:airline_c_normal = [ s:colors_gui.dim,        s:colors_gui.black,        s:colors_term.dim,        s:colors_term.black        ]
+let s:airline_a_normal = [ s:colors_gui.black, s:colors_gui.dim,          s:colors_term.black, s:colors_term.dim          ]
+let s:airline_b_normal = [ s:colors_gui.dim,   s:colors_gui.bright_black, s:colors_term.dim,   s:colors_term.bright_black ]
+let s:airline_c_normal = [ s:colors_gui.dim,   s:colors_gui.black,        s:colors_term.dim,   s:colors_term.black        ]
 let g:airline#themes#enfocado#palette.normal = airline#themes#generate_color_map(
   \ s:airline_a_normal, s:airline_b_normal, s:airline_c_normal
 \ )
 
 " Insert mode.
-let s:airline_a_insert = [ s:colors_gui.black,      s:colors_gui.bright_yellow, s:colors_term.black,      s:colors_term.bright_yellow ]
-let s:airline_b_insert = [ s:colors_gui.dim,        s:colors_gui.bright_black,  s:colors_term.dim,        s:colors_term.bright_black  ]
-let s:airline_c_insert = [ s:colors_gui.dim,        s:colors_gui.black,         s:colors_term.dim,        s:colors_term.black         ] 
+let s:airline_a_insert = [ s:colors_gui.black, s:colors_gui.bright_yellow, s:colors_term.black, s:colors_term.bright_yellow ]
+let s:airline_b_insert = [ s:colors_gui.dim,   s:colors_gui.bright_black,  s:colors_term.dim,   s:colors_term.bright_black  ]
+let s:airline_c_insert = [ s:colors_gui.dim,   s:colors_gui.black,         s:colors_term.dim,   s:colors_term.black         ] 
 let g:airline#themes#enfocado#palette.insert = airline#themes#generate_color_map(
   \ s:airline_a_insert, s:airline_b_insert, s:airline_c_insert
 \ )
 
 " Visual mode.
-let s:airline_a_visual = [ s:colors_gui.black,        s:colors_gui.dim,   s:colors_term.black,         s:colors_term.dim   ]
-let s:airline_b_visual = [ s:colors_gui.bright_black, s:colors_gui.black, s:colors_term.bright_black,  s:colors_term.black ]
-let s:airline_c_visual = [ s:colors_gui.bright_black, s:colors_gui.black, s:colors_term.bright_black,  s:colors_term.black ]
+let s:airline_a_visual = [ s:colors_gui.black,        s:colors_gui.dim,   s:colors_term.black,        s:colors_term.dim   ]
+let s:airline_b_visual = [ s:colors_gui.bright_black, s:colors_gui.black, s:colors_term.bright_black, s:colors_term.black ]
+let s:airline_c_visual = [ s:colors_gui.bright_black, s:colors_gui.black, s:colors_term.bright_black, s:colors_term.black ]
 let g:airline#themes#enfocado#palette.visual = airline#themes#generate_color_map(
   \ s:airline_a_visual, s:airline_b_visual, s:airline_c_visual
 \ )
 
 " Command mode.
-let s:airline_a_commandline = [ s:colors_gui.black,      s:colors_gui.dim,          s:colors_term.black,      s:colors_term.dim          ]
-let s:airline_b_commandline = [ s:colors_gui.dim,        s:colors_gui.bright_black, s:colors_term.dim,        s:colors_term.bright_black ]
-let s:airline_c_commandline = [ s:colors_gui.dim, 	 s:colors_gui.black, 	    s:colors_term.dim, 	      s:colors_term.black        ]
+let s:airline_a_commandline = [ s:colors_gui.black, s:colors_gui.dim,          s:colors_term.black, s:colors_term.dim          ]
+let s:airline_b_commandline = [ s:colors_gui.dim,   s:colors_gui.bright_black, s:colors_term.dim,   s:colors_term.bright_black ]
+let s:airline_c_commandline = [ s:colors_gui.dim,   s:colors_gui.black,        s:colors_term.dim,   s:colors_term.black        ]
 let g:airline#themes#enfocado#palette.commandline = airline#themes#generate_color_map(
   \ s:airline_a_commandline, s:airline_b_commandline, s:airline_c_commandline
 \ )
