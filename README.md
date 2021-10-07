@@ -67,18 +67,20 @@ autocmd VimEnter * ++nested colorscheme enfocado
 
 ## 😎 **Recommendations.**
 
-In order for the human text simulation to work as it should (in addition to installing [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)), I recommend that you use either of these two beautiful fonts with the **Human-Machine** concept.
+In order for the human text simulation to work as it should (in addition to installing [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)), I recommend that you use either of these two beautiful fonts with the **"Mankind and Machine"** concept.
 
-- [Victor Mono](https://rubjo.github.io/victor-mono/).
 - [IBM Plex Mono](https://www.ibm.com/plex/).
+- [Victor Mono](https://rubjo.github.io/victor-mono/).
 
 ## 🔥 **Contributing.**
 
-All your ideas and suggestions are welcome! 🙌
+The official **Enfocado Theme** for [Visual Studio Code](https://code.visualstudio.com/) is coming soon. It is currently in development [here](https://github.com/wuelnerdotexe/vscode-enfocado). Wait for it! 🤩
 
 Let me see your captures and know what you think with the hashtag **#HowTheThemesShouldBe**. 👀
 
 And of course, if you want to motivate me to constantly improve this theme, your donations are welcome at [PayPal](https://paypal.me/wuelnerdotexe). 👉👈
+
+All your ideas and suggestions are welcome! 🙌
 
 ## 🙏 **Credits.**
 

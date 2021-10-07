@@ -1,10 +1,14 @@
 ![VIM ENFOCADO](https://i.imgur.com/8um4BUj.png)
 
-# **v2.0**
+# **v2.0.0**
 
-RELEASE DATE: **Oct 11, 2021**.
+RELEASE DATE: **Oct 7, 2021**.
 
-## ✨ **Features.**
+## 📢 **Announcement.**
+
+The official **Enfocado Theme** for [Visual Studio Code](https://code.visualstudio.com/) is coming soon. It is currently in development [here](https://github.com/wuelnerdotexe/vscode-enfocado). Wait for it! 🤩
+
+## ✨ **New Features.**
 
 - The official **Enfocado Theme** for [lualine.nvim](https://github.com/hoob3rt/lualine.nvim) is created.
 - Added **human writing** simulation feature (available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
@@ -15,7 +19,7 @@ RELEASE DATE: **Oct 11, 2021**.
 - Multiple enhancements were made to the interface colors for consistency.
 - Color groups were also defined to improve syntax. And the **yellow was removed** from there!
 
-# **v1.0**
+# **v1.0.0**
 
 RELEASE DATE: **Sep 25, 2021**.
 
