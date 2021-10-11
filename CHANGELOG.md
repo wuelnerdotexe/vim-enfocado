@@ -7,9 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-
-- The official **Enfocado** theme for [Visual Studio Code](https://code.visualstudio.com/) is coming soon. It is currently in development [here](https://github.com/wuelnerdotexe/vscode-enfocado). Wait for it! 🤩
+- [Enfocado for VSCode](https://github.com/wuelnerdotexe/vscode-enfocado) is coming soon. Wait for it!
 
 ## [2.0.0] - 2021-10-07
 
@@ -26,4 +24,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2021-09-25
 
-### 🎉 **INTRODUCING VIM ENFOCADO!**
+- Initial release

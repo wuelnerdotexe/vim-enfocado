@@ -1,11 +1,11 @@
-# Vim Enfocado
+# Enfocado for Vim
 
-![Vim Enfocado](https://i.imgur.com/8um4BUj.png)
+![Enfocado for Vim](https://i.imgur.com/8um4BUj.png)
 
 [![license](https://img.shields.io/github/license/wuelnerdotexe/vim-enfocado.svg?style=flat-square)](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-**Enfocado** is more than a theme, it is a concept of **"how themes should be"**, focusing on what is really important to developers: the **code** and nothing else.
+**Enfocado** is more than a theme, it is a concept of **"how the themes should be"**, focusing on what is really important to developers: the **code** and nothing else.
 
 The features for this theme are:
 
@@ -69,13 +69,13 @@ let g:airline_theme = "enfocado"
 
 ### Colorscheme
 
-First, if you have true colors support, enable it:
+First, if you have **true colors** support, enable it:
 
 ```vim
 set termguicolors
 ```
 
-Otherwise, enable 256 terminal colors support:
+Otherwise, enable **256 terminal colors** support:
 
 ```vim
 set t_Co=256
@@ -101,18 +101,17 @@ In order for the human text simulation to work as it should (in addition to inst
 
 ### Extras
 
-If you want to apply the same **Enfocado** color scheme (Selenized black) to your terminal, you can find it [here](https://github.com/jan-warchol/selenized/tree/master/terminals) in the official Selenized by Jan Warchol repository.
+- [Selenized black for terminals](https://github.com/jan-warchol/selenized/tree/master/terminals).
+- [Enfocado for VSCode](https://github.com/wuelnerdotexe/vscode-enfocado) is coming soon. Wait for it!
 
 ## Credits
 
-- Theme colorscheme by [Jan Warchol](https://github.com/jan-warchol) on [Github](https://github.com/jan-warchol/selenized/blob/master/the-values.md)
-- Screenshot wallpaper by [Andreas Gücklhorn](https://unsplash.com/@draufsicht?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+- Theme colorscheme by [Jan Warchol](https://github.com/jan-warchol) on [Github](https://github.com/jan-warchol/selenized/blob/master/the-values.md).
+- Screenshot wallpaper by [Andreas Gücklhorn](https://unsplash.com/@draufsicht?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
 
 ## Contributing
 
 All your ideas and suggestions are welcome!
-
-The official **Enfocado** theme for [Visual Studio Code](https://code.visualstudio.com/) is coming soon. It is currently in development [here](https://github.com/wuelnerdotexe/vscode-enfocado). Wait for it!
 
 Let me see your captures and know what you think with the hashtag **#HowTheThemesShouldBe**.
 

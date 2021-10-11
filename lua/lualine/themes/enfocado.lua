@@ -4,9 +4,9 @@
 -- URL:         https://github.com/wuelnerdotexe/vim-enfocado
 -- License:     MIT (C) Wuelner Martínez.
 -- Description: How the themes should be.
--- About:       Enfocado is more than a theme, it is a concept of "how themes
---              should be", focusing on what is really important to developers:
---              the code and nothing else.
+-- About:       Enfocado is more than a theme, it is a concept of "how the
+--              themes should be", focusing on what is really important to
+--              developers: the code and nothing else.
 -- ----------------------------------------------------------------------------
 
 -- Selenized black colorscheme.
