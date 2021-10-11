@@ -1,34 +1,12 @@
 " -----------------------------------------------------------------------------
-" Name:     VIM ENFOCADO
-" Author:   Wuelner Martínez <wuelnerdotexe@gmail.com>
-" URL:      https://github.com/wuelnerdotexe/vim-enfocado
-" License:  MIT. Copyright (C) 2021 Wuelner Martínez.
-" About:    How the themes should be.
-" -----------------------------------------------------------------------------
-" Philosophy:
-" I decided to create this theme, because all the themes I had
-" used were built to be attractive, but not entirely useful. This is how
-" ENFOCADO was born, the topic that focuses only on what is important for
-" programmers, the code and nothing else.
-" -----------------------------------------------------------------------------
-" Features:
-" - Focused on coding and nothing more than coding.
-" - Use of well-founded Selenized black color scheme. Learn more about the
-"   project in https://github.com/jan-warchol/selenized
-" - Use of only three nature-inspired colors (Blue, Cyan, & Green) for
-"   syntax highlighting.
-" - The important colors (Orange & Red) are reserved for important alerts only,
-"   as they should be.
-" - What is not important, is Black & White, truly minimalist.
-" -----------------------------------------------------------------------------
-" Contributing:
-" All your ideas and suggestions are welcome!
-" Let me see your captures and know what you think with the
-" hashtag #HowTheThemesShouldBe
-" And of course, if you want to motivate me to constantly improve this topic,
-" your donations are welcome at PayPal: https://paypal.me/wuelnerdotexe
-" -----------------------------------------------------------------------------
-"               CON AMOR <3 DE LATINOAMÉRICA PARA EL MUNDO.
+" Name:        Vim Enfocado
+" Author:      Wuelner Martínez <wuelner.martinez@outlook.com>
+" URL:         https://github.com/wuelnerdotexe/vim-enfocado
+" License:     MIT (C) Wuelner Martínez.
+" Description: How the themes should be.
+" About:       Enfocado is more than a theme, it is a concept of "how themes
+"              should be", focusing on what is really important to developers:
+"              the code and nothing else.
 " -----------------------------------------------------------------------------
 
 " Vim dark mode is activated.
