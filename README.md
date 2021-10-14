@@ -5,7 +5,7 @@
 [![license](https://img.shields.io/github/license/wuelnerdotexe/vim-enfocado.svg?style=flat-square)](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-**Enfocado** is more than a theme, it is a concept of **"how themes should be,"** focusing on what is really important to developers: the **code** and nothing else.
+**Enfocado** is more than a theme, it is a concept of **"how the themes should be,"** focusing on what is really important to developers: the **code** and nothing else.
 
 The features of this theme are:
 
@@ -22,6 +22,7 @@ The features of this theme are:
 - [Usage](#usage)
   - [Statuslines](#statuslines)
   - [Colorscheme](#colorscheme)
+  - [Customization](#customization)
 - [Recommendations](#recommendations)
   - [Fonts](#fonts)
   - [Extras](#extras)
@@ -49,19 +50,19 @@ Plug 'wuelnerdotexe/vim-enfocado', { 'branch': 'development' }
 
 ### Statuslines
 
-[Lightline](https://github.com/itchyny/lightline.vim) theme:
+To use [Lightline](https://github.com/itchyny/lightline.vim) theme:
 
 ```vim
 let g:lightline = { 'colorscheme': 'enfocado' }
 ```
 
-[Lualine](https://github.com/hoob3rt/lualine.nvim) theme:
+To use [Lualine](https://github.com/hoob3rt/lualine.nvim) theme:
 
 ```lua
 require('lualine').setup { options = { theme = 'enfocado' } }
 ```
 
-[Airline](https://github.com/vim-airline/vim-airline) theme:
+To use [Airline](https://github.com/vim-airline/vim-airline) theme:
 
 ```vim
 let g:airline_theme = "enfocado"
@@ -87,13 +88,32 @@ Then activate the **Enfocado** theme, and enjoy!
 autocmd VimEnter * ++nested colorscheme enfocado
 ```
 
-Note: The usage codes must be written in your [Vim](https://www.vim.org) / [Neovim](https://neovim.io) configuration file.
+### Customization
+
+Like all colorschemes, **Enfocado** is easy to customize with `autocmd`. Make use of the `ColorScheme` event as in the following examples.
+
+It would be a good idea to put all of your personal changes in an `augroup`, which you can do with the following code:
+
+```vim
+augroup enfocado_customization
+  autocmd!
+    " autocmds...
+augroup END
+```
+
+To add underline styling to `hl-CursorLine`, you can use the following:
+
+```vim
+autocmd ColorScheme enfocado highlight CursorLine term=underline cterm=underline gui=underline
+```
+
+Note: The usage codes must be written in your [vim](https://www.vim.org) / [neovim](https://neovim.io) configuration file.
 
 ## Recommendations
 
 ### Fonts
 
-In order for the human text simulation to work as it should (in addition to installing [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)), I recommend that you use either of these two beautiful fonts, which align with the **"Mankind and Machine"** concept.
+In order for the human text simulation to work as it should (in addition to installing [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)), I recommend that you use either of these three beautiful fonts, which align with the **"Mankind and Machine"** concept.
 
 - [Cartograph](https://connary.com/cartograph.html) (paid).
 - [IBM Plex Mono](https://www.ibm.com/plex/) (free).
