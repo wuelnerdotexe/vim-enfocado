@@ -21,6 +21,12 @@ endif
 " Colorscheme name.
 let g:colors_name = "enfocado"
 
+if !(has('termguicolors') && &termguicolors) && !has('gui_running') && &t_Co != 256
+  echoerr "Enfocado was not applied because the option 'termguicolors' was not
+        \ found or was not activated and the option 't_Co' does not have the value '256'."
+  finish
+endif
+
 " Selenized black colorscheme (termguicolors).
 let s:colors_gui = {
     \ 'black'         : '#252525',
