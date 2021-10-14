@@ -160,8 +160,48 @@ exe "highlight Todo                  term=".s:text_types.bold."        cterm=".s
 exe "highlight Type                  term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.blue."          guifg=".s:colors_gui.blue
 exe "highlight Underlined            term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:attributes.none
 
+" Vim terminal colors.
+if has('terminal')
+  let g:terminal_ansi_colors = [
+        \ s:colors_gui.black,
+        \ s:colors_gui.red,
+        \ s:colors_gui.green,
+        \ s:colors_gui.yellow,
+        \ s:colors_gui.blue,
+        \ s:colors_gui.purple,
+        \ s:colors_gui.cyan,
+        \ s:colors_gui.white,
+        \ s:colors_gui.bright_black,
+        \ s:colors_gui.bright_red,
+        \ s:colors_gui.bright_green,
+        \ s:colors_gui.bright_yellow,
+        \ s:colors_gui.bright_blue,
+        \ s:colors_gui.bright_purple,
+        \ s:colors_gui.bright_cyan,
+        \ s:colors_gui.bright_white
+      \ ]
+endif
+
 " Only Neovim.
 if has('nvim')
+
+" Terminal colors.
+let g:terminal_color_0  = s:colors_gui.black
+let g:terminal_color_1  = s:colors_gui.red
+let g:terminal_color_2  = s:colors_gui.green
+let g:terminal_color_3  = s:colors_gui.yellow
+let g:terminal_color_4  = s:colors_gui.blue
+let g:terminal_color_5  = s:colors_gui.purple
+let g:terminal_color_6  = s:colors_gui.cyan
+let g:terminal_color_7  = s:colors_gui.white
+let g:terminal_color_8  = s:colors_gui.bright_black
+let g:terminal_color_9  = s:colors_gui.bright_red
+let g:terminal_color_10 = s:colors_gui.bright_green
+let g:terminal_color_11 = s:colors_gui.bright_yellow
+let g:terminal_color_12 = s:colors_gui.bright_blue
+let g:terminal_color_13 = s:colors_gui.bright_purple
+let g:terminal_color_14 = s:colors_gui.bright_cyan
+let g:terminal_color_15 = s:colors_gui.bright_white
 
 " Cursors and visual selections.
 exe "highlight Cursor                term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.dim."           guibg=".s:colors_gui.dim."           ctermfg=".s:attributes.none."           guifg=".s:attributes.none
