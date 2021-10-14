@@ -13,17 +13,17 @@
 set background=dark
 
 " Remove all existing highlighting.
-highlight clear
-if exists("syntax_on")
-  syntax reset
+if version > 580
+  highlight clear
+  if exists("syntax_on")
+    syntax reset
+  endif
 endif
 
 " Colorscheme name.
 let g:colors_name = "enfocado"
 
 if !(has('termguicolors') && &termguicolors) && !has('gui_running') && &t_Co != 256
-  echoerr "Enfocado was not applied because the option 'termguicolors' was not
-        \ found or was not activated and the option 't_Co' does not have the value '256'."
   finish
 endif
 
@@ -96,78 +96,86 @@ let s:text_types = {
     \ }
 
 " All environment.
-exe "highlight Normal                term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.background."    guibg=".s:colors_gui.background."    ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
+execute "highlight Normal                term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.background."    guibg=".s:colors_gui.background."    ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
 
 " Interface elements.
-exe "highlight ColorColumn           term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:attributes.none."           guifg=".s:attributes.none
-exe "highlight Conceal               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
-exe "highlight CursorColumn          term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:attributes.none."           guifg=".s:attributes.none
-exe "highlight CursorLine            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:attributes.none."           guifg=".s:attributes.none
-exe "highlight CursorLineNr          term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
-exe "highlight Directory             term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_green."  guifg=".s:colors_gui.bright_green
-exe "highlight Error                 term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_red."    guifg=".s:colors_gui.bright_red
-exe "highlight ErrorMsg              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_red."    guifg=".s:colors_gui.bright_red
-exe "highlight FoldColumn            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none
-exe "highlight Folded                term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
-exe "highlight LineNr                term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
-exe "highlight MsgArea               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
-exe "highlight ModeMsg               term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
-exe "highlight MoreMsg               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.green."         guifg=".s:colors_gui.green
-exe "highlight NonText               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
-exe "highlight Pmenu                 term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim 
-exe "highlight PmenuSbar             term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
-exe "highlight PmenuSel              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
-exe "highlight PmenuThumb            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.dim."           guibg=".s:colors_gui.dim."           ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
-exe "highlight Question              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_yellow." guifg=".s:colors_gui.bright_yellow
-exe "highlight QuickFixLine          term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:attributes.none."           guifg=".s:attributes.none
-exe "highlight SignColumn            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none
-exe "highlight SpecialKey            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
-exe "highlight StatusLine            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
-exe "highlight StatusLineNC          term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
-exe "highlight StatusLineTerm        term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
-exe "highlight StatusLineTermNC      term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
-exe "highlight TabLine               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
-exe "highlight TabLineFill           term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
-exe "highlight TabLineSel            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.background."    guibg=".s:colors_gui.background."    ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
-exe "highlight ToolbarButton         term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
-exe "highlight ToolbarLine           term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
-exe "highlight VertSplit             term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
-exe "highlight Visual                term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:attributes.none."           guifg=".s:attributes.none
-exe "highlight WarningMsg            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_orange." guifg=".s:colors_gui.bright_orange
-exe "highlight WildMenu              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
+if version >= 700
+  execute "highlight CursorColumn          term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+  execute "highlight CursorLine            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+  execute "highlight MatchParen            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+  execute "highlight Pmenu                 term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim 
+  execute "highlight PmenuSbar             term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
+  execute "highlight PmenuSel              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
+  execute "highlight PmenuThumb            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.dim."           guibg=".s:colors_gui.dim."           ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
+  execute "highlight TabLine               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
+  execute "highlight TabLineFill           term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
+  execute "highlight TabLineSel            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.background."    guibg=".s:colors_gui.background."    ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
+endif
+
+if version >= 703
+  execute "highlight ColorColumn           term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+  execute "highlight Conceal               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
+  execute "highlight CursorLineNr          term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
+endif 
+
+execute "highlight Directory             term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_green."  guifg=".s:colors_gui.bright_green
+execute "highlight Error                 term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_red."    guifg=".s:colors_gui.bright_red
+execute "highlight ErrorMsg              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_red."    guifg=".s:colors_gui.bright_red
+execute "highlight FoldColumn            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+execute "highlight Folded                term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
+execute "highlight LineNr                term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
+execute "highlight MsgArea               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
+execute "highlight ModeMsg               term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
+execute "highlight MoreMsg               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.green."         guifg=".s:colors_gui.green
+execute "highlight NonText               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
+execute "highlight Question              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_yellow." guifg=".s:colors_gui.bright_yellow
+execute "highlight QuickFixLine          term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+execute "highlight SignColumn            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+execute "highlight SpecialKey            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
+execute "highlight StatusLine            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
+execute "highlight StatusLineNC          term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
+execute "highlight StatusLineTerm        term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
+execute "highlight StatusLineTermNC      term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
+execute "highlight ToolbarButton         term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
+execute "highlight ToolbarLine           term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:colors_term.bright_black."  guifg=".s:colors_gui.bright_black
+execute "highlight VertSplit             term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
+execute "highlight Visual                term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+execute "highlight WarningMsg            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_orange." guifg=".s:colors_gui.bright_orange
+execute "highlight WildMenu              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.black."         guibg=".s:colors_gui.black."         ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
 
 " Spell check.
-exe "highlight SpellBad              term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:colors_gui.bright_red
-exe "highlight SpellCap              term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:colors_gui.bright_orange
-exe "highlight SpellLocal            term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:colors_gui.bright_yellow
-exe "highlight SpellRare             term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:colors_gui.bright_purple
+if has('spell')
+  execute "highlight SpellBad              term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:colors_gui.bright_red
+  execute "highlight SpellCap              term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:colors_gui.bright_orange
+  execute "highlight SpellLocal            term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:colors_gui.bright_yellow
+  execute "highlight SpellRare             term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:colors_gui.bright_purple
+endif
 
 " Search.
-exe "highlight IncSearch             term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_cyan."   guibg=".s:colors_gui.bright_cyan."   ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
-exe "highlight Search                term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_green."  guibg=".s:colors_gui.bright_green."  ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
+execute "highlight IncSearch             term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_cyan."   guibg=".s:colors_gui.bright_cyan."   ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
+execute "highlight Search                term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_green."  guibg=".s:colors_gui.bright_green."  ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
 
 " Diff code.
-exe "highlight DiffAdd               term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_green."  guifg=".s:colors_gui.bright_green
-exe "highlight DiffChange            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_yellow." guifg=".s:colors_gui.bright_yellow
-exe "highlight DiffDelete            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_red."    guifg=".s:colors_gui.bright_red
-exe "highlight DiffText              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_yellow." guibg=".s:colors_gui.bright_yellow." ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
+execute "highlight DiffAdd               term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_green."  guifg=".s:colors_gui.bright_green
+execute "highlight DiffChange            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_yellow." guifg=".s:colors_gui.bright_yellow
+execute "highlight DiffDelete            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_red."    guifg=".s:colors_gui.bright_red
+execute "highlight DiffText              term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_yellow." guibg=".s:colors_gui.bright_yellow." ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
 
 " Main code syntax.
-exe "highlight Comment               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
-exe "highlight Constant              term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
-exe "highlight Identifier            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_green."  guifg=".s:colors_gui.bright_green
-exe "highlight Ignore                term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
-exe "highlight MatchParen            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:attributes.none."           guifg=".s:attributes.none
-exe "highlight PreProc               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.blue."          guifg=".s:colors_gui.blue
-exe "highlight Special               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_cyan."   guifg=".s:colors_gui.bright_cyan
-exe "highlight Statement             term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.blue."          guifg=".s:colors_gui.blue
-exe "highlight Title                 term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_blue."   guifg=".s:colors_gui.bright_blue
-exe "highlight Todo                  term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.yellow."        guibg=".s:colors_gui.yellow."        ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
-exe "highlight Type                  term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.blue."          guifg=".s:colors_gui.blue
-exe "highlight Underlined            term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:attributes.none
+execute "highlight Comment               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
+execute "highlight Constant              term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
+execute "highlight Identifier            term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_green."  guifg=".s:colors_gui.bright_green
+execute "highlight Ignore                term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
+execute "highlight PreProc               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.blue."          guifg=".s:colors_gui.blue
+execute "highlight Special               term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_cyan."   guifg=".s:colors_gui.bright_cyan
+execute "highlight Statement             term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.blue."          guifg=".s:colors_gui.blue
+execute "highlight Title                 term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_blue."   guifg=".s:colors_gui.bright_blue
+execute "highlight Todo                  term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.yellow."        guibg=".s:colors_gui.yellow."        ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
+execute "highlight Type                  term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.blue."          guifg=".s:colors_gui.blue
+execute "highlight Underlined            term=".s:text_types.underline."   cterm=".s:text_types.underline."   gui=".s:text_types.underline."   ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none."          guisp=".s:attributes.none
 
 " Vim terminal colors.
-if has('terminal')
+if has('*term_setansicolors')
   let g:terminal_ansi_colors = [
         \ s:colors_gui.black,
         \ s:colors_gui.red,
@@ -191,53 +199,56 @@ endif
 " Only Neovim.
 if has('nvim')
 
-" Terminal colors.
-let g:terminal_color_0  = s:colors_gui.black
-let g:terminal_color_1  = s:colors_gui.red
-let g:terminal_color_2  = s:colors_gui.green
-let g:terminal_color_3  = s:colors_gui.yellow
-let g:terminal_color_4  = s:colors_gui.blue
-let g:terminal_color_5  = s:colors_gui.purple
-let g:terminal_color_6  = s:colors_gui.cyan
-let g:terminal_color_7  = s:colors_gui.white
-let g:terminal_color_8  = s:colors_gui.bright_black
-let g:terminal_color_9  = s:colors_gui.bright_red
-let g:terminal_color_10 = s:colors_gui.bright_green
-let g:terminal_color_11 = s:colors_gui.bright_yellow
-let g:terminal_color_12 = s:colors_gui.bright_blue
-let g:terminal_color_13 = s:colors_gui.bright_purple
-let g:terminal_color_14 = s:colors_gui.bright_cyan
-let g:terminal_color_15 = s:colors_gui.bright_white
+  " Terminal colors.
+  let g:terminal_color_0  = s:colors_gui.black
+  let g:terminal_color_1  = s:colors_gui.red
+  let g:terminal_color_2  = s:colors_gui.green
+  let g:terminal_color_3  = s:colors_gui.yellow
+  let g:terminal_color_4  = s:colors_gui.blue
+  let g:terminal_color_5  = s:colors_gui.purple
+  let g:terminal_color_6  = s:colors_gui.cyan
+  let g:terminal_color_7  = s:colors_gui.white
+  let g:terminal_color_8  = s:colors_gui.bright_black
+  let g:terminal_color_9  = s:colors_gui.bright_red
+  let g:terminal_color_10 = s:colors_gui.bright_green
+  let g:terminal_color_11 = s:colors_gui.bright_yellow
+  let g:terminal_color_12 = s:colors_gui.bright_blue
+  let g:terminal_color_13 = s:colors_gui.bright_purple
+  let g:terminal_color_14 = s:colors_gui.bright_cyan
+  let g:terminal_color_15 = s:colors_gui.bright_white
 
-" Cursors and visual selections.
-exe "highlight Cursor                term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.dim."           guibg=".s:colors_gui.dim."           ctermfg=".s:attributes.none."           guifg=".s:attributes.none
-exe "highlight TermCursor            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.dim."           guibg=".s:colors_gui.dim."           ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+  " Cursors.
+  execute "highlight Cursor                term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.dim."           guibg=".s:colors_gui.dim."           ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+  execute "highlight iCursor               term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_yellow." guibg=".s:colors_gui.bright_yellow." ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+  execute "highlight vCursor               term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.bright_black."  guibg=".s:colors_gui.bright_black."  ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+  execute "highlight lCursor               term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.dim."           guibg=".s:colors_gui.dim."           ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+  execute "highlight TermCursor            term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:colors_term.dim."           guibg=".s:colors_gui.dim."           ctermfg=".s:attributes.none."           guifg=".s:attributes.none
 
-" Float windows.
-exe "highlight FloatShadow           term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=0                               guibg=#000000                        blend=80"
-exe "highlight FloatShadowThrough    term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=0                               guibg=#000000                        blend=100"
+  " Float windows.
+  execute "highlight FloatShadow           term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=0                               guibg=#000000                        blend=80"
+  execute "highlight FloatShadowThrough    term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=0                               guibg=#000000                        blend=100"
 
-" Neovim errors.
-exe "highlight NvimInternalError     term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_red."    guifg=".s:colors_gui.bright_red
+  " Neovim errors.
+  execute "highlight NvimInternalError     term=".s:text_types.bold."        cterm=".s:text_types.bold."        gui=".s:text_types.bold."        ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_red."    guifg=".s:colors_gui.bright_red
 
-" Debug redraws.
-exe "highlight RedrawDebugClear      term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_orange." guibg=".s:colors_gui.bright_orange." ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
-exe "highlight RedrawDebugComposed   term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_green."  guibg=".s:colors_gui.bright_green."  ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
-exe "highlight RedrawDebugNormal     term=".s:attributes.reverse."     cterm=".s:attributes.reverse."     gui=".s:attributes.reverse."     ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none
-exe "highlight RedrawDebugRecompose  term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_red."    guibg=".s:colors_gui.bright_red."    ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
+  " Debug redraws.
+  execute "highlight RedrawDebugClear      term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_orange." guibg=".s:colors_gui.bright_orange." ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
+  execute "highlight RedrawDebugComposed   term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_green."  guibg=".s:colors_gui.bright_green."  ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
+  execute "highlight RedrawDebugNormal     term=".s:attributes.reverse."     cterm=".s:attributes.reverse."     gui=".s:attributes.reverse."     ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:attributes.none."           guifg=".s:attributes.none
+  execute "highlight RedrawDebugRecompose  term=".s:attributes.none."        cterm=".s:attributes.none."        gui=".s:attributes.none."        ctermbg=".s:colors_term.bright_red."    guibg=".s:colors_gui.bright_red."    ctermfg=".s:colors_term.black."         guifg=".s:colors_gui.black
 
-" Treesitter msg alerts.
-highlight! link TSDanger  ErrorMsg
-highlight! link TSWarning WarningMsg
+  " Treesitter msg alerts.
+  highlight! link TSDanger  ErrorMsg
+  highlight! link TSWarning WarningMsg
 
-" Treesitter human text.
-exe "highlight TSAnnotation          term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.blue."          guifg=".s:colors_gui.blue
-exe "highlight TSBoolean             term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
-exe "highlight TSComment             term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
-exe "highlight TSLiteral             term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
-exe "highlight TSMethod              term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_green."  guifg=".s:colors_gui.bright_green
-exe "highlight TSNote                term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_cyan."   guifg=".s:colors_gui.bright_cyan
-exe "highlight TSTextReference       term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
-exe "highlight TSTitle               term=".s:text_types.bold_italic." cterm=".s:text_types.bold_italic." gui=".s:text_types.bold_italic." ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_blue."   guifg=".s:colors_gui.bright_blue
+  " Treesitter human text.
+  execute "highlight TSAnnotation          term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.blue."          guifg=".s:colors_gui.blue
+  execute "highlight TSBoolean             term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
+  execute "highlight TSComment             term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.dim."           guifg=".s:colors_gui.dim
+  execute "highlight TSLiteral             term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
+  execute "highlight TSMethod              term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_green."  guifg=".s:colors_gui.bright_green
+  execute "highlight TSNote                term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_cyan."   guifg=".s:colors_gui.bright_cyan
+  execute "highlight TSTextReference       term=".s:text_types.italic."      cterm=".s:text_types.italic."      gui=".s:text_types.italic."      ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.foreground."    guifg=".s:colors_gui.foreground
+  execute "highlight TSTitle               term=".s:text_types.bold_italic." cterm=".s:text_types.bold_italic." gui=".s:text_types.bold_italic." ctermbg=".s:attributes.none."           guibg=".s:attributes.none."          ctermfg=".s:colors_term.bright_blue."   guifg=".s:colors_gui.bright_blue
 
 endif
