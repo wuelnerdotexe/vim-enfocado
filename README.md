@@ -5,16 +5,16 @@
 [![license](https://img.shields.io/github/license/wuelnerdotexe/vim-enfocado.svg?style=flat-square)](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-**Enfocado** is more than a theme, it is a concept of **"how the themes should be"**, focusing on what is really important to developers: the **code** and nothing else.
+**Enfocado** is more than a theme, it is a concept of **"how themes should be,"** focusing on what is really important to developers: the **code** and nothing else.
 
-The features for this theme are:
+The features of this theme are:
 
 - Use of **well-founded CIELAB** Selenized black color scheme. Learn about its features and design [here](https://github.com/jan-warchol/selenized/blob/master/features-and-design.md).
-- Focused on **coding** and nothing more than **coding**.
-- Use of **only three** nature-inspired colors (Blue, Cyan, & Green) for syntax highlighting.
-- The important colors (Orange & Red) are reserved for **important alerts only**, as they should be.
-- What is not important, is dimmed, **rally minimalist**.
-- Human writing (italicized) is simulated for syntax groups (Booleans, Comments, Methods, Titles, and more...) that are usually written with **human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
+- Focus on **coding** and nothing more than **coding**.
+- Use of **only three** nature-inspired colors (blue, cyan, & green) for syntax highlighting.
+- The important colors (orange & red) are reserved for **important alerts only**, as they should be.
+- What is not important, is dimmed, **really minimalist**.
+- Human writing (italicized) is simulated for syntax groups (booleans, comments, methods, titles, and more...) that are usually written with **human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
 
 ## Table of Contents
 
@@ -29,7 +29,7 @@ The features for this theme are:
 - [Contributing](#contributing)
 - [License](#license)
 
-## Install
+## Installation
 
 Install via your preferred package manager. Example using [vim-plug](https://github.com/junegunn/vim-plug):
 
@@ -69,19 +69,19 @@ let g:airline_theme = "enfocado"
 
 ### Colorscheme
 
-First, if you have **true colors** support, enable it:
+First, if you have **true color** support, enable it:
 
 ```vim
 set termguicolors
 ```
 
-Otherwise, enable **256 terminal colors** support:
+Otherwise, enable **256 terminal color** support:
 
 ```vim
 set t_Co=256
 ```
 
-Then activate the **Enfocado** theme, and to enjoy!
+Then activate the **Enfocado** theme, and enjoy!
 
 ```vim
 autocmd VimEnter * ++nested colorscheme enfocado
@@ -93,7 +93,7 @@ Note: The usage codes must be written in your [Vim](https://www.vim.org) / [Neov
 
 ### Fonts
 
-In order for the human text simulation to work as it should (in addition to installing [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)), I recommend that you use either of these two beautiful fonts with the **"Mankind and Machine"** concept.
+In order for the human text simulation to work as it should (in addition to installing [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)), I recommend that you use either of these two beautiful fonts, which align with the **"Mankind and Machine"** concept.
 
 - [Cartograph](https://connary.com/cartograph.html) (paid).
 - [IBM Plex Mono](https://www.ibm.com/plex/) (free).
@@ -113,7 +113,7 @@ In order for the human text simulation to work as it should (in addition to inst
 
 All your ideas and suggestions are welcome!
 
-Let me see your captures and know what you think with the hashtag **#HowTheThemesShouldBe**.
+Let me see your captures and let me know what you think with the hashtag **#HowTheThemesShouldBe**.
 
 And of course, if you want to motivate me to constantly improve this theme, your donations are welcome at [PayPal](https://paypal.me/wuelnerdotexe).
 
