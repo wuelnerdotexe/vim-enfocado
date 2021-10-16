@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Support for multiple plugins will be added.
 - [Enfocado for VSCode](https://github.com/wuelnerdotexe/vscode-enfocado) is coming soon. Wait for it!
 
 ## [2.0.0] - 2021-10-07

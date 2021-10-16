@@ -101,13 +101,16 @@ augroup enfocado_customization
 augroup END
 ```
 
-To add underline styling to `hl-CursorLine`, you can use the following:
+To make the **background transparent**, you can use the following:
 
 ```vim
-autocmd ColorScheme enfocado highlight CursorLine term=underline cterm=underline gui=underline
+augroup enfocado_customization
+  autocmd!
+      autocmd ColorScheme enfocado highlight Normal ctermbg=NONE guibg=NONE
+augroup END
 ```
 
-Note: The usage codes must be written in your [vim](https://www.vim.org) / [neovim](https://neovim.io) configuration file.
+Note: The usage codes must be written in your `.vimrc` or `init.vim`.
 
 ## Recommendations
 

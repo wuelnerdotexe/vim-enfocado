@@ -11,62 +11,63 @@
 
 -- Selenized black colorscheme.
 local colors = {
-  black         = '#252525',
-  red           = '#Ed4A46',
-  green         = '#70B433',
-  yellow        = '#DBB32D',
-  blue          = '#368AEB',
-  purple        = '#EB6EB7',
-  cyan          = '#3FC5B7',
-  bright_black  = '#3B3B3B',
-  bright_red    = '#FF5E56',
-  bright_green  = '#83C746',
-  bright_yellow = '#EFC541',
-  bright_blue   = '#4F9CFE',
-  bright_purple = '#FF81CA',
-  bright_cyan   = '#56D8C9',
-  background    = '#181818',
-  foreground    = '#DEDEDE',
-  dim           = '#777777',
-  orange        = '#E67F43',
-  violet        = '#A580E2',
-  bright_orange = '#FA9153',
-  bright_violet = '#B891F5',
+  bg_0       = '#181818',
+  bg_1       = '#252525',
+  bg_2       = '#3B3B3B',
+  dim_0      = '#777777',
+  fg_0       = '#B9B9B9',
+  fg_1       = '#DEDEDE',
+  red        = '#ED4A46',
+  green      = '#70B433',
+  yellow     = '#DBB32D',
+  blue       = '#368AEB',
+  magenta    = '#EB6EB7',
+  cyan       = '#3FC5B7',
+  orange     = '#E67F43',
+  violet     = '#A580E2',
+  br_red     = '#FF5E56',
+  br_green   = '#83C746',
+  br_yellow  = '#EFC541',
+  br_blue    = '#4F9CFE',
+  br_magenta = '#FF81CA',
+  br_cyan    = '#56D8C9',
+  br_orange  = '#FA9153',
+  br_violet  = '#B891F5'
 }
 
 -- Text types.
 local text_types = {
-  bold = 'bold',
+  bold = 'bold'
 }
 
 return {
   normal = {
-    a = { fg = colors.black, bg = colors.dim, gui = text_types.bold },
-    b = { fg = colors.dim, bg = colors.black },
-    c = { fg = colors.dim, bg = colors.black }
+    a = { fg = colors.bg_1,  bg = colors.dim_0, gui = text_types.bold },
+    b = { fg = colors.dim_0, bg = colors.bg_1 },
+    c = { fg = colors.dim_0, bg = colors.bg_1 }
   },
   insert = {
-    a = { fg = colors.black, bg = colors.bright_yellow, gui = text_types.bold },
-    b = { fg = colors.dim, bg = colors.black },
-    c = { fg = colors.dim, bg = colors.black }
+    a = { fg = colors.bg_1,  bg = colors.br_yellow, gui = text_types.bold },
+    b = { fg = colors.dim_0, bg = colors.bg_1 },
+    c = { fg = colors.dim_0, bg = colors.bg_1 }
   },
   visual = {
-    a = { fg = colors.black, bg = colors.dim, gui = text_types.bold },
-    b = { fg = colors.bright_black, bg = colors.black },
-    c = { fg = colors.bright_black, bg = colors.black }
+    a = { fg = colors.bg_1,  bg = colors.dim_0, gui = text_types.bold },
+    b = { fg = colors.bg_2,  bg = colors.bg_1 },
+    c = { fg = colors.bg_2,  bg = colors.bg_1 }
   },
   replace = {
-    a = { fg = colors.black, bg = colors.bright_yellow, gui = text_types.bold },
-    b = { fg = colors.dim, bg = colors.black },
-    c = { fg = colors.dim, bg = colors.black }
+    a = { fg = colors.bg_1,  bg = colors.br_yellow, gui = text_types.bold },
+    b = { fg = colors.dim_0, bg = colors.bg_1 },
+    c = { fg = colors.dim_0, bg = colors.bg_1 }
   },
   command = {
-    a = { fg = colors.black, bg = colors.dim, gui = text_types.bold },
-    b = { fg = colors.dim, bg = colors.black },
-    c = { fg = colors.dim, bg = colors.black }
+    a = { fg = colors.bg_1,  bg = colors.dim_0, gui = text_types.bold },
+    b = { fg = colors.dim_0, bg = colors.bg_1 },
+    c = { fg = colors.dim_0, bg = colors.bg_1 }
   },
   inactive = {
-    a = { fg = colors.dim, bg = colors.black, gui = text_types.bold },
-    b = { fg = colors.dim, bg = colors.black }
+    a = { fg = colors.dim_0, bg = colors.bg_1, gui = text_types.bold },
+    b = { fg = colors.dim_0, bg = colors.bg_1 }
   }
 }
