@@ -9,7 +9,7 @@
 --              developers: the code and nothing else.
 -- ----------------------------------------------------------------------------
 
--- Selenized black colorscheme.
+-- The Selenized black color scheme is declared.
 local colors = {
   bg_0       = '#181818',
   bg_1       = '#252525',
@@ -35,7 +35,7 @@ local colors = {
   br_violet  = '#B891F5'
 }
 
--- Text types.
+-- Attributes are declared. 
 local text_types = {
   bold = 'bold'
 }

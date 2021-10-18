@@ -9,7 +9,7 @@
 "              developers: the code and nothing else.
 " -----------------------------------------------------------------------------
 
-" Selenized black colorscheme (termguicolors && 256 cterm colors).
+" The Selenized black color scheme is declared.
 let s:bg_0       = [ '#181818', 234 ]
 let s:bg_1       = [ '#252525', 235 ]
 let s:bg_2       = [ '#3B3B3B', 237 ]
@@ -33,10 +33,10 @@ let s:br_cyan    = [ '#56D8C9', 80  ]
 let s:br_orange  = [ '#FA9153', 209 ]
 let s:br_violet  = [ '#B891F5', 141 ]
 
-" Text types.
+" Attributes are declared. 
 let s:bold = 'bold'
 
-" Airline name theme.
+" The Enfocado Airline theme is initialized.
 let g:airline#themes#enfocado#palette = { }
 
 " Accent colors.
