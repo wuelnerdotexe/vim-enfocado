@@ -7,8 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Support for multiple plugins will be added.
 - [Enfocado for VSCode](https://github.com/wuelnerdotexe/vscode-enfocado) is coming soon. Wait for it!
+
+## [3.8.0] - 2021-10-18
+
+### Added
+
+Support is added for the following plugins:
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [coc.nvim](https://github.com/neoclide/coc.nvim)
+- [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+- [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
+- [NERDTree](https://github.com/preservim/nerdtree)
+- [Vim-Signify](https://github.com/mhinz/vim-signify)
+
+### Changed
+
+- A **function** is created to reduce the highlighting action of each group.
+- The code is better organized.
+- We have a new sexier banner!
 
 ## [2.0.0] - 2021-10-07
 

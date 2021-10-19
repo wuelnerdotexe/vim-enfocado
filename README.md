@@ -1,6 +1,6 @@
 # Enfocado for Vim
 
-![Enfocado for Vim](https://i.imgur.com/8um4BUj.png)
+![banner](https://github.com/wuelnerdotexe/vim-enfocado/raw/main/assets/banner.png)
 
 [![license](https://img.shields.io/github/license/wuelnerdotexe/vim-enfocado.svg?style=flat-square)](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
@@ -101,12 +101,13 @@ augroup enfocado_customization
 augroup END
 ```
 
-To make the **background transparent**, you can use the following:
+To make the **background transparent** (same as in the banner), you can use the following:
 
 ```vim
 augroup enfocado_customization
   autocmd!
       autocmd ColorScheme enfocado highlight Normal ctermbg=NONE guibg=NONE
+      autocmd ColorScheme enfocado highlight TabLineSel ctermbg=NONE guibg=NONE
 augroup END
 ```
 
@@ -130,7 +131,7 @@ In order for the human text simulation to work as it should (in addition to inst
 ## Credits
 
 - Theme colorscheme by [Jan Warchol](https://github.com/jan-warchol) on [Github](https://github.com/jan-warchol/selenized/blob/master/the-values.md).
-- Screenshot wallpaper by [Andreas Gücklhorn](https://unsplash.com/@draufsicht?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
+- Banner wallpaper by [Martin Sattler](https://unsplash.com/@martinsattler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
 
 ## Contributing
 
