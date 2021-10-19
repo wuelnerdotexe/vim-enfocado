@@ -68,7 +68,7 @@ function! s:Hl(group, txt, bg, fg, sp)
     execute "highlight ".a:group.
           \ " gui=".a:txt[0]." cterm=".a:txt[0]." term=".a:txt[0].
           \ " guibg=".a:bg[0]." ctermbg=".a:bg[1].
-          \ " guifg=".a:fg[0]." ctermfg=".a:fg[1]." guisp=".a:sp[1]
+          \ " guifg=".a:fg[0]." ctermfg=".a:fg[1]." guisp=".a:sp[0]
 endfunction
 " ------------------------------------------------------------------------------
 " SECTION: Highlight groups.
