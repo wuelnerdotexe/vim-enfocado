@@ -133,7 +133,7 @@ endif
 " Syntax vim groups.
 call s:Hl("Comment", s:none, s:none, s:dim_0, s:none)
 call s:Hl("Constant", s:none, s:none, s:cyan, s:none)
-call s:Hl("Identifier", s:none, s:none, s:green, s:none)
+call s:Hl("Identifier", s:none, s:none, s:cyan, s:none)
 call s:Hl("PreProc", s:none, s:none, s:blue, s:none)
 call s:Hl("Special", s:none, s:none, s:br_cyan, s:none)
 call s:Hl("Statement", s:none, s:none, s:blue, s:none)
@@ -155,9 +155,9 @@ call s:Hl("PreCondit", s:none, s:none, s:br_cyan, s:none)
 call s:Hl("Repeat", s:none, s:none, s:br_cyan, s:none)
 call s:Hl("SpecialChar", s:none, s:none, s:fg_1, s:none)
 call s:Hl("SpecialComment", s:none, s:none, s:dim_0, s:none)
-call s:Hl("StorageClass", s:none, s:none, s:br_blue, s:none)
+call s:Hl("StorageClass", s:bold, s:none, s:br_blue, s:none)
 call s:Hl("String", s:none, s:none, s:fg_1, s:none)
-call s:Hl("Structure", s:none, s:none, s:br_blue, s:none)
+call s:Hl("Structure", s:bold, s:none, s:br_blue, s:none)
 call s:Hl("Tag", s:none, s:none, s:blue, s:none)
 
 " Terminal vim groups.
@@ -253,6 +253,7 @@ if has('nvim')
       call s:Hl("TSConstructor", s:none, s:none, s:br_green, s:none)
       call s:Hl("TSDanger", s:bold, s:none, s:br_red, s:none)
       call s:Hl("TSEmphasis", s:bold, s:none, s:br_magenta, s:none)
+      call s:Hl("TSField", s:none, s:none, s:green, s:none)
       call s:Hl("TSFuncBuiltin", s:none, s:none, s:br_cyan, s:none)
       call s:Hl("TSKeywordReturn", s:italic, s:none, s:br_cyan, s:none)
       call s:Hl("TSLiteral", s:italic, s:none, s:fg_1, s:none)
@@ -261,24 +262,25 @@ if has('nvim')
       call s:Hl("TSNamespace", s:bold, s:none, s:br_blue, s:none)
       call s:Hl("TSNone", s:none, s:none, s:fg_1, s:none)
       call s:Hl("TSNote", s:italic, s:none, s:br_cyan, s:none)
-      call s:Hl("TSParameter", s:none, s:none, s:br_cyan, s:none)
+      call s:Hl("TSProperty", s:none, s:none, s:green, s:none)
       call s:Hl("TSPunctDelimiter", s:none, s:none, s:fg_1, s:none)
       call s:Hl("TSPunctSpecial", s:none, s:none, s:fg_1, s:none)
       call s:Hl("TSStrike", s:bold, s:none, s:br_orange, s:none)
       call s:Hl("TSStrong", s:bold, s:none, s:br_magenta, s:none)
-      call s:Hl("TSTagDelimiter", s:none, s:none, s:dim_0, s:none)
+      call s:Hl("TSSymbol", s:none, s:none, s:green, s:none)
+      call s:Hl("TSTagDelimiter", s:none, s:none, s:blue, s:none)
       call s:Hl("TSTextReference", s:italic, s:none, s:fg_1, s:none)
       call s:Hl("TSTitle", s:bold_italic, s:none, s:br_blue, s:none)
       call s:Hl("TSUnderline", s:underline, s:none, s:br_blue, s:none)
-      call s:Hl("TSVariable", s:none, s:none, s:green, s:none)
+      call s:Hl("TSVariable", s:none, s:none, s:cyan, s:none)
       call s:Hl("TSVariableBuiltin", s:none, s:none, s:br_cyan, s:none)
       call s:Hl("TSWarning", s:bold, s:none, s:br_yellow, s:none)
     endif
   " }}}
 endif
-" ==============================================================================
+" ------------------------------------------------------------------------------
 " SECTION: Plugins highlight groups.
-" ==============================================================================
+" ------------------------------------------------------------------------------
 " COC: {{{
   call s:Hl("CocCodeLens", s:none, s:none, s:dim_0, s:none)
   call s:Hl("CocDiagnosticsError", s:bold, s:none, s:br_red, s:none)
