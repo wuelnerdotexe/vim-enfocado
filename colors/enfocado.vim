@@ -370,12 +370,6 @@ endif
   call s:Hl("multiple_cursors_cursor", s:bold, s:dim_0, s:none, s:none)
   call s:Hl("multiple_cursors_visual", s:bold, s:bg_2, s:none, s:none)
 " }}}
-" Visual Multi: {{{
-  call s:Hl("VM_Mono", s:bold, s:bg_2, s:br_yellow, s:none)
-  call s:Hl("VM_Cursor", s:bold, s:br_yellow, s:bg_1, s:none)
-  call s:Hl("VM_Extend", s:none, s:dim_0, s:bg_1, s:none)
-  call s:Hl("VM_Insert", s:bold, s:bg_2, s:br_yellow, s:none)
-" }}}
 " NERDTree: {{{
   call s:Hl("NERDTreeBookmark", s:bold, s:none, s:blue, s:none)
   call s:Hl("NERDTreeBookmarkHeader", s:bold, s:none, s:br_blue, s:none)
@@ -411,9 +405,29 @@ endif
   call s:Hl("netrwSymLink", s:none, s:none, s:fg_0, s:none)
   call s:Hl("netrwVersion", s:none, s:none, s:dim_0, s:none)
 " }}}
+" Rainbow Parentheses: {{{
+let s:rainbow_guifgs   = [ '#EFC541', '#FA9153', '#FF81CA', '#B891F5' ]
+let s:rainbow_ctermfgs = [ '221'    , '209'    , '212'    , '141'     ]
+
+if !exists('g:rainbow_conf')
+   let g:rainbow_conf = {}
+endif
+if !has_key(g:rainbow_conf, 'guifgs')
+   let g:rainbow_conf['guifgs'] = s:rainbow_guifgs
+endif
+if !has_key(g:rainbow_conf, 'ctermfgs')
+   let g:rainbow_conf['ctermfgs'] = s:rainbow_ctermfgs
+endif
+"}}}
 " Signify: {{{
   call s:Hl("SignifySignAdd", s:bold, s:none, s:br_green, s:none)
   call s:Hl("SignifySignChange", s:bold, s:none, s:br_yellow, s:none)
   call s:Hl("SignifySignDelete", s:bold, s:none, s:br_red, s:none)
+" }}}
+" Visual Multi: {{{
+  call s:Hl("VM_Mono", s:bold, s:bg_2, s:br_yellow, s:none)
+  call s:Hl("VM_Cursor", s:bold, s:br_yellow, s:bg_1, s:none)
+  call s:Hl("VM_Extend", s:none, s:dim_0, s:bg_1, s:none)
+  call s:Hl("VM_Insert", s:bold, s:bg_2, s:br_yellow, s:none)
 " }}}
 " vim: set foldmethod=marker:

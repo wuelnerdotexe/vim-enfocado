@@ -14,7 +14,7 @@ The features of this theme are:
 - Use of **only three** nature-inspired colors (blue, cyan, & green) for syntax highlighting.
 - The important colors (orange & red) are reserved for **important alerts only**, as they should be.
 - What is not important, is dimmed, **really minimalist**.
-- Human writing (italicized) is simulated for syntax groups (booleans, comments, methods, titles, and more...) that are usually written with **human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
+- Human writing (italicized) is simulated for syntax groups (comments, methods, titles, and more...) that are usually written with **human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
 
 ## Table of Contents
 
