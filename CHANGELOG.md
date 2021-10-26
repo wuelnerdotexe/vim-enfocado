@@ -2,12 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- Enfocado Neon, comes a new version that will delight the coders of Instagram and Twitch...
 - [Enfocado for VSCode](https://github.com/wuelnerdotexe/vscode-enfocado) is coming soon. Wait for it!
+
+## [3.10.0] - 2021-10-25
+
+### Added
+
+- Support is added for [Rainbow](https://github.com/luochen1990/rainbow) Parentheses.
+
+### Changed
+
+- A standard was created for choosing colors for syntax highlighting, which will allow consistency [Enfocado for VSCode](https://github.com/wuelnerdotexe/vscode-enfocado) (sorry for so many color changes in the syntax).
 
 ## [3.8.0] - 2021-10-18
 

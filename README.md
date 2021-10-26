@@ -5,7 +5,7 @@
 [![license](https://img.shields.io/github/license/wuelnerdotexe/vim-enfocado.svg?style=flat-square)](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-**Enfocado** is more than a theme, it is a concept of **"how the themes should be,"** focusing on what is really important to developers: the **code** and nothing else.
+**Enfocado** is more than a theme, it is a concept of **"how the themes should be"**, focusing on what is really important to developers: the **code** and nothing else.
 
 The features of this theme are:
 
