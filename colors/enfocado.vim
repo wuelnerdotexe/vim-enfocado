@@ -78,8 +78,7 @@ call s:Hl("DiffAdd", s:bold, s:none, s:br_green, s:none)
 call s:Hl("DiffChange", s:bold, s:none, s:br_yellow, s:none)
 call s:Hl("DiffDelete", s:bold, s:none, s:br_red, s:none)
 call s:Hl("DiffText", s:bold, s:br_yellow, s:bg_1, s:none)
-call s:Hl("Directory", s:none, s:none, s:br_green, s:none)
-call s:Hl("Error", s:bold, s:none, s:br_red, s:none)
+call s:Hl("Directory", s:none, s:none, s:fg_0, s:none)
 call s:Hl("ErrorMsg", s:bold, s:none, s:br_red, s:none)
 call s:Hl("FoldColumn", s:none, s:none, s:none, s:none)
 call s:Hl("Folded", s:none, s:bg_1, s:dim_0, s:none)
@@ -130,36 +129,6 @@ if version >= 703
   call s:Hl("CursorLineNr", s:none, s:bg_1, s:dim_0, s:none)
 endif
 
-" Syntax vim groups.
-call s:Hl("Comment", s:none, s:none, s:dim_0, s:none)
-call s:Hl("Constant", s:none, s:none, s:cyan, s:none)
-call s:Hl("Identifier", s:none, s:none, s:cyan, s:none)
-call s:Hl("PreProc", s:none, s:none, s:blue, s:none)
-call s:Hl("Special", s:none, s:none, s:br_cyan, s:none)
-call s:Hl("Statement", s:none, s:none, s:blue, s:none)
-call s:Hl("Title", s:bold, s:none, s:br_blue, s:none)
-call s:Hl("Todo", s:bold, s:yellow, s:bg_1, s:none)
-call s:Hl("Type", s:none, s:none, s:blue, s:none)
-call s:Hl("Underlined", s:underline, s:none, s:br_blue, s:none)
-
-" Syntax specific vim groups.
-call s:Hl("Boolean", s:none, s:none, s:br_cyan, s:none)
-call s:Hl("Character", s:none, s:none, s:fg_1, s:none)
-call s:Hl("Conditional", s:none, s:none, s:br_cyan, s:none)
-call s:Hl("Delimiter", s:bold, s:none, s:fg_1, s:none)
-call s:Hl("Exception", s:none, s:none, s:orange, s:none)
-call s:Hl("Function", s:none, s:none, s:br_green, s:none)
-call s:Hl("Number", s:none, s:none, s:green, s:none)
-call s:Hl("Operator", s:none, s:none, s:br_cyan, s:none)
-call s:Hl("PreCondit", s:none, s:none, s:br_cyan, s:none)
-call s:Hl("Repeat", s:none, s:none, s:br_cyan, s:none)
-call s:Hl("SpecialChar", s:none, s:none, s:fg_1, s:none)
-call s:Hl("SpecialComment", s:none, s:none, s:dim_0, s:none)
-call s:Hl("StorageClass", s:bold, s:none, s:br_blue, s:none)
-call s:Hl("String", s:none, s:none, s:fg_1, s:none)
-call s:Hl("Structure", s:bold, s:none, s:br_blue, s:none)
-call s:Hl("Tag", s:none, s:none, s:blue, s:none)
-
 " Terminal vim groups.
 if has('*term_setansicolors')
   let g:terminal_ansi_colors = [
@@ -181,6 +150,71 @@ if has('*term_setansicolors')
         \ s:fg_1[0]
       \ ]
 endif
+
+" Syntax general vim groups.
+call s:Hl("Comment", s:none, s:none, s:dim_0, s:none)
+call s:Hl("Constant", s:none, s:none, s:cyan, s:none)
+call s:Hl("Error", s:bold, s:none, s:br_red, s:none)
+call s:Hl("Identifier", s:none, s:none, s:green, s:none)
+call s:Hl("PreProc", s:none, s:none, s:blue, s:none)
+call s:Hl("Special", s:bold, s:none, s:blue, s:none)
+call s:Hl("Statement", s:none, s:none, s:blue, s:none)
+call s:Hl("Title", s:bold, s:none, s:br_blue, s:none)
+call s:Hl("Todo", s:bold, s:yellow, s:bg_1, s:none)
+call s:Hl("Type", s:none, s:none, s:blue, s:none)
+call s:Hl("Underlined", s:underline, s:none, s:br_blue, s:none)
+
+" Syntax specific vim groups.
+call s:Hl("Debug", s:none, s:none, s:cyan, s:none)
+call s:Hl("Delimiter", s:none, s:none, s:fg_1, s:none)
+call s:Hl("Exception", s:none, s:none, s:orange, s:none)
+call s:Hl("SpecialComment", s:none, s:none, s:violet, s:none)
+call s:Hl("StorageClass", s:bold, s:none, s:br_blue, s:none)
+call s:Hl("Structure", s:bold, s:none, s:br_blue, s:none)
+call s:Hl("Tag", s:none, s:none, s:blue, s:none)
+" ------------------------------------------------------------------------------
+" SECTION: Syntax language highlight groups.
+" ------------------------------------------------------------------------------
+" Diff: {{{
+  call s:Hl("diffAdded", s:bold, s:none, s:br_green, s:none)
+  call s:Hl("diffChanged", s:bold, s:none, s:br_yellow, s:none)
+  call s:Hl("diffFile", s:none, s:none, s:br_cyan, s:none)
+  call s:Hl("diffLine", s:none, s:none, s:blue, s:none)
+  call s:Hl("diffNewFile", s:bold, s:none, s:br_green, s:none)
+  call s:Hl("diffRemoved", s:bold, s:none, s:br_red, s:none)
+" }}}
+" HTML: {{{
+  highlight! link htmlPreAttr PreProc
+  highlight! link htmlArg Identifier
+  highlight! link htmlEndTag Tag
+  highlight! link htmlTag Tag
+  highlight! link htmlTagN Tag
+  highlight! link htmlTagName Tag
+  highlight! link htmlSpecialTagName SpecialComment
+" }}}
+" XML: {{{
+  highlight! link xmlAttrib Identifier
+  highlight! link xmlEndTag Tag
+  highlight! link xmlEqual Tag
+  highlight! link xmlTag Tag
+  highlight! link xmlTagName Tag
+" }}}
+" JSX: {{{
+  highlight! link jsxAttrib Identifier
+  highlight! link jsxCloseString Tag
+  highlight! link jsxCloseTag Tag
+  highlight! link jsxEqual Keyword
+  highlight! link jsxTag Tag
+  highlight! link jsxTagName Tag
+" }}}
+" TSX: {{{
+  highlight! link tsxAttrib Identifier
+  highlight! link tsxCloseString Tag
+  highlight! link tsxCloseTag Tag
+  highlight! link tsxEqual Keyword
+  highlight! link tsxTag Tag
+  highlight! link tsxTagName Tag
+" }}}
 " ------------------------------------------------------------------------------
 " SECTION: Neovim highlight groups.
 " ------------------------------------------------------------------------------
@@ -246,34 +280,25 @@ if has('nvim')
   " Treesitter: {{{
     if exists('g:loaded_nvim_treesitter')
       call s:Hl("TSAnnotation", s:italic, s:none, s:blue, s:none)
-      call s:Hl("TSAttribute", s:none, s:none, s:green, s:none)
-      call s:Hl("TSBoolean", s:italic, s:none, s:br_cyan, s:none)
       call s:Hl("TSComment", s:italic, s:none, s:dim_0, s:none)
-      call s:Hl("TSConstBuiltin", s:none, s:none, s:br_cyan, s:none)
-      call s:Hl("TSConstructor", s:none, s:none, s:br_green, s:none)
+      call s:Hl("TSConstBuiltin", s:none, s:none, s:violet, s:none)
+      call s:Hl("TSConstructor", s:bold, s:none, s:br_blue, s:none)
       call s:Hl("TSDanger", s:bold, s:none, s:br_red, s:none)
-      call s:Hl("TSEmphasis", s:bold, s:none, s:br_magenta, s:none)
-      call s:Hl("TSField", s:none, s:none, s:green, s:none)
-      call s:Hl("TSFuncBuiltin", s:none, s:none, s:br_cyan, s:none)
-      call s:Hl("TSKeywordReturn", s:italic, s:none, s:br_cyan, s:none)
+      call s:Hl("TSEmphasis", s:bold, s:none, s:br_yellow, s:none)
+      call s:Hl("TSFuncBuiltin", s:none, s:none, s:violet, s:none)
       call s:Hl("TSLiteral", s:italic, s:none, s:fg_1, s:none)
-      call s:Hl("TSMath", s:none, s:none, s:br_cyan, s:none)
-      call s:Hl("TSMethod", s:bold_italic, s:none, s:br_blue, s:none)
+      call s:Hl("TSMethod", s:italic, s:none, s:green, s:none)
       call s:Hl("TSNamespace", s:bold, s:none, s:br_blue, s:none)
-      call s:Hl("TSNone", s:none, s:none, s:fg_1, s:none)
-      call s:Hl("TSNote", s:italic, s:none, s:br_cyan, s:none)
-      call s:Hl("TSProperty", s:none, s:none, s:green, s:none)
-      call s:Hl("TSPunctDelimiter", s:none, s:none, s:fg_1, s:none)
-      call s:Hl("TSPunctSpecial", s:none, s:none, s:fg_1, s:none)
-      call s:Hl("TSStrike", s:bold, s:none, s:br_orange, s:none)
-      call s:Hl("TSStrong", s:bold, s:none, s:br_magenta, s:none)
-      call s:Hl("TSSymbol", s:none, s:none, s:green, s:none)
+      call s:Hl("TSNone", s:italic, s:none, s:fg_1, s:none)
+      call s:Hl("TSNote", s:italic, s:br_yellow, s:bg_1, s:none)
+      call s:Hl("TSStrong", s:bold, s:none, s:br_yellow, s:none)
       call s:Hl("TSTagDelimiter", s:none, s:none, s:blue, s:none)
       call s:Hl("TSTextReference", s:italic, s:none, s:fg_1, s:none)
       call s:Hl("TSTitle", s:bold_italic, s:none, s:br_blue, s:none)
+      call s:Hl("TSTypeBuiltin", s:none, s:none, s:violet, s:none)
       call s:Hl("TSUnderline", s:underline, s:none, s:br_blue, s:none)
-      call s:Hl("TSVariable", s:none, s:none, s:cyan, s:none)
-      call s:Hl("TSVariableBuiltin", s:none, s:none, s:br_cyan, s:none)
+      call s:Hl("TSVariable", s:none, s:none, s:green, s:none)
+      call s:Hl("TSVariableBuiltin", s:none, s:none, s:violet, s:none)
       call s:Hl("TSWarning", s:bold, s:none, s:br_yellow, s:none)
     endif
   " }}}
@@ -387,9 +412,6 @@ endif
   call s:Hl("netrwVersion", s:none, s:none, s:dim_0, s:none)
 " }}}
 " Signify: {{{
-  call s:Hl("diffAdded", s:bold, s:none, s:br_green, s:none)
-  call s:Hl("diffChanged", s:bold, s:none, s:br_yellow, s:none)
-  call s:Hl("diffRemoved", s:bold, s:none, s:br_red, s:none)
   call s:Hl("SignifySignAdd", s:bold, s:none, s:br_green, s:none)
   call s:Hl("SignifySignChange", s:bold, s:none, s:br_yellow, s:none)
   call s:Hl("SignifySignDelete", s:bold, s:none, s:br_red, s:none)
