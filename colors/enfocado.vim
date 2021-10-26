@@ -63,6 +63,11 @@ let s:italic      = [ 'italic'     , 'italic'      ]
 let s:underline   = [ 'underline'  , 'underline'   ]
 let s:undercurl   = [ 'undercurl'  , 'undercurl'   ]
 
+" Configuration variables are initialized.
+if !exists('g:enfocado_theme')
+  let g:enfocado_theme = 'nature'
+endif
+
 " A function is created to highlight the groups.
 function! s:Hl(group, txt, bg, fg, sp)
     execute "highlight ".a:group.
@@ -73,6 +78,25 @@ endfunction
 " ------------------------------------------------------------------------------
 " SECTION: Highlight groups.
 " ------------------------------------------------------------------------------
+" Syntax enfocado groups.
+if g:enfocado_theme == 'neon'
+  " Enfocado neon...
+  call s:Hl("EnfocadoBuiltin", s:none, s:none, s:blue, s:none)
+  call s:Hl("EnfocadoConstants", s:none, s:none, s:br_cyan, s:none)
+  call s:Hl("EnfocadoIdentifiers", s:none, s:none, s:br_magenta, s:none)
+  call s:Hl("EnfocadoKeywords", s:none, s:none, s:violet, s:none)
+  call s:Hl("EnfocadoTitles", s:bold, s:none, s:br_violet, s:none)
+  call s:Hl("EnfocadoUnderlineds", s:underline, s:none, s:br_violet, s:br_violet)
+else
+  " Enfocado nature...
+  call s:Hl("EnfocadoBuiltin", s:none, s:none, s:violet, s:none)
+  call s:Hl("EnfocadoConstants", s:none, s:none, s:cyan, s:none)
+  call s:Hl("EnfocadoIdentifiers", s:none, s:none, s:green, s:none)
+  call s:Hl("EnfocadoKeywords", s:none, s:none, s:blue, s:none)
+  call s:Hl("EnfocadoTitles", s:bold, s:none, s:br_blue, s:none)
+  call s:Hl("EnfocadoUnderlineds", s:underline, s:none, s:br_blue, s:br_blue)
+endif
+
 " General vim groups.
 call s:Hl("DiffAdd", s:bold, s:none, s:br_green, s:none)
 call s:Hl("DiffChange", s:bold, s:none, s:br_yellow, s:none)
@@ -152,26 +176,25 @@ if has('*term_setansicolors')
 endif
 
 " Syntax general vim groups.
-call s:Hl("Comment", s:none, s:none, s:dim_0, s:none)
-call s:Hl("Constant", s:none, s:none, s:cyan, s:none)
-call s:Hl("Error", s:bold, s:none, s:br_red, s:none)
-call s:Hl("Identifier", s:none, s:none, s:green, s:none)
-call s:Hl("PreProc", s:none, s:none, s:blue, s:none)
-call s:Hl("Special", s:bold, s:none, s:blue, s:none)
-call s:Hl("Statement", s:none, s:none, s:blue, s:none)
-call s:Hl("Title", s:bold, s:none, s:br_blue, s:none)
-call s:Hl("Todo", s:bold, s:yellow, s:bg_1, s:none)
-call s:Hl("Type", s:none, s:none, s:blue, s:none)
-call s:Hl("Underlined", s:underline, s:none, s:br_blue, s:none)
+highlight! link Constant EnfocadoConstants
+highlight! link Debug EnfocadoConstants
+highlight! link Identifier EnfocadoIdentifiers
+highlight! link PreProc EnfocadoKeywords
+highlight! link Special EnfocadoKeywords
+highlight! link SpecialComment EnfocadoBuiltin
+highlight! link Statement EnfocadoKeywords
+highlight! link StorageClass EnfocadoTitles
+highlight! link Structure EnfocadoTitles
+highlight! link Tag EnfocadoKeywords
+highlight! link Title EnfocadoTitles
+highlight! link Type EnfocadoKeywords
+highlight! link Underlined EnfocadoUnderlineds
 
-" Syntax specific vim groups.
-call s:Hl("Debug", s:none, s:none, s:cyan, s:none)
+call s:Hl("Comment", s:none, s:none, s:dim_0, s:none)
 call s:Hl("Delimiter", s:none, s:none, s:fg_1, s:none)
+call s:Hl("Error", s:bold, s:none, s:br_red, s:none)
 call s:Hl("Exception", s:none, s:none, s:orange, s:none)
-call s:Hl("SpecialComment", s:none, s:none, s:violet, s:none)
-call s:Hl("StorageClass", s:bold, s:none, s:br_blue, s:none)
-call s:Hl("Structure", s:bold, s:none, s:br_blue, s:none)
-call s:Hl("Tag", s:none, s:none, s:blue, s:none)
+call s:Hl("Todo", s:bold, s:yellow, s:bg_1, s:none)
 " ------------------------------------------------------------------------------
 " SECTION: Syntax language highlight groups.
 " ------------------------------------------------------------------------------
@@ -279,26 +302,43 @@ if has('nvim')
   " }}}
   " Treesitter: {{{
     if exists('g:loaded_nvim_treesitter')
-      call s:Hl("TSAnnotation", s:italic, s:none, s:blue, s:none)
+      if g:enfocado_theme == 'neon'
+        " Enfocado neon...
+        call s:Hl("TSAnnotation", s:italic, s:none, s:violet, s:none)
+        call s:Hl("TSConstBuiltin", s:none, s:none, s:blue, s:none)
+        call s:Hl("TSConstructor", s:bold, s:none, s:br_violet, s:none)
+        call s:Hl("TSFuncBuiltin", s:none, s:none, s:blue, s:none)
+        call s:Hl("TSMethod", s:italic, s:none, s:br_magenta, s:none)
+        call s:Hl("TSNamespace", s:bold, s:none, s:br_violet, s:none)
+        call s:Hl("TSTagDelimiter", s:none, s:none, s:violet, s:none)
+        call s:Hl("TSTitle", s:bold_italic, s:none, s:br_violet, s:none)
+        call s:Hl("TSTypeBuiltin", s:none, s:none, s:blue, s:none)
+        call s:Hl("TSUnderline", s:underline, s:none, s:br_violet, s:none)
+        call s:Hl("TSVariable", s:none, s:none, s:br_magenta, s:none)
+        call s:Hl("TSVariableBuiltin", s:none, s:none, s:blue, s:none)
+      else
+        " Enfocado nature...
+        call s:Hl("TSAnnotation", s:italic, s:none, s:blue, s:none)
+        call s:Hl("TSConstBuiltin", s:none, s:none, s:violet, s:none)
+        call s:Hl("TSConstructor", s:bold, s:none, s:br_blue, s:none)
+        call s:Hl("TSFuncBuiltin", s:none, s:none, s:violet, s:none)
+        call s:Hl("TSMethod", s:italic, s:none, s:green, s:none)
+        call s:Hl("TSNamespace", s:bold, s:none, s:br_blue, s:none)
+        call s:Hl("TSTagDelimiter", s:none, s:none, s:blue, s:none)
+        call s:Hl("TSTitle", s:bold_italic, s:none, s:br_blue, s:none)
+        call s:Hl("TSTypeBuiltin", s:none, s:none, s:violet, s:none)
+        call s:Hl("TSUnderline", s:underline, s:none, s:br_blue, s:none)
+        call s:Hl("TSVariable", s:none, s:none, s:green, s:none)
+        call s:Hl("TSVariableBuiltin", s:none, s:none, s:violet, s:none)
+      endif
       call s:Hl("TSComment", s:italic, s:none, s:dim_0, s:none)
-      call s:Hl("TSConstBuiltin", s:none, s:none, s:violet, s:none)
-      call s:Hl("TSConstructor", s:bold, s:none, s:br_blue, s:none)
       call s:Hl("TSDanger", s:bold, s:none, s:br_red, s:none)
       call s:Hl("TSEmphasis", s:bold, s:none, s:br_yellow, s:none)
-      call s:Hl("TSFuncBuiltin", s:none, s:none, s:violet, s:none)
       call s:Hl("TSLiteral", s:italic, s:none, s:fg_1, s:none)
-      call s:Hl("TSMethod", s:italic, s:none, s:green, s:none)
-      call s:Hl("TSNamespace", s:bold, s:none, s:br_blue, s:none)
       call s:Hl("TSNone", s:italic, s:none, s:fg_1, s:none)
       call s:Hl("TSNote", s:italic, s:br_yellow, s:bg_1, s:none)
       call s:Hl("TSStrong", s:bold, s:none, s:br_yellow, s:none)
-      call s:Hl("TSTagDelimiter", s:none, s:none, s:blue, s:none)
       call s:Hl("TSTextReference", s:italic, s:none, s:fg_1, s:none)
-      call s:Hl("TSTitle", s:bold_italic, s:none, s:br_blue, s:none)
-      call s:Hl("TSTypeBuiltin", s:none, s:none, s:violet, s:none)
-      call s:Hl("TSUnderline", s:underline, s:none, s:br_blue, s:none)
-      call s:Hl("TSVariable", s:none, s:none, s:green, s:none)
-      call s:Hl("TSVariableBuiltin", s:none, s:none, s:violet, s:none)
       call s:Hl("TSWarning", s:bold, s:none, s:br_yellow, s:none)
     endif
   " }}}
