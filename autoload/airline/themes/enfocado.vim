@@ -45,33 +45,33 @@ let g:airline#themes#enfocado#palette.accents = {
 \ }
 
 " Normal mode.
-let s:airline_a_normal = [ s:bg_1[0], s:dim_0[0], s:bg_1[1], s:dim_0[1] ]
-let s:airline_b_normal = [ s:dim_0[0], s:bg_2[0], s:dim_0[1], s:bg_2[1] ]
-let s:airline_c_normal = [ s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1] ]
+let s:airline_a_normal = [ s:dim_0[0], s:bg_2[0], s:dim_0[1], s:bg_2[1] ]
+let s:airline_b_normal = [ s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1] ]
+let s:airline_c_normal = [ s:dim_0[0], s:bg_0[0], s:dim_0[1], s:bg_0[1] ]
 let g:airline#themes#enfocado#palette.normal = airline#themes#generate_color_map(
   \ s:airline_a_normal, s:airline_b_normal, s:airline_c_normal
 \ )
 
 " Insert mode.
-let s:airline_a_insert = [ s:bg_1[0], s:br_yellow[0], s:bg_1[1], s:br_yellow[1] ]
-let s:airline_b_insert = [ s:dim_0[0], s:bg_2[0], s:dim_0[1], s:bg_2[1] ]
-let s:airline_c_insert = [ s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1] ]
+let s:airline_a_insert = [ s:dim_0[0], s:bg_2[0], s:dim_0[1], s:bg_2[1] ]
+let s:airline_b_insert = [ s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1] ]
+let s:airline_c_insert = [ s:dim_0[0], s:bg_0[0], s:dim_0[1], s:bg_0[1] ]
 let g:airline#themes#enfocado#palette.insert = airline#themes#generate_color_map(
   \ s:airline_a_insert, s:airline_b_insert, s:airline_c_insert
 \ )
 
 " Visual mode.
-let s:airline_a_visual = [ s:bg_1[0], s:dim_0[0], s:bg_1[1], s:dim_0[1] ]
-let s:airline_b_visual = [ s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1] ]
-let s:airline_c_visual = [ s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1] ]
+let s:airline_a_visual = [ s:dim_0[0], s:bg_2[0], s:dim_0[1], s:bg_2[1] ]
+let s:airline_b_visual = [ s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1] ]
+let s:airline_c_visual = [ s:dim_0[0], s:bg_0[0], s:dim_0[1], s:bg_0[1] ]
 let g:airline#themes#enfocado#palette.visual = airline#themes#generate_color_map(
   \ s:airline_a_visual, s:airline_b_visual, s:airline_c_visual
 \ )
 
 " Command mode.
-let s:airline_a_commandline = [ s:bg_1[0], s:dim_0[0], s:bg_1[1], s:dim_0[1] ]
-let s:airline_b_commandline = [ s:dim_0[0], s:bg_2[0], s:dim_0[1], s:bg_2[1] ]
-let s:airline_c_commandline = [ s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1] ]
+let s:airline_a_commandline = [ s:dim_0[0], s:bg_2[0], s:dim_0[1], s:bg_2[1] ]
+let s:airline_b_commandline = [ s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1] ]
+let s:airline_c_commandline = [ s:dim_0[0], s:bg_0[0], s:dim_0[1], s:bg_0[1] ]
 let g:airline#themes#enfocado#palette.commandline = airline#themes#generate_color_map(
   \ s:airline_a_commandline, s:airline_b_commandline, s:airline_c_commandline
 \ )
@@ -93,9 +93,9 @@ let g:airline#themes#enfocado#palette.terminal = airline#themes#generate_color_m
 \ )
 
 " Inactive mode.
-let s:airline_a_inactive = [ s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1], '' ]
-let s:airline_b_inactive = [ s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1], '' ]
-let s:airline_c_inactive = [ s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1], '' ]
+let s:airline_a_inactive = [ s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1], '' ]
+let s:airline_b_inactive = [ s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1], '' ]
+let s:airline_c_inactive = [ s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1], '' ]
 let g:airline#themes#enfocado#palette.inactive = airline#themes#generate_color_map(
   \ s:airline_a_inactive, s:airline_b_inactive, s:airline_c_inactive
 \ )

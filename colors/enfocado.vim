@@ -132,6 +132,10 @@ else
 endif
 
 " General vim groups.
+highlight! link DiffAdd EnfocadoGreen
+highlight! link DiffChange EnfocadoYellow
+highlight! link DiffDelete EnfocadoRed
+highlight! link DiffText EnfocadoHl
 highlight! link Directory EnfocadoFg2
 highlight! link ErrorMsg EnfocadoRed
 highlight! link FoldColumn EnfocadoNone
@@ -146,13 +150,8 @@ highlight! link Question EnfocadoYellow
 highlight! link Search EnfocadoSearch
 highlight! link SignColumn EnfocadoNone
 highlight! link SpecialKey EnfocadoDimmeds
-highlight! link VertSplit EnfocadoAccent
 highlight! link WarningMsg EnfocadoOrange
 highlight! link Visual EnfocadoVisual
-highlight! link DiffAdd EnfocadoGreen
-highlight! link DiffChange EnfocadoYellow
-highlight! link DiffDelete EnfocadoRed
-highlight! link DiffText EnfocadoHl
 
 call s:Hl("Folded", s:none, s:bg_1, s:dim_0, s:none)
 call s:Hl("Normal", s:none, s:bg_0, s:fg_1, s:none)
@@ -163,6 +162,7 @@ call s:Hl("StatusLineTerm", s:none, s:bg_1, s:dim_0, s:none)
 call s:Hl("StatusLineTermNC", s:none, s:bg_1, s:bg_2, s:none)
 call s:Hl("ToolbarButton", s:none, s:bg_1, s:dim_0, s:none)
 call s:Hl("ToolbarLine", s:none, s:bg_2, s:bg_2, s:none)
+call s:Hl("VertSplit", s:none, s:none, s:shadow_0, s:none)
 call s:Hl("WildMenu", s:bold, s:bg_1, s:fg_1, s:none)
 if has('spell')
   call s:Hl("SpellBad", s:undercurl, s:none, s:br_red, s:br_red)
@@ -486,11 +486,5 @@ endif
   highlight! link SignifySignAdd EnfocadoGreen 
   highlight! link SignifySignChange EnfocadoYellow 
   highlight! link SignifySignDelete EnfocadoRed 
-" }}}
-" Visual Multi: {{{
-  call s:Hl("VM_Mono", s:bold, s:bg_2, s:br_magenta, s:none)
-  call s:Hl("VM_Cursor", s:bold, s:br_magenta, s:bg_1, s:none)
-  call s:Hl("VM_Extend", s:none, s:dim_0, s:bg_1, s:none)
-  call s:Hl("VM_Insert", s:bold, s:bg_2, s:br_magenta, s:none)
 " }}}
 " vim: set foldmethod=marker:
