@@ -71,69 +71,104 @@ endif
 " A function is created to highlight the groups.
 function! s:Hl(group, txt, bg, fg, sp)
     execute "highlight ".a:group.
-          \ " gui=".a:txt[0]." cterm=".a:txt[0]." term=".a:txt[0].
+          \ " gui=".a:txt[0]."  cterm=".a:txt[0]."  term=".a:txt[0].
           \ " guibg=".a:bg[0]." ctermbg=".a:bg[1].
           \ " guifg=".a:fg[0]." ctermfg=".a:fg[1]." guisp=".a:sp[0]
 endfunction
 " ------------------------------------------------------------------------------
 " SECTION: Highlight groups.
 " ------------------------------------------------------------------------------
-" Syntax enfocado groups.
+" Enfocado groups.
+call s:Hl("EnfocadoBlue", s:bold, s:none, s:br_blue, s:none)
+call s:Hl("EnfocadoBlueBg", s:bold, s:br_blue, s:bg_1, s:none)
+call s:Hl("EnfocadoBlueHl", s:underline, s:none, s:br_blue, s:br_blue)
+call s:Hl("EnfocadoComments", s:none, s:none, s:dim_0, s:none)
+call s:Hl("EnfocadoCursor", s:bold, s:dim_0, s:none, s:none)
+call s:Hl("EnfocadoDimmeds", s:none, s:none, s:bg_2, s:none)
+call s:Hl("EnfocadoFg", s:none, s:none, s:fg_1, s:none)
+call s:Hl("EnfocadoFg2", s:none, s:none, s:fg_1, s:none)
+call s:Hl("EnfocadoGeneral", s:none, s:bg_0, s:fg_1, s:none)
+call s:Hl("EnfocadoGreen", s:bold, s:none, s:br_green, s:none)
+call s:Hl("EnfocadoGreenBg", s:bold, s:br_green, s:bg_1, s:none)
+call s:Hl("EnfocadoGreenHl", s:underline, s:none, s:br_green, s:br_green)
+call s:Hl("EnfocadoHl", s:bold, s:br_yellow, s:bg_1, s:none)
+call s:Hl("EnfocadoIgnores", s:none, s:none, s:bg_1, s:none)
+call s:Hl("EnfocadoNone", s:none, s:none, s:none, s:none)
+call s:Hl("EnfocadoOrange", s:bold, s:none, s:br_orange, s:none)
+call s:Hl("EnfocadoOrangeBg", s:bold, s:br_orange, s:bg_1, s:none)
+call s:Hl("EnfocadoOrangeHl", s:underline, s:none, s:br_orange, s:br_orange)
+call s:Hl("EnfocadoPopup", s:none, s:bg_1, s:dim_0, s:none)
+call s:Hl("EnfocadoRed", s:bold, s:none, s:br_red, s:none)
+call s:Hl("EnfocadoRedBg", s:bold, s:br_red, s:bg_1, s:none)
+call s:Hl("EnfocadoRedHl", s:underline, s:none, s:br_red, s:br_red)
+call s:Hl("EnfocadoSearch", s:bold, s:br_cyan, s:bg_1, s:none)
+call s:Hl("EnfocadoShadows", s:none, s:shadow_0, s:none, s:none)
+call s:Hl("EnfocadoVisual", s:bold, s:bg_2, s:none, s:none)
+call s:Hl("EnfocadoYellow", s:bold, s:none, s:br_yellow, s:none)
+call s:Hl("EnfocadoYellowBg", s:bold, s:br_yellow, s:bg_1, s:none)
+call s:Hl("EnfocadoYellowHl", s:underline, s:none, s:br_yellow, s:br_yellow)
 if g:enfocado_theme == 'neon'
   " Enfocado neon...
+  call s:Hl("EnfocadoAccent", s:none, s:none, s:br_magenta, s:none)
   call s:Hl("EnfocadoBuiltin", s:none, s:none, s:blue, s:none)
   call s:Hl("EnfocadoConstants", s:none, s:none, s:br_cyan, s:none)
   call s:Hl("EnfocadoIdentifiers", s:none, s:none, s:br_magenta, s:none)
   call s:Hl("EnfocadoKeywords", s:none, s:none, s:violet, s:none)
+  call s:Hl("EnfocadoSearch2", s:bold, s:br_magenta, s:bg_1, s:none)
+  call s:Hl("EnfocadoSearch3", s:bold, s:br_violet, s:bg_1, s:none)
   call s:Hl("EnfocadoTitles", s:bold, s:none, s:br_violet, s:none)
   call s:Hl("EnfocadoUnderlineds", s:underline, s:none, s:br_violet, s:br_violet)
 else
   " Enfocado nature...
+  call s:Hl("EnfocadoAccent", s:none, s:none, s:green, s:none)
   call s:Hl("EnfocadoBuiltin", s:none, s:none, s:violet, s:none)
   call s:Hl("EnfocadoConstants", s:none, s:none, s:cyan, s:none)
   call s:Hl("EnfocadoIdentifiers", s:none, s:none, s:green, s:none)
   call s:Hl("EnfocadoKeywords", s:none, s:none, s:blue, s:none)
+  call s:Hl("EnfocadoSearch2", s:bold, s:br_green, s:bg_1, s:none)
+  call s:Hl("EnfocadoSearch3", s:bold, s:br_blue, s:bg_1, s:none)
   call s:Hl("EnfocadoTitles", s:bold, s:none, s:br_blue, s:none)
   call s:Hl("EnfocadoUnderlineds", s:underline, s:none, s:br_blue, s:br_blue)
 endif
 
 " General vim groups.
-call s:Hl("DiffAdd", s:bold, s:none, s:br_green, s:none)
-call s:Hl("DiffChange", s:bold, s:none, s:br_yellow, s:none)
-call s:Hl("DiffDelete", s:bold, s:none, s:br_red, s:none)
-call s:Hl("DiffText", s:bold, s:br_yellow, s:bg_1, s:none)
-call s:Hl("Directory", s:none, s:none, s:fg_0, s:none)
-call s:Hl("ErrorMsg", s:bold, s:none, s:br_red, s:none)
-call s:Hl("FoldColumn", s:none, s:none, s:none, s:none)
+highlight! link Directory EnfocadoFg2
+highlight! link ErrorMsg EnfocadoRed
+highlight! link FoldColumn EnfocadoNone
+highlight! link Ignore EnfocadoIgnores
+highlight! link IncSearch EnfocadoSearch
+highlight! link LineNr EnfocadoDimmeds
+highlight! link ModeMsg EnfocadoAccent
+highlight! link MoreMsg EnfocadoAccent
+highlight! link MsgArea EnfocadoComments
+highlight! link NonText EnfocadoDimmeds
+highlight! link Question EnfocadoYellow
+highlight! link Search EnfocadoSearch
+highlight! link SignColumn EnfocadoNone
+highlight! link SpecialKey EnfocadoDimmeds
+highlight! link VertSplit EnfocadoAccent
+highlight! link WarningMsg EnfocadoOrange
+highlight! link Visual EnfocadoVisual
+highlight! link DiffAdd EnfocadoGreen
+highlight! link DiffChange EnfocadoYellow
+highlight! link DiffDelete EnfocadoRed
+highlight! link DiffText EnfocadoHl
+
 call s:Hl("Folded", s:none, s:bg_1, s:dim_0, s:none)
-call s:Hl("Ignore", s:none, s:none, s:bg_1, s:none)
-call s:Hl("IncSearch", s:bold, s:br_cyan, s:bg_1, s:none)
-call s:Hl("LineNr", s:none, s:none, s:bg_2, s:none)
-call s:Hl("MsgArea", s:none, s:none, s:dim_0, s:none)
-call s:Hl("ModeMsg", s:bold, s:none, s:fg_1, s:none)
-call s:Hl("MoreMsg", s:none, s:none, s:green, s:none)
-call s:Hl("NonText", s:none, s:none, s:bg_2, s:none)
 call s:Hl("Normal", s:none, s:bg_0, s:fg_1, s:none)
-call s:Hl("Question", s:bold, s:none, s:br_yellow, s:none)
 call s:Hl("QuickFixLine", s:bold, s:bg_2, s:none, s:none)
-call s:Hl("Search", s:bold, s:br_green, s:bg_1, s:none)
-call s:Hl("SignColumn", s:none, s:none, s:none, s:none)
-call s:Hl("SpecialKey", s:none, s:none, s:bg_2, s:none)
 call s:Hl("StatusLine", s:none, s:bg_1, s:dim_0, s:none)
 call s:Hl("StatusLineNC", s:none, s:bg_1, s:bg_2, s:none)
 call s:Hl("StatusLineTerm", s:none, s:bg_1, s:dim_0, s:none)
 call s:Hl("StatusLineTermNC", s:none, s:bg_1, s:bg_2, s:none)
 call s:Hl("ToolbarButton", s:none, s:bg_1, s:dim_0, s:none)
 call s:Hl("ToolbarLine", s:none, s:bg_2, s:bg_2, s:none)
-call s:Hl("VertSplit", s:none, s:bg_1, s:bg_1, s:none)
-call s:Hl("Visual", s:bold, s:bg_2, s:none, s:none)
-call s:Hl("WarningMsg", s:bold, s:none, s:br_orange, s:none)
 call s:Hl("WildMenu", s:bold, s:bg_1, s:fg_1, s:none)
 if has('spell')
-  call s:Hl("SpellBad", s:undercurl, s:none, s:none, s:br_red)
-  call s:Hl("SpellCap", s:undercurl, s:none, s:none, s:br_orange)
-  call s:Hl("SpellLocal", s:undercurl, s:none, s:none, s:br_yellow)
-  call s:Hl("SpellRare", s:undercurl, s:none, s:none, s:br_magenta)
+  call s:Hl("SpellBad", s:undercurl, s:none, s:br_red, s:br_red)
+  call s:Hl("SpellCap", s:undercurl, s:none, s:br_orange, s:br_orange)
+  call s:Hl("SpellLocal", s:undercurl, s:none, s:br_yellow, s:br_yellow)
+  call s:Hl("SpellRare", s:undercurl, s:none, s:br_magenta, s:br_magenta)
 endif
 if version >= 700
   call s:Hl("CursorColumn", s:none, s:bg_1, s:none, s:none)
@@ -176,8 +211,11 @@ if has('*term_setansicolors')
 endif
 
 " Syntax general vim groups.
+highlight! link Comment EnfocadoComments
 highlight! link Constant EnfocadoConstants
 highlight! link Debug EnfocadoConstants
+highlight! link Error EnfocadoRed
+highlight! link Exception EnfocadoOrange
 highlight! link Identifier EnfocadoIdentifiers
 highlight! link PreProc EnfocadoKeywords
 highlight! link Special EnfocadoKeywords
@@ -189,72 +227,71 @@ highlight! link Tag EnfocadoKeywords
 highlight! link Title EnfocadoTitles
 highlight! link Type EnfocadoKeywords
 highlight! link Underlined EnfocadoUnderlineds
-
-call s:Hl("Comment", s:none, s:none, s:dim_0, s:none)
-call s:Hl("Delimiter", s:none, s:none, s:fg_1, s:none)
-call s:Hl("Error", s:bold, s:none, s:br_red, s:none)
-call s:Hl("Exception", s:none, s:none, s:orange, s:none)
-call s:Hl("Todo", s:bold, s:yellow, s:bg_1, s:none)
+highlight! link Delimiter EnfocadoFg
+highlight! link Todo EnfocadoHl
 " ------------------------------------------------------------------------------
 " SECTION: Syntax language highlight groups.
 " ------------------------------------------------------------------------------
 " Diff: {{{
-  call s:Hl("diffAdded", s:bold, s:none, s:br_green, s:none)
-  call s:Hl("diffChanged", s:bold, s:none, s:br_yellow, s:none)
-  call s:Hl("diffFile", s:none, s:none, s:br_cyan, s:none)
-  call s:Hl("diffLine", s:none, s:none, s:blue, s:none)
-  call s:Hl("diffNewFile", s:bold, s:none, s:br_green, s:none)
-  call s:Hl("diffRemoved", s:bold, s:none, s:br_red, s:none)
+  highlight! link diffAdded EnfocadoGreen
+  highlight! link diffChanged EnfocadoYellow
+  highlight! link diffFile EnfocadoConstants
+  highlight! link diffLine EnfocadoBlue
+  highlight! link diffNewFile EnfocadoGreen
+  highlight! link diffRemoved EnfocadoRed
 " }}}
 " HTML: {{{
-  highlight! link htmlPreAttr PreProc
-  highlight! link htmlArg Identifier
-  highlight! link htmlEndTag Tag
-  highlight! link htmlTag Tag
-  highlight! link htmlTagN Tag
-  highlight! link htmlTagName Tag
-  highlight! link htmlSpecialTagName SpecialComment
+  highlight! link htmlPreAttr EnfocadoKeywords
+  highlight! link htmlArg EnfocadoIdentifiers
+  highlight! link htmlEndTag EnfocadoKeywords
+  highlight! link htmlTag EnfocadoKeywords
+  highlight! link htmlTagN EnfocadoKeywords
+  highlight! link htmlTagName EnfocadoKeywords
+  highlight! link htmlSpecialTagName EnfocadoBuiltin
 " }}}
 " XML: {{{
-  highlight! link xmlAttrib Identifier
-  highlight! link xmlEndTag Tag
-  highlight! link xmlEqual Tag
-  highlight! link xmlTag Tag
-  highlight! link xmlTagName Tag
+  highlight! link xmlAttrib EnfocadoIdentifiers
+  highlight! link xmlEndTag EnfocadoKeywords
+  highlight! link xmlEqual EnfocadoKeywords
+  highlight! link xmlTag EnfocadoKeywords
+  highlight! link xmlTagName EnfocadoKeywords
 " }}}
 " JSX: {{{
-  highlight! link jsxAttrib Identifier
-  highlight! link jsxCloseString Tag
-  highlight! link jsxCloseTag Tag
-  highlight! link jsxEqual Keyword
-  highlight! link jsxTag Tag
-  highlight! link jsxTagName Tag
+  highlight! link jsxAttrib EnfocadoIdentifiers
+  highlight! link jsxCloseString EnfocadoKeywords
+  highlight! link jsxCloseTag EnfocadoKeywords
+  highlight! link jsxEqual EnfocadoKeywords
+  highlight! link jsxTag EnfocadoKeywords
+  highlight! link jsxTagName EnfocadoKeywords
 " }}}
 " TSX: {{{
-  highlight! link tsxAttrib Identifier
-  highlight! link tsxCloseString Tag
-  highlight! link tsxCloseTag Tag
-  highlight! link tsxEqual Keyword
-  highlight! link tsxTag Tag
-  highlight! link tsxTagName Tag
+  highlight! link tsxAttrib EnfocadoIdentifiers
+  highlight! link tsxCloseString EnfocadoKeywords
+  highlight! link tsxCloseTag EnfocadoKeywords
+  highlight! link tsxEqual EnfocadoKeywords
+  highlight! link tsxTag EnfocadoKeywords
+  highlight! link tsxTagName EnfocadoKeywords
 " }}}
 " ------------------------------------------------------------------------------
 " SECTION: Neovim highlight groups.
 " ------------------------------------------------------------------------------
 if has('nvim')
   " Cursors neovim groups.
-  call s:Hl("Cursor", s:bold, s:dim_0, s:none, s:none)
-  call s:Hl("FloatShadow", s:none, s:shadow_0, s:shadow_0, s:none)
-  call s:Hl("FloatShadowThrough", s:none, s:shadow_0, s:shadow_0, s:none)
-  call s:Hl("iCursor", s:bold, s:br_yellow, s:none, s:none)
-  call s:Hl("lCursor", s:bold, s:dim_0, s:none, s:none)
-  call s:Hl("NvimInternalError", s:bold, s:none, s:br_red, s:none)
-  call s:Hl("RedrawDebugClear", s:none, s:br_orange, s:bg_1, s:none)
-  call s:Hl("RedrawDebugComposed", s:none, s:br_green, s:bg_1, s:none)
+  highlight! link Cursor EnfocadoCursor
+  highlight! link iCursor EnfocadoCursor
+  highlight! link lCursor EnfocadoCursor
+  highlight! link vCursor EnfocadoVisual
+  highlight! link TermCursor EnfocadoCursor
+
+  " Other neovim groups.
+  highlight! link FloatShadow EnfocadoShadows
+  highlight! link FloatShadowThrough EnfocadoShadows
+  highlight! link NvimInternalError EnfocadoRed
+  highlight! link RedrawDebugClear EnfocadoOrange
+  highlight! link RedrawDebugComposed EnfocadoGreen
+  highlight! link RedrawDebugRecompose EnfocadoRed
+
   call s:Hl("RedrawDebugNormal", s:reverse, s:none, s:none, s:none)
-  call s:Hl("RedrawDebugRecompose", s:none, s:br_red, s:bg_1, s:none)
-  call s:Hl("TermCursor", s:bold, s:dim_0, s:none, s:none)
-  call s:Hl("vCursor", s:bold, s:bg_2, s:none, s:none)
 
   " Terminal neovim groups.
   let g:terminal_color_0  = s:bg_1[0]
@@ -274,31 +311,31 @@ if has('nvim')
   let g:terminal_color_14 = s:br_cyan[0]
   let g:terminal_color_15 = s:fg_1[0]
   " LSP: {{{
-    call s:Hl("DiagnosticError", s:bold, s:none, s:br_red, s:none)
-    call s:Hl("DiagnosticHint", s:bold, s:none, s:br_blue, s:none)
-    call s:Hl("DiagnosticInfo", s:bold, s:none, s:br_yellow, s:none)
-    call s:Hl("DiagnosticSignError", s:bold, s:none, s:br_red, s:none)
-    call s:Hl("DiagnosticSignHint", s:bold, s:none, s:br_blue, s:none)
-    call s:Hl("DiagnosticSignInfo", s:bold, s:none, s:br_yellow, s:none)
-    call s:Hl("DiagnosticSignWarn", s:bold, s:none, s:br_orange, s:none)
-    call s:Hl("DiagnosticUnderlineError", s:underline, s:none, s:none, s:br_red)
-    call s:Hl("DiagnosticUnderlineHint", s:underline, s:none, s:none, s:br_blue)
-    call s:Hl("DiagnosticUnderlineInfo", s:underline, s:none, s:none, s:br_yellow)
-    call s:Hl("DiagnosticUnderlineWarn", s:underline, s:none, s:none, s:br_orange)
-    call s:Hl("DiagnosticWarn", s:bold, s:none, s:br_orange, s:none)
-    call s:Hl("LspCodeLens", s:none, s:none, s:dim_0, s:none)
-    call s:Hl("LspDiagnosticDefaultError", s:bold, s:none, s:br_red, s:none)
-    call s:Hl("LspDiagnosticDefaultHint", s:bold, s:none, s:br_blue, s:none)
-    call s:Hl("LspDiagnosticDefaultInfo", s:bold, s:none, s:br_yellow, s:none)
-    call s:Hl("LspDiagnosticDefaultWarn", s:bold, s:none, s:br_orange, s:none)
-    call s:Hl("LspDiagnosticSignError", s:bold, s:none, s:br_red, s:none)
-    call s:Hl("LspDiagnosticSignHint", s:bold, s:none, s:br_blue, s:none)
-    call s:Hl("LspDiagnosticSignInfo", s:bold, s:none, s:br_yellow, s:none)
-    call s:Hl("LspDiagnosticSignWarn", s:bold, s:none, s:br_orange, s:none)
-    call s:Hl("LspDiagnosticUnderlineError", s:underline, s:none, s:none, s:br_red)
-    call s:Hl("LspDiagnosticUnderlineHint", s:underline, s:none, s:none, s:br_blue)
-    call s:Hl("LspDiagnosticUnderlineInfo", s:underline, s:none, s:none, s:br_yellow)
-    call s:Hl("LspDiagnosticUnderlineWarn", s:underline, s:none, s:none, s:br_orange)
+    highlight! link DiagnosticError EnfocadoRed
+    highlight! link DiagnosticHint EnfocadoBlue
+    highlight! link DiagnosticInfo EnfocadoYellow
+    highlight! link DiagnosticWarn EnfocadoOrange
+    highlight! link DiagnosticSignError EnfocadoRed
+    highlight! link DiagnosticSignHint EnfocadoBlue
+    highlight! link DiagnosticSignInfo EnfocadoYellow
+    highlight! link DiagnosticSignWarn EnfocadoOrange
+    highlight! link DiagnosticUnderlineError EnfocadoRedHl
+    highlight! link DiagnosticUnderlineHint EnfocadoBlueHl
+    highlight! link DiagnosticUnderlineInfo EnfocadoYellowHl
+    highlight! link DiagnosticUnderlineWarn EnfocadoOrangeHl
+    highlight! link LspCodeLens EnfocadoComments
+    highlight! link LspDiagnosticDefaultError EnfocadoRed
+    highlight! link LspDiagnosticDefaultHint EnfocadoBlue
+    highlight! link LspDiagnosticDefaultInfo EnfocadoYellow
+    highlight! link LspDiagnosticDefaultWarn EnfocadoOrange
+    highlight! link LspDiagnosticSignError EnfocadoRed
+    highlight! link LspDiagnosticSignHint EnfocadoBlue
+    highlight! link LspDiagnosticSignInfo EnfocadoYellow
+    highlight! link LspDiagnosticSignWarn EnfocadoOrange
+    highlight! link LspDiagnosticUnderlineError EnfocadoRedHl
+    highlight! link LspDiagnosticUnderlineHint EnfocadoBlueHl
+    highlight! link LspDiagnosticUnderlineInfo EnfocadoYellowHl
+    highlight! link LspDiagnosticUnderlineWarn EnfocadoOrangeHl
   " }}}
   " Treesitter: {{{
     if exists('g:loaded_nvim_treesitter')
@@ -347,103 +384,89 @@ endif
 " SECTION: Plugins highlight groups.
 " ------------------------------------------------------------------------------
 " COC: {{{
-  call s:Hl("CocCodeLens", s:none, s:none, s:dim_0, s:none)
-  call s:Hl("CocDiagnosticsError", s:bold, s:none, s:br_red, s:none)
-  call s:Hl("CocDiagnosticsHint", s:bold, s:none, s:br_blue, s:none)
-  call s:Hl("CocDiagnosticsInfo", s:bold, s:none, s:br_yellow, s:none)
-  call s:Hl("CocDiagnosticsWarning", s:bold, s:none, s:br_orange, s:none)
+  highlight! link CocCodeLens EnfocadoComments
+  highlight! link CocDiagnosticsError EnfocadoRed
+  highlight! link CocDiagnosticsHint EnfocadoBlue
+  highlight! link CocDiagnosticsInfo EnfocadoYellow
+  highlight! link CocDiagnosticsWarning EnfocadoOrange
+  highlight! link CocErrorHighlight EnfocadoRedHl
+  highlight! link CocHintHighlight EnfocadoBlueHl
+  highlight! link CocInfoHighlight EnfocadoYellowHl
+  highlight! link CocWarningHighlight EnfocadoOrangeHl
+  highlight! link CocErrorSign EnfocadoRed
+  highlight! link CocHintSign EnfocadoBlue
+  highlight! link CocInfoSign EnfocadoYellow
+  highlight! link CocWarningSign EnfocadoOrange
+  highlight! link CocSelectedText EnfocadoRed
+
   call s:Hl("CocErrorFloat", s:bold, s:bg_1, s:br_red, s:none)
-  call s:Hl("CocErrorHighlight", s:underline, s:none, s:none, s:br_red)
   call s:Hl("CocHintFloat", s:bold, s:bg_1, s:br_blue, s:none)
-  call s:Hl("CocHintHighlight", s:underline, s:none, s:none, s:br_blue)
   call s:Hl("CocInfoFloat", s:bold, s:bg_1, s:br_yellow, s:none)
-  call s:Hl("CocInfoHighlight", s:underline, s:none, s:none, s:br_yellow)
   call s:Hl("CocWarningFloat", s:bold, s:bg_1, s:br_orange, s:none)
-  call s:Hl("CocWarningHighlight", s:underline, s:none, s:none, s:br_orange)
-  call s:Hl("CocErrorSign", s:bold, s:none, s:br_red, s:none)
-  call s:Hl("CocHintSign", s:bold, s:none, s:br_blue, s:none)
-  call s:Hl("CocInfoSign", s:bold, s:none, s:br_yellow, s:none)
-  call s:Hl("CocSelectedText", s:none, s:none, s:br_red, s:none)
-  call s:Hl("CocWarningSign", s:bold, s:none, s:br_orange, s:none)
 " }}}
 " FZF: {{{
-  " Create FZF groups.
-  call s:Hl("FzfBg", s:none, s:bg_1, s:none, s:none)
-  call s:Hl("FzfBgPlus", s:none, s:bg_1, s:br_blue, s:none)
-  call s:Hl("FzfBorder", s:none, s:none, s:bg_2, s:none)
-  call s:Hl("FzfFg", s:none, s:none, s:dim_0, s:none)
-  call s:Hl("FzfFgPlus", s:none, s:none, s:fg_1, s:none)
-  call s:Hl("FzfHeader", s:none, s:none, s:br_blue, s:none)
-  call s:Hl("FzfHl", s:none, s:none, s:br_green, s:none)
-  call s:Hl("FzfHlPlus", s:none, s:none, s:br_cyan, s:none)
-  call s:Hl("FzfInfo", s:none, s:none, s:br_yellow, s:none)
-  call s:Hl("FzfMarker", s:none, s:none, s:br_blue, s:none)
-  call s:Hl("FzfPointer", s:none, s:none, s:fg_1, s:none)
-  call s:Hl("FzfPrompt", s:none, s:none, s:dim_0, s:none)
-  call s:Hl("FzfSpinner", s:none, s:none, s:br_yellow, s:none)
-
-  " Apply FZF groups.
+  " FZF apply enfocado groups.
   if exists('g:loaded_fzf') && !exists('g:fzf_colors')
     let g:fzf_colors = {
-          \ 'fg'     : [ 'fg', 'FzfFg'      ],
-          \ 'bg'     : [ 'bg', 'FzfBg'      ],
-          \ 'hl'     : [ 'fg', 'FzfHl'      ],
-          \ 'fg+'    : [ 'fg', 'FzfFgPlus'  ],
-          \ 'bg+'    : [ 'bg', 'FzfBgPlus'  ],
-          \ 'hl+'    : [ 'fg', 'FzfHlPlus'  ],
-          \ 'info'   : [ 'fg', 'FzfInfo'    ],
-          \ 'border' : [ 'fg', 'FzfBorder'  ],
-          \ 'prompt' : [ 'fg', 'FzfPrompt'  ],
-          \ 'pointer': [ 'fg', 'FzfPointer' ],
-          \ 'marker' : [ 'fg', 'FzfMarker'  ],
-          \ 'spinner': [ 'fg', 'FzfSpinner' ],
-          \ 'header' : [ 'fg', 'FzfHeader'  ]
+          \ 'fg'     : [ 'fg', 'EnfocadoPopup'    ],
+          \ 'bg'     : [ 'bg', 'EnfocadoPopup'    ],
+          \ 'hl'     : [ 'fg', 'EnfocadoAccent'   ],
+          \ 'fg+'    : [ 'fg', 'EnfocadoFg'       ],
+          \ 'bg+'    : [ 'bg', 'EnfocadoPopup'    ],
+          \ 'hl+'    : [ 'fg', 'EnfocadoAccent'   ],
+          \ 'info'   : [ 'fg', 'EnfocadoBuiltin'  ],
+          \ 'border' : [ 'fg', 'EnfocadoAccent'   ],
+          \ 'prompt' : [ 'fg', 'EnfocadoComments' ],
+          \ 'pointer': [ 'fg', 'EnfocadoAccent'   ],
+          \ 'marker' : [ 'fg', 'EnfocadoAccent'   ],
+          \ 'spinner': [ 'fg', 'EnfocadoBuiltin'  ],
+          \ 'header' : [ 'fg', 'EnfocadoTitles'   ]
         \ }
   endif
 
   " Others FZF groups.
-  call s:Hl("Fzf1", s:none, s:blue, s:bg_1, s:none)
-  call s:Hl("Fzf2", s:none, s:green, s:bg_1, s:none)
-  call s:Hl("Fzf3", s:none, s:cyan, s:bg_1, s:none)
+  highlight! link Fzf1 Search
+  highlight! link Fzf2 Search2
+  highlight! link Fzf3 Search3
 " }}}
 " Multiple Cursors: {{{
-  call s:Hl("multiple_cursors_cursor", s:bold, s:dim_0, s:none, s:none)
-  call s:Hl("multiple_cursors_visual", s:bold, s:bg_2, s:none, s:none)
+  highlight! link multiple_cursors_cursor EnfocadoCursor
+  highlight! link multiple_cursors_visual EnfocadoVisual
 " }}}
 " NERDTree: {{{
-  call s:Hl("NERDTreeBookmark", s:bold, s:none, s:blue, s:none)
-  call s:Hl("NERDTreeBookmarkHeader", s:bold, s:none, s:br_blue, s:none)
-  call s:Hl("NERDTreeClosable", s:bold, s:none, s:br_green, s:none)
-  call s:Hl("NERDTreeCWD", s:none, s:none, s:dim_0, s:none)
-  call s:Hl("NERDTreeDir", s:none, s:none, s:fg_0, s:none)
-  call s:Hl("NERDTreeDirSlash", s:none, s:none, s:fg_0, s:none)
-  call s:Hl("NERDTreeExecFile", s:none, s:none, s:bg_2, s:none)
-  call s:Hl("NERDTreeFile", s:none, s:none, s:fg_1, s:none)
-  call s:Hl("NERDTreeHelp", s:italic, s:none, s:dim_0, s:none)
-  call s:Hl("NERDTreeHelpCommand", s:none, s:none, s:fg_1, s:none)
-  call s:Hl("NERDTreeHelpKey", s:none, s:none, s:fg_1, s:none)
-  call s:Hl("NERDTreeHelpTitle", s:bold, s:none, s:br_blue, s:none)
-  call s:Hl("NERDTreeLink", s:none, s:none, s:green, s:none)
-  call s:Hl("NERDTreeLinkDir", s:none, s:none, s:fg_0, s:none)
-  call s:Hl("NERDTreeLinkFile", s:none, s:none, s:fg_0, s:none)
-  call s:Hl("NERDTreeLinkTarget", s:none, s:none, s:bg_2, s:none)
-  call s:Hl("NERDTreeOpenable", s:none, s:none, s:dim_0, s:none)
-  call s:Hl("NERDTreeRO", s:bold, s:none, s:br_yellow, s:none)
-  call s:Hl("NERDTreeToggleOff", s:none, s:none, s:dim_0, s:none)
-  call s:Hl("NERDTreeToggleOn", s:bold, s:none, s:br_green, s:none)
-  call s:Hl("NERDTreeUp", s:italic, s:none, s:fg_0, s:none)
+  highlight! link NERDTreeBookmark EnfocadoKeywords
+  highlight! link NERDTreeBookmarkHeader EnfocadoTitles
+  highlight! link NERDTreeClosable EnfocadoAccent
+  highlight! link NERDTreeCWD EnfocadoComments
+  highlight! link NERDTreeDir EnfocadoFg2
+  highlight! link NERDTreeDirSlash EnfocadoFg2
+  highlight! link NERDTreeExecFile EnfocadoDimmeds
+  highlight! link NERDTreeFile EnfocadoFg
+  highlight! link NERDTreeHelp EnfocadoComments
+  highlight! link NERDTreeHelpCommand EnfocadoFg
+  highlight! link NERDTreeHelpKey EnfocadoFg
+  highlight! link NERDTreeHelpTitle EnfocadoTitles
+  highlight! link NERDTreeLink EnfocadoAccent
+  highlight! link NERDTreeLinkDir EnfocadoFg2
+  highlight! link NERDTreeLinkFile EnfocadoFg2
+  highlight! link NERDTreeLinkTarget EnfocadoDimmeds
+  highlight! link NERDTreeOpenable EnfocadoComments
+  highlight! link NERDTreeRO EnfocadoYellow
+  highlight! link NERDTreeToggleOff EnfocadoComments
+  highlight! link NERDTreeToggleOn EnfocadoAccent
+  highlight! link NERDTreeUp EnfocadoFg2
 " }}}
 " Netrw: {{{
-  call s:Hl("netrwClassify", s:none, s:none, s:fg_0, s:none)
-  call s:Hl("netrwCmdSep", s:none, s:none, s:dim_0, s:none)
-  call s:Hl("netrwComment", s:none, s:none, s:dim_0, s:none)
-  call s:Hl("netrwDir", s:none, s:none, s:fg_0, s:none)
-  call s:Hl("netrwExe", s:none, s:none, s:bg_2, s:none)
-  call s:Hl("netrwHelpCmd", s:bold, s:none, s:br_yellow, s:none)
-  call s:Hl("netrwLink", s:none, s:none, s:fg_0, s:none)
-  call s:Hl("netrwList", s:none, s:none, s:dim_0, s:none)
-  call s:Hl("netrwSymLink", s:none, s:none, s:fg_0, s:none)
-  call s:Hl("netrwVersion", s:none, s:none, s:dim_0, s:none)
+  highlight! link netrwClassify EnfocadoFg2
+  highlight! link netrwCmdSep EnfocadoComments
+  highlight! link netrwComment EnfocadoComments
+  highlight! link netrwDir EnfocadoFg2
+  highlight! link netrwExe EnfocadoDimmeds
+  highlight! link netrwHelpCmd EnfocadoYellow
+  highlight! link netrwLink EnfocadoFg2
+  highlight! link netrwList EnfocadoComments
+  highlight! link netrwSymLink EnfocadoFg2
+  highlight! link netrwVersion EnfocadoComments
 " }}}
 " Rainbow Parentheses: {{{
 let s:rainbow_guifgs   = [ '#EFC541', '#FA9153', '#FF81CA', '#B891F5' ]
@@ -460,14 +483,14 @@ if !has_key(g:rainbow_conf, 'ctermfgs')
 endif
 "}}}
 " Signify: {{{
-  call s:Hl("SignifySignAdd", s:bold, s:none, s:br_green, s:none)
-  call s:Hl("SignifySignChange", s:bold, s:none, s:br_yellow, s:none)
-  call s:Hl("SignifySignDelete", s:bold, s:none, s:br_red, s:none)
+  highlight! link SignifySignAdd EnfocadoGreen 
+  highlight! link SignifySignChange EnfocadoYellow 
+  highlight! link SignifySignDelete EnfocadoRed 
 " }}}
 " Visual Multi: {{{
-  call s:Hl("VM_Mono", s:bold, s:bg_2, s:br_yellow, s:none)
-  call s:Hl("VM_Cursor", s:bold, s:br_yellow, s:bg_1, s:none)
+  call s:Hl("VM_Mono", s:bold, s:bg_2, s:br_magenta, s:none)
+  call s:Hl("VM_Cursor", s:bold, s:br_magenta, s:bg_1, s:none)
   call s:Hl("VM_Extend", s:none, s:dim_0, s:bg_1, s:none)
-  call s:Hl("VM_Insert", s:bold, s:bg_2, s:br_yellow, s:none)
+  call s:Hl("VM_Insert", s:bold, s:bg_2, s:br_magenta, s:none)
 " }}}
 " vim: set foldmethod=marker:
