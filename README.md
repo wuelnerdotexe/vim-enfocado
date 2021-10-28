@@ -1,4 +1,4 @@
-![banner](assets/banner.png)
+![banner](images/banner.png)
 
 [![license](https://img.shields.io/github/license/wuelnerdotexe/vim-enfocado.svg?style=flat-square)](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
@@ -18,13 +18,13 @@ The features of this theme are:
 - Human writing (italicized) is simulated for syntax groups (comments, methods, titles, and more...) that are usually written with **human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
 
 <figure align="center">
-  <img src="assets/nature.png">
+  <img src="images/nature.png">
   <figcaption>
     <small>Enfocado Nature</small>
   </figcaption>
 </figure>
 <figure align="center">
-  <img src="assets/neon.png">
+  <img src="images/neon.png">
   <figcaption>
     <small>Enfocado Neon</small>
   </figcaption>
