@@ -9,7 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 
 - A new sexy Enfocado style was created for the most daring and outgoing coders, enjoy it!
-- Introducing [Enfocado for VSCode](https://github.com/wuelnerdotexe/vscode-enfocado) **is here!**, enjoy it and recommend it with your team.
+- Introducing [Enfocado for VS Code](https://github.com/wuelnerdotexe/vscode-enfocado) **is here!**, enjoy it and recommend it with your team.
 
 ### Changed
 
