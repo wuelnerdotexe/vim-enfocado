@@ -64,8 +64,8 @@ let s:underline   = [ 'underline'  , 'underline'   ]
 let s:undercurl   = [ 'undercurl'  , 'undercurl'   ]
 
 " Configuration variables are initialized.
-if !exists('g:enfocado_theme')
-  let g:enfocado_theme = 'nature'
+if !exists('g:enfocado_style')
+  let g:enfocado_style = "nature"
 endif
 
 " A function is created to highlight the groups.
@@ -107,7 +107,7 @@ call s:Hl("EnfocadoVisual", s:bold, s:bg_2, s:none, s:none)
 call s:Hl("EnfocadoYellow", s:bold, s:none, s:br_yellow, s:none)
 call s:Hl("EnfocadoYellowBg", s:bold, s:br_yellow, s:bg_1, s:none)
 call s:Hl("EnfocadoYellowHl", s:underline, s:none, s:br_yellow, s:br_yellow)
-if g:enfocado_theme == 'neon'
+if g:enfocado_style == "neon"
   " Enfocado neon...
   call s:Hl("EnfocadoAccent", s:none, s:none, s:br_magenta, s:none)
   call s:Hl("EnfocadoBuiltin", s:none, s:none, s:blue, s:none)
@@ -339,7 +339,7 @@ if has('nvim')
   " }}}
   " Treesitter: {{{
     if exists('g:loaded_nvim_treesitter')
-      if g:enfocado_theme == 'neon'
+      if g:enfocado_style == "neon"
         " Enfocado neon...
         call s:Hl("TSAnnotation", s:italic, s:none, s:violet, s:none)
         call s:Hl("TSConstBuiltin", s:none, s:none, s:blue, s:none)

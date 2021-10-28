@@ -4,10 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [3.12.2] - 2021-10-28
 
-- Enfocado Neon, comes a new version that will delight the coders of Instagram and Twitch...
-- [Enfocado for VSCode](https://github.com/wuelnerdotexe/vscode-enfocado) is coming soon. Wait for it!
+### Added
+
+- A new sexy Enfocado style was created for the most daring and outgoing coders, enjoy it!
+- Introducing [Enfocado for VSCode](https://github.com/wuelnerdotexe/vscode-enfocado) **is here!**, enjoy it and recommend it with your team.
+
+### Changed
+
+- Supported statuslines themes have been improved.
+- The performance of the theme has been greatly improved.
+- Consistency improvements were made.
 
 ## [3.10.0] - 2021-10-25
 
@@ -17,7 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
-- A standard was created for choosing colors for syntax highlighting, which will allow consistency [Enfocado for VSCode](https://github.com/wuelnerdotexe/vscode-enfocado) (sorry for so many color changes in the syntax).
+- A standard was created for choosing colors for syntax highlighting, which will allow consistency with [Enfocado for VSCode](https://github.com/wuelnerdotexe/vscode-enfocado) (sorry for so many color changes in the syntax).
 
 ## [3.8.0] - 2021-10-18
 
@@ -54,3 +62,5 @@ Support is added for the following plugins:
 ## [1.0.0] - 2021-09-25
 
 - Initial release
+
+<footer><p align="center"><strong>¡Con 💖 de Latinoamérica para el mundo!</strong></p></footer>
