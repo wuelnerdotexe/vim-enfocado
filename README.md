@@ -1,6 +1,6 @@
 # Enfocado for Vim
 
-![Banner](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/images/banner.png)
+![Banner](https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/banner.png)
 
 [![License Badge](https://img.shields.io/badge/License-MIT-3FC5B7.svg?style=for-the-badge)](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 [![README Style Badge](https://img.shields.io/badge/README%20Style-Standard-3FC5B7.svg?style=for-the-badge)](https://github.com/RichardLitt/standard-readme)
@@ -19,18 +19,15 @@ The features of this theme are:
 - What is not important, is dimmed, **really minimalist**.
 - Human writing (italicized) is simulated for syntax groups (comments, methods, titles, and more...) that are usually written with **human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
 
-<figure align="center">
-  <img src="https://github.com/wuelnerdotexe/vim-enfocado/blob/main/images/nature.png">
-  <figcaption>
-    <small>Enfocado Nature</small>
-  </figcaption>
-</figure>
-<figure align="center">
-  <img src="https://github.com/wuelnerdotexe/vim-enfocado/blob/main/images/neon.png">
-  <figcaption>
-    <small>Enfocado Neon</small>
-  </figcaption>
-</figure>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/nature.png">
+  <small>Enfocado Nature</small>
+</div>
+<br />
+<div align="center">
+  <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/neon.png">
+  <small>Enfocado Neon</small>
+</div>
 
 ## Table of Contents
 
