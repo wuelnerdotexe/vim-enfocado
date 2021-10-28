@@ -414,12 +414,12 @@ endif
           \ 'fg+'    : [ 'fg', 'EnfocadoFg'       ],
           \ 'bg+'    : [ 'bg', 'EnfocadoPopup'    ],
           \ 'hl+'    : [ 'fg', 'EnfocadoAccent'   ],
-          \ 'info'   : [ 'fg', 'EnfocadoBuiltin'  ],
+          \ 'info'   : [ 'fg', 'EnfocadoKeywords' ],
           \ 'border' : [ 'fg', 'EnfocadoAccent'   ],
           \ 'prompt' : [ 'fg', 'EnfocadoComments' ],
           \ 'pointer': [ 'fg', 'EnfocadoAccent'   ],
           \ 'marker' : [ 'fg', 'EnfocadoAccent'   ],
-          \ 'spinner': [ 'fg', 'EnfocadoBuiltin'  ],
+          \ 'spinner': [ 'fg', 'EnfocadoKeywords' ],
           \ 'header' : [ 'fg', 'EnfocadoTitles'   ]
         \ }
   endif
