@@ -15,15 +15,15 @@ The features of this theme are:
 - Only three colors are used to highlight syntax, following the **color guidelines for web design**, which state that **only three main colors** should be used in interfaces, no more.
 - Choose the style that best suits your **personality**:
 
-<article align="center">
+<div align="center">
   <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/nature.png">
   <strong>NATURE:</strong> Go fot the <code>nature</code> style if you are a minimalist developer who is always <strong>connected to nature</strong>.
-</article>
+</div>
 <br />
-<article align="center">
+<div align="center">
   <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/neon.png">
   <strong>NEON:</strong> Go fot the <code>neon</code> style if you are an outgoing developer that is always <strong>surrounded by RGBs</strong>.
-</article>
+</div>
 
 ## Table of Contents
 
