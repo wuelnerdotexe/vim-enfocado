@@ -9,25 +9,21 @@
 
 The features of this theme are:
 
-- Use of **well-founded CIELAB** Selenized black color scheme. Learn about its features and design [here](https://github.com/jan-warchol/selenized/blob/master/features-and-design.md).
-- Choose from two **styles** of **Enfocado** theme:
-  - **Nature**, for developers who are always connected with nature.
-  - **Neon**, for more daring, outgoing and futuristic coders. **✨ NEW FEATURE !! ✨**
-- Only three colors are used mainly to highlight the syntax, this following the **color guidelines for web design**, which indicate that a nice interface should have **only three colors**, no more.
-- The important colors (orange & red) are reserved for **important alerts only**, as they should be.
-- Focus on **coding** and nothing more than **coding**.
-- What is not important, is dimmed, **really minimalist**.
-- Human writing (italicized) is simulated for syntax groups (comments, methods, titles, and more...) that are usually written with **human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
+- The yellow, orange and red colors are reserved to be used only with important alerts, following the standards for the meanings of the **signal colors in the industrial area**.
+- Use of the well-founded Selenized black color scheme created with the magic of the **CIELAB color space**. Learn about its features and design in its [official repository](https://github.com/jan-warchol/selenized/blob/master/features-and-design.md).
+- Human writing is simulated by using italic typeface for syntax groups (comments, methods, titles and more ...) that are generally named and **written in human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
+- Only three colors are used to highlight syntax, following the **color guidelines for web design**, which state that **only three main colors** should be used in interfaces, no more.
+- Choose the style that best suits your **personality**:
 
-<div align="center">
+<article align="center">
   <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/nature.png">
-  <small>Enfocado Nature</small>
-</div>
+  <strong>NATURE:</strong> Go fot the <code>nature</code> style if you are a minimalist developer who is always <strong>connected to nature</strong>.
+</article>
 <br />
-<div align="center">
+<article align="center">
   <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/neon.png">
-  <small>Enfocado Neon</small>
-</div>
+  <strong>NEON:</strong> Go fot the <code>neon</code> style if you are an outgoing developer that is always <strong>surrounded by RGBs</strong>.
+</article>
 
 ## Table of Contents
 
@@ -165,4 +161,4 @@ And of course, if you want to motivate me to constantly improve this theme, your
 
 [MIT &copy; Wuelner Martínez.](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 
-<footer><p align="center"><strong>¡Con 💖 de Latinoamérica para el mundo!</strong></p></footer>
+<footer><p align="center">¡Con 💖 de <strong>Latinoamérica</strong> para el mundo!</p></footer>
