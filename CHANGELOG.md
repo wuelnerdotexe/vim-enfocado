@@ -64,4 +64,4 @@ Support is added for the following plugins:
 
 - Initial release
 
-<p align="center"><strong>¡Con 💖 de Latinoamérica para el mundo!</strong></p>
+<p align="center">¡Con 💖 de <strong>Latinoamérica</strong> para el mundo!</p>
