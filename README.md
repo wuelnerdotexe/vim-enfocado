@@ -5,7 +5,7 @@
 [![License Badge](https://img.shields.io/badge/License-MIT-3FC5B7.svg?style=for-the-badge)](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 [![README Style Badge](https://img.shields.io/badge/README%20Style-Standard-3FC5B7.svg?style=for-the-badge)](https://github.com/RichardLitt/standard-readme)
 
-**Enfocado** is more than a theme, it is a concept of **"how themes should be"**, focusing on what is really important to developers: the **code** and nothing else.
+**Enfocado** is more than a theme, it is a concept of **"how themes should be"**, focusing on what is really important to developers: **the code and nothing else**.
 
 The features of this theme are:
 
@@ -17,12 +17,12 @@ The features of this theme are:
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/nature.png">
-  <strong>NATURE:</strong> Go fot the <code>nature</code> style if you are a minimalist developer who is always <strong>connected to nature</strong>.
+  <strong>NATURE:</strong> Go for the <code>nature</code> style if you are a minimalist developer who is always <strong>connected to nature</strong>.
 </div>
 <br />
 <div align="center">
   <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/neon.png">
-  <strong>NEON:</strong> Go fot the <code>neon</code> style if you are an outgoing developer that is always <strong>surrounded by RGBs</strong>.
+  <strong>NEON:</strong> Go for the <code>neon</code> style if you are an outgoing developer that is always <strong>surrounded by RGBs</strong>.
 </div>
 
 ## Table of Contents
@@ -141,7 +141,7 @@ In order for the human text simulation to work as it should (in addition to inst
 ### Extras
 
 - [Selenized black for terminals](https://github.com/jan-warchol/selenized/tree/master/terminals).
-- [Enfocado for VS Code](https://github.com/wuelnerdotexe/vscode-enfocado). 🔥
+- [Enfocado for VS Code](https://github.com/wuelnerdotexe/vscode-enfocado).
 
 ## Credits
 
@@ -161,4 +161,4 @@ And of course, if you want to motivate me to constantly improve this theme, your
 
 [MIT &copy; Wuelner Martínez.](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 
-<footer><p align="center">¡Con 💖 de <strong>Latinoamérica</strong> para el mundo!</p></footer>
+<p align="center">¡Con 💖 de <strong>Latinoamérica</strong> para el mundo!</p>
