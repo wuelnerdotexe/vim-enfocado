@@ -32,6 +32,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 
 Support is added for the following plugins:
+
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
@@ -63,4 +64,4 @@ Support is added for the following plugins:
 
 - Initial release
 
-<footer><p align="center"><strong>¡Con 💖 de Latinoamérica para el mundo!</strong></p></footer>
+<p align="center"><strong>¡Con 💖 de Latinoamérica para el mundo!</strong></p>
