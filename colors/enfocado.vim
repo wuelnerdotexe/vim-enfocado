@@ -120,7 +120,7 @@ if g:enfocado_style == "neon"
   call s:Hl("EnfocadoSearch2", s:bold, s:br_magenta, s:bg_1, s:none)
   call s:Hl("EnfocadoSearch3", s:bold, s:br_violet, s:bg_1, s:none)
   call s:Hl("EnfocadoTitles", s:bold, s:none, s:br_violet, s:none)
-  call s:Hl("EnfocadoUnderlineds", s:underline, s:none, s:br_violet, s:br_violet)
+  call s:Hl("EnfocadoUnderlineds", s:underline, s:none, s:magenta, s:br_violet)
 else
   " Enfocado nature...
   call s:Hl("EnfocadoAccent", s:none, s:none, s:green, s:none)
@@ -130,7 +130,7 @@ else
   call s:Hl("EnfocadoSearch2", s:bold, s:br_green, s:bg_1, s:none)
   call s:Hl("EnfocadoSearch3", s:bold, s:br_blue, s:bg_1, s:none)
   call s:Hl("EnfocadoTitles", s:bold, s:none, s:br_blue, s:none)
-  call s:Hl("EnfocadoUnderlineds", s:underline, s:none, s:br_blue, s:br_blue)
+  call s:Hl("EnfocadoUnderlineds", s:underline, s:none, s:green, s:br_blue)
 endif
 
 " General vim groups.
