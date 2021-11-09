@@ -406,6 +406,11 @@ endif
   call s:Hl("CocInfoFloat", s:bold, s:bg_1, s:br_yellow, s:none)
   call s:Hl("CocWarningFloat", s:bold, s:bg_1, s:br_orange, s:none)
 " }}}
+" Copilot: {{{
+  if exists('g:loaded_copilot')
+    highlight! link CopilotSuggestion EnfocadoDimmeds
+  endif
+" }}}
 " FZF: {{{
   " FZF apply enfocado groups.
   if exists('g:loaded_fzf') && !exists('g:fzf_colors')
