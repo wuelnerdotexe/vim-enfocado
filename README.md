@@ -9,20 +9,20 @@
 
 The features of this theme for vim are:
 
-- The yellow, orange and red colors are reserved to be used only with important alerts, following the standards for the meanings of the **signal colors in the industrial area**.
-- Use of the well-founded Selenized black color scheme created with the magic of the **CIELAB color space**. Learn about its features and design in its [official repository](https://github.com/jan-warchol/selenized/blob/master/features-and-design.md).
-- Human writing is simulated by using italic typeface for syntax groups (comments, methods, titles and more ...) that are generally named and **written in human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
-- Only three colors are used to highlight syntax, following the **color guidelines for web design**, which state that **only three main colors** should be used in interfaces, no more.
-- Choose the style that best suits your **personality**:
+- **Color alerts:** the yellow, orange and red colors are reserved to be used only with important alerts, following the standards for the meanings of the **signal colors in the industrial area**.
+- **Color scheme:** use of the well-founded Selenized black color scheme created with the magic of the **CIELAB color space**. Learn about its features and design in its [official repository](https://github.com/jan-warchol/selenized/blob/master/features-and-design.md).
+- **Human writing:** human writing is simulated by using italic typeface for syntax groups (comments, methods, titles and more ...) that are generally named and **written in human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
+- **Syntax highlight:** only three colors are used to highlight syntax, following the **color guidelines for web design**, which state that **only three main colors** should be used in interfaces, no more.
+- **Styles:** choose the style that best suits your **personality**:
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/nature.png">
-  <strong>NATURE:</strong> Go for the <code>nature</code> style if you are a minimalist developer who is always <strong>connected to nature</strong>.
+  <strong>Nature:</strong> go for the <code>nature</code> style if you are a minimalist developer who is always <strong>connected to nature</strong>.
 </div>
 <br />
 <div align="center">
   <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/neon.png">
-  <strong>NEON:</strong> Go for the <code>neon</code> style if you are an outgoing developer that is always <strong>surrounded by RGBs</strong>.
+  <strong>Neon:</strong> go for the <code>neon</code> style if you are an outgoing developer that is always <strong>surrounded by RGBs</strong>.
 </div>
 
 ## Table of Contents
