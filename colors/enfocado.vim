@@ -102,9 +102,8 @@ call s:Hl("EnfocadoDiffChange", s:none, s:none, s:yellow, s:none)
 call s:Hl("EnfocadoDiffDelete", s:none, s:none, s:red, s:none)
 call s:Hl("EnfocadoDiffLine", s:none, s:none, s:cyan, s:none)
 call s:Hl("EnfocadoDimmeds", s:none, s:none, s:bg_2, s:none)
-call s:Hl("EnfocadoFg", s:none, s:none, s:fg_1, s:none)
+call s:Hl("EnfocadoFg", s:none, s:none, s:fg_0, s:none)
 call s:Hl("EnfocadoFg2", s:none, s:none, s:fg_1, s:none)
-call s:Hl("EnfocadoGeneral", s:none, s:bg_0, s:fg_1, s:none)
 call s:Hl("EnfocadoHl", s:bold, s:br_yellow, s:bg_1, s:none)
 call s:Hl("EnfocadoIgnores", s:none, s:none, s:bg_1, s:none)
 call s:Hl("EnfocadoNone", s:none, s:none, s:none, s:none)
@@ -139,7 +138,7 @@ highlight! link DiffAdd EnfocadoDiffAdd
 highlight! link DiffChange EnfocadoDiffChange
 highlight! link DiffDelete EnfocadoDiffDelete
 highlight! link DiffText EnfocadoHl
-highlight! link Directory EnfocadoFg2
+highlight! link Directory EnfocadoFg
 highlight! link ErrorMsg EnfocadoAlertsRed
 highlight! link FoldColumn EnfocadoNone
 highlight! link Ignore EnfocadoIgnores
@@ -201,7 +200,7 @@ if has('*term_setansicolors')
         \ s:blue[0],
         \ s:magenta[0],
         \ s:cyan[0],
-        \ s:fg_0[0],
+        \ s:dim_0[0],
         \ s:bg_2[0],
         \ s:br_red[0],
         \ s:br_green[0],
@@ -230,7 +229,7 @@ highlight! link Tag EnfocadoKeywords
 highlight! link Title EnfocadoTitles
 highlight! link Type EnfocadoKeywords
 highlight! link Underlined EnfocadoUnderlineds
-highlight! link Delimiter EnfocadoFg
+highlight! link Delimiter EnfocadoFg2
 highlight! link Todo EnfocadoHl
 " ------------------------------------------------------------------------------
 " SECTION: Syntax language highlight groups.
@@ -304,7 +303,7 @@ if has('nvim')
   let g:terminal_color_4  = s:blue[0]
   let g:terminal_color_5  = s:magenta[0]
   let g:terminal_color_6  = s:cyan[0]
-  let g:terminal_color_7  = s:fg_0[0]
+  let g:terminal_color_7  = s:dim_0[0]
   let g:terminal_color_8  = s:bg_2[0]
   let g:terminal_color_9  = s:br_red[0]
   let g:terminal_color_10 = s:br_green[0]
@@ -439,10 +438,10 @@ endif
 " NERDTree: {{{
   highlight! link NERDTreeBookmark EnfocadoKeywords
   highlight! link NERDTreeBookmarkHeader EnfocadoTitles
-  highlight! link NERDTreeClosable EnfocadoAccent
+  highlight! link NERDTreeClosable EnfocadoFg
   highlight! link NERDTreeCWD EnfocadoComments
-  highlight! link NERDTreeDir EnfocadoFg2
-  highlight! link NERDTreeDirSlash EnfocadoFg2
+  highlight! link NERDTreeDir EnfocadoFg
+  highlight! link NERDTreeDirSlash EnfocadoFg
   highlight! link NERDTreeExecFile EnfocadoDimmeds
   highlight! link NERDTreeFile EnfocadoFg
   highlight! link NERDTreeHelp EnfocadoComments
@@ -450,25 +449,25 @@ endif
   highlight! link NERDTreeHelpKey EnfocadoFg
   highlight! link NERDTreeHelpTitle EnfocadoTitles
   highlight! link NERDTreeLink EnfocadoAccent
-  highlight! link NERDTreeLinkDir EnfocadoFg2
-  highlight! link NERDTreeLinkFile EnfocadoFg2
+  highlight! link NERDTreeLinkDir EnfocadoFg
+  highlight! link NERDTreeLinkFile EnfocadoFg
   highlight! link NERDTreeLinkTarget EnfocadoDimmeds
   highlight! link NERDTreeOpenable EnfocadoComments
   highlight! link NERDTreeRO EnfocadoAlertsYellow
   highlight! link NERDTreeToggleOff EnfocadoComments
   highlight! link NERDTreeToggleOn EnfocadoAccent
-  highlight! link NERDTreeUp EnfocadoFg2
+  highlight! link NERDTreeUp EnfocadoFg
 " }}}
 " Netrw: {{{
-  highlight! link netrwClassify EnfocadoFg2
+  highlight! link netrwClassify EnfocadoFg
   highlight! link netrwCmdSep EnfocadoComments
   highlight! link netrwComment EnfocadoComments
-  highlight! link netrwDir EnfocadoFg2
+  highlight! link netrwDir EnfocadoFg
   highlight! link netrwExe EnfocadoDimmeds
   highlight! link netrwHelpCmd EnfocadoAlertsYellow
-  highlight! link netrwLink EnfocadoFg2
+  highlight! link netrwLink EnfocadoFg
   highlight! link netrwList EnfocadoComments
-  highlight! link netrwSymLink EnfocadoFg2
+  highlight! link netrwSymLink EnfocadoFg
   highlight! link netrwVersion EnfocadoComments
 " }}}
 " Rainbow Parentheses: {{{
