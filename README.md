@@ -100,6 +100,8 @@ let g:enfocado_style = "neon"
 And finally turn on the **Enfocado** theme and enjoy!
 
 ```vim
+" IMPORTANT: This autocmd ensures the activation of the theme in all compatible plugins that are activated.
+"            If it is not enabled in this way, the theme is not guaranteed to apply to all your plugins.
 autocmd VimEnter * ++nested colorscheme enfocado
 ```
 
@@ -121,7 +123,7 @@ To make the **background transparent** (same as in the banner), you can use the 
 ```vim
 augroup enfocado_customization
   autocmd!
-      autocmd ColorScheme enfocado highlight Normal ctermbg=NONE guibg=NONE
+      autocmd ColorScheme enfocado highlight Normal     ctermbg=NONE guibg=NONE
       autocmd ColorScheme enfocado highlight TabLineSel ctermbg=NONE guibg=NONE
 augroup END
 ```
