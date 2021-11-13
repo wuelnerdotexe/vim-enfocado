@@ -103,11 +103,12 @@ call s:Hl("EnfocadoDiffDelete", s:none, s:none, s:red, s:none)
 call s:Hl("EnfocadoDiffLine", s:none, s:none, s:cyan, s:none)
 call s:Hl("EnfocadoDimmeds", s:none, s:none, s:bg_2, s:none)
 call s:Hl("EnfocadoFg", s:none, s:none, s:fg_0, s:none)
-call s:Hl("EnfocadoFg2", s:none, s:none, s:fg_1, s:none)
+call s:Hl("EnfocadoFg1", s:none, s:none, s:fg_1, s:none)
 call s:Hl("EnfocadoHl", s:bold, s:br_yellow, s:bg_1, s:none)
 call s:Hl("EnfocadoIgnores", s:none, s:none, s:bg_1, s:none)
 call s:Hl("EnfocadoNone", s:none, s:none, s:none, s:none)
 call s:Hl("EnfocadoPopup", s:none, s:bg_1, s:dim_0, s:none)
+call s:Hl("EnfocadoPopup1", s:none, s:bg_2, s:fg_0, s:none)
 call s:Hl("EnfocadoSearch", s:bold, s:br_cyan, s:bg_1, s:none)
 call s:Hl("EnfocadoShadows", s:none, s:shadow_0, s:none, s:none)
 call s:Hl("EnfocadoVisual", s:bold, s:bg_2, s:none, s:none)
@@ -229,7 +230,7 @@ highlight! link Tag EnfocadoKeywords
 highlight! link Title EnfocadoTitles
 highlight! link Type EnfocadoKeywords
 highlight! link Underlined EnfocadoUnderlineds
-highlight! link Delimiter EnfocadoFg2
+highlight! link Delimiter EnfocadoFg1
 highlight! link Todo EnfocadoHl
 " ------------------------------------------------------------------------------
 " SECTION: Syntax language highlight groups.
@@ -255,6 +256,7 @@ highlight! link Todo EnfocadoHl
   highlight! link xmlAttrib EnfocadoIdentifiers
   highlight! link xmlEndTag EnfocadoKeywords
   highlight! link xmlEqual EnfocadoKeywords
+  highlight! link xmlProcessingDelim EnfocadoKeywords
   highlight! link xmlTag EnfocadoKeywords
   highlight! link xmlTagName EnfocadoKeywords
 " }}}
@@ -408,7 +410,11 @@ endif
 " }}}
 " Copilot: {{{
   if exists('g:loaded_copilot')
-    highlight! link CopilotSuggestion EnfocadoDimmeds
+    if exists('g:loaded_nvim_treesitter')
+      call s:Hl("CopilotSuggestion", s:italic, s:bg_0, s:dim_0, s:none)
+    else
+      call s:Hl("CopilotSuggestion", s:none, s:bg_0, s:dim_0, s:none)
+    endif
   endif
 " }}}
 " FZF: {{{
@@ -419,7 +425,7 @@ endif
           \ 'bg'     : [ 'bg', 'EnfocadoPopup'    ],
           \ 'hl'     : [ 'fg', 'EnfocadoAccent'   ],
           \ 'fg+'    : [ 'fg', 'EnfocadoFg'       ],
-          \ 'bg+'    : [ 'bg', 'EnfocadoPopup'    ],
+          \ 'bg+'    : [ 'bg', 'EnfocadoPopup1'   ],
           \ 'hl+'    : [ 'fg', 'EnfocadoAccent'   ],
           \ 'info'   : [ 'fg', 'EnfocadoKeywords' ],
           \ 'border' : [ 'fg', 'EnfocadoAccent'   ],
@@ -432,9 +438,9 @@ endif
   endif
 
   " Others FZF groups.
-  highlight! link Fzf1 Search
-  highlight! link Fzf2 Search2
-  highlight! link Fzf3 Search3
+  call s:Hl("Fzf1", s:bold, s:bg_2, s:dim_0, s:none)
+  call s:Hl("Fzf2", s:none, s:bg_1, s:dim_0, s:none)
+  call s:Hl("Fzf3", s:none, s:bg_0, s:dim_0, s:none)
 " }}}
 " Multiple Cursors: {{{
   highlight! link multiple_cursors_cursor EnfocadoCursor
@@ -476,18 +482,25 @@ endif
   highlight! link netrwVersion EnfocadoComments
 " }}}
 " Rainbow Parentheses: {{{
-let s:rainbow_guifgs   = [ '#EFC541', '#FA9153', '#FF81CA', '#B891F5' ]
-let s:rainbow_ctermfgs = [ '221'    , '209'    , '212'    , '141'     ]
+  if g:enfocado_style == "neon"
+    let s:rainbow_guifgs   = [ s:br_yellow[0], s:br_orange[0], s:br_green[0], s:br_yellow[0] ]
+    let s:rainbow_ctermfgs = [ s:br_yellow[1], s:br_orange[1], s:br_green[1], s:br_yellow[1] ]
+  else
+    let s:rainbow_guifgs   = [ s:br_yellow[0], s:br_orange[0], s:br_magenta[0], s:br_yellow[0] ]
+    let s:rainbow_ctermfgs = [ s:br_yellow[1], s:br_orange[1], s:br_magenta[1], s:br_yellow[1] ]
+  endif
+  
+  if !exists('g:rainbow_conf')
+    let g:rainbow_conf = {}
+  endif
 
-if !exists('g:rainbow_conf')
-   let g:rainbow_conf = {}
-endif
-if !has_key(g:rainbow_conf, 'guifgs')
-   let g:rainbow_conf['guifgs'] = s:rainbow_guifgs
-endif
-if !has_key(g:rainbow_conf, 'ctermfgs')
-   let g:rainbow_conf['ctermfgs'] = s:rainbow_ctermfgs
-endif
+  if !has_key(g:rainbow_conf, 'guifgs')
+    let g:rainbow_conf['guifgs'] = s:rainbow_guifgs
+  endif
+
+  if !has_key(g:rainbow_conf, 'ctermfgs')
+    let g:rainbow_conf['ctermfgs'] = s:rainbow_ctermfgs
+  endif
 "}}}
 " Signify: {{{
   highlight! link SignifySignAdd EnfocadoDiffAdd
