@@ -221,8 +221,7 @@ highlight! link Error EnfocadoAlertsRed
 highlight! link Exception EnfocadoAlertsOrange
 highlight! link Identifier EnfocadoIdentifiers
 highlight! link PreProc EnfocadoKeywords
-highlight! link Special EnfocadoKeywords
-highlight! link SpecialComment EnfocadoBuiltin
+highlight! link Special EnfocadoBuiltin
 highlight! link Statement EnfocadoKeywords
 highlight! link StorageClass EnfocadoTitles
 highlight! link Structure EnfocadoTitles
