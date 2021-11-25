@@ -1,13 +1,13 @@
-" ------------------------------------------------------------------------------
-" Name:        Vim Enfocado
+" -----------------------------------------------------------------------------
+" Name:        Enfocado for Vim
 " Author:      Wuelner Martínez <wuelner.martinez@outlook.com>
 " URL:         https://github.com/wuelnerdotexe/vim-enfocado
 " License:     MIT (C) Wuelner Martínez.
-" Description: How the themes should be.
-" About:       Enfocado is more than a theme, it is a concept of "how the
-"              themes should be", focusing on what is really important to
-"              developers: the code and nothing else.
-" ------------------------------------------------------------------------------
+" Description: How themes should be.
+" About:       Enfocado is more than a theme, it is a concept of "how themes
+"              should be", focusing on what is really important to developers:
+"              the code and nothing else.
+" -----------------------------------------------------------------------------
 
 " The Enfocado theme is initialized.
 let g:colors_name = "enfocado"
@@ -249,7 +249,7 @@ highlight! link Special EnfocadoKeywordsBuiltins
 highlight! link SpecialChar EnfocadoKeywordsBuiltins
 highlight! link SpecialComment EnfocadoKeywordsBuiltins
 highlight! link Statement EnfocadoKeywords
-highlight! link StorageClass EnfocadoKeywords
+highlight! link StorageClass EnfocadoTypes
 highlight! link String EnfocadoConstants
 highlight! link Structure EnfocadoKeywords
 highlight! link Tag EnfocadoKeywords
@@ -381,7 +381,7 @@ if has('nvim')
     highlight! link TSFuncMacro EnfocadoFunctions
     highlight! link TSInclude EnfocadoTypes
     highlight! link TSKeyword EnfocadoKeywords
-    highlight! link TSKeywordFunction EnfocadoKeywords
+    highlight! link TSKeywordFunction EnfocadoTypes
     highlight! link TSKeywordOperator EnfocadoKeywords
     highlight! link TSKeywordReturn EnfocadoKeywords
     highlight! link TSLabel EnfocadoTypes

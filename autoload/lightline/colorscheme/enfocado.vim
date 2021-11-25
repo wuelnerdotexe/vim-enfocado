@@ -1,12 +1,12 @@
 " -----------------------------------------------------------------------------
-" Name:        Vim Enfocado (Lightline Theme)
+" Name:        Enfocado for Lightline
 " Author:      Wuelner Martínez <wuelner.martinez@outlook.com>
 " URL:         https://github.com/wuelnerdotexe/vim-enfocado
 " License:     MIT (C) Wuelner Martínez.
-" Description: How the themes should be.
-" About:       Enfocado is more than a theme, it is a concept of "how the
-"              themes should be", focusing on what is really important to
-"              developers: the code and nothing else.
+" Description: How themes should be.
+" About:       Enfocado is more than a theme, it is a concept of "how themes
+"              should be", focusing on what is really important to developers:
+"              the code and nothing else.
 " -----------------------------------------------------------------------------
 
 " The Selenized black color scheme is declared.
