@@ -1,27 +1,27 @@
 # Enfocado for Vim
 
-![Banner](https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/banner.png)
+![Banner](https://raw.githubusercontent.com/wuelnerdotexe/enfocado/main/assets/banner.png)
 
 [![License Badge](https://img.shields.io/badge/License-MIT-3FC5B7.svg?style=for-the-badge)](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 [![README Style Badge](https://img.shields.io/badge/README%20Style-Standard-3FC5B7.svg?style=for-the-badge)](https://github.com/RichardLitt/standard-readme)
 
 **Enfocado** is more than a theme, it is a concept of **"how themes should be"**, focusing on what is really important to developers: **the code and nothing else**.
 
-The features of this theme for vim are:
+What you **won't have** if you **don't install Enfocado**:
 
-- **Color alerts:** the yellow, orange and red colors are reserved to be used only with important alerts, following the standards for the meanings of the **signal colors in the industrial area**.
-- **Color scheme:** use of the well-founded Selenized black color scheme created with the magic of the **CIELAB color space**. Learn about its features and design in its [official repository](https://github.com/jan-warchol/selenized/blob/master/features-and-design.md).
-- **Human writing:** human writing is simulated by using italic typeface for syntax groups (comments, methods, titles and more ...) that are generally named and **written in human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
-- **Syntax highlight:** only three colors are used to highlight syntax, following the **color guidelines for web design**, which state that **only three main colors** should be used in interfaces, no more.
+- **CIELAB Colors:** use of the well-founded Selenized black color scheme created with the magic of the **CIELAB color space**. Learn about its features and design in its [official repository](https://github.com/jan-warchol/selenized/blob/master/features-and-design.md).
+- **Human Writing:** human writing is simulated by using italic typeface for syntax groups (comments, methods, titles and more ...) that are generally named and **written in human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
+- **Minimal Syntax:** only three colors are used to highlight syntax, following the **color guidelines for web design**, which state that **only three main colors** should be used in interfaces, no more.
+- **Signal Alerts:** the yellow, orange and red colors are reserved to be used only with important alerts, following the standards for the meanings of the **signal colors in the industrial area**.
 - **Styles:** choose the style that best suits your **personality**:
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/nature.png">
+  <img src="https://raw.githubusercontent.com/wuelnerdotexe/enfocado/main/assets/vim-nature.png">
   <strong>Nature:</strong> go for the <code>nature</code> style if you are a minimalist developer who is always <strong>connected to nature</strong>.
 </div>
 <br />
 <div align="center">
-  <img src="https://raw.githubusercontent.com/wuelnerdotexe/vim-enfocado/main/images/neon.png">
+  <img src="https://raw.githubusercontent.com/wuelnerdotexe/enfocado/main/assets/vim-neon.png">
   <strong>Neon:</strong> go for the <code>neon</code> style if you are an outgoing developer that is always <strong>surrounded by RGBs</strong>.
 </div>
 
@@ -101,7 +101,7 @@ And finally turn on the **Enfocado** theme and enjoy!
 
 ```vim
 " IMPORTANT: this vim auto command ensures the
-" activation of Enfocado in all compatible plugins.
+" activation of Enfocado in compatible plugins.
 autocmd VimEnter * ++nested colorscheme enfocado
 ```
 
@@ -136,9 +136,8 @@ Note: The usage codes must be written in your `.vimrc` or `init.vim`.
 
 In order for the human text simulation to work as it should (in addition to installing [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)), I recommend that you use either of these three beautiful fonts, which align with the **"Mankind and Machine"** concept.
 
-- [Cartograph](https://connary.com/cartograph.html) (paid).
-- [IBM Plex Mono](https://www.ibm.com/plex/) (free).
-- [Victor Mono](https://rubjo.github.io/victor-mono/) (free).
+- [IBM Plex Mono](https://www.ibm.com/plex/).
+- [Victor Mono](https://rubjo.github.io/victor-mono/).
 
 ### Extras
 
