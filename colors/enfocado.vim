@@ -496,6 +496,8 @@ endif
   highlight! link NERDTreeToggleOff EnfocadoComments
   highlight! link NERDTreeToggleOn EnfocadoAccents
   highlight! link NERDTreeUp EnfocadoFgs
+
+  call s:Hl("NERDTreeFile", s:none, s:none, s:fg_0, s:none)
 " }}}
 " Netrw: {{{
   highlight! link netrwClassify EnfocadoFgs
@@ -506,16 +508,17 @@ endif
   highlight! link netrwHelpCmd EnfocadoInfos
   highlight! link netrwLink EnfocadoFgs
   highlight! link netrwList EnfocadoComments
+  highlight! link netrwPlain EnfocadoFgs
   highlight! link netrwSymLink EnfocadoFgs
   highlight! link netrwVersion EnfocadoComments
 " }}}
 " Rainbow Parentheses: {{{
   if g:enfocado_style == "neon"
-    let s:rainbow_guifgs   = [ s:blue[0], s:cyan[0], s:green[0], s:br_blue[0] ]
-    let s:rainbow_ctermfgs = [ s:blue[1], s:cyan[1], s:green[1], s:br_blue[1] ]
-  else    
     let s:rainbow_guifgs   = [ s:violet[0], s:cyan[0], s:magenta[0], s:br_violet[0] ]
     let s:rainbow_ctermfgs = [ s:violet[1], s:cyan[1], s:magenta[1], s:br_violet[1] ]
+  else    
+    let s:rainbow_guifgs   = [ s:blue[0], s:cyan[0], s:green[0], s:br_blue[0] ]
+    let s:rainbow_ctermfgs = [ s:blue[1], s:cyan[1], s:green[1], s:br_blue[1] ]
   endif
   
   if !exists('g:rainbow_conf')
