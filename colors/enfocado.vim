@@ -453,7 +453,7 @@ if has('nvim')
   " ------------------------------------------------------------------------------
   " SECTION: Neovim plugins highlight groups.
   " ------------------------------------------------------------------------------
-  " cmp: {{{
+  " nvim-cmp: {{{
     highlight! link CmpItemAbbrDefault EnfocadoFgs
     highlight! link CmpItemAbbrDeprecatedDefault EnfocadoErrors
     highlight! link CmpItemAbbrMatchDefault EnfocadoAccents
@@ -486,19 +486,19 @@ if has('nvim')
     highlight! link CmpItemKindTypeParameterDefault EnfocadoTypes
     highlight! link CmpItemMenuDefault EnfocadoPopups
   " }}}
-  " Copilot: {{{
+  " copilot.vim: {{{
     if exists('g:loaded_nvim_treesitter')
       call s:Hl("CopilotSuggestion", s:italic, s:bg_0, s:dim_0, s:none)
     else
       call s:Hl("CopilotSuggestion", s:none, s:bg_0, s:dim_0, s:none)
     endif
   " }}}
-  " GitSigns: {{{
+  " gitsigns.nvim: {{{
     highlight! link GitSignsAdd EnfocadoDiffsAdds
     highlight! link GitSignsChange EnfocadoDiffsChanges
     highlight! link GitSignsDelete EnfocadoDiffsDeletes
   " }}}
-  " nvim-tree: {{{
+  " nvim-tree.lua: {{{
   highlight! link NvimTreeCursorColumn CursorColumn
   highlight! link NvimTreeCursorLine CursorLine
   highlight! link NvimTreeEmptyFolderName EnfocadoFgs
@@ -539,7 +539,7 @@ if has('nvim')
   highlight! link NvimTreeVertSplit VertSplit
   highlight! link NvimTreeWindowPicker EnfocadoAccentsFloats
   " }}}
-  " Notify: {{{
+  " nvim-notify: {{{
     highlight! link NotifyERRORBorder EnfocadoErrors
     highlight! link NotifyWARNBorder EnfocadoWarns
     highlight! link NotifyINFOBorder EnfocadoInfos
@@ -563,7 +563,7 @@ if has('nvim')
     highlight! link NotifyLogTime EnfocadoConstants
     highlight! link NotifyLogTitle EnfocadoTitles
   " }}}
-  " Telescope: {{{
+  " telescope.nvim: {{{
     call s:Hl("TelescopePreviewDate", s:none, s:none, s:blue, s:none)
     call s:Hl("TelescopePreviewDirectory", s:bold, s:none, s:br_blue, s:none)
     call s:Hl("TelescopePreviewExecute", s:none, s:none, s:green, s:none)
@@ -612,7 +612,7 @@ if has('nvim')
     highlight! link TelescopeSelectionCaret EnfocadoPopups
     highlight! link TelescopeTitle EnfocadoTitles
   " }}}
-  " todo comments: {{{
+  " todo-comments.nvim: {{{
     call s:Hl("TodoBgNOTE", s:bold, s:br_blue, s:bg_1, s:none)
     call s:Hl("TodoFgNOTE", s:none, s:none, s:br_blue, s:none)
     call s:Hl("TodoSignNOTE", s:none, s:none, s:br_blue, s:none)
@@ -636,7 +636,7 @@ endif
 " ------------------------------------------------------------------------------
 " SECTION: Vim plugins highlight groups.
 " ------------------------------------------------------------------------------
-" coc: {{{
+" coc.nvim: {{{
   highlight! link CocCodeLens EnfocadoComments
   highlight! link CocDiagnosticsError EnfocadoErrors
   highlight! link CocDiagnosticsHint EnfocadoHints
@@ -656,17 +656,17 @@ endif
   highlight! link CocWarningSign EnfocadoWarns
   highlight! link CocSelectedText EnfocadoErrors
 " }}}
-" Dashboard: {{{
+" dashboard-nvim: {{{
   highlight! link DashoardCenter EnfocadoFgs1
   highlight! link DashoardFooter EnfocadoComments
   highlight! link DashoardHeader EnfocadoTitles
 " }}}
-" Float Term: {{{
+" vim-floaterm: {{{
   highlight! link FloatTerm EnfocadoPopups
   highlight! link FloatTermBorder EnfocadoAccents
   highlight! link FloatTermNC EnfocadoPopups
 " }}}
-" fzf: {{{
+" fzf.vim: {{{
   " fzf apply enfocado groups.
   if !exists('g:fzf_colors')
     let g:fzf_colors = {
@@ -691,11 +691,11 @@ endif
   call s:Hl("Fzf2", s:none, s:bg_1, s:dim_0, s:none)
   call s:Hl("Fzf3", s:none, s:bg_0, s:dim_0, s:none)
 " }}}
-" Multiple Cursors: {{{
+" vim-multiple-cursors: {{{
   highlight! link multiple_cursors_cursor EnfocadoCursors
   highlight! link multiple_cursors_visual EnfocadoVisuals
 " }}}
-" NERDTree: {{{
+" nerdtree: {{{
   highlight! link NERDTreeBookmark EnfocadoKeywords
   highlight! link NERDTreeBookmarkHeader EnfocadoTitles
   highlight! link NERDTreeClosable EnfocadoFgs
@@ -720,7 +720,7 @@ endif
 
   call s:Hl("NERDTreeFile", s:none, s:none, s:fg_0, s:none)
 " }}}
-" Netrw: {{{
+" netrw: {{{
   highlight! link netrwClassify EnfocadoFgs
   highlight! link netrwCmdSep EnfocadoComments
   highlight! link netrwComment EnfocadoComments
@@ -733,7 +733,7 @@ endif
   highlight! link netrwSymLink EnfocadoFgs
   highlight! link netrwVersion EnfocadoComments
 " }}}
-" Rainbow Parentheses: {{{
+" rainbow_parentheses.vim: {{{
   if g:enfocado_style == "neon"
     let s:rainbow_guifgs   = [ s:violet[0], s:cyan[0], s:magenta[0], s:br_violet[0] ]
     let s:rainbow_ctermfgs = [ s:violet[1], s:cyan[1], s:magenta[1], s:br_violet[1] ]
@@ -754,7 +754,7 @@ endif
     let g:rainbow_conf['ctermfgs'] = s:rainbow_ctermfgs
   endif
 "}}}
-" Signify: {{{
+" vim-signify: {{{
   highlight! link SignifySignAdd EnfocadoDiffsAdds
   highlight! link SignifySignChange EnfocadoDiffsChanges
   highlight! link SignifySignDelete EnfocadoDiffsDeletes

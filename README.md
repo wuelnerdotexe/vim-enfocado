@@ -34,9 +34,12 @@ What you **won't have** if you **don't install Enfocado**:
   - [Customization](#customization)
 - [Recommendations](#recommendations)
   - [Fonts](#fonts)
+  - [Configs](#configs)
   - [Extras](#extras)
-- [Credits](#credits)
+- [Maintainer](#maintainer)
 - [Contributing](#contributing)
+- [Plugins](#plugins)
+- [Credits](#credits)
 - [License](#license)
 
 ## Installation
@@ -123,7 +126,7 @@ To make the **background transparent** (same as in the screenshots), you can use
 ```vim
 augroup enfocado_customization
   autocmd!
-      autocmd ColorScheme enfocado highlight Normal     ctermbg=NONE guibg=NONE
+      autocmd ColorScheme enfocado highlight Normal ctermbg=NONE guibg=NONE
       autocmd ColorScheme enfocado highlight TabLineSel ctermbg=NONE guibg=NONE
 augroup END
 ```
@@ -139,16 +142,20 @@ In order for the human text simulation to work as it should (in addition to inst
 - [IBM Plex Mono](https://www.ibm.com/plex/).
 - [Victor Mono](https://rubjo.github.io/victor-mono/).
 
+### Configs
+
+This vim configs comes with **Enfocado for Vim** already installed by default!
+
+- [CosmicNvim](https://github.com/CosmicNvim/CosmicNvim)
+
 ### Extras
 
 - [Selenized black for terminals](https://github.com/jan-warchol/selenized/tree/master/terminals).
 - [Enfocado for VS Code](https://github.com/wuelnerdotexe/vscode-enfocado).
 
-## Credits
+## Mantainer
 
-- Theme colorscheme by [Jan Warchol](https://github.com/jan-warchol) on [Github](https://github.com/jan-warchol/selenized/blob/master/the-values.md).
-- Enfocado Nature wallpaper by [Josefin](https://unsplash.com/@josefin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
-- Enfocado Neon wallpaper by [Dilyara Garifullina](https://unsplash.com/@dilja96?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/neon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
+> _Hola 👋, soy **[Wuelner](https://linktr.ee/wuelnerdotexe)**, un **software developer de Guatemala**, apasionado por crear soluciones minimalistas utilizando fundamentos sólidos enfocados en **"cómo deben ser las cosas"**._
 
 ## Contributing
 
@@ -157,6 +164,33 @@ All your ideas and suggestions are welcome! 🙌
 Let me see your captures and let me know what you think with the hashtag **#HowThemesShouldBe**. 👀
 
 And of course, if you want to motivate me to constantly improve this theme, your donations are welcome at [PayPal](https://paypal.me/wuelnerdotexe). 👉👈
+
+## Plugins
+
+The following plugins are supported:
+
+- [coc.nvim](https://github.com/neoclide/coc.nvim)
+- [copilot.vim](https://github.com/github/copilot.vim)
+- [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
+- [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- [nerdree](https://github.com/preservim/nerdtree)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
+- [vim-floaterm](https://github.com/voldikss/vim-floaterm)
+- [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+- [vim-signify](https://github.com/mhinz/vim-signify)
+- [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
+
+## Credits
+
+- Theme colorscheme by [Jan Warchol](https://github.com/jan-warchol) on [Github](https://github.com/jan-warchol/selenized/blob/master/the-values.md).
+- Enfocado Nature wallpaper by [Josefin](https://unsplash.com/@josefin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/nature?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
+- Enfocado Neon wallpaper by [Dilyara Garifullina](https://unsplash.com/@dilja96?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/neon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
 
 ## License
 
