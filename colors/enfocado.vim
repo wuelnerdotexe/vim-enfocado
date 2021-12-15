@@ -666,9 +666,9 @@ endif
   highlight! link DashboardShortCut EnfocadoUnderlineds
 " }}}
 " vim-floaterm: {{{
-  highlight! link FloatTerm EnfocadoPopups
-  highlight! link FloatTermBorder EnfocadoAccents
-  highlight! link FloatTermNC EnfocadoPopups
+  highlight! link Floaterm EnfocadoPopups
+  highlight! link FloatermBorder EnfocadoAccents
+  highlight! link FloatermNC EnfocadoPopups
 " }}}
 " fzf.vim: {{{
   " fzf apply enfocado groups.
