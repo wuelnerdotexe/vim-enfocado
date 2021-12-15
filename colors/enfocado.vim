@@ -56,7 +56,7 @@ let s:br_violet  = [ '#B891F5', 141 ]
 " Support colors are declared.
 let s:black = [ '#000000', 16  ]
 
-" Attributes are declared. 
+" Attributes are declared.
 let s:none        = [ 'NONE'         , 'NONE'          ]
 let s:reverse     = [ 'reverse'      , 'reverse'       ]
 let s:bold        = [ 'bold'         , 'bold'          ]
@@ -108,7 +108,7 @@ call s:Hl("EnfocadoInfosFloats", s:none, s:bg_1, s:br_yellow, s:none)
 call s:Hl("EnfocadoInfosInvs", s:none, s:br_yellow, s:bg_1, s:none)
 call s:Hl("EnfocadoInfosUnders", s:underline, s:none, s:br_yellow, s:br_yellow)
 call s:Hl("EnfocadoNones", s:none, s:none, s:none, s:none)
-call s:Hl("EnfocadoNormal", s:none, s:bg_0, s:fg_1, s:none)
+call s:Hl("EnfocadoNormal", s:none, s:bg_0, s:fg_0, s:none)
 call s:Hl("EnfocadoPopups", s:none, s:bg_1, s:fg_1, s:none)
 call s:Hl("EnfocadoSearchs", s:none, s:br_cyan, s:bg_1, s:none)
 call s:Hl("EnfocadoStatusLines", s:none, s:bg_1, s:dim_0, s:none)
@@ -248,6 +248,7 @@ highlight! link Include EnfocadoTypes
 highlight! link Keyword EnfocadoKeywords
 highlight! link Label EnfocadoTypes
 highlight! link Macro EnfocadoTypes
+highlight! link Method EnfocadoFunctions
 highlight! link Number EnfocadoConstants
 highlight! link Operator EnfocadoKeywords
 highlight! link PreCondit EnfocadoKeywords
@@ -259,6 +260,7 @@ highlight! link SpecialComment EnfocadoKeywordsBuiltins
 highlight! link Statement EnfocadoKeywords
 highlight! link StorageClass EnfocadoTypes
 highlight! link String EnfocadoConstants
+highlight! link Struct EnfocadoFunctions
 highlight! link Structure EnfocadoKeywords
 highlight! link Tag EnfocadoKeywords
 highlight! link Title EnfocadoTitles
@@ -291,15 +293,16 @@ highlight! link diffSubname	EnfocadoDiffsFgs
 if has('nvim')
   " Cursors neovim groups.
   highlight! link Cursor EnfocadoCursors
-  highlight! link iCursor EnfocadoCursors
   highlight! link lCursor EnfocadoCursors
-  highlight! link vCursor EnfocadoVisuals
   highlight! link TermCursor EnfocadoCursors
+  highlight! link TermCursorNC EnfocadoNones
 
   " Other neovim groups.
   highlight! link FloatBorder EnfocadoAccents
   highlight! link FloatShadow EnfocadoBlacks
   highlight! link FloatShadowThrough EnfocadoBlacks
+  highlight! link LineNrAbove EnfocadoDimmeds
+  highlight! link LineNrBelow EnfocadoDimmeds
   highlight! link MsgArea EnfocadoComments
   highlight! link MsgSeparator EnfocadoStatusLines
   highlight! link NvimInternalError EnfocadoErrors
@@ -307,7 +310,7 @@ if has('nvim')
   highlight! link RedrawDebugComposed EnfocadoSuccess
   highlight! link RedrawDebugRecompose EnfocadoErrors
   highlight! link Substitute EnfocadoSearchs
-  highlight! link Whitespace EnfocadoIgnores
+  highlight! link Whitespace EnfocadoDimmeds
 
   call s:Hl("NormalFloat", s:none, s:bg_1, s:fg_1, s:none)
   call s:Hl("NormalNC", s:none, s:bg_0, s:fg_1, s:none)
@@ -330,7 +333,7 @@ if has('nvim')
   let g:terminal_color_13 = s:br_magenta[0]
   let g:terminal_color_14 = s:br_cyan[0]
   let g:terminal_color_15 = s:fg_1[0]
-  " LSP: {{{
+  " nvim-lspconfig: {{{
     highlight! link DiagnosticError EnfocadoErrors
     highlight! link DiagnosticErrorInv EnfocadoErrorsInvs
     highlight! link DiagnosticFloatingError EnfocadoErrorsFloats
@@ -373,7 +376,7 @@ if has('nvim')
     highlight! link LspDiagnosticUnderlineInfo EnfocadoInfosUnders
     highlight! link LspDiagnosticUnderlineWarn EnfocadoWarnsUnders
   " }}}
-  " Treesitter: {{{
+  " nvim-treesitter: {{{
     if g:enfocado_style == "neon"
       " Enfocado neon...
       call s:Hl("TSConstructor", s:bold, s:none, s:br_magenta, s:none)
@@ -499,45 +502,45 @@ if has('nvim')
     highlight! link GitSignsDelete EnfocadoDiffsDeletes
   " }}}
   " nvim-tree.lua: {{{
-  highlight! link NvimTreeCursorColumn CursorColumn
-  highlight! link NvimTreeCursorLine CursorLine
-  highlight! link NvimTreeEmptyFolderName EnfocadoFgs
-  highlight! link NvimTreeEndOfBuffer EndOfBuffer
-  highlight! link NvimTreeExecFile EnfocadoFgs
-  highlight! link NvimTreeFileDeleted EnfocadoDiffsDeletes
-  highlight! link NvimTreeFileDirty EnfocadoDiffsDeletes
-  highlight! link NvimTreeFileMerge EnfocadoDiffsChanges
-  highlight! link NvimTreeFileNew EnfocadoDiffsAdds
-  highlight! link NvimTreeFileRenamed EnfocadoDiffsAdds
-  highlight! link NvimTreeFileStaged EnfocadoDiffsChanges
-  highlight! link NvimTreeFolderIcon EnfocadoFgs
-  highlight! link NvimTreeFolderName EnfocadoFgs
-  highlight! link NvimTreeGitDeleted EnfocadoDiffsDeletes
-  highlight! link NvimTreeGitDirty EnfocadoDiffsDeletes
-  highlight! link NvimTreeGitIgnored EnfocadoComments
-  highlight! link NvimTreeGitMerge EnfocadoDiffsChanges
-  highlight! link NvimTreeGitNew EnfocadoDiffsAdds
-  highlight! link NvimTreeGitRenamed EnfocadoDiffsAdds
-  highlight! link NvimTreeGitStaged EnfocadoDiffsChanges
-  highlight! link NvimTreeImageFile EnfocadoFgs
-  highlight! link NvimTreeIndentMarker EnfocadoIgnores
-  highlight! link NvimTreeLspDiagnosticsError EnfocadoErrors
-  highlight! link NvimTreeLspDiagnosticsHint EnfocadoHints
-  highlight! link NvimTreeLspDiagnosticsInformation EnfocadoInfos
-  highlight! link NvimTreeLspDiagnosticsWarning EnfocadoWarns
-  highlight! link NvimTreeNormal EnfocadoNormal
-  highlight! link NvimTreeNormalNC EnfocadoNormal
-  highlight! link NvimTreeOpenedFile EnfocadoFgs
-  highlight! link NvimTreeOpenedFolderName EnfocadoFgs
-  highlight! link NvimTreePopup EnfocadoPopups
-  highlight! link NvimTreeRootFolder EnfocadoComments
-  highlight! link NvimTreeSignColumn SignColumn
-  highlight! link NvimTreeSpecialFile EnfocadoFgs
-  highlight! link NvimTreeStatusLine StatusLine
-  highlight! link NvimTreeStatusLineNC StatusLineNC
-  highlight! link NvimTreeSymlink EnfocadoDimmeds
-  highlight! link NvimTreeVertSplit VertSplit
-  highlight! link NvimTreeWindowPicker EnfocadoAccentsFloats
+    highlight! link NvimTreeCursorColumn CursorColumn
+    highlight! link NvimTreeCursorLine CursorLine
+    highlight! link NvimTreeEmptyFolderName EnfocadoFgs
+    highlight! link NvimTreeEndOfBuffer EndOfBuffer
+    highlight! link NvimTreeExecFile EnfocadoFgs
+    highlight! link NvimTreeFileDeleted EnfocadoDiffsDeletes
+    highlight! link NvimTreeFileDirty EnfocadoDiffsDeletes
+    highlight! link NvimTreeFileMerge EnfocadoDiffsChanges
+    highlight! link NvimTreeFileNew EnfocadoDiffsAdds
+    highlight! link NvimTreeFileRenamed EnfocadoDiffsAdds
+    highlight! link NvimTreeFileStaged EnfocadoDiffsChanges
+    highlight! link NvimTreeFolderIcon EnfocadoFgs
+    highlight! link NvimTreeFolderName EnfocadoFgs
+    highlight! link NvimTreeGitDeleted EnfocadoDiffsDeletes
+    highlight! link NvimTreeGitDirty EnfocadoDiffsDeletes
+    highlight! link NvimTreeGitIgnored EnfocadoComments
+    highlight! link NvimTreeGitMerge EnfocadoDiffsChanges
+    highlight! link NvimTreeGitNew EnfocadoDiffsAdds
+    highlight! link NvimTreeGitRenamed EnfocadoDiffsAdds
+    highlight! link NvimTreeGitStaged EnfocadoDiffsChanges
+    highlight! link NvimTreeImageFile EnfocadoFgs
+    highlight! link NvimTreeIndentMarker EnfocadoDimmeds
+    highlight! link NvimTreeLspDiagnosticsError EnfocadoErrors
+    highlight! link NvimTreeLspDiagnosticsHint EnfocadoHints
+    highlight! link NvimTreeLspDiagnosticsInformation EnfocadoInfos
+    highlight! link NvimTreeLspDiagnosticsWarning EnfocadoWarns
+    highlight! link NvimTreeNormal EnfocadoNormal
+    highlight! link NvimTreeNormalNC EnfocadoNormal
+    highlight! link NvimTreeOpenedFile EnfocadoFgs
+    highlight! link NvimTreeOpenedFolderName EnfocadoFgs
+    highlight! link NvimTreePopup EnfocadoPopups
+    highlight! link NvimTreeRootFolder EnfocadoComments
+    highlight! link NvimTreeSignColumn SignColumn
+    highlight! link NvimTreeSpecialFile EnfocadoFgs
+    highlight! link NvimTreeStatusLine StatusLine
+    highlight! link NvimTreeStatusLineNC StatusLineNC
+    highlight! link NvimTreeSymlink EnfocadoFgs
+    highlight! link NvimTreeVertSplit VertSplit
+    highlight! link NvimTreeWindowPicker EnfocadoAccentsFloats
   " }}}
   " nvim-notify: {{{
     highlight! link NotifyERRORBorder EnfocadoErrors
@@ -631,7 +634,7 @@ if has('nvim')
     call s:Hl("TodoBgWARN", s:bold, s:br_orange, s:bg_1, s:none)
     call s:Hl("TodoFgWARN", s:none, s:none, s:br_orange, s:none)
     call s:Hl("TodoSignWARN", s:none, s:none, s:br_orange, s:none)
-  " }}}   
+  " }}}
 endif
 " ------------------------------------------------------------------------------
 " SECTION: Vim plugins highlight groups.
@@ -657,9 +660,10 @@ endif
   highlight! link CocSelectedText EnfocadoErrors
 " }}}
 " dashboard-nvim: {{{
-  highlight! link DashoardCenter EnfocadoFgs1
-  highlight! link DashoardFooter EnfocadoComments
-  highlight! link DashoardHeader EnfocadoTitles
+  highlight! link DashboardCenter EnfocadoFgs1
+  highlight! link DashboardFooter EnfocadoDimmeds
+  highlight! link DashboardHeader EnfocadoTitles
+  highlight! link DashboardShortCut EnfocadoUnderlineds
 " }}}
 " vim-floaterm: {{{
   highlight! link FloatTerm EnfocadoPopups
@@ -737,11 +741,11 @@ endif
   if g:enfocado_style == "neon"
     let s:rainbow_guifgs   = [ s:violet[0], s:cyan[0], s:magenta[0], s:br_violet[0] ]
     let s:rainbow_ctermfgs = [ s:violet[1], s:cyan[1], s:magenta[1], s:br_violet[1] ]
-  else    
+  else
     let s:rainbow_guifgs   = [ s:blue[0], s:cyan[0], s:green[0], s:br_blue[0] ]
     let s:rainbow_ctermfgs = [ s:blue[1], s:cyan[1], s:green[1], s:br_blue[1] ]
   endif
-  
+
   if !exists('g:rainbow_conf')
     let g:rainbow_conf = {}
   endif
@@ -759,4 +763,4 @@ endif
   highlight! link SignifySignChange EnfocadoDiffsChanges
   highlight! link SignifySignDelete EnfocadoDiffsDeletes
 " }}}
-" vim: set foldmethod=marker: 
+" vim: set foldmethod=marker:

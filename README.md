@@ -153,9 +153,9 @@ This vim configs comes with **Enfocado for Vim** already installed by default!
 - [Selenized black for terminals](https://github.com/jan-warchol/selenized/tree/master/terminals).
 - [Enfocado for VS Code](https://github.com/wuelnerdotexe/vscode-enfocado).
 
-## Mantainer
+## Maintainer
 
-> _Hola 👋, soy **[Wuelner](https://linktr.ee/wuelnerdotexe)**, un **software developer de Guatemala**, apasionado por crear soluciones minimalistas utilizando fundamentos sólidos enfocados en **"cómo deben ser las cosas"**._
+> Hola 👋, soy **[Wuelner](https://linktr.ee/wuelnerdotexe)**, un **software developer de Guatemala**, apasionado por crear soluciones minimalistas utilizando fundamentos sólidos enfocados en **"cómo deben ser las cosas"**.
 
 ## Contributing
 
