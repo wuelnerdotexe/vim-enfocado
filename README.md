@@ -127,7 +127,6 @@ To make the **background transparent** (same as in the screenshots), you can use
 augroup enfocado_customization
   autocmd!
       autocmd ColorScheme enfocado highlight Normal ctermbg=NONE guibg=NONE
-      autocmd ColorScheme enfocado highlight TabLineSel ctermbg=NONE guibg=NONE
 augroup END
 ```
 
