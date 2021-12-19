@@ -146,13 +146,11 @@ call s:Hl("EnfocadoNones", s:none, s:none, s:none, s:none)
 call s:Hl("EnfocadoReverse", s:reverse, s:none, s:none, s:none)
 call s:Hl("EnfocadoStatusLines", s:none, s:bg_1, s:dim_0, s:none)
 call s:Hl("EnfocadoStatusLinesNC", s:none, s:bg_1, s:bg_2, s:none)
-call s:Hl("EnfocadoStrikeds", s:strike, s:none, s:bg_2, s:none)
 call s:Hl("EnfocadoSuccess", s:none, s:none, s:br_green, s:none)
 call s:Hl("EnfocadoSuccessFloats", s:none, s:bg_1, s:br_green, s:none)
 call s:Hl("EnfocadoSuccessInvs", s:none, s:br_green, s:bg_1, s:none)
 call s:Hl("EnfocadoSuccessUnders", s:underline, s:none, s:br_green, s:br_green)
 call s:Hl("EnfocadoTitles", s:bold, s:none, s:fg_1, s:none)
-call s:Hl("EnfocadoUnderlineds", s:underline, s:none, s:br_cyan, s:cyan)
 call s:Hl("EnfocadoVisuals", s:none, s:bg_2, s:none, s:none)
 call s:Hl("EnfocadoWarns", s:none, s:none, s:br_orange, s:none)
 call s:Hl("EnfocadoWarnsFloats", s:none, s:bg_1, s:br_orange, s:none)
@@ -273,8 +271,8 @@ highlight! link Tag EnfocadoKeywords
 highlight! link Title EnfocadoTitles
 highlight! link Type EnfocadoTypes
 highlight! link Typedef EnfocadoTypes
-highlight! link Underlined EnfocadoUnderlineds
 highlight! link Todo EnfocadoHlters
+highlight! Underlined term=underline cterm=underline gui=underline
 
 " Syntax filetype diff groups.
 highlight! link diffAdded EnfocadoDiffsAdds
@@ -394,9 +392,10 @@ if has('nvim')
     endif
     call s:Hl("TSComment", s:italic, s:none, s:dim_0, s:none)
     call s:Hl("TSLiteral", s:italic, s:none, s:fg_0, s:none)
+    call s:Hl("TSNone", s:italic, s:none, s:fg_0, s:none)
     call s:Hl("TSText", s:italic, s:none, s:fg_0, s:none)
     call s:Hl("TSTextReference", s:italic, s:none, s:fg_0, s:none)
-    call s:Hl("TSNone", s:italic, s:none, s:fg_0, s:none)
+    call s:Hl("TSURI", s:underline, s:none, s:br_cyan, s:br_cyan)
     highlight! link TSAnnotation EnfocadoDimmeds
     highlight! link TSAttribute EnfocadoVariables
     highlight! link TSBoolean EnfocadoTypesBuiltins
@@ -434,7 +433,6 @@ if has('nvim')
     highlight! link TSPunctBracket EnfocadoTypes
     highlight! link TSPunctSpecial EnfocadoTypesBuiltins
     highlight! link TSRepeat EnfocadoKeywords
-    highlight! link TSStrike EnfocadoStrikeds
     highlight! link TSString EnfocadoConstants
     highlight! link TSStringRegex EnfocadoTypesBuiltins
     highlight! link TSStringEscape EnfocadoTypesBuiltins
@@ -445,13 +443,13 @@ if has('nvim')
     highlight! link TSTagDelimiter EnfocadoTypes
     highlight! link TSType EnfocadoTypes
     highlight! link TSTypeBuiltin EnfocadoTypes
-    highlight! link TSUnderline EnfocadoUnderlineds
-    highlight! link TSURI EnfocadoUnderlineds
     highlight! link TSVariable EnfocadoVariables
     highlight! link TSVariableBuiltin EnfocadoVariablesBuiltins
     highlight! link TSWarning EnfocadoWarns
     highlight! TSEmphasis term=italic cterm=italic gui=italic
+    highlight! TSStrike term=strikethrough cterm=strikethrough gui=strikethrough
     highlight! TSStrong term=bold cterm=bold gui=bold
+    highlight! TSUnderline term=underline cterm=underline gui=underline
   " }}}
   " ------------------------------------------------------------------------------
   " SECTION: Neovim plugins highlight groups.
@@ -641,7 +639,7 @@ endif
 " coc.nvim: {{{
   " Coc markdown groups.
   call s:Hl("CocMarkdownHeader", s:bold, s:bg_1, s:fg_1, s:none)
-  call s:Hl("CocMarkdownLink", s:underline, s:bg_1, s:br_cyan, s:none)
+  call s:Hl("CocMarkdownLink", s:underline, s:bg_1, s:br_cyan, s:br_cyan)
   highlight! CocBold term=bold cterm=bold gui=bold
   highlight! CocItalic term=italic cterm=italic gui=italic
   highlight! CocStrikeThrough term=strikethrough cterm=strikethrough gui=strikethrough
@@ -729,28 +727,31 @@ endif
   highlight! link CocSelectedRange EnfocadoVisuals
 
   " Coc semantic highlight groups.
-  highlight! link CocSem_class EnfocadoStructs
-  highlight! link CocSem_comment EnfocadoDimmeds
-  highlight! link CocSem_enum EnfocadoVariables
-  highlight! link CocSem_enumMember EnfocadoVariables
-  highlight! link CocSem_event EnfocadoFunctions
-  highlight! link CocSem_function EnfocadoFunctions
-  highlight! link CocSem_interface EnfocadoStructs
-  highlight! link CocSem_keyword EnfocadoKeywords
-  highlight! link CocSem_macro EnfocadoFunctions
-  highlight! link CocSem_method EnfocadoFunctions
-  highlight! link CocSem_modifier EnfocadoStructs
-  highlight! link CocSem_namespace EnfocadoStructs
-  highlight! link CocSem_number EnfocadoConstants
-  highlight! link CocSem_operator EnfocadoKeywords
-  highlight! link CocSem_parameter EnfocadoVariables
-  highlight! link CocSem_property EnfocadoVariables
-  highlight! link CocSem_regexp EnfocadoTypesBuiltins
-  highlight! link CocSem_string EnfocadoConstants
-  highlight! link CocSem_struct EnfocadoStructs
-  highlight! link CocSem_type EnfocadoTypes
-  highlight! link CocSem_typeParameter EnfocadoTypes
-  highlight! link CocSem_variable EnfocadoVariables
+  if exists('g:coc_default_semantic_highlight_groups') && 
+        \ g:coc_default_semantic_highlight_groups == 1
+    highlight! link CocSem_class EnfocadoStructs
+    highlight! link CocSem_comment EnfocadoDimmeds
+    highlight! link CocSem_enum EnfocadoVariables
+    highlight! link CocSem_enumMember EnfocadoVariables
+    highlight! link CocSem_event EnfocadoFunctions
+    highlight! link CocSem_function EnfocadoFunctions
+    highlight! link CocSem_interface EnfocadoStructs
+    highlight! link CocSem_keyword EnfocadoKeywords
+    highlight! link CocSem_macro EnfocadoFunctions
+    highlight! link CocSem_method EnfocadoFunctions
+    highlight! link CocSem_modifier EnfocadoStructs
+    highlight! link CocSem_namespace EnfocadoStructs
+    highlight! link CocSem_number EnfocadoConstants
+    highlight! link CocSem_operator EnfocadoKeywords
+    highlight! link CocSem_parameter EnfocadoVariables
+    highlight! link CocSem_property EnfocadoVariables
+    highlight! link CocSem_regexp EnfocadoTypesBuiltins
+    highlight! link CocSem_string EnfocadoConstants
+    highlight! link CocSem_struct EnfocadoStructs
+    highlight! link CocSem_type EnfocadoTypes
+    highlight! link CocSem_typeParameter EnfocadoTypes
+    highlight! link CocSem_variable EnfocadoVariables
+  endif
 " }}}
 " dashboard-nvim: {{{
   highlight! link DashboardCenter EnfocadoFgs
