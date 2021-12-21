@@ -345,7 +345,7 @@ if has('nvim')
     highlight! link DiagnosticInfo EnfocadoInfosInvs
     highlight! link DiagnosticInfoInv EnfocadoInfosInvs
     highlight! link DiagnosticWarn EnfocadoWarns
-    highlight! link DiagnosticWarnInv EnfocadoWarnsInvss
+    highlight! link DiagnosticWarnInv EnfocadoWarnsInvs
     highlight! link DiagnosticSignError EnfocadoErrors
     highlight! link DiagnosticSignHint EnfocadoHints
     highlight! link DiagnosticSignInfo EnfocadoInfos
@@ -500,6 +500,8 @@ if has('nvim')
     highlight! link GitSignsDelete EnfocadoDiffsDeletes
   " }}}
   " nvim-tree.lua: {{{
+    call s:Hl("NvimTreeNormal", s:none, s:bg_0, s:dim_0, s:none)
+    call s:Hl("NvimTreeNormalNC", s:none, s:bg_0, s:dim_0, s:none)
     highlight! link NvimTreeCursorColumn EnfocadoLinesHls
     highlight! link NvimTreeCursorLine EnfocadoLinesHls
     highlight! link NvimTreeEmptyFolderName EnfocadoDimmeds
@@ -526,8 +528,6 @@ if has('nvim')
     highlight! link NvimTreeLspDiagnosticsHint EnfocadoHints
     highlight! link NvimTreeLspDiagnosticsInformation EnfocadoInfos
     highlight! link NvimTreeLspDiagnosticsWarning EnfocadoWarns
-    highlight! link NvimTreeNormal EnfocadoNormal
-    highlight! link NvimTreeNormalNC EnfocadoNormal
     highlight! link NvimTreeOpenedFile EnfocadoDimmeds
     highlight! link NvimTreeOpenedFolderName EnfocadoDimmeds
     highlight! link NvimTreePopup EnfocadoFloats
@@ -727,7 +727,7 @@ endif
   highlight! link CocSelectedRange EnfocadoVisuals
 
   " Coc semantic highlight groups.
-  if exists('g:coc_default_semantic_highlight_groups') && 
+  if exists('g:coc_default_semantic_highlight_groups') &&
         \ g:coc_default_semantic_highlight_groups == 1
     highlight! link CocSem_class EnfocadoStructs
     highlight! link CocSem_comment EnfocadoDimmeds
