@@ -95,7 +95,7 @@ if g:enfocado_style == "neon"
   call s:Hl("EnfocadoFunctionsBuiltins", s:none, s:none, s:br_green, s:none)
   call s:Hl("EnfocadoKeywords", s:none, s:none, s:br_violet, s:none)
   call s:Hl("EnfocadoKeywordsBuiltins", s:none, s:none, s:br_blue, s:none)
-  call s:Hl("EnfocadoSearchs", s:none, s:bg_2, s:br_magenta, s:none)
+  call s:Hl("EnfocadoSearchs", s:bold, s:bg_2, s:br_magenta, s:none)
   call s:Hl("EnfocadoStructs", s:bold, s:none, s:br_magenta, s:none)
   call s:Hl("EnfocadoTypes", s:none, s:none, s:violet, s:none)
   call s:Hl("EnfocadoTypesBuiltins", s:none, s:none, s:blue, s:none)
@@ -110,7 +110,7 @@ else
   call s:Hl("EnfocadoFunctionsBuiltins", s:none, s:none, s:br_magenta, s:none)
   call s:Hl("EnfocadoKeywords", s:none, s:none, s:br_blue, s:none)
   call s:Hl("EnfocadoKeywordsBuiltins", s:none, s:none, s:br_violet, s:none)
-  call s:Hl("EnfocadoSearchs", s:none, s:bg_2, s:br_green, s:none)
+  call s:Hl("EnfocadoSearchs", s:bold, s:bg_2, s:br_green, s:none)
   call s:Hl("EnfocadoStructs", s:bold, s:none, s:br_green, s:none)
   call s:Hl("EnfocadoTypes", s:none, s:none, s:blue, s:none)
   call s:Hl("EnfocadoTypesBuiltins", s:none, s:none, s:violet, s:none)
@@ -128,33 +128,29 @@ call s:Hl("EnfocadoDiffsFgs", s:none, s:none, s:cyan, s:none)
 call s:Hl("EnfocadoIgnores", s:none, s:none, s:bg_2, s:none)
 call s:Hl("EnfocadoErrors", s:none, s:none, s:br_red, s:none)
 call s:Hl("EnfocadoErrorsFloats", s:none, s:bg_1, s:br_red, s:none)
-call s:Hl("EnfocadoErrorsInvs", s:none, s:br_red, s:bg_1, s:none)
 call s:Hl("EnfocadoErrorsUnders", s:underline, s:none, s:br_red, s:br_red)
 call s:Hl("EnfocadoFgs", s:none, s:none, s:fg_0, s:none)
 call s:Hl("EnfocadoFloats", s:none, s:bg_1, s:fg_0, s:none)
 call s:Hl("EnfocadoHints", s:none, s:none, s:br_blue, s:none)
 call s:Hl("EnfocadoHintsFloats", s:none, s:bg_1, s:br_blue, s:none)
-call s:Hl("EnfocadoHintsInvs", s:none, s:br_blue, s:bg_1, s:none)
 call s:Hl("EnfocadoHintsUnders", s:underline, s:none, s:br_blue, s:br_blue)
-call s:Hl("EnfocadoHlters", s:none, s:br_yellow, s:bg_1, s:none)
 call s:Hl("EnfocadoInfos", s:none, s:none, s:br_yellow, s:none)
 call s:Hl("EnfocadoInfosFloats", s:none, s:bg_1, s:br_yellow, s:none)
-call s:Hl("EnfocadoInfosInvs", s:none, s:br_yellow, s:bg_1, s:none)
 call s:Hl("EnfocadoInfosUnders", s:underline, s:none, s:br_yellow, s:br_yellow)
 call s:Hl("EnfocadoLinesHls", s:none, s:bg_1, s:none, s:none)
+call s:Hl("EnfocadoLinks", s:underline, s:none, s:br_cyan, s:br_cyan)
 call s:Hl("EnfocadoNones", s:none, s:none, s:none, s:none)
+call s:Hl("EnfocadoRares", s:none, s:none, s:br_magenta, s:none)
 call s:Hl("EnfocadoReverse", s:reverse, s:none, s:none, s:none)
 call s:Hl("EnfocadoStatusLines", s:none, s:bg_1, s:dim_0, s:none)
 call s:Hl("EnfocadoStatusLinesNC", s:none, s:bg_1, s:bg_2, s:none)
 call s:Hl("EnfocadoSuccess", s:none, s:none, s:br_green, s:none)
 call s:Hl("EnfocadoSuccessFloats", s:none, s:bg_1, s:br_green, s:none)
-call s:Hl("EnfocadoSuccessInvs", s:none, s:br_green, s:bg_1, s:none)
 call s:Hl("EnfocadoSuccessUnders", s:underline, s:none, s:br_green, s:br_green)
 call s:Hl("EnfocadoTitles", s:bold, s:none, s:fg_1, s:none)
 call s:Hl("EnfocadoVisuals", s:none, s:bg_2, s:none, s:none)
 call s:Hl("EnfocadoWarns", s:none, s:none, s:br_orange, s:none)
 call s:Hl("EnfocadoWarnsFloats", s:none, s:bg_1, s:br_orange, s:none)
-call s:Hl("EnfocadoWarnsInvs", s:none, s:br_orange, s:bg_1, s:none)
 call s:Hl("EnfocadoWarnsUnders", s:underline, s:none, s:br_orange, s:br_orange)
 " General vim groups.
 if has('spell')
@@ -183,7 +179,7 @@ endif
 highlight! link DiffAdd EnfocadoDiffsAdds
 highlight! link DiffChange EnfocadoDiffsChanges
 highlight! link DiffDelete EnfocadoDiffsDeletes
-highlight! link DiffText EnfocadoHlters
+highlight! link DiffText EnfocadoDiffsChanges
 highlight! link Directory EnfocadoDimmeds
 highlight! link EndOfBuffer EnfocadoIgnores
 highlight! link ErrorMsg EnfocadoErrors
@@ -235,6 +231,7 @@ if has('*term_setansicolors')
 endif
 
 " Syntax general vim groups.
+call s:Hl("Todo", s:bold, s:br_cyan, s:bg_1, s:none)
 highlight! link Boolean EnfocadoTypesBuiltins
 highlight! link Character EnfocadoConstants
 highlight! link Comment EnfocadoDimmeds
@@ -271,7 +268,6 @@ highlight! link Tag EnfocadoKeywords
 highlight! link Title EnfocadoTitles
 highlight! link Type EnfocadoTypes
 highlight! link Typedef EnfocadoTypes
-highlight! link Todo EnfocadoHlters
 highlight! Underlined term=underline cterm=underline gui=underline
 
 " Syntax filetype diff groups.
@@ -300,7 +296,7 @@ if has('nvim')
   highlight! FloatShadow ctermbg=16 guibg=#000000 blend=60
   highlight! FloatShadowThrough ctermbg=16 guibg=#000000 blend=100
   highlight! link Cursor EnfocadoCursors
-  highlight! link FloatBorder EnfocadoAccentsFloats
+  highlight! link FloatBorder EnfocadoFgs
   highlight! link lCursor EnfocadoCursors
   highlight! link MsgArea EnfocadoDimmeds
   highlight! link MsgSeparator EnfocadoStatusLines
@@ -334,18 +330,15 @@ if has('nvim')
   let g:terminal_color_14 = s:br_cyan[0]
   let g:terminal_color_15 = s:fg_1[0]
   " nvim-lspconfig: {{{
+    " Neovim diagnostics new groups.
     highlight! link DiagnosticError EnfocadoErrors
-    highlight! link DiagnosticErrorInv EnfocadoErrorsInvs
+    highlight! link DiagnosticHint EnfocadoHints
+    highlight! link DiagnosticInfo EnfocadoInfos
+    highlight! link DiagnosticWarn EnfocadoWarns
     highlight! link DiagnosticFloatingError EnfocadoErrorsFloats
     highlight! link DiagnosticFloatingHint EnfocadoHintsFloats
     highlight! link DiagnosticFloatingInfo EnfocadoInfosFloats
     highlight! link DiagnosticFloatingWarn EnfocadoWarnsFloats
-    highlight! link DiagnosticHint EnfocadoHints
-    highlight! link DiagnosticHintInv EnfocadoHintsInvs
-    highlight! link DiagnosticInfo EnfocadoInfosInvs
-    highlight! link DiagnosticInfoInv EnfocadoInfosInvs
-    highlight! link DiagnosticWarn EnfocadoWarns
-    highlight! link DiagnosticWarnInv EnfocadoWarnsInvs
     highlight! link DiagnosticSignError EnfocadoErrors
     highlight! link DiagnosticSignHint EnfocadoHints
     highlight! link DiagnosticSignInfo EnfocadoInfos
@@ -358,23 +351,36 @@ if has('nvim')
     highlight! link DiagnosticVirtualTextHint EnfocadoHints
     highlight! link DiagnosticVirtualTextInfo EnfocadoInfos
     highlight! link DiagnosticVirtualTextWarn EnfocadoWarns
-    highlight! link LspCodeLens EnfocadoDimmeds
-    highlight! link LspDiagnosticDefaultError EnfocadoErrors
-    highlight! link LspDiagnosticDefaultHint EnfocadoHints
-    highlight! link LspDiagnosticDefaultInfo EnfocadoInfos
-    highlight! link LspDiagnosticDefaultWarn EnfocadoWarns
-    highlight! link LspDiagnosticSignError EnfocadoErrors
-    highlight! link LspDiagnosticSignHint EnfocadoHints
-    highlight! link LspDiagnosticSignInfo EnfocadoInfos
-    highlight! link LspDiagnosticSignWarn EnfocadoWarns
+
+    " Neovim diagnostics old groups.
+    highlight! link LspDiagnosticsDefaultError EnfocadoErrors
+    highlight! link LspDiagnosticsDefaultHint EnfocadoHints
+    highlight! link LspDiagnosticsDefaultInformation EnfocadoInfos
+    highlight! link LspDiagnosticsDefaultWarning EnfocadoWarns
+    highlight! link LspDiagnosticsFloatingError EnfocadoErrorsFloats
+    highlight! link LspDiagnosticsFloatingHint EnfocadoHintsFloats
+    highlight! link LspDiagnosticsFloatingInformation EnfocadoInfosFloats
+    highlight! link LspDiagnosticsFloatingWarning EnfocadoWarnsFloats
     highlight! link LspDiagnosticsSignError EnfocadoErrors
     highlight! link LspDiagnosticsSignHint EnfocadoHints
     highlight! link LspDiagnosticsSignInformation EnfocadoInfos
     highlight! link LspDiagnosticsSignWarning EnfocadoWarns
-    highlight! link LspDiagnosticUnderlineError EnfocadoErrorsUnders
-    highlight! link LspDiagnosticUnderlineHint EnfocadoHintsUnders
-    highlight! link LspDiagnosticUnderlineInfo EnfocadoInfosUnders
-    highlight! link LspDiagnosticUnderlineWarn EnfocadoWarnsUnders
+    highlight! link LspDiagnosticsUnderlineError EnfocadoErrorsUnders
+    highlight! link LspDiagnosticsUnderlineHint EnfocadoHintsUnders
+    highlight! link LspDiagnosticsUnderlineInformation EnfocadoInfosUnders
+    highlight! link LspDiagnosticsUnderlineWarning EnfocadoWarnsUnders
+    highlight! link LspDiagnosticsVirtualTextError EnfocadoErrors
+    highlight! link LspDiagnosticsVirtualTextHint EnfocadoHints
+    highlight! link LspDiagnosticsVirtualTextInformation EnfocadoInfos
+    highlight! link LspDiagnosticsVirtualTextWarning EnfocadoWarns
+
+    " Neovim diagnostics other groups.
+    highlight! link LspCodeLens EnfocadoDimmeds
+    highlight! link LspCodeLensSeparator EnfocadoIgnores
+    highlight! link LspReferenceRead EnfocadoAccents
+    highlight! link LspReferenceText EnfocadoAccents
+    highlight! link LspReferenceWrite EnfocadoAccents
+    highlight! link LspSignatureActiveParameter EnfocadoAccents
   " }}}
   " nvim-treesitter: {{{
     if g:enfocado_style == "neon"
@@ -395,7 +401,7 @@ if has('nvim')
     call s:Hl("TSNone", s:italic, s:none, s:fg_0, s:none)
     call s:Hl("TSText", s:italic, s:none, s:fg_0, s:none)
     call s:Hl("TSTextReference", s:italic, s:none, s:fg_0, s:none)
-    call s:Hl("TSURI", s:underline, s:none, s:br_cyan, s:br_cyan)
+    call s:Hl("TSNote", s:bold, s:br_green, s:bg_1, s:none)
     highlight! link TSAnnotation EnfocadoDimmeds
     highlight! link TSAttribute EnfocadoVariables
     highlight! link TSBoolean EnfocadoTypesBuiltins
@@ -423,14 +429,13 @@ if has('nvim')
     highlight! link TSKeywordReturn EnfocadoKeywords
     highlight! link TSLabel EnfocadoTypes
     highlight! link TSMath EnfocadoFunctionsBuiltins
-    highlight! link TSNote EnfocadoInfos
     highlight! link TSNumber EnfocadoConstants
     highlight! link TSOperator EnfocadoKeywords
     highlight! link TSParameter EnfocadoVariables
     highlight! link TSParameterReference EnfocadoVariables
     highlight! link TSProperty EnfocadoVariables
     highlight! link TSPunctDelimiter EnfocadoFgs
-    highlight! link TSPunctBracket EnfocadoTypes
+    highlight! link TSPunctBracket EnfocadoFgs
     highlight! link TSPunctSpecial EnfocadoTypesBuiltins
     highlight! link TSRepeat EnfocadoKeywords
     highlight! link TSString EnfocadoConstants
@@ -443,6 +448,7 @@ if has('nvim')
     highlight! link TSTagDelimiter EnfocadoTypes
     highlight! link TSType EnfocadoTypes
     highlight! link TSTypeBuiltin EnfocadoTypes
+    highlight! link TSURI EnfocadoLinks
     highlight! link TSVariable EnfocadoVariables
     highlight! link TSVariableBuiltin EnfocadoVariablesBuiltins
     highlight! link TSWarning EnfocadoWarns
@@ -454,39 +460,6 @@ if has('nvim')
   " ------------------------------------------------------------------------------
   " SECTION: Neovim plugins highlight groups.
   " ------------------------------------------------------------------------------
-  " nvim-cmp: {{{
-    highlight! link CmpItemAbbrDefault EnfocadoFgs
-    highlight! link CmpItemAbbrDeprecatedDefault EnfocadoErrors
-    highlight! link CmpItemAbbrMatchDefault EnfocadoAccents
-    highlight! link CmpItemAbbrMatchFuzzyDefault EnfocadoAccents
-    highlight! link CmpItemKindDefault EnfocadoFgs
-    highlight! link CmpItemKindTextDefault EnfocadoFgs
-    highlight! link CmpItemKindMethodDefault EnfocadoFunctions
-    highlight! link CmpItemKindFunctionDefault EnfocadoFunctions
-    highlight! link CmpItemKindConstructorDefault EnfocadoStructs
-    highlight! link CmpItemKindFieldDefault EnfocadoVariables
-    highlight! link CmpItemKindVariableDefault EnfocadoVariables
-    highlight! link CmpItemKindClassDefault EnfocadoStructs
-    highlight! link CmpItemKindInterfaceDefault EnfocadoStructs
-    highlight! link CmpItemKindModuleDefault EnfocadoVariables
-    highlight! link CmpItemKindPropertyDefault EnfocadoVariables
-    highlight! link CmpItemKindUnitDefault EnfocadoConstants
-    highlight! link CmpItemKindValueDefault EnfocadoConstants
-    highlight! link CmpItemKindEnumDefault EnfocadoStructs
-    highlight! link CmpItemKindKeywordDefault EnfocadoKeywords
-    highlight! link CmpItemKindSnippetDefault EnfocadoFgs
-    highlight! link CmpItemKindColorDefault EnfocadoConstants
-    highlight! link CmpItemKindFileDefault EnfocadoFgs
-    highlight! link CmpItemKindReferenceDefault EnfocadoFgs
-    highlight! link CmpItemKindFolderDefault EnfocadoFgs
-    highlight! link CmpItemKindEnumMemberDefault EnfocadoVariables
-    highlight! link CmpItemKindConstantDefault EnfocadoConstants
-    highlight! link CmpItemKindStructDefault EnfocadoStructs
-    highlight! link CmpItemKindEventDefault EnfocadoFunctions
-    highlight! link CmpItemKindOperatorDefault EnfocadoKeywords
-    highlight! link CmpItemKindTypeParameterDefault EnfocadoTypes
-    highlight! link CmpItemMenuDefault EnfocadoFloats
-  " }}}
   " copilot.vim: {{{
     if exists('g:loaded_nvim_treesitter')
       call s:Hl("CopilotSuggestion", s:italic, s:bg_0, s:dim_0, s:none)
@@ -499,6 +472,77 @@ if has('nvim')
     highlight! link GitSignsChange EnfocadoDiffsChanges
     highlight! link GitSignsDelete EnfocadoDiffsDeletes
   " }}}
+  " nvim-cmp: {{{
+    highlight! link CmpItemAbbrDefault EnfocadoFgs
+    highlight! link CmpItemAbbrDeprecatedDefault EnfocadoErrors
+    highlight! link CmpItemAbbrMatchDefault EnfocadoAccents
+    highlight! link CmpItemAbbrMatchFuzzyDefault EnfocadoAccents
+    highlight! link CmpItemKindClassDefault EnfocadoStructs
+    highlight! link CmpItemKindColorDefault EnfocadoConstants
+    highlight! link CmpItemKindConstantDefault EnfocadoConstants
+    highlight! link CmpItemKindConstructorDefault EnfocadoStructs
+    highlight! link CmpItemKindDefault EnfocadoFgs
+    highlight! link CmpItemKindEnumDefault EnfocadoStructs
+    highlight! link CmpItemKindEnumMemberDefault EnfocadoVariables
+    highlight! link CmpItemKindEventDefault EnfocadoFunctions
+    highlight! link CmpItemKindFieldDefault EnfocadoVariables
+    highlight! link CmpItemKindFileDefault EnfocadoFgs
+    highlight! link CmpItemKindFolderDefault EnfocadoFgs
+    highlight! link CmpItemKindFunctionDefault EnfocadoFunctions
+    highlight! link CmpItemKindInterfaceDefault EnfocadoStructs
+    highlight! link CmpItemKindKeywordDefault EnfocadoKeywords
+    highlight! link CmpItemKindMethodDefault EnfocadoFunctions
+    highlight! link CmpItemKindModuleDefault EnfocadoVariables
+    highlight! link CmpItemKindOperatorDefault EnfocadoKeywords
+    highlight! link CmpItemKindPropertyDefault EnfocadoVariables
+    highlight! link CmpItemKindReferenceDefault EnfocadoFgs
+    highlight! link CmpItemKindSnippetDefault EnfocadoFgs
+    highlight! link CmpItemKindStructDefault EnfocadoStructs
+    highlight! link CmpItemKindTextDefault EnfocadoFgs
+    highlight! link CmpItemKindTypeParameterDefault EnfocadoTypes
+    highlight! link CmpItemKindUnitDefault EnfocadoConstants
+    highlight! link CmpItemKindValueDefault EnfocadoConstants
+    highlight! link CmpItemKindVariableDefault EnfocadoVariables
+    highlight! link CmpItemMenuDefault EnfocadoFloats
+  " }}}
+  " nvim-lsp-installer: {{{
+    highlight! link LspInstallerHeader EnfocadoTitles
+    highlight! link LspInstallerServerExpanded EnfocadoFgs
+    highlight! link LspInstallerHeading EnfocadoTitles
+    highlight! link LspInstallerGreen EnfocadoSuccess
+    highlight! link LspInstallerVaderSaber EnfocadoFgs
+    highlight! link LspInstallerOrange EnfocadoWarns
+    highlight! link LspInstallerMuted EnfocadoIgnores
+    highlight! link LspInstallerLabel EnfocadoFgs
+    highlight! link LspInstallerError EnfocadoErrors
+    highlight! link LspInstallerHighlighted EnfocadoAccents
+    highlight! link LspInstallerLink EnfocadoLinks
+  " }}}
+  " nvim-notify: {{{
+    highlight! link NotifyERRORBody EnfocadoFgs
+    highlight! link NotifyERRORBorder EnfocadoErrors
+    highlight! link NotifyERRORIcon EnfocadoErrors
+    highlight! link NotifyERRORTitle EnfocadoErrors
+    highlight! link NotifyDEBUGBody EnfocadoFgs
+    highlight! link NotifyDEBUGBorder EnfocadoDimmeds
+    highlight! link NotifyDEBUGIcon EnfocadoDimmeds
+    highlight! link NotifyDEBUGTitle EnfocadoDimmeds
+    highlight! link NotifyINFOBody EnfocadoFgs
+    highlight! link NotifyINFOBorder EnfocadoInfos
+    highlight! link NotifyINFOIcon EnfocadoInfos
+    highlight! link NotifyINFOTitle EnfocadoInfos
+    highlight! link NotifyTRACEBody EnfocadoFgs
+    highlight! link NotifyTRACEBorder EnfocadoRares
+    highlight! link NotifyTRACEIcon EnfocadoRares
+    highlight! link NotifyTRACETitle EnfocadoRares
+    highlight! link NotifyWARNBody EnfocadoFgs
+    highlight! link NotifyWARNBorder EnfocadoWarns
+    highlight! link NotifyWARNIcon EnfocadoWarns
+    highlight! link NotifyWARNTitle EnfocadoWarns
+  " }}}
+  " nvim-scrollview: {{{
+    highlight! link ScrollView EnfocadoLinesHls
+  "}}}
   " nvim-tree.lua: {{{
     call s:Hl("NvimTreeNormal", s:none, s:bg_0, s:dim_0, s:none)
     call s:Hl("NvimTreeNormalNC", s:none, s:bg_0, s:dim_0, s:none)
@@ -540,29 +584,27 @@ if has('nvim')
     highlight! link NvimTreeVertSplit VertSplit
     highlight! link NvimTreeWindowPicker EnfocadoAccents
   " }}}
-  " nvim-notify: {{{
-    highlight! link NotifyERRORBorder EnfocadoErrors
-    highlight! link NotifyWARNBorder EnfocadoWarns
-    highlight! link NotifyINFOBorder EnfocadoInfos
-    highlight! link NotifyDEBUGBorder EnfocadoDimmeds
-    highlight! link NotifyTRACEBorder EnfocadoWarns
-    highlight! link NotifyERRORIcon EnfocadoErrors
-    highlight! link NotifyWARNIcon EnfocadoWarns
-    highlight! link NotifyINFOIcon EnfocadoInfos
-    highlight! link NotifyDEBUGIcon EnfocadoDimmeds
-    highlight! link NotifyTRACEIcon EnfocadoWarns
-    highlight! link NotifyERRORTitle EnfocadoErrors
-    highlight! link NotifyWARNTitle EnfocadoWarns
-    highlight! link NotifyINFOTitle EnfocadoInfos
-    highlight! link NotifyDEBUGTitle EnfocadoDimmeds
-    highlight! link NotifyTRACETitle EnfocadoWarns
-    highlight! link NotifyERRORBody EnfocadoFgs
-    highlight! link NotifyWARNBody EnfocadoFgs
-    highlight! link NotifyINFOBody EnfocadoFgs
-    highlight! link NotifyDEBUGBody EnfocadoFgs
-    highlight! link NotifyTRACEBody EnfocadoFgs
-    highlight! link NotifyLogTime EnfocadoConstants
-    highlight! link NotifyLogTitle EnfocadoTitles
+  " packer.nvim: {{{
+    highlight! link packerWorking EnfocadoAccents
+    highlight! link packerSuccess EnfocadoSuccess
+    highlight! link packerFail EnfocadoErrors
+    highlight! link packerStatus EnfocadoInfos
+    highlight! link packerStatusSuccess EnfocadoSuccess
+    highlight! link packerStatusFail EnfocadoErrors
+    highlight! link packerStatusCommit EnfocadoDimmeds
+    highlight! link packerHash EnfocadoDimmeds
+    highlight! link packerRelDate EnfocadoDimmeds
+    highlight! link packerProgress EnfocadoInfos
+    highlight! link packerOutput EnfocadoConstants
+    highlight! link packerTimeHigh EnfocadoDimmeds
+    highlight! link packerTimeMedium EnfocadoDimmeds
+    highlight! link packerTimeLow EnfocadoDimmeds
+    highlight! link packerTimeTrivial EnfocadoDimmeds
+    highlight! link packerPackageNotLoaded EnfocadoDimmeds
+    highlight! link packerPackageName EnfocadoFgs
+    highlight! link packerString EnfocadoConstants
+    highlight! link packerBool EnfocadoTypesBuiltins
+    highlight! link packerBreakingChange EnfocadoWarns
   " }}}
   " telescope.nvim: {{{
     call s:Hl("TelescopePreviewDate", s:none, s:none, s:blue, s:none)
@@ -613,23 +655,23 @@ if has('nvim')
     highlight! link TelescopeTitle EnfocadoTitles
   " }}}
   " todo-comments.nvim: {{{
-    call s:Hl("TodoBgNOTE", s:bold, s:br_blue, s:bg_1, s:none)
-    call s:Hl("TodoFgNOTE", s:none, s:none, s:br_blue, s:none)
-    call s:Hl("TodoSignNOTE", s:none, s:none, s:br_blue, s:none)
-    call s:Hl("TodoBgPERF", s:bold, s:br_magenta, s:bg_1, s:none)
-    call s:Hl("TodoFgPERF", s:none, s:none, s:br_magenta, s:none)
-    call s:Hl("TodoSignPERF", s:none, s:none, s:br_magenta, s:none)
-    call s:Hl("TodoBgHACK", s:bold, s:br_orange, s:bg_1, s:none)
-    call s:Hl("TodoFgHACK", s:none, s:none, s:br_orange, s:none)
-    call s:Hl("TodoSignHACK", s:none, s:none, s:br_orange, s:none)
-    call s:Hl("TodoBgTODO", s:bold, s:br_yellow, s:bg_1, s:none)
-    call s:Hl("TodoFgTODO", s:none, s:none, s:br_yellow, s:none)
-    call s:Hl("TodoSignTODO", s:none, s:none, s:br_yellow, s:none)
     call s:Hl("TodoBgFIX", s:bold, s:br_red, s:bg_1, s:none)
-    call s:Hl("TodoFgFIX", s:none, s:none, s:br_red, s:none)
-    call s:Hl("TodoSignFIX", s:none, s:none, s:br_red, s:none)
+    call s:Hl("TodoBgHACK", s:bold, s:br_yellow, s:bg_1, s:none)
+    call s:Hl("TodoBgNOTE", s:bold, s:br_green, s:bg_1, s:none)
+    call s:Hl("TodoBgPERF", s:bold, s:br_magenta, s:bg_1, s:none)
+    call s:Hl("TodoBgTODO", s:bold, s:br_cyan, s:bg_1, s:none)
     call s:Hl("TodoBgWARN", s:bold, s:br_orange, s:bg_1, s:none)
+    call s:Hl("TodoFgFIX", s:none, s:none, s:br_red, s:none)
+    call s:Hl("TodoFgHACK", s:none, s:none, s:br_yellow, s:none)
+    call s:Hl("TodoFgNOTE", s:none, s:none, s:br_green, s:none)
+    call s:Hl("TodoFgPERF", s:none, s:none, s:br_magenta, s:none)
+    call s:Hl("TodoFgTODO", s:none, s:none, s:br_cyan, s:none)
     call s:Hl("TodoFgWARN", s:none, s:none, s:br_orange, s:none)
+    call s:Hl("TodoSignFIX", s:none, s:none, s:br_red, s:none)
+    call s:Hl("TodoSignHACK", s:none, s:none, s:br_yellow, s:none)
+    call s:Hl("TodoSignNOTE", s:none, s:none, s:br_green, s:none)
+    call s:Hl("TodoSignPERF", s:none, s:none, s:br_magenta, s:none)
+    call s:Hl("TodoSignTODO", s:none, s:none, s:br_cyan, s:none)
     call s:Hl("TodoSignWARN", s:none, s:none, s:br_orange, s:none)
   " }}}
 endif
@@ -667,9 +709,9 @@ endif
   highlight! link CocWarningVirtualText EnfocadoWarns
 
   " Coc document highlight groups.
-  call s:Hl("CocHighlightRead", s:bold, s:bg_2, s:yellow, s:none)
-  call s:Hl("CocHighlightWrite", s:bold, s:bg_2, s:red, s:none)
-  highlight! link CocHighlightText EnfocadoVisuals
+  highlight! link CocHighlightRead EnfocadoAccents
+  highlight! link CocHighlightWrite EnfocadoAccents
+  highlight! link CocHighlightText EnfocadoAccents
 
   " Coc float window/popup groups.
   highlight! link CocErrorFloat EnfocadoErrorsFloats
@@ -720,7 +762,7 @@ endif
   highlight! link CocSymbolVariable EnfocadoVariables
 
   " Other coc groups.
-  highlight! link CocCodeLens EnfocadoFgs
+  highlight! link CocCodeLens EnfocadoDimmeds
   highlight! link CocCursorRange EnfocadoVisuals
   highlight! link CocHoverRange EnfocadoVisuals
   highlight! link CocMenuSel EnfocadoVisuals
@@ -754,15 +796,10 @@ endif
   endif
 " }}}
 " dashboard-nvim: {{{
-  highlight! link DashboardCenter EnfocadoFgs
-  highlight! link DashboardFooter EnfocadoDimmeds
+  highlight! link DashboardCenter EnfocadoDimmeds
+  highlight! link DashboardFooter EnfocadoIgnores
   highlight! link DashboardHeader EnfocadoAccents
-  highlight! link DashboardShortCut EnfocadoFgs
-" }}}
-" vim-floaterm: {{{
-  highlight! link Floaterm EnfocadoFloats
-  highlight! link FloatermBorder EnfocadoAccentsFloats
-  highlight! link FloatermNC EnfocadoFloats
+  highlight! link DashboardShortCut EnfocadoDimmeds
 " }}}
 " fzf.vim: {{{
   " fzf apply enfocado groups.
@@ -788,10 +825,6 @@ endif
   call s:Hl("Fzf1", s:bold, s:bg_2, s:dim_0, s:none)
   call s:Hl("Fzf2", s:none, s:bg_1, s:dim_0, s:none)
   call s:Hl("Fzf3", s:none, s:bg_0, s:dim_0, s:none)
-" }}}
-" vim-multiple-cursors: {{{
-  highlight! link multiple_cursors_cursor EnfocadoCursors
-  highlight! link multiple_cursors_visual EnfocadoVisuals
 " }}}
 " nerdtree: {{{
   call s:Hl("NERDTreeFile", s:none, s:none, s:dim_0, s:none)
@@ -850,9 +883,43 @@ endif
     let g:rainbow_conf['ctermfgs'] = s:rainbow_ctermfgs
   endif
 "}}}
+" vim-floaterm: {{{
+  highlight! link Floaterm EnfocadoFloats
+  highlight! link FloatermBorder EnfocadoAccentsFloats
+  highlight! link FloatermNC EnfocadoFloats
+" }}}
+" vim-matchup: {{{
+  highlight! link MatchBackground EnfocadoLinesHls
+  highlight! link MatchParenCur EnfocadoVisuals
+  highlight! link MatchWord EnfocadoVisuals
+  highlight! link MatchWordCur EnfocadoVisuals
+" }}}
+" vim-multiple-cursors: {{{
+  highlight! link multiple_cursors_cursor EnfocadoCursors
+  highlight! link multiple_cursors_visual EnfocadoVisuals
+" }}}
 " vim-signify: {{{
   highlight! link SignifySignAdd EnfocadoDiffsAdds
   highlight! link SignifySignChange EnfocadoDiffsChanges
   highlight! link SignifySignDelete EnfocadoDiffsDeletes
+" }}}
+" vim-which-key: {{{
+  highlight! link WhichKey EnfocadoFgs
+  highlight! link WhichKeyDesc EnfocadoFgs
+  highlight! link WhichKeyFloat EnfocadoFloats
+  highlight! link WhichKeyGroup EnfocadoDimmeds
+  highlight! link WhichKeySeparator EnfocadoIgnores
+  highlight! link WhichKeyValue EnfocadoFgs
+" }}}
+" vista.vim: {{{
+  highlight! link VistaBracket EnfocadoIgnores
+  highlight! link VistaChildrenNr EnfocadoIgnores
+  highlight! link VistaColon EnfocadoIgnores
+  highlight! link VistaFloat EnfocadoFloats
+  highlight! link VistaIcon EnfocadoAccents
+  highlight! link VistaLineNr EnfocadoIgnores
+  highlight! link VistaPrefix EnfocadoIgnores
+  highlight! link VistaScope EnfocadoDimmeds
+  highlight! link VistaTag EnfocadoDimmeds
 " }}}
 " vim: set foldmethod=marker:

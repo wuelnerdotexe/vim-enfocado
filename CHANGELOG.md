@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.3.2] - 2021-12-27
+
+### Added
+
+Support is added for plugins used in CodeArt:
+
+- [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer/)
+- [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)
+- [packer.nvim](https://github.com/wbthomason/packer.nvim)
+- [vim-matchup](https://github.com/andymass/vim-matchup)
+- [vim-which-key](https://github.com/liuchengxu/vim-which-key)
+- [vista.vim](https://github.com/liuchengxu/vista.vim)
+
+### Fixed
+
+- Many improvements are made.
+
 ## [4.2.1] - 2021-12-18
 
 ### Added

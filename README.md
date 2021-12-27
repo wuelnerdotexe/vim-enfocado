@@ -145,6 +145,7 @@ In order for the human text simulation to work as it should (in addition to inst
 
 This vim configs comes with **Enfocado for Vim** already installed by default!
 
+- [CodeArt](https://github.com/artart222/CodeArt)
 - [CosmicNvim](https://github.com/CosmicNvim/CosmicNvim)
 
 ### Extras
@@ -176,14 +177,20 @@ The following plugins are supported:
 - [nerdree](https://github.com/preservim/nerdtree)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer/)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
+- [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
+- [vim-matchup](https://github.com/andymass/vim-matchup)
 - [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 - [vim-signify](https://github.com/mhinz/vim-signify)
 - [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
+- [vim-which-key](https://github.com/liuchengxu/vim-which-key)
+- [vista.vim](https://github.com/liuchengxu/vista.vim)
 
 ## Credits
 
