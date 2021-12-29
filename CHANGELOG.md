@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.3.3] - 2021-12-29
+
+### Fixed
+
+- Highlighting for the spell is optimized.
+
 ## [4.3.2] - 2021-12-27
 
 ### Added
@@ -35,7 +41,6 @@ Support is added for plugins used in CodeArt:
 Support is added for plugins used in CosmicNvim:
 
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
-- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
@@ -92,7 +97,7 @@ Support is added for plugins used in CosmicNvim:
 
 ### Added
 
-- Support is added for [Rainbow](https://github.com/luochen1990/rainbow) Parentheses.
+- Support is added for [rainbow](https://github.com/luochen1990/rainbow) parentheses.
 
 ### Changed
 
@@ -108,9 +113,8 @@ Support is added for the following plugins:
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
-- [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
-- [NERDTree](https://github.com/preservim/nerdtree)
-- [Vim-Signify](https://github.com/mhinz/vim-signify)
+- [nerdtree](https://github.com/preservim/nerdtree)
+- [vim-signify](https://github.com/mhinz/vim-signify)
 
 ### Changed
 

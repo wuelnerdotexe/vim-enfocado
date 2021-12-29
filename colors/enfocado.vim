@@ -64,7 +64,7 @@ let s:bold_italic = [ 'bold,italic'  , 'bold,italic'   ]
 let s:italic      = [ 'italic'       , 'italic'        ]
 let s:strike      = [ 'strikethrough', 'strikethrough' ]
 let s:underline   = [ 'underline'    , 'underline'     ]
-let s:undercurl   = [ 'undercurl'    , 'undercurl'     ]
+let s:undercurl   = [ 'undercurl'    , 'underline'     ]
 
 " Configuration variables are initialized.
 if !exists('g:enfocado_style')
@@ -74,7 +74,7 @@ endif
 " A function is created to highlight the groups.
 function! s:Hl(group, txt, bg, fg, sp)
     execute "highlight ".a:group.
-          \ " gui=".a:txt[0]."  cterm=".a:txt[0]."  term=".a:txt[0].
+          \ " gui=".a:txt[0]."  cterm=".a:txt[1]."  term=".a:txt[1].
           \ " guibg=".a:bg[0]." ctermbg=".a:bg[1].
           \ " guifg=".a:fg[0]." ctermfg=".a:fg[1]." guisp=".a:sp[0]
 endfunction
@@ -152,12 +152,13 @@ call s:Hl("EnfocadoVisuals", s:none, s:bg_2, s:none, s:none)
 call s:Hl("EnfocadoWarns", s:none, s:none, s:br_orange, s:none)
 call s:Hl("EnfocadoWarnsFloats", s:none, s:bg_1, s:br_orange, s:none)
 call s:Hl("EnfocadoWarnsUnders", s:underline, s:none, s:br_orange, s:br_orange)
+
 " General vim groups.
 if has('spell')
-  call s:Hl("SpellBad", s:undercurl, s:none, s:br_red, s:br_red)
-  call s:Hl("SpellCap", s:undercurl, s:none, s:br_orange, s:br_orange)
-  call s:Hl("SpellLocal", s:undercurl, s:none, s:br_yellow, s:br_yellow)
-  call s:Hl("SpellRare", s:undercurl, s:none, s:br_magenta, s:br_magenta)
+    call s:Hl("SpellBad", s:undercurl, s:none, s:none, s:red)
+    call s:Hl("SpellCap", s:undercurl, s:none, s:none, s:blue)
+    call s:Hl("SpellLocal", s:undercurl, s:none, s:none, s:cyan)
+    call s:Hl("SpellRare", s:undercurl, s:none, s:none, s:magenta)
 endif
 if version >= 700
   highlight! link CursorColumn EnfocadoLinesHls
@@ -466,11 +467,6 @@ if has('nvim')
     else
       call s:Hl("CopilotSuggestion", s:none, s:bg_0, s:dim_0, s:none)
     endif
-  " }}}
-  " gitsigns.nvim: {{{
-    highlight! link GitSignsAdd EnfocadoDiffsAdds
-    highlight! link GitSignsChange EnfocadoDiffsChanges
-    highlight! link GitSignsDelete EnfocadoDiffsDeletes
   " }}}
   " nvim-cmp: {{{
     highlight! link CmpItemAbbrDefault EnfocadoFgs
@@ -862,7 +858,7 @@ endif
   highlight! link netrwSymLink EnfocadoDimmeds
   highlight! link netrwVersion EnfocadoIgnores
 " }}}
-" rainbow_parentheses.vim: {{{
+" rainbow: {{{
   if g:enfocado_style == "neon"
     let s:rainbow_guifgs   = [ s:violet[0], s:cyan[0], s:magenta[0], s:br_violet[0] ]
     let s:rainbow_ctermfgs = [ s:violet[1], s:cyan[1], s:magenta[1], s:br_violet[1] ]
@@ -898,10 +894,42 @@ endif
   highlight! link multiple_cursors_cursor EnfocadoCursors
   highlight! link multiple_cursors_visual EnfocadoVisuals
 " }}}
+" vim-plug: {{{
+  highlight! link plug1 EnfocadoTitles
+  highlight! link plug2 EnfocadoAccents
+  highlight! link plugBracket EnfocadoFgs
+  highlight! link plugCommit EnfocadoFgs
+  highlight! link plugDash EnfocadoDimmeds
+  highlight! link plugDeleted EnfocadoIgnores
+  highlight! link plugEdge EnfocadoDimmeds
+  highlight! link plugError EnfocadoErrors
+  highlight! link plugH2 EnfocadoTitles
+  highlight! link plugInstall EnfocadoAccents
+  highlight! link plugMessage EnfocadoInfos
+  highlight! link plugName EnfocadoFgs
+  highlight! link plugNotLoaded EnfocadoDimmeds
+  highlight! link plugNumber EnfocadoConstants
+  highlight! link plugPlus EnfocadoFgs
+  highlight! link plugRelDate EnfocadoDimmeds
+  highlight! link plugSha EnfocadoDimmeds
+  highlight! link plugStar EnfocadoDimmeds
+  highlight! link plugTag EnfocadoFgs
+  highlight! link plugUpdate EnfocadoAccents
+  highlight! link plugX EnfocadoFgs
+" }}}
 " vim-signify: {{{
+  if exists('g:signify_line_highlight') && g:signify_line_highlight == 1
+    highlight! link SignifyLineAdd EnfocadoDiffsAdds
+    highlight! link SignifyLineChange EnfocadoDiffsChanges
+    highlight! link SignifyLineChangeDelete EnfocadoDiffsChanges
+    highlight! link SignifyLineDelete EnfocadoDiffsDeletes
+    highlight! link SignifyLineDeleteFirstLine EnfocadoDiffsDeletes
+  endif
   highlight! link SignifySignAdd EnfocadoDiffsAdds
   highlight! link SignifySignChange EnfocadoDiffsChanges
+  highlight! link SignifySignChangeDelete EnfocadoDiffsChanges
   highlight! link SignifySignDelete EnfocadoDiffsDeletes
+  highlight! link SignifySignDeleteFirstLine EnfocadoDiffsDeletes
 " }}}
 " vim-which-key: {{{
   highlight! link WhichKey EnfocadoFgs
