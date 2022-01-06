@@ -1,3 +1,4 @@
+" vim: fileencoding=utf-8 tabstop=2 shiftwidth=2 foldlevel=0 foldmethod=marker:
 " -----------------------------------------------------------------------------
 " Name:        Enfocado for Airline
 " Author:      Wuelner Martínez <wuelner.martinez@outlook.com>
@@ -33,7 +34,7 @@ let s:br_cyan    = [ '#56D8C9', 80  ]
 let s:br_orange  = [ '#FA9153', 209 ]
 let s:br_violet  = [ '#B891F5', 141 ]
 
-" Attributes are declared. 
+" Attributes are declared.
 let s:bold = 'bold'
 
 " The Enfocado Airline theme is initialized.
