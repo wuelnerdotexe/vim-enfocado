@@ -35,39 +35,34 @@ local colors = {
   br_violet  = '#B891F5'
 }
 
--- Attributes are declared. 
-local text_types = {
-  bold = 'bold'
-}
-
 return {
   normal = {
-    a = { fg = colors.dim_0, bg = colors.bg_2, gui = text_types.bold },
+    a = { fg = colors.dim_0, bg = colors.bg_2, gui = 'bold' },
     b = { fg = colors.dim_0, bg = colors.bg_1 },
     c = { fg = colors.dim_0, bg = colors.bg_0 }
   },
   insert = {
-    a = { fg = colors.dim_0, bg = colors.bg_2, gui = text_types.bold },
+    a = { fg = colors.dim_0, bg = colors.bg_2, gui = 'bold' },
     b = { fg = colors.dim_0, bg = colors.bg_1 },
     c = { fg = colors.dim_0, bg = colors.bg_0 }
   },
   visual = {
-    a = { fg = colors.dim_0, bg = colors.bg_2, gui = text_types.bold },
+    a = { fg = colors.dim_0, bg = colors.bg_2, gui = 'bold' },
     b = { fg = colors.dim_0, bg = colors.bg_1 },
     c = { fg = colors.dim_0, bg = colors.bg_0 }
   },
   replace = {
-    a = { fg = colors.dim_0, bg = colors.bg_2, gui = text_types.bold },
+    a = { fg = colors.dim_0, bg = colors.bg_2, gui = 'bold' },
     b = { fg = colors.dim_0, bg = colors.bg_1 },
     c = { fg = colors.dim_0, bg = colors.bg_0 }
   },
   command = {
-    a = { fg = colors.dim_0, bg = colors.bg_2, gui = text_types.bold },
+    a = { fg = colors.dim_0, bg = colors.bg_2, gui = 'bold' },
     b = { fg = colors.dim_0, bg = colors.bg_1 },
     c = { fg = colors.dim_0, bg = colors.bg_0 }
   },
   inactive = {
-    a = { fg = colors.bg_2, bg = colors.bg_1, gui = text_types.bold },
+    a = { fg = colors.bg_2, bg = colors.bg_1, gui = 'bold' },
     b = { fg = colors.bg_2, bg = colors.bg_1 }
   }
 }

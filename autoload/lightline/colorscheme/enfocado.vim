@@ -34,46 +34,45 @@ let s:br_cyan    = [ '#56D8C9', 80  ]
 let s:br_orange  = [ '#FA9153', 209 ]
 let s:br_violet  = [ '#B891F5', 141 ]
 
-" Attributes are declared.
-let s:bold = 'bold'
-
 " The Enfocado Lightline theme is initialized.
-let s:p = {
-  \ 'normal' : {}, 'inactive' : {}, 'insert' : {},
-  \ 'replace' : {}, 'visual' : {}, 'tabline' : {}
-\ }
+let s:palette = {
+  \ 'normal' : { }, 'inactive' : { }, 'insert' : { },
+  \ 'replace' : { }, 'visual' : { }, 'tabline' : { }
+  \ }
 
 " Normal mode.
-let s:p.normal.left    = [ [ s:dim_0, s:bg_2, s:bold ], [ s:dim_0, s:bg_1 ] ]
-let s:p.normal.middle  = [ [ s:dim_0, s:bg_0 ] ]
-let s:p.normal.right   = [ [ s:dim_0, s:bg_2, s:bold ], [ s:dim_0, s:bg_1 ], [ s:dim_0, s:bg_0 ] ]
-let s:p.normal.error   = [ [ s:bg_1, s:br_red ] ]
-let s:p.normal.warning = [ [ s:bg_1, s:br_orange ] ]
+let s:palette.normal.left   = [ [ s:dim_0, s:bg_2, 'bold' ], [ s:dim_0, s:bg_1 ] ]
+let s:palette.normal.middle = [ [ s:dim_0, s:bg_0 ] ]
+let s:palette.normal.right  = [ [ s:dim_0, s:bg_2, 'bold' ], [ s:dim_0, s:bg_1 ], [ s:dim_0, s:bg_0 ] ]
 
 " Insert mode.
-let s:p.insert.left    = [ [ s:dim_0, s:bg_2, s:bold ], [ s:dim_0, s:bg_1 ] ]
-let s:p.insert.middle  = [ [ s:dim_0, s:bg_0 ] ]
-let s:p.insert.right   = [ [ s:dim_0, s:bg_2, s:bold ], [ s:dim_0, s:bg_1 ], [ s:dim_0, s:bg_0 ] ]
+let s:palette.insert.left   = copy(s:palette.normal.left)
+let s:palette.insert.middle = copy(s:palette.normal.middle)
+let s:palette.insert.right  = copy(s:palette.normal.right)
 
 " Visual mode.
-let s:p.visual.left    = [ [ s:dim_0, s:bg_2, s:bold ], [ s:dim_0, s:bg_1 ] ]
-let s:p.visual.middle  = [ [ s:dim_0, s:bg_0 ] ]
-let s:p.visual.right   = [ [ s:dim_0, s:bg_2, s:bold ], [ s:dim_0, s:bg_1 ], [ s:dim_0, s:bg_0 ] ]
+let s:palette.visual.left   = copy(s:palette.normal.left)
+let s:palette.visual.middle = copy(s:palette.normal.middle)
+let s:palette.visual.right  = copy(s:palette.normal.right)
 
 " Replace mode.
-let s:p.replace.left    = [ [ s:dim_0, s:bg_2, s:bold ], [ s:dim_0, s:bg_1 ] ]
-let s:p.replace.middle  = [ [ s:dim_0, s:bg_0 ] ]
-let s:p.replace.right   = [ [ s:dim_0, s:bg_2, s:bold ], [ s:dim_0, s:bg_1 ], [ s:dim_0, s:bg_0 ] ]
+let s:palette.replace.left   = copy(s:palette.normal.left)
+let s:palette.replace.middle = copy(s:palette.normal.middle)
+let s:palette.replace.right  = copy(s:palette.normal.right)
 
 " Inactive mode.
-let s:p.inactive.letf  = [ [ s:bg_2 , s:bg_1 ], [ s:bg_2, s:bg_1 ], [ s:bg_2, s:bg_1 ] ]
-let s:p.inactive.right = [ [ s:bg_2 , s:bg_1 ], [ s:bg_2, s:bg_1 ], [ s:bg_2, s:bg_1 ] ]
+let s:palette.inactive.letf  = [ [ s:bg_2 , s:bg_1 ], [ s:bg_2, s:bg_1 ], [ s:bg_2, s:bg_1 ] ]
+let s:palette.inactive.right = [ [ s:bg_2 , s:bg_1 ], [ s:bg_2, s:bg_1 ], [ s:bg_2, s:bg_1 ] ]
 
 " Tabline.
-let s:p.tabline.left   = [ [ s:dim_0, s:bg_0 ] ]
-let s:p.tabline.middle = [ [ s:dim_0, s:bg_0 ] ]
-let s:p.tabline.right  = [ [ s:dim_0, s:bg_1 ] ]
-let s:p.tabline.tabsel = [ [ s:dim_0, s:bg_2, s:bold ] ]
+let s:palette.tabline.left   = [ [ s:dim_0, s:bg_0 ] ]
+let s:palette.tabline.middle = [ [ s:dim_0, s:bg_0 ] ]
+let s:palette.tabline.right  = [ [ s:dim_0, s:bg_1 ] ]
+let s:palette.tabline.tabsel = [ [ s:dim_0, s:bg_2, 'bold' ] ]
+
+" Alerts.
+let s:palette.normal.error   = [ [ s:bg_1, s:br_red ] ]
+let s:palette.normal.warning = [ [ s:bg_1, s:br_orange ] ]
 
 " Lightline name theme.
-let g:lightline#colorscheme#enfocado#palette = lightline#colorscheme#flatten(s:p)
+let g:lightline#colorscheme#enfocado#palette = lightline#colorscheme#flatten(s:palette)

@@ -1,0 +1,103 @@
+*enfocado.txt* How themes should be.
+
+==============================================================================
+
+1. Statuslines                                          *enfocado-statuslines*
+
+To use lightline theme:
+
+`let g:lightline = { 'colorscheme': 'enfocado' }`
+
+To use Lualine theme:
+
+`require('lualine').setup { options = { theme = 'enfocado' } }`
+
+To use Airline theme:
+
+`let g:airline_theme = 'enfocado'`
+
+==============================================================================
+
+2. Colorscheme                                          *enfocado-colorscheme*
+
+First, if you have true color support, enable it:
+
+`set termguicolors`
+
+Otherwise, enable 256 terminal color support:
+
+`set t_Co=256`
+
+Then choose your favorite Enfocado style, for example:
+
+`let g:enfocado_style = 'neon' "Available: 'nature' or 'neon'.`
+
+If you want to reduce the loading time of Enfocado, you can specify the
+plugins you want to apply the theme to on-demand, This is the full list of
+supported plugins so far:
+
+`let g:enfocado_plugins = [`
+`  \ 'cmp',`
+`  \ 'coc',`
+`  \ 'copilot',`
+`  \ 'dashboard',`
+`  \ 'floaterm',`
+`  \ 'fzf',`
+`  \ 'lsp',`
+`  \ 'lsp-installer',`
+`  \ 'matchup',`
+`  \ 'nerdtree',`
+`  \ 'netrw',`
+`  \ 'notify',`
+`  \ 'packer',`
+`  \ 'plug',`
+`  \ 'rainbow',`
+`  \ 'scrollview',`
+`  \ 'signify'`
+`  \ 'telescope',`
+`  \ 'todo-comments',`
+`  \ 'tree',`
+`  \ 'treesitter',`
+`  \ 'vista',`
+`  \ 'which-key',`
+`  \ ]`
+
+or also indicate the `all` option to highlight all supported plugins:
+
+`let g:enfocado_plugins = ['all']`
+
+or simply indicate the `none` option to disable plugin support:
+
+`let g:enfocado_plugins = ['none']`
+
+And finally turn on the Enfocado theme and enjoy!
+
+`" IMPORTANT: this vim auto command ensures the`
+`" activation of Enfocado in compatible plugins.`
+`autocmd VimEnter * ++nested colorscheme enfocado`
+
+==============================================================================
+
+3. Customization                                      *enfocado-customization*
+
+Like all colorschemes, Enfocado is easy to customize with autocmd. Make use
+of the ColorScheme event as in the following examples.
+
+It would be a good idea to put all of your personal changes in an augroup,
+which you can do with the following code:
+
+`augroup enfocado_customization`
+  `autocmd!`
+    `" autocmds...`
+`augroup END`
+
+To make the background transparent, you can use the following:
+
+`augroup enfocado_customization`
+  `autocmd!`
+      `autocmd ColorScheme enfocado highlight Normal ctermbg=NONE guibg=NONE`
+`augroup END`
+
+Note: The usage codes must be written in your .vimrc or init.vim.
+
+vim:textwidth=78:tabstop=8:filetype=help:

@@ -10,7 +10,7 @@
 What you **won't have** if you **don't install Enfocado**:
 
 - **CIELAB Colors:** use of the well-founded Selenized black color scheme created with the magic of the **CIELAB color space**. Learn about its features and design in its [official repository](https://github.com/jan-warchol/selenized/blob/master/features-and-design.md).
-- **Human Writing:** human writing is simulated by using italic typeface for syntax groups (comments, methods, titles and more ...) that are generally named and **written in human language**, (feature available only with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed).
+- **Human Writing:** human writing is simulated by using italic typeface for syntax groups (comments, methods, structs, and more ...) that are generally named and **written in human language**.
 - **Minimal Syntax:** only three colors are used to highlight syntax, following the **color guidelines for web design**, which state that **only three main colors** should be used in interfaces, no more.
 - **Signal Alerts:** the yellow, orange and red colors are reserved to be used only with important alerts, following the standards for the meanings of the **signal colors in the industrial area**.
 - **Styles:** choose the style that best suits your **personality**:
@@ -77,7 +77,7 @@ require('lualine').setup { options = { theme = 'enfocado' } }
 To use [Airline](https://github.com/vim-airline/vim-airline) theme:
 
 ```vim
-let g:airline_theme = "enfocado"
+let g:airline_theme = 'enfocado'
 ```
 
 ### Colorscheme
@@ -94,10 +94,27 @@ Otherwise, enable **256 terminal color** support:
 set t_Co=256
 ```
 
-Then choose your favorite **Enfocado** style (`nature` or `neon`), for example:
+Then choose your favorite **Enfocado** style, for example:
 
 ```vim
-let g:enfocado_style = "neon"
+let g:enfocado_style = 'neon' " Available: `nature` or `neon`.
+```
+
+If you want to reduce the loading time of **Enfocado**, you can specify the plugins you want to apply the theme to on demand (NEW FEATURE! ✨):
+
+```vim
+" NOTE: To see a list of all available plugins, run
+" `:h enfocado-colorscheme` at the vim commandline.
+let g:enfocado_plugins = [
+  \ 'coc',
+  \ 'copilot',
+  \ 'fzf',
+  \ 'matchup',
+  \ 'nerdtree',
+  \ 'plug',
+  \ 'rainbow',
+  \ 'signify'
+  \ ]
 ```
 
 And finally turn on the **Enfocado** theme and enjoy!
@@ -121,7 +138,7 @@ augroup enfocado_customization
 augroup END
 ```
 
-To make the **background transparent** (same as in the screenshots), you can use the following:
+To make the **background transparent**, you can use the following:
 
 ```vim
 augroup enfocado_customization
@@ -136,7 +153,7 @@ Note: The usage codes must be written in your `.vimrc` or `init.vim`.
 
 ### Fonts
 
-In order for the human text simulation to work as it should (in addition to installing [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)), I recommend that you use either of these three beautiful fonts, which align with the **"Mankind and Machine"** concept.
+In order for the human text simulation to work as it should, I recommend that you use either of these three beautiful fonts, which align with the **"Mankind and Machine"** concept.
 
 - [IBM Plex Mono](https://www.ibm.com/plex/).
 - [Victor Mono](https://rubjo.github.io/victor-mono/).
@@ -169,10 +186,13 @@ And of course, if you want to motivate me to constantly improve this theme, your
 
 The following plugins are supported:
 
+- [vim-airline](https://github.com/vim-airline/vim-airline)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [copilot.vim](https://github.com/github/copilot.vim)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [lightline.vim](https://github.com/itchyny/lightline.vim)
+- [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
 - [nerdtree](https://github.com/preservim/nerdtree)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
@@ -187,7 +207,6 @@ The following plugins are supported:
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
 - [vim-matchup](https://github.com/andymass/vim-matchup)
-- [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [vim-signify](https://github.com/mhinz/vim-signify)
 - [vim-which-key](https://github.com/liuchengxu/vim-which-key)

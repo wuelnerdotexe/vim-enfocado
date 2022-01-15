@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.0.0] - 2022-01-15
+
+### Added
+
+- A new feature is added that allows you to apply **Enfocado** only to plugins on-demand.
+- Help documentation for vim has been created.
+- Now [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) is not needed to apply **Human Writing**.
+
+### Changed
+
+Extensive refactoring of the following:
+
+- The highlight function is renamed and optimized.
+- Enfocado groups are removed and replaced with native vim groups.
+- Many validations that prevent applying the theme are removed.
+- Highlight links now make more sense.
+- All the code was ordered.
+
+### Fixed
+
+- Fixed "many featured groups" error in [vim-airline](https://github.com/vim-airline/vim-airline).
+
 ## [4.3.3] - 2021-12-29
 
 ### Fixed
@@ -62,7 +84,7 @@ Support is added for plugins used in CosmicNvim:
 
 ### Changed
 
-- Multiple improvements and optimizations are made. It is recommended to update yes or yes :)
+- Multiple improvements and optimizations are made. It is recommended to update yes or yes. :)
 
 ## [3.13.1] - 2021-11-11
 
@@ -112,7 +134,6 @@ Support is added for the following plugins:
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
-- [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 - [nerdtree](https://github.com/preservim/nerdtree)
 - [vim-signify](https://github.com/mhinz/vim-signify)
 
