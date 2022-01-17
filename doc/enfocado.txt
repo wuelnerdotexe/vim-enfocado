@@ -60,6 +60,7 @@ supported plugins so far:
 `  \ 'treesitter',`
 `  \ 'vista',`
 `  \ 'which-key',`
+`  \ 'yank',`
 `  \ ]`
 
 or also indicate the `all` option to highlight all supported plugins:

@@ -113,7 +113,8 @@ let g:enfocado_plugins = [
   \ 'nerdtree',
   \ 'plug',
   \ 'rainbow',
-  \ 'signify'
+  \ 'signify',
+  \ 'yank'
   \ ]
 ```
 
@@ -206,6 +207,7 @@ The following plugins are supported:
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
+- [vim-highlightedyank](https://github.com/machakann/vim-highlightedyank)
 - [vim-matchup](https://github.com/andymass/vim-matchup)
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [vim-signify](https://github.com/mhinz/vim-signify)

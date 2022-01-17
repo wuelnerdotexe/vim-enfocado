@@ -9,7 +9,7 @@
 --              the code and nothing else.
 -- ----------------------------------------------------------------------------
 
--- The Selenized black color scheme is declared.
+-- Selenized black color scheme variables are declared.
 local colors = {
   bg_0       = '#181818',
   bg_1       = '#252525',

@@ -856,6 +856,11 @@ highlight! link diffSubname Title
     highlight! link FloatermNC NormalFloat
   endif
 " }}}
+" vim-highlightedyank: {{{
+  if s:Plugin_is_activated('yank', 0)
+    highlight! link HighlightedyankRegion Visual
+  endif
+" }}}
 " vim-matchup: {{{
   if s:Plugin_is_activated('matchup', 0)
     highlight! link MatchBackground Visual

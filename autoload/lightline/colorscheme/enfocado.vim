@@ -1,4 +1,3 @@
-" vim: fileencoding=utf-8 tabstop=2 shiftwidth=2 foldlevel=0 foldmethod=marker:
 " -----------------------------------------------------------------------------
 " Name:        Enfocado for Lightline
 " Author:      Wuelner Martínez <wuelner.martinez@outlook.com>
@@ -10,7 +9,7 @@
 "              the code and nothing else.
 " -----------------------------------------------------------------------------
 
-" The Selenized black color scheme is declared.
+" Selenized black color scheme variables are declared.
 let s:bg_0       = [ '#181818', 234 ]
 let s:bg_1       = [ '#252525', 235 ]
 let s:bg_2       = [ '#3B3B3B', 237 ]
