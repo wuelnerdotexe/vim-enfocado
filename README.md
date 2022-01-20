@@ -187,7 +187,6 @@ And of course, if you want to motivate me to constantly improve this theme, your
 
 The following plugins are supported:
 
-- [vim-airline](https://github.com/vim-airline/vim-airline)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [copilot.vim](https://github.com/github/copilot.vim)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
@@ -206,6 +205,7 @@ The following plugins are supported:
 - [rainbow](https://github.com/luochen1990/rainbow)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
+- [vim-airline](https://github.com/vim-airline/vim-airline)
 - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
 - [vim-highlightedyank](https://github.com/machakann/vim-highlightedyank)
 - [vim-matchup](https://github.com/andymass/vim-matchup)

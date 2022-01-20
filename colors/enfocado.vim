@@ -30,39 +30,39 @@ if version > 580
 endif
 
 " Selenized black color scheme variables are declared.
-let s:bg_0       = [ '#181818', 234 ]
-let s:bg_1       = [ '#252525', 235 ]
-let s:bg_2       = [ '#3B3B3B', 237 ]
-let s:dim_0      = [ '#777777', 243 ]
-let s:fg_0       = [ '#B9B9B9', 250 ]
-let s:fg_1       = [ '#DEDEDE', 253 ]
-let s:red        = [ '#ED4A46', 203 ]
-let s:green      = [ '#70B433', 107 ]
-let s:yellow     = [ '#DBB32D', 179 ]
-let s:blue       = [ '#368AEB', 69  ]
-let s:magenta    = [ '#EB6EB7', 205 ]
-let s:cyan       = [ '#3FC5B7', 79  ]
-let s:orange     = [ '#E67F43', 173 ]
-let s:violet     = [ '#A580E2', 140 ]
-let s:br_red     = [ '#FF5E56', 203 ]
-let s:br_green   = [ '#83C746', 113 ]
-let s:br_yellow  = [ '#EFC541', 221 ]
-let s:br_blue    = [ '#4F9CFE', 75  ]
-let s:br_magenta = [ '#FF81CA', 212 ]
-let s:br_cyan    = [ '#56D8C9', 80  ]
-let s:br_orange  = [ '#FA9153', 209 ]
-let s:br_violet  = [ '#B891F5', 141 ]
+let s:bg_0 = ['#181818', 234]
+let s:bg_1 = ['#252525', 235]
+let s:bg_2 = ['#3B3B3B', 237]
+let s:dim_0 = ['#777777', 243]
+let s:fg_0 = ['#B9B9B9', 250]
+let s:fg_1 = ['#DEDEDE', 253]
+let s:red = ['#ED4A46', 203]
+let s:green = ['#70B433', 107]
+let s:yellow = ['#DBB32D', 179]
+let s:blue = ['#368AEB', 69]
+let s:magenta = ['#EB6EB7', 205]
+let s:cyan = ['#3FC5B7', 79]
+let s:orange = ['#E67F43', 173]
+let s:violet = ['#A580E2', 140]
+let s:br_red = ['#FF5E56', 203]
+let s:br_green = ['#83C746', 113]
+let s:br_yellow = ['#EFC541', 221]
+let s:br_blue = ['#4F9CFE', 75]
+let s:br_magenta = ['#FF81CA', 212]
+let s:br_cyan = ['#56D8C9', 80]
+let s:br_orange = ['#FA9153', 209]
+let s:br_violet = ['#B891F5', 141]
 
 " Support colors are declared.
-let s:black = [ '#000000', 16  ]
+let s:black = ['#000000', 16]
 
 " Attributes are declared.
-let s:none        = [ 'NONE'         , 'NONE'          ]
-let s:bold        = [ 'bold'         , 'bold'          ]
-let s:bold_italic = [ 'bold,italic'  , 'bold,italic'   ]
-let s:italic      = [ 'italic'       , 'italic'        ]
-let s:underline   = [ 'underline'    , 'underline'     ]
-let s:undercurl   = [ 'undercurl'    , 'underline'     ]
+let s:none = ['NONE', 'NONE']
+let s:bold = ['bold', 'bold']
+let s:bold_italic = ['bold,italic', 'bold,italic']
+let s:italic = ['italic', 'italic']
+let s:underline = ['underline', 'underline']
+let s:undercurl = ['undercurl', 'underline']
 
 " Vim terminal variables are assigned.
 let g:terminal_ansi_colors = [
@@ -85,16 +85,16 @@ let g:terminal_ansi_colors = [
     \ ]
 
 " Neovim terminal variables are assigned.
-let g:terminal_color_0  = s:bg_1[0]
-let g:terminal_color_1  = s:red[0]
-let g:terminal_color_2  = s:green[0]
-let g:terminal_color_3  = s:yellow[0]
-let g:terminal_color_4  = s:blue[0]
-let g:terminal_color_5  = s:magenta[0]
-let g:terminal_color_6  = s:cyan[0]
-let g:terminal_color_7  = s:dim_0[0]
-let g:terminal_color_8  = s:bg_2[0]
-let g:terminal_color_9  = s:br_red[0]
+let g:terminal_color_0 = s:bg_1[0]
+let g:terminal_color_1 = s:red[0]
+let g:terminal_color_2 = s:green[0]
+let g:terminal_color_3 = s:yellow[0]
+let g:terminal_color_4 = s:blue[0]
+let g:terminal_color_5 = s:magenta[0]
+let g:terminal_color_6 = s:cyan[0]
+let g:terminal_color_7 = s:dim_0[0]
+let g:terminal_color_8 = s:bg_2[0]
+let g:terminal_color_9 = s:br_red[0]
 let g:terminal_color_10 = s:br_green[0]
 let g:terminal_color_11 = s:br_yellow[0]
 let g:terminal_color_12 = s:br_blue[0]
@@ -103,8 +103,8 @@ let g:terminal_color_14 = s:br_cyan[0]
 let g:terminal_color_15 = s:fg_1[0]
 
 " Enfocado configuration variables are initialized.
-let g:enfocado_style   = get( g:, 'enfocado_style'  , 'nature' )
-let g:enfocado_plugins = get( g:, 'enfocado_plugins', ['all']  )
+let g:enfocado_style = get(g:, 'enfocado_style', 'nature')
+let g:enfocado_plugins = get(g:, 'enfocado_plugins', ['all'])
 
 " A function is created to check on-demand plugins.
 function! s:Plugin_is_activated(name, only_nvim)
