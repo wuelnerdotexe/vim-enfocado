@@ -121,15 +121,15 @@ endfunction
 
 " A function is created to highlight the groups.
 function! s:Highlighter(group, attr, bg, fg, sp)
-    execute 'highlight! ' .a:group.
-          \ ' term='.a:attr[1].
-          \ ' cterm='.a:attr[1].
-          \ ' ctermfg='.a:fg[1].
-          \ ' ctermbg='.a:bg[1].
-          \ ' gui='.a:attr[0].
-          \ ' guifg='.a:fg[0].
-          \ ' guibg='.a:bg[0].
-          \ ' guisp='.a:sp[0]
+  execute 'highlight! '.a:group.
+        \ ' term='.a:attr[1].
+        \ ' cterm='.a:attr[1].
+        \ ' ctermfg='.a:fg[1].
+        \ ' ctermbg='.a:bg[1].
+        \ ' gui='.a:attr[0].
+        \ ' guifg='.a:fg[0].
+        \ ' guibg='.a:bg[0].
+        \ ' guisp='.a:sp[0]
 endfunction
 " ------------------------------------------------------------------------------
 " SECTION: Neo(Vim) base groups highlighting.
@@ -146,7 +146,7 @@ if g:enfocado_style == 'neon'
 
   " Neon syntax.
   call s:Highlighter('Function', s:italic, s:none, s:br_magenta, s:none)
-  call s:Highlighter('FunctionBuiltin', s:none, s:none, s:br_green, s:none)
+  call s:Highlighter('FunctionBuiltin', s:italic, s:none, s:br_green, s:none)
   call s:Highlighter('Identifier', s:none, s:none, s:magenta, s:none)
   call s:Highlighter('IdentifierBuiltin', s:none, s:none, s:green, s:none)
   call s:Highlighter('PreProc', s:none, s:none, s:br_violet, s:none)
@@ -167,7 +167,7 @@ else
 
   " Nature syntax.
   call s:Highlighter('Function', s:italic, s:none, s:br_green, s:none)
-  call s:Highlighter('FunctionBuiltin', s:none, s:none, s:br_magenta, s:none)
+  call s:Highlighter('FunctionBuiltin', s:italic, s:none, s:br_magenta, s:none)
   call s:Highlighter('Identifier', s:none, s:none, s:green, s:none)
   call s:Highlighter('IdentifierBuiltin', s:none, s:none, s:magenta, s:none)
   call s:Highlighter('PreProc', s:none, s:none, s:br_blue, s:none)
@@ -248,8 +248,10 @@ highlight! link QuickFixLine Search
 highlight! link Substitute Search
 highlight! link TermCursorNC None
 highlight! link Whitespace NonText
-highlight! FloatShadow ctermbg=16 guibg=#000000 blend=60
-highlight! FloatShadowThrough ctermbg=16 guibg=#000000 blend=100
+if has('nvim')
+  highlight! FloatShadow ctermbg=16 guibg=#000000 blend=60
+  highlight! FloatShadowThrough ctermbg=16 guibg=#000000 blend=100
+endif
 
 " General syntax.
 call s:Highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
