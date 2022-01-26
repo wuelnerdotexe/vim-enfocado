@@ -109,11 +109,11 @@ let g:enfocado_plugins = [
   \ 'coc',
   \ 'copilot',
   \ 'fzf',
+  \ 'gitgutter',
   \ 'matchup',
   \ 'nerdtree',
   \ 'plug',
   \ 'rainbow',
-  \ 'signify',
   \ 'yank'
   \ ]
 ```
@@ -144,7 +144,8 @@ To make the **background transparent**, you can use the following:
 ```vim
 augroup enfocado_customization
   autocmd!
-      autocmd ColorScheme enfocado highlight Normal ctermbg=NONE guibg=NONE
+    autocmd ColorScheme enfocado highlight Normal ctermbg=NONE guibg=NONE
+    autocmd ColorScheme enfocado highlight NormalNC ctermbg=NONE guibg=NONE
 augroup END
 ```
 

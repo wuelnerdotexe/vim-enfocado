@@ -4,8 +4,8 @@
 " URL:         https://github.com/wuelnerdotexe/vim-enfocado
 " License:     MIT (C) Wuelner Martínez.
 " Description: How themes should be.
-" About:       Enfocado is more than a theme, it is a concept of "how themes
-"              should be", focusing on what is really important to developers:
+" About:       Enfocado is more than a theme, it is a concept of 'how themes
+"              should be', focusing on what is really important to developers:
 "              the code and nothing else.
 " -----------------------------------------------------------------------------
 
@@ -452,7 +452,7 @@ highlight! link diffSubname Title
 " }}}
 " copilot.vim: {{{
   if s:Plugin_is_activated('copilot', 1)
-    call s:Highlighter("CopilotSuggestion", s:none, s:bg_0, s:dim_0, s:none)
+    call s:Highlighter('CopilotSuggestion', s:none, s:bg_0, s:dim_0, s:none)
   endif
 " }}}
 " dashboard-nvim: {{{
@@ -468,31 +468,31 @@ highlight! link diffSubname Title
     " fzf apply enfocado groups.
     if !exists('g:fzf_colors')
       let g:fzf_colors = {
-            \ 'bg'     : [ 'bg', 'NormalFloat'    ],
-            \ 'bg+'    : [ 'bg', 'Search'         ],
-            \ 'border' : [ 'fg', 'FloatBorder'    ],
-            \ 'fg'     : [ 'fg', 'NormalFloat'    ],
-            \ 'fg+'    : [ 'fg', 'NormalFloat'    ],
-            \ 'header' : [ 'fg', 'Title'          ],
-            \ 'hl'     : [ 'fg', 'Accent'         ],
-            \ 'hl+'    : [ 'fg', 'Search'         ],
-            \ 'info'   : [ 'fg', 'DiagnosticInfo' ],
-            \ 'marker' : [ 'fg', 'NormalFloat'    ],
-            \ 'pointer': [ 'fg', 'NormalFloat'    ],
-            \ 'prompt' : [ 'fg', 'Dimmed'         ],
-            \ 'spinner': [ 'fg', 'DiagnosticInfo' ]
+            \ 'bg': ['bg', 'NormalFloat'],
+            \ 'bg+': ['bg', 'Search'],
+            \ 'border': ['fg', 'FloatBorder'],
+            \ 'fg': ['fg', 'NormalFloat'],
+            \ 'fg+': ['fg', 'NormalFloat'],
+            \ 'header': ['fg', 'Title'],
+            \ 'hl': ['fg', 'Accent'],
+            \ 'hl+': ['fg', 'Search'],
+            \ 'info': ['fg', 'DiagnosticInfo'],
+            \ 'marker': ['fg', 'NormalFloat'],
+            \ 'pointer': ['fg', 'NormalFloat'],
+            \ 'prompt': ['fg', 'Dimmed'],
+            \ 'spinner': ['fg', 'DiagnosticInfo']
           \ }
     endif
 
     " Others FZF groups.
-    call s:Highlighter("Fzf1", s:bold, s:bg_2, s:dim_0, s:none)
-    call s:Highlighter("Fzf2", s:none, s:bg_1, s:dim_0, s:none)
-    call s:Highlighter("Fzf3", s:none, s:bg_0, s:dim_0, s:none)
+    call s:Highlighter('Fzf1', s:bold, s:bg_2, s:dim_0, s:none)
+    call s:Highlighter('Fzf2', s:none, s:bg_1, s:dim_0, s:none)
+    call s:Highlighter('Fzf3', s:none, s:bg_0, s:dim_0, s:none)
   endif
 " }}}
 " nerdtree: {{{
   if s:Plugin_is_activated('nerdtree', 0)
-    call s:Highlighter("NERDTreeFile", s:none, s:none, s:dim_0, s:none)
+    call s:Highlighter('NERDTreeFile', s:none, s:none, s:dim_0, s:none)
     highlight! link NERDTreeBookmark Dimmed
     highlight! link NERDTreeBookmarkHeader Title
     highlight! link NERDTreeClosable Dimmed
@@ -592,11 +592,11 @@ highlight! link diffSubname Title
 " }}}
 " nvim-notify: {{{
   if s:Plugin_is_activated('notify', 1)
-    call s:Highlighter("NotifyERRORBorder", s:none, s:none, s:br_red, s:none)
-    call s:Highlighter("NotifyDEBUGBorder", s:none, s:none, s:dim_0, s:none)
-    call s:Highlighter("NotifyINFOBorder", s:none, s:none, s:br_yellow, s:none)
-    call s:Highlighter("NotifyTRACEBorder", s:none, s:none, s:br_magenta, s:none)
-    call s:Highlighter("NotifyWARNBorder", s:none, s:none, s:br_orange, s:none)
+    call s:Highlighter('NotifyERRORBorder', s:none, s:none, s:br_red, s:none)
+    call s:Highlighter('NotifyDEBUGBorder', s:none, s:none, s:dim_0, s:none)
+    call s:Highlighter('NotifyINFOBorder', s:none, s:none, s:br_yellow, s:none)
+    call s:Highlighter('NotifyTRACEBorder', s:none, s:none, s:br_magenta, s:none)
+    call s:Highlighter('NotifyWARNBorder', s:none, s:none, s:br_orange, s:none)
     highlight! link NotifyERRORIcon NotifyERRORBorder
     highlight! link NotifyDEBUGIcon NotifyDEBUGBorder
     highlight! link NotifyINFOIcon NotifyINFOBorder
@@ -620,12 +620,12 @@ highlight! link diffSubname Title
   if s:Plugin_is_activated('scrollview', 1)
     highlight! link ScrollView Line
   endif
-"}}}
+" }}}
 " nvim-treesitter: {{{
   if s:Plugin_is_activated('treesitter', 1)
-    call s:Highlighter("TSLiteral", s:italic, s:none, s:fg_0, s:none)
-    call s:Highlighter("TSNote", s:bold, s:br_green, s:bg_1, s:none)
-    call s:Highlighter("TSTitle", s:bold_italic, s:none, s:fg_1, s:none)
+    call s:Highlighter('TSLiteral', s:italic, s:none, s:fg_0, s:none)
+    call s:Highlighter('TSNote', s:bold, s:br_green, s:bg_1, s:none)
+    call s:Highlighter('TSTitle', s:bold_italic, s:none, s:fg_1, s:none)
     highlight! link TSAnnotation Dimmed
     highlight! link TSAttribute Identifier
     highlight! link TSBoolean Boolean
@@ -691,8 +691,8 @@ highlight! link diffSubname Title
 " }}}
 " nvim-tree.lua: {{{
   if s:Plugin_is_activated('tree', 1)
-    call s:Highlighter("NvimTreeNormal", s:none, s:bg_0, s:dim_0, s:none)
-    call s:Highlighter("NvimTreeNormalNC", s:none, s:bg_0, s:dim_0, s:none)
+    call s:Highlighter('NvimTreeNormal', s:none, s:bg_0, s:dim_0, s:none)
+    call s:Highlighter('NvimTreeNormalNC', s:none, s:bg_0, s:dim_0, s:none)
     highlight! link NvimTreeCursorColumn Line
     highlight! link NvimTreeCursorLine Line
     highlight! link NvimTreeEmptyFolderName Dimmed
@@ -758,12 +758,12 @@ highlight! link diffSubname Title
 " }}}
 " rainbow: {{{
   if s:Plugin_is_activated('rainbow', 0)
-    if g:enfocado_style == "neon"
-      let s:rainbow_guifgs   = [ s:violet[0], s:cyan[0], s:magenta[0], s:br_violet[0] ]
-      let s:rainbow_ctermfgs = [ s:violet[1], s:cyan[1], s:magenta[1], s:br_violet[1] ]
+    if g:enfocado_style == 'neon'
+      let s:rainbow_guifgs = [s:violet[0], s:cyan[0], s:magenta[0], s:br_violet[0]]
+      let s:rainbow_ctermfgs = [s:violet[1], s:cyan[1], s:magenta[1], s:br_violet[1]]
     else
-      let s:rainbow_guifgs   = [ s:blue[0], s:cyan[0], s:green[0], s:br_blue[0] ]
-      let s:rainbow_ctermfgs = [ s:blue[1], s:cyan[1], s:green[1], s:br_blue[1] ]
+      let s:rainbow_guifgs = [s:blue[0], s:cyan[0], s:green[0], s:br_blue[0]]
+      let s:rainbow_ctermfgs = [s:blue[1], s:cyan[1], s:green[1], s:br_blue[1]]
     endif
 
     if !exists('g:rainbow_conf')
@@ -778,17 +778,17 @@ highlight! link diffSubname Title
       let g:rainbow_conf['ctermfgs'] = s:rainbow_ctermfgs
     endif
   endif
-"}}}
+" }}}
 " telescope.nvim: {{{
   if s:Plugin_is_activated('telescope', 1)
-    call s:Highlighter("TelescopePreviewDate", s:none, s:none, s:blue, s:none)
-    call s:Highlighter("TelescopePreviewDirectory", s:bold, s:none, s:br_blue, s:none)
-    call s:Highlighter("TelescopePreviewExecute", s:none, s:none, s:green, s:none)
-    call s:Highlighter("TelescopePreviewLink", s:none, s:none, s:magenta, s:none)
-    call s:Highlighter("TelescopePreviewRead", s:bold, s:none, s:yellow, s:none)
-    call s:Highlighter("TelescopePreviewSize", s:bold, s:none, s:green, s:none)
-    call s:Highlighter("TelescopePreviewUser", s:bold, s:none, s:br_yellow, s:none)
-    call s:Highlighter("TelescopePreviewWrite", s:bold, s:none, s:red, s:none)
+    call s:Highlighter('TelescopePreviewDate', s:none, s:none, s:blue, s:none)
+    call s:Highlighter('TelescopePreviewDirectory', s:bold, s:none, s:br_blue, s:none)
+    call s:Highlighter('TelescopePreviewExecute', s:none, s:none, s:green, s:none)
+    call s:Highlighter('TelescopePreviewLink', s:none, s:none, s:magenta, s:none)
+    call s:Highlighter('TelescopePreviewRead', s:bold, s:none, s:yellow, s:none)
+    call s:Highlighter('TelescopePreviewSize', s:bold, s:none, s:green, s:none)
+    call s:Highlighter('TelescopePreviewUser', s:bold, s:none, s:br_yellow, s:none)
+    call s:Highlighter('TelescopePreviewWrite', s:bold, s:none, s:red, s:none)
     highlight! link TelescopeBorder FloatBorder
     highlight! link TelescopeMatching Accent
     highlight! link TelescopeMultiSelection Visual
@@ -831,24 +831,24 @@ highlight! link diffSubname Title
 " }}}
 " todo-comments.nvim: {{{
   if s:Plugin_is_activated('todo-comments', 1)
-    call s:Highlighter("TodoBgFIX", s:bold, s:br_red, s:bg_1, s:none)
-    call s:Highlighter("TodoBgHACK", s:bold, s:br_yellow, s:bg_1, s:none)
-    call s:Highlighter("TodoBgNOTE", s:bold, s:br_green, s:bg_1, s:none)
-    call s:Highlighter("TodoBgPERF", s:bold, s:br_magenta, s:bg_1, s:none)
-    call s:Highlighter("TodoBgTODO", s:bold, s:br_cyan, s:bg_1, s:none)
-    call s:Highlighter("TodoBgWARN", s:bold, s:br_orange, s:bg_1, s:none)
-    call s:Highlighter("TodoFgFIX", s:none, s:none, s:br_red, s:none)
-    call s:Highlighter("TodoFgHACK", s:none, s:none, s:br_yellow, s:none)
-    call s:Highlighter("TodoFgNOTE", s:none, s:none, s:br_green, s:none)
-    call s:Highlighter("TodoFgPERF", s:none, s:none, s:br_magenta, s:none)
-    call s:Highlighter("TodoFgTODO", s:none, s:none, s:br_cyan, s:none)
-    call s:Highlighter("TodoFgWARN", s:none, s:none, s:br_orange, s:none)
-    call s:Highlighter("TodoSignFIX", s:none, s:none, s:br_red, s:none)
-    call s:Highlighter("TodoSignHACK", s:none, s:none, s:br_yellow, s:none)
-    call s:Highlighter("TodoSignNOTE", s:none, s:none, s:br_green, s:none)
-    call s:Highlighter("TodoSignPERF", s:none, s:none, s:br_magenta, s:none)
-    call s:Highlighter("TodoSignTODO", s:none, s:none, s:br_cyan, s:none)
-    call s:Highlighter("TodoSignWARN", s:none, s:none, s:br_orange, s:none)
+    call s:Highlighter('TodoBgFIX', s:bold, s:br_red, s:bg_1, s:none)
+    call s:Highlighter('TodoBgHACK', s:bold, s:br_yellow, s:bg_1, s:none)
+    call s:Highlighter('TodoBgNOTE', s:bold, s:br_green, s:bg_1, s:none)
+    call s:Highlighter('TodoBgPERF', s:bold, s:br_magenta, s:bg_1, s:none)
+    call s:Highlighter('TodoBgTODO', s:bold, s:br_cyan, s:bg_1, s:none)
+    call s:Highlighter('TodoBgWARN', s:bold, s:br_orange, s:bg_1, s:none)
+    call s:Highlighter('TodoFgFIX', s:none, s:none, s:br_red, s:none)
+    call s:Highlighter('TodoFgHACK', s:none, s:none, s:br_yellow, s:none)
+    call s:Highlighter('TodoFgNOTE', s:none, s:none, s:br_green, s:none)
+    call s:Highlighter('TodoFgPERF', s:none, s:none, s:br_magenta, s:none)
+    call s:Highlighter('TodoFgTODO', s:none, s:none, s:br_cyan, s:none)
+    call s:Highlighter('TodoFgWARN', s:none, s:none, s:br_orange, s:none)
+    call s:Highlighter('TodoSignFIX', s:none, s:none, s:br_red, s:none)
+    call s:Highlighter('TodoSignHACK', s:none, s:none, s:br_yellow, s:none)
+    call s:Highlighter('TodoSignNOTE', s:none, s:none, s:br_green, s:none)
+    call s:Highlighter('TodoSignPERF', s:none, s:none, s:br_magenta, s:none)
+    call s:Highlighter('TodoSignTODO', s:none, s:none, s:br_cyan, s:none)
+    call s:Highlighter('TodoSignWARN', s:none, s:none, s:br_orange, s:none)
   endif
 " }}}
 " vim-floaterm: {{{
@@ -856,6 +856,26 @@ highlight! link diffSubname Title
     highlight! link Floaterm NormalFloat
     highlight! link FloatermBorder FloatBorder
     highlight! link FloatermNC NormalFloat
+  endif
+" }}}
+" vim-gitgutter: {{{
+  if s:Plugin_is_activated('gitgutter', 0)
+    call s:Highlighter('GitGutterAddLine', s:none, s:green, s:none, s:none)
+    call s:Highlighter('GitGutterChangeLine', s:none, s:yellow, s:none, s:none)
+    call s:Highlighter('GitGutterDeleteLine', s:none, s:red, s:none, s:none)
+    highlight! link GitGutterAdd DiffAdd
+    highlight! link GitGutterAddInvisible None
+    highlight! link GitGutterAddLineNr GitGutterAdd
+    highlight! link GitGutterChange DiffChange
+    highlight! link GitGutterChangeInvisible None
+    highlight! link GitGutterChangeLineNr GitGutterChange
+    highlight! link GitGutterDelete DiffDelete
+    highlight! link GitGutterDeleteInvisible None
+    highlight! link GitGutterDeleteLineNr GitGutterDelete
+    highlight! link GitGutterChangeDelete GitGutterChange
+    highlight! link GitGutterChangeDeleteInvisible GitGutterChangeInvisible
+    highlight! link GitGutterChangeDeleteLine GitGutterChangeDelete
+    highlight! link GitGutterChangeDeleteLineNr GitGutterChangeDelete
   endif
 " }}}
 " vim-highlightedyank: {{{
@@ -899,17 +919,17 @@ highlight! link diffSubname Title
 " vim-signify: {{{
   if s:Plugin_is_activated('signify', 0)
     if exists('g:signify_line_highlight') && g:signify_line_highlight == 1
-      highlight! link SignifyLineAdd DiffAdd
-      highlight! link SignifyLineChange DiffChange
-      highlight! link SignifyLineChangeDelete DiffChange
-      highlight! link SignifyLineDelete DiffDelete
-      highlight! link SignifyLineDeleteFirstLine DiffDelete
+      call s:Highlighter('SignifyLineAdd', s:none, s:green, s:none, s:none)
+      call s:Highlighter('SignifyLineChange', s:none, s:yellow, s:none, s:none)
+      call s:Highlighter('SignifyLineDelete', s:none, s:red, s:none, s:none)
+      highlight! link SignifyLineChangeDelete SignifyLineChange
+      highlight! link SignifyLineDeleteFirstLine SignifyLineDelete
     endif
     highlight! link SignifySignAdd DiffAdd
     highlight! link SignifySignChange DiffChange
-    highlight! link SignifySignChangeDelete DiffChange
+    highlight! link SignifySignChangeDelete SignifySignChange
     highlight! link SignifySignDelete DiffDelete
-    highlight! link SignifySignDeleteFirstLine DiffDelete
+    highlight! link SignifySignDeleteFirstLine SignifySignDelete
   endif
 " }}}
 " vim-which-key: {{{
