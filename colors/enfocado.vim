@@ -860,17 +860,17 @@ highlight! link diffSubname Title
 " }}}
 " vim-gitgutter: {{{
   if s:Plugin_is_activated('gitgutter', 0)
-    call s:Highlighter('GitGutterAddLine', s:none, s:green, s:none, s:none)
-    call s:Highlighter('GitGutterChangeLine', s:none, s:yellow, s:none, s:none)
-    call s:Highlighter('GitGutterDeleteLine', s:none, s:red, s:none, s:none)
     highlight! link GitGutterAdd DiffAdd
     highlight! link GitGutterAddInvisible None
+    highlight! link GitGutterAddLine GitGutterAdd
     highlight! link GitGutterAddLineNr GitGutterAdd
     highlight! link GitGutterChange DiffChange
     highlight! link GitGutterChangeInvisible None
+    highlight! link GitGutterChangeLine GitGutterChange
     highlight! link GitGutterChangeLineNr GitGutterChange
     highlight! link GitGutterDelete DiffDelete
     highlight! link GitGutterDeleteInvisible None
+    highlight! link GitGutterDeleteLine GitGutterDelete
     highlight! link GitGutterDeleteLineNr GitGutterDelete
     highlight! link GitGutterChangeDelete GitGutterChange
     highlight! link GitGutterChangeDeleteInvisible GitGutterChangeInvisible
@@ -919,10 +919,10 @@ highlight! link diffSubname Title
 " vim-signify: {{{
   if s:Plugin_is_activated('signify', 0)
     if exists('g:signify_line_highlight') && g:signify_line_highlight == 1
-      call s:Highlighter('SignifyLineAdd', s:none, s:green, s:none, s:none)
-      call s:Highlighter('SignifyLineChange', s:none, s:yellow, s:none, s:none)
-      call s:Highlighter('SignifyLineDelete', s:none, s:red, s:none, s:none)
+      highlight! link SignifyLineAdd SignifySignAdd
+      highlight! link SignifyLineChange SignifySignChange
       highlight! link SignifyLineChangeDelete SignifyLineChange
+      highlight! link SignifyLineDelete SignifySignDelete
       highlight! link SignifyLineDeleteFirstLine SignifyLineDelete
     endif
     highlight! link SignifySignAdd DiffAdd

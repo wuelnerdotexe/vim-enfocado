@@ -208,6 +208,7 @@ The following plugins are supported:
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [vim-airline](https://github.com/vim-airline/vim-airline)
 - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
+- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 - [vim-highlightedyank](https://github.com/machakann/vim-highlightedyank)
 - [vim-matchup](https://github.com/andymass/vim-matchup)
 - [vim-plug](https://github.com/junegunn/vim-plug)
