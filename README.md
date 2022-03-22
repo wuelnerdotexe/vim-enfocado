@@ -121,9 +121,7 @@ let g:enfocado_plugins = [
 And finally turn on the **Enfocado** theme and enjoy!
 
 ```vim
-" IMPORTANT: this vim auto command ensures the
-" activation of Enfocado in compatible plugins.
-autocmd VimEnter * ++nested colorscheme enfocado
+colorscheme enfocado
 ```
 
 ### Customization
