@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.3.1] - 2022-03-23
+
+### Added
+
+- Support is added for [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow) module at the request of our user [@datwaft](https://github.com/wuelnerdotexe/vim-enfocado/issues/5#issuecomment-1074513923).
+
+Added support for the following plugins:
+
+- [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+- [vim-highlightedyank](https://github.com/machakann/vim-highlightedyank)
+
+### Changed
+
+- Now **human writing** applies to built-in functions.
+
+### Fixed
+
+- Fixed correct command to activate theme. Thanks to issue [#5](https://github.com/wuelnerdotexe/vim-enfocado/issues/5) by [@datwaft](https://github.com/datwaft). Thank you very much!
+
 ## [5.0.0] - 2022-01-15
 
 ### Added
