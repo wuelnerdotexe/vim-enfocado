@@ -687,6 +687,25 @@ highlight! link diffSubname Title
     highlight! TSStrike term=strikethrough cterm=strikethrough gui=strikethrough
     highlight! TSStrong term=bold cterm=bold gui=bold
     highlight! TSUnderline term=underline cterm=underline gui=underline
+
+    " nvim-ts-rainbow module.
+    if g:enfocado_style == 'neon'
+      call s:Highlighter('rainbowcol1', s:none, s:none, s:violet, s:none)
+      call s:Highlighter('rainbowcol2', s:none, s:none, s:cyan, s:none)
+      call s:Highlighter('rainbowcol3', s:none, s:none, s:magenta, s:none)
+      call s:Highlighter('rainbowcol4', s:none, s:none, s:br_violet, s:none)
+      call s:Highlighter('rainbowcol5', s:none, s:none, s:br_cyan, s:none)
+      call s:Highlighter('rainbowcol6', s:none, s:none, s:br_magenta, s:none)
+      call s:Highlighter('rainbowcol7', s:none, s:none, s:violet, s:none)
+    else
+      call s:Highlighter('rainbowcol1', s:none, s:none, s:blue, s:none)
+      call s:Highlighter('rainbowcol2', s:none, s:none, s:cyan, s:none)
+      call s:Highlighter('rainbowcol3', s:none, s:none, s:green, s:none)
+      call s:Highlighter('rainbowcol4', s:none, s:none, s:br_blue, s:none)
+      call s:Highlighter('rainbowcol5', s:none, s:none, s:br_cyan, s:none)
+      call s:Highlighter('rainbowcol6', s:none, s:none, s:br_green, s:none)
+      call s:Highlighter('rainbowcol7', s:none, s:none, s:blue, s:none)
+    endif
   endif
 " }}}
 " nvim-tree.lua: {{{
