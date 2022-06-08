@@ -951,6 +951,21 @@ highlight! link diffSubname Title
     highlight! link SignifySignDeleteFirstLine SignifySignDelete
   endif
 " }}}
+" vim-startify: {{{
+  if s:Plugin_is_activated('startify', 0)
+    call s:Highlighter('StartifySelect', s:none, s:bg_2, s:fg_1, s:none)
+    highlight! link StartifyBracket Ignore
+    highlight! link StartifyFile Accent
+    highlight! link StartifyFooter Dimmed
+    highlight! link StartifyHeader Accent
+    highlight! link StartifyNumber Dimmed
+    highlight! link StartifyPath Text
+    highlight! link StartifySection Title
+    highlight! link StartifySlash StartifyPath
+    highlight! link StartifySpecial StartifyPath
+    highlight! link StartifyVar StartifyPath
+  endif
+" }}}
 " vim-which-key: {{{
   if s:Plugin_is_activated('which-key', 0)
     highlight! link WhichKey Text
