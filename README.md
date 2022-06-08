@@ -107,13 +107,13 @@ If you want to reduce the loading time of **Enfocado**, you can specify the plug
 " `:h enfocado-colorscheme` at the vim commandline.
 let g:enfocado_plugins = [
   \ 'coc',
-  \ 'copilot',
   \ 'fzf',
   \ 'gitgutter',
   \ 'matchup',
   \ 'nerdtree',
+  \ 'netrw',
   \ 'plug',
-  \ 'rainbow',
+  \ 'startify',
   \ 'yank'
   \ ]
 ```
@@ -211,6 +211,7 @@ The following plugins are supported:
 - [vim-matchup](https://github.com/andymass/vim-matchup)
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [vim-signify](https://github.com/mhinz/vim-signify)
+- [vim-startify](https://github.com/mhinz/vim-startify)
 - [vista.vim](https://github.com/liuchengxu/vista.vim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 
