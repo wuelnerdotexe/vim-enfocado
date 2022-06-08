@@ -67,8 +67,8 @@ Support is added for plugins used in CodeArt:
 - [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [vim-matchup](https://github.com/andymass/vim-matchup)
-- [vim-which-key](https://github.com/liuchengxu/vim-which-key)
 - [vista.vim](https://github.com/liuchengxu/vista.vim)
+- [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ### Fixed
 

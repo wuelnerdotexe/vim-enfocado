@@ -966,16 +966,6 @@ highlight! link diffSubname Title
     highlight! link StartifyVar StartifyPath
   endif
 " }}}
-" vim-which-key: {{{
-  if s:Plugin_is_activated('which-key', 0)
-    highlight! link WhichKey Text
-    highlight! link WhichKeyDesc Text
-    highlight! link WhichKeyFloat NormalFloat
-    highlight! link WhichKeyGroup Dimmed
-    highlight! link WhichKeySeparator NonText
-    highlight! link WhichKeyValue Text
-  endif
-" }}}
 " vista.vim: {{{
   if s:Plugin_is_activated('vista', 0)
     highlight! link VistaBracket Ignore
@@ -987,5 +977,15 @@ highlight! link diffSubname Title
     highlight! link VistaPrefix Ignore
     highlight! link VistaScope Dimmed
     highlight! link VistaTag Dimmed
+  endif
+" }}}
+" which-key.nvim: {{{
+  if s:Plugin_is_activated('which-key', 0)
+    highlight! link WhichKey Text
+    highlight! link WhichKeyDesc Text
+    highlight! link WhichKeyFloat NormalFloat
+    highlight! link WhichKeyGroup Dimmed
+    highlight! link WhichKeySeparator NonText
+    highlight! link WhichKeyValue Text
   endif
 " }}}

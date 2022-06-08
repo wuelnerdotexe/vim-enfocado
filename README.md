@@ -211,8 +211,8 @@ The following plugins are supported:
 - [vim-matchup](https://github.com/andymass/vim-matchup)
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [vim-signify](https://github.com/mhinz/vim-signify)
-- [vim-which-key](https://github.com/liuchengxu/vim-which-key)
 - [vista.vim](https://github.com/liuchengxu/vista.vim)
+- [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ## Credits
 
