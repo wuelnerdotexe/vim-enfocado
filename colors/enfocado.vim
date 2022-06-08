@@ -458,9 +458,9 @@ highlight! link diffSubname Title
 " dashboard-nvim: {{{
   if s:Plugin_is_activated('dashboard', 0)
     highlight! link DashboardHeader Accent
-    highlight! link DashboardCenter Dimmed
-    highlight! link DashboardShortCut Dimmed
-    highlight! link DashboardFooter Ignore
+    highlight! link DashboardCenter Text
+    highlight! link DashboardShortCut Text
+    highlight! link DashboardFooter Dimmed
   endif
 " }}}
 " fzf.vim: {{{
