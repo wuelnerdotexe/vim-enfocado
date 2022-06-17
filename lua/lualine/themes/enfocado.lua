@@ -9,30 +9,33 @@
 --              the code and nothing else.
 -- ----------------------------------------------------------------------------
 
--- Selenized black color scheme variables are declared.
+-- Get the color scheme.
+local scheme = vim.fn['enfocado#getScheme']()
+
+-- The colors to use are assigned.
 local colors = {
-  bg_0 = '#181818',
-  bg_1 = '#252525',
-  bg_2 = '#3B3B3B',
-  dim_0 = '#777777',
-  fg_0 = '#B9B9B9',
-  fg_1 = '#DEDEDE',
-  red = '#ED4A46',
-  green = '#70B433',
-  yellow = '#DBB32D',
-  blue = '#368AEB',
-  magenta = '#EB6EB7',
-  cyan = '#3FC5B7',
-  orange = '#E67F43',
-  violet = '#A580E2',
-  br_red = '#FF5E56',
-  br_green = '#83C746',
-  br_yellow = '#EFC541',
-  br_blue = '#4F9CFE',
-  br_magenta = '#FF81CA',
-  br_cyan = '#56D8C9',
-  br_orange = '#FA9153',
-  br_violet  = '#B891F5'
+  bg_0 = scheme.bg_0[1],
+  bg_1 = scheme.bg_1[1],
+  bg_2 = scheme.bg_2[1],
+  dim_0 = scheme.dim_0[1],
+  fg_0 = scheme.fg_0[1],
+  fg_1 = scheme.fg_1[1],
+  red = scheme.red[1],
+  green = scheme.green[1],
+  yellow = scheme.yellow[1],
+  blue = scheme.blue[1],
+  magenta = scheme.magenta[1],
+  cyan = scheme.cyan[1],
+  orange = scheme.orange[1],
+  violet = scheme.violet[1],
+  br_red = scheme.br_red[1],
+  br_green = scheme.br_green[1],
+  br_yellow = scheme.br_yellow[1],
+  br_blue = scheme.br_blue[1],
+  br_magenta = scheme.br_magenta[1],
+  br_cyan = scheme.br_cyan[1],
+  br_orange = scheme.br_orange[1],
+  br_violet  = scheme.br_violet
 }
 
 return {

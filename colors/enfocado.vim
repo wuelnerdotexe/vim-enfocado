@@ -18,8 +18,9 @@ endif
 " The Enfocado theme is initialized.
 let g:colors_name = 'enfocado'
 
+" TODO: Set dark or light mode.
 " Vim's dark mode is on.
-set background=dark
+" set background=dark
 
 " All highlights are removed.
 if version > 580
@@ -29,32 +30,36 @@ if version > 580
   endif
 endif
 
-" Selenized black color scheme variables are declared.
-let s:bg_0 = ['#181818', 234]
-let s:bg_1 = ['#252525', 235]
-let s:bg_2 = ['#3B3B3B', 237]
-let s:dim_0 = ['#777777', 243]
-let s:fg_0 = ['#B9B9B9', 250]
-let s:fg_1 = ['#DEDEDE', 253]
-let s:red = ['#ED4A46', 203]
-let s:green = ['#70B433', 107]
-let s:yellow = ['#DBB32D', 179]
-let s:blue = ['#368AEB', 69]
-let s:magenta = ['#EB6EB7', 205]
-let s:cyan = ['#3FC5B7', 79]
-let s:orange = ['#E67F43', 173]
-let s:violet = ['#A580E2', 140]
-let s:br_red = ['#FF5E56', 203]
-let s:br_green = ['#83C746', 113]
-let s:br_yellow = ['#EFC541', 221]
-let s:br_blue = ['#4F9CFE', 75]
-let s:br_magenta = ['#FF81CA', 212]
-let s:br_cyan = ['#56D8C9', 80]
-let s:br_orange = ['#FA9153', 209]
-let s:br_violet = ['#B891F5', 141]
+" Get the color scheme.
+let s:scheme = enfocado#getScheme()
 
-" Support colors are declared.
-let s:black = ['#000000', 16]
+" The scheme to use are assigned.
+let s:bg_0 = s:scheme.bg_0
+let s:bg_1 = s:scheme.bg_1
+let s:bg_2 = s:scheme.bg_2
+let s:dim_0 = s:scheme.dim_0
+let s:fg_0 = s:scheme.fg_0
+let s:fg_1 = s:scheme.fg_1
+
+let s:red = s:scheme.red
+let s:green = s:scheme.green
+let s:yellow = s:scheme.yellow
+let s:blue = s:scheme.blue
+let s:magenta = s:scheme.magenta
+let s:cyan = s:scheme.cyan
+let s:orange = s:scheme.orange
+let s:violet = s:scheme.violet
+
+let s:br_red = s:scheme.br_red
+let s:br_green = s:scheme.br_green
+let s:br_yellow = s:scheme.br_yellow
+let s:br_blue = s:scheme.br_blue
+let s:br_magenta = s:scheme.br_magenta
+let s:br_cyan = s:scheme.br_cyan
+let s:br_orange = s:scheme.br_orange
+let s:br_violet = s:scheme.br_violet
+
+let s:base = s:scheme.base
 
 " Attributes are declared.
 let s:none = ['NONE', 'NONE']
@@ -233,7 +238,7 @@ call s:Highlighter('TabLineSel', s:none, s:none, s:dim_0, s:none)
 call s:Highlighter('TermCursor', s:none, s:fg_0, s:bg_1, s:none)
 call s:Highlighter('Title', s:bold, s:none, s:fg_1, s:none)
 call s:Highlighter('ToolbarLine', s:none, s:bg_1, s:dim_0, s:none)
-call s:Highlighter('VertSplit', s:none, s:none, s:black, s:none)
+call s:Highlighter('VertSplit', s:none, s:none, s:base, s:none)
 call s:Highlighter('Visual', s:none, s:bg_2, s:none, s:none)
 call s:Highlighter('VisualNC', s:none, s:bg_2, s:none, s:none)
 call s:Highlighter('VisualNOS', s:none, s:bg_2, s:none, s:none)
