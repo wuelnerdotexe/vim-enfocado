@@ -18,15 +18,10 @@ endif
 " The Enfocado theme is initialized.
 let g:colors_name = 'enfocado'
 
-" TODO: Set dark or light mode.
-" Vim's dark mode is on.
-" set background=dark
-
 " All highlights are removed.
 if version > 580
-  highlight clear
-  if exists('syntax_on')
-    syntax reset
+  if !exists('syntax_on')
+    syntax on | syntax reset
   endif
 endif
 
@@ -112,7 +107,7 @@ let g:enfocado_style = get(g:, 'enfocado_style', 'nature')
 let g:enfocado_plugins = get(g:, 'enfocado_plugins', ['all'])
 
 " A function is created to check on-demand plugins.
-function! s:Plugin_is_activated(name, only_nvim)
+function s:Plugin_is_activated(name, only_nvim)
   if (g:enfocado_plugins == ['none']) || (a:only_nvim && !has('nvim'))
     return 0
   elseif (a:only_nvim && has('nvim')) || !a:only_nvim
@@ -125,7 +120,7 @@ function! s:Plugin_is_activated(name, only_nvim)
 endfunction
 
 " A function is created to highlight the groups.
-function! s:Highlighter(group, attr, bg, fg, sp)
+function s:Highlighter(group, attr, bg, fg, sp)
   execute 'highlight! '.a:group.
         \ ' term='.a:attr[1].
         \ ' cterm='.a:attr[1].
