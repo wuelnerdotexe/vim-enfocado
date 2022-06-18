@@ -28,6 +28,10 @@ Otherwise, enable 256 terminal color support:
 
 `set t_Co=256`
 
+Choose between light or dark theme:
+
+`set background={light or dark}`
+
 Then choose your favorite Enfocado style, for example:
 
 `let g:enfocado_style = 'neon' "Available: 'nature' or 'neon'.`

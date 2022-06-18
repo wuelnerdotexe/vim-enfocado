@@ -94,13 +94,19 @@ Otherwise, enable **256 terminal color** support:
 set t_Co=256
 ```
 
+Choose between light or dark theme (NEW FEATURE! ✨):
+
+```vim
+set background={light or dark}
+```
+
 Then choose your favorite **Enfocado** style, for example:
 
 ```vim
 let g:enfocado_style = 'neon' " Available: `nature` or `neon`.
 ```
 
-If you want to reduce the loading time of **Enfocado**, you can specify the plugins you want to apply the theme to on demand (NEW FEATURE! ✨):
+If you want to reduce the loading time of **Enfocado**, you can specify the plugins you want to apply the theme to on demand:
 
 ```vim
 " NOTE: To see a list of all available plugins, run
