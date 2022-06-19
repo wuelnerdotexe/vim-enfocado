@@ -35,7 +35,7 @@ local colors = {
   br_magenta = scheme.br_magenta[1],
   br_cyan = scheme.br_cyan[1],
   br_orange = scheme.br_orange[1],
-  br_violet  = scheme.br_violet
+  br_violet  = scheme.br_violet[1]
 }
 
 return {

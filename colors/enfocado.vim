@@ -19,10 +19,8 @@ endif
 let g:colors_name = 'enfocado'
 
 " All highlights are removed.
-if version > 580
-  if !exists('syntax_on')
-    syntax on | syntax reset
-  endif
+if !exists('syntax_on')
+  syntax on | syntax reset
 endif
 
 " Get the color scheme.
