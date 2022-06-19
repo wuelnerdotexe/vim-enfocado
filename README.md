@@ -94,7 +94,7 @@ Otherwise, enable **256 terminal color** support:
 set t_Co=256
 ```
 
-Choose between light or dark theme (NEW FEATURE! ✨):
+Choose between light or dark theme ✨ new ✨:
 
 ```vim
 set background={light or dark}

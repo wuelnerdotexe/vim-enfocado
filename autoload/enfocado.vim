@@ -10,7 +10,7 @@
 " -----------------------------------------------------------------------------
 
 " A funcref is created to get the color scheme based on the vim background.
-function! enfocado#getScheme()
+function! enfocado#getColorScheme()
   " Colors are initialized.
   let l:colors = {}
 

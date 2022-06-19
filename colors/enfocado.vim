@@ -21,38 +21,40 @@ let g:colors_name = 'enfocado'
 " All highlights are removed.
 if !exists('syntax_on')
   syntax on | syntax reset
+else
+  syntax reset
 endif
 
 " Get the color scheme.
-let s:scheme = enfocado#getScheme()
+let s:colorScheme = enfocado#getColorScheme()
 
-" The scheme to use are assigned.
-let s:bg_0 = s:scheme.bg_0
-let s:bg_1 = s:scheme.bg_1
-let s:bg_2 = s:scheme.bg_2
-let s:dim_0 = s:scheme.dim_0
-let s:fg_0 = s:scheme.fg_0
-let s:fg_1 = s:scheme.fg_1
+" The color scheme to use are assigned.
+let s:bg_0 = s:colorScheme.bg_0
+let s:bg_1 = s:colorScheme.bg_1
+let s:bg_2 = s:colorScheme.bg_2
+let s:dim_0 = s:colorScheme.dim_0
+let s:fg_0 = s:colorScheme.fg_0
+let s:fg_1 = s:colorScheme.fg_1
 
-let s:red = s:scheme.red
-let s:green = s:scheme.green
-let s:yellow = s:scheme.yellow
-let s:blue = s:scheme.blue
-let s:magenta = s:scheme.magenta
-let s:cyan = s:scheme.cyan
-let s:orange = s:scheme.orange
-let s:violet = s:scheme.violet
+let s:red = s:colorScheme.red
+let s:green = s:colorScheme.green
+let s:yellow = s:colorScheme.yellow
+let s:blue = s:colorScheme.blue
+let s:magenta = s:colorScheme.magenta
+let s:cyan = s:colorScheme.cyan
+let s:orange = s:colorScheme.orange
+let s:violet = s:colorScheme.violet
 
-let s:br_red = s:scheme.br_red
-let s:br_green = s:scheme.br_green
-let s:br_yellow = s:scheme.br_yellow
-let s:br_blue = s:scheme.br_blue
-let s:br_magenta = s:scheme.br_magenta
-let s:br_cyan = s:scheme.br_cyan
-let s:br_orange = s:scheme.br_orange
-let s:br_violet = s:scheme.br_violet
+let s:br_red = s:colorScheme.br_red
+let s:br_green = s:colorScheme.br_green
+let s:br_yellow = s:colorScheme.br_yellow
+let s:br_blue = s:colorScheme.br_blue
+let s:br_magenta = s:colorScheme.br_magenta
+let s:br_cyan = s:colorScheme.br_cyan
+let s:br_orange = s:colorScheme.br_orange
+let s:br_violet = s:colorScheme.br_violet
 
-let s:base = s:scheme.base
+let s:base = s:colorScheme.base
 
 " Attributes are declared.
 let s:none = ['NONE', 'NONE']

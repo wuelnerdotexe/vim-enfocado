@@ -10,32 +10,32 @@
 -- ----------------------------------------------------------------------------
 
 -- Get the color scheme.
-local scheme = vim.fn['enfocado#getScheme']()
+local colorScheme = vim.fn['enfocado#getColorScheme']()
 
 -- The colors to use are assigned.
 local colors = {
-  bg_0 = scheme.bg_0[1],
-  bg_1 = scheme.bg_1[1],
-  bg_2 = scheme.bg_2[1],
-  dim_0 = scheme.dim_0[1],
-  fg_0 = scheme.fg_0[1],
-  fg_1 = scheme.fg_1[1],
-  red = scheme.red[1],
-  green = scheme.green[1],
-  yellow = scheme.yellow[1],
-  blue = scheme.blue[1],
-  magenta = scheme.magenta[1],
-  cyan = scheme.cyan[1],
-  orange = scheme.orange[1],
-  violet = scheme.violet[1],
-  br_red = scheme.br_red[1],
-  br_green = scheme.br_green[1],
-  br_yellow = scheme.br_yellow[1],
-  br_blue = scheme.br_blue[1],
-  br_magenta = scheme.br_magenta[1],
-  br_cyan = scheme.br_cyan[1],
-  br_orange = scheme.br_orange[1],
-  br_violet  = scheme.br_violet[1]
+  bg_0 = colorScheme.bg_0[1],
+  bg_1 = colorScheme.bg_1[1],
+  bg_2 = colorScheme.bg_2[1],
+  dim_0 = colorScheme.dim_0[1],
+  fg_0 = colorScheme.fg_0[1],
+  fg_1 = colorScheme.fg_1[1],
+  red = colorScheme.red[1],
+  green = colorScheme.green[1],
+  yellow = colorScheme.yellow[1],
+  blue = colorScheme.blue[1],
+  magenta = colorScheme.magenta[1],
+  cyan = colorScheme.cyan[1],
+  orange = colorScheme.orange[1],
+  violet = colorScheme.violet[1],
+  br_red = colorScheme.br_red[1],
+  br_green = colorScheme.br_green[1],
+  br_yellow = colorScheme.br_yellow[1],
+  br_blue = colorScheme.br_blue[1],
+  br_magenta = colorScheme.br_magenta[1],
+  br_cyan = colorScheme.br_cyan[1],
+  br_orange = colorScheme.br_orange[1],
+  br_violet  = colorScheme.br_violet[1]
 }
 
 return {
