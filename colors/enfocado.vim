@@ -331,6 +331,29 @@ highlight! link diffSubname Title
 " ------------------------------------------------------------------------------
 " SECTION: Plugins for Neo(Vim) groups highlighting.
 " ------------------------------------------------------------------------------
+" ale: {{{
+  if s:Plugin_is_activated('ale', 0)
+    highlight! link ALEError DiagnosticUnderlineError
+    highlight! link ALEInfo DiagnosticUnderlineInfo
+    highlight! link ALEWarning DiagnosticUnderlineWarn
+    highlight! link ALEErrorSign DiagnosticError
+    highlight! link ALEInfoSign DiagnosticInfo
+    highlight! link ALEWarningSign DiagnosticWarn
+    highlight! link ALEErrorLine None
+    highlight! link ALEInfoLine None
+    highlight! link ALEWarningLine None
+    highlight! link ALEVirtualTextError DiagnosticError
+    highlight! link ALEVirtualTextInfo DiagnosticInfo
+    highlight! link ALEVirtualTextWarning DiagnosticWarn
+    highlight! link ALEStyleError ALEError
+    highlight! link ALEStyleWarning ALEWarning
+    highlight! link ALEStyleErrorSign ALEErrorSign
+    highlight! link ALEStyleWarningSign ALEWarningSign
+    highlight! link ALEVirtualTextStyleError ALEVirtualTextError
+    highlight! link ALEVirtualTextStyleWarning ALEVirtualTextWarning
+    highlight! link ALESignColumnWithErrors ALEErrorSign
+  endif
+" }}}
 " coc.nvim: {{{
   if s:Plugin_is_activated('coc', 0)
     " Coc markdown.

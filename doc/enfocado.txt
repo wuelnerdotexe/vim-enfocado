@@ -41,6 +41,7 @@ plugins you want to apply the theme to on-demand, This is the full list of
 supported plugins so far:
 
 `let g:enfocado_plugins = [`
+`  \ 'ale',`
 `  \ 'cmp',`
 `  \ 'coc',`
 `  \ 'copilot',`

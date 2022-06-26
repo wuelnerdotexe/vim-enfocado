@@ -114,7 +114,7 @@ If you want to reduce the loading time of **Enfocado**, you can specify the plug
 " NOTE: To see a list of all available plugins, run
 " `:h enfocado-colorscheme` at the vim commandline.
 let g:enfocado_plugins = [
-  \ 'coc',
+  \ 'ale',
   \ 'fzf',
   \ 'gitgutter',
   \ 'matchup',
@@ -194,6 +194,7 @@ And of course, if you want to motivate me to constantly improve this theme, your
 
 The following plugins are supported:
 
+- [ale](https://github.com/dense-analysis/ale)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [copilot.vim](https://github.com/github/copilot.vim)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
