@@ -303,10 +303,10 @@ highlight! link DiagnosticSignError DiagnosticError
 highlight! link DiagnosticSignHint DiagnosticHint
 highlight! link DiagnosticSignInfo DiagnosticInfo
 highlight! link DiagnosticSignWarn DiagnosticWarn
-highlight! link DiagnosticVirtualTextError DiagnosticError
-highlight! link DiagnosticVirtualTextHint DiagnosticHint
-highlight! link DiagnosticVirtualTextInfo DiagnosticInfo
-highlight! link DiagnosticVirtualTextWarn DiagnosticWarn
+highlight! link DiagnosticVirtualTextError DiagnosticFloatingError
+highlight! link DiagnosticVirtualTextHint DiagnosticFloatingHint
+highlight! link DiagnosticVirtualTextInfo DiagnosticFloatingInfo
+highlight! link DiagnosticVirtualTextWarn DiagnosticFloatingWarn
 " ------------------------------------------------------------------------------
 " SECTION: Filetypes syntax groups highlighting.
 " ------------------------------------------------------------------------------
@@ -336,15 +336,15 @@ highlight! link diffSubname Title
     highlight! link ALEError DiagnosticUnderlineError
     highlight! link ALEInfo DiagnosticUnderlineInfo
     highlight! link ALEWarning DiagnosticUnderlineWarn
-    highlight! link ALEErrorSign DiagnosticError
-    highlight! link ALEInfoSign DiagnosticInfo
-    highlight! link ALEWarningSign DiagnosticWarn
+    highlight! link ALEErrorSign DiagnosticSignError
+    highlight! link ALEInfoSign DiagnosticSignInfo
+    highlight! link ALEWarningSign DiagnosticSignWarn
     highlight! link ALEErrorLine None
     highlight! link ALEInfoLine None
     highlight! link ALEWarningLine None
-    highlight! link ALEVirtualTextError DiagnosticError
-    highlight! link ALEVirtualTextInfo DiagnosticInfo
-    highlight! link ALEVirtualTextWarning DiagnosticWarn
+    highlight! link ALEVirtualTextError DiagnosticVirtualTextError
+    highlight! link ALEVirtualTextInfo DiagnosticVirtualTextInfo
+    highlight! link ALEVirtualTextWarning DiagnosticVirtualTextWarn
     highlight! link ALEStyleError ALEError
     highlight! link ALEStyleWarning ALEWarning
     highlight! link ALEStyleErrorSign ALEErrorSign
@@ -373,10 +373,10 @@ highlight! link diffSubname Title
     highlight! link CocHintSign DiagnosticHint
     highlight! link CocInfoSign DiagnosticInfo
     highlight! link CocWarningSign DiagnosticWarn
-    highlight! link CocErrorVirtualText DiagnosticError
-    highlight! link CocHintVirtualText DiagnosticHint
-    highlight! link CocInfoVirtualText DiagnosticInfo
-    highlight! link CocWarningVirtualText DiagnosticWarn
+    highlight! link CocErrorVirtualText DiagnosticVirtualTextError
+    highlight! link CocHintVirtualText DiagnosticVirtualTextHint
+    highlight! link CocInfoVirtualText DiagnosticVirtualTextInfo
+    highlight! link CocWarningVirtualText DiagnosticVirtualTextWarn
     highlight! link CocErrorLine None
     highlight! link CocHintLine None
     highlight! link CocInfoLine None
