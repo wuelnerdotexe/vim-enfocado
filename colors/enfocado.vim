@@ -149,13 +149,13 @@ if g:enfocado_style == 'neon'
   call s:Highlighter('FunctionBuiltin', s:italic, s:none, s:br_green, s:none)
   call s:Highlighter('Identifier', s:none, s:none, s:magenta, s:none)
   call s:Highlighter('IdentifierBuiltin', s:none, s:none, s:green, s:none)
-  call s:Highlighter('PreProc', s:none, s:none, s:br_violet, s:none)
+  call s:Highlighter('PreProc', s:none, s:none, s:violet, s:none)
+  call s:Highlighter('Property', s:none, s:none, s:violet, s:none)
   call s:Highlighter('Special', s:none, s:none, s:br_blue, s:none)
-  call s:Highlighter('Statement', s:none, s:none, s:br_violet, s:none)
-  call s:Highlighter('StatementBuiltin', s:none, s:none, s:br_blue, s:none)
-  call s:Highlighter('Struct', s:bold_italic, s:none, s:br_magenta, s:none)
-  call s:Highlighter('Type', s:none, s:none, s:violet, s:none)
-  call s:Highlighter('TypeBuiltin', s:none, s:none, s:blue, s:none)
+  call s:Highlighter('Statement', s:none, s:none, s:violet, s:none)
+  call s:Highlighter('StatementBuiltin', s:none, s:none, s:blue, s:none)
+  call s:Highlighter('Type', s:bold, s:none, s:br_violet, s:none)
+  call s:Highlighter('TypeBuiltin', s:bold, s:none, s:br_blue, s:none)
 else
   " Nature interfaz.
   call s:Highlighter('Accent', s:none, s:none, s:br_green, s:none)
@@ -170,13 +170,13 @@ else
   call s:Highlighter('FunctionBuiltin', s:italic, s:none, s:br_magenta, s:none)
   call s:Highlighter('Identifier', s:none, s:none, s:green, s:none)
   call s:Highlighter('IdentifierBuiltin', s:none, s:none, s:magenta, s:none)
-  call s:Highlighter('PreProc', s:none, s:none, s:br_blue, s:none)
+  call s:Highlighter('PreProc', s:none, s:none, s:blue, s:none)
+  call s:Highlighter('Property', s:none, s:none, s:br_blue, s:none)
   call s:Highlighter('Special', s:none, s:none, s:br_violet, s:none)
-  call s:Highlighter('Statement', s:none, s:none, s:br_blue, s:none)
-  call s:Highlighter('StatementBuiltin', s:none, s:none, s:br_violet, s:none)
-  call s:Highlighter('Struct', s:bold_italic, s:none, s:br_green, s:none)
-  call s:Highlighter('Type', s:none, s:none, s:blue, s:none)
-  call s:Highlighter('TypeBuiltin', s:none, s:none, s:violet, s:none)
+  call s:Highlighter('Statement', s:none, s:none, s:blue, s:none)
+  call s:Highlighter('StatementBuiltin', s:none, s:none, s:violet, s:none)
+  call s:Highlighter('Type', s:bold, s:none, s:br_blue, s:none)
+  call s:Highlighter('TypeBuiltin', s:bold, s:none, s:br_violet, s:none)
 endif
 
 " General interfaz.
@@ -260,26 +260,26 @@ call s:Highlighter('Error', s:none, s:none, s:br_red, s:none)
 call s:Highlighter('Link', s:underline, s:none, s:br_cyan, s:br_cyan)
 call s:Highlighter('Text', s:none, s:none, s:fg_0, s:none)
 call s:Highlighter('Todo', s:bold, s:br_cyan, s:bg_1, s:none)
-highlight! link Boolean TypeBuiltin
-highlight! link Character Constant
+highlight! link Boolean StatementBuiltin
+highlight! link Character StatementBuiltin
 highlight! link Conditional Statement
 highlight! link Debug Constant
-highlight! link Define Type
+highlight! link Define PreProc
 highlight! link Delimiter Text
 highlight! link Exception Statement
 highlight! link Float Number
-highlight! link Include Type
+highlight! link Include PreProc
 highlight! link Keyword Statement
-highlight! link Label Type
-highlight! link Macro Type
+highlight! link Label Statement
+highlight! link Macro Define
 highlight! link Method Function
-highlight! link Number Constant
+highlight! link Number Text
 highlight! link Operator Statement
-highlight! link PreCondit Statement
+highlight! link PreCondit PreProc
 highlight! link Repeat Statement
 highlight! link SpecialChar StatementBuiltin
 highlight! link SpecialComment StatementBuiltin
-highlight! link StorageClass Type
+highlight! link StorageClass Statement
 highlight! link String Constant
 highlight! link Structure Type
 highlight! link Tag Statement
@@ -412,30 +412,30 @@ highlight! link diffSubname Title
     " Coc symbol icons.
     highlight! link CocSymbolArray Identifier
     highlight! link CocSymbolBoolean Boolean
-    highlight! link CocSymbolClass Struct
+    highlight! link CocSymbolClass Type
     highlight! link CocSymbolConstant Constant
-    highlight! link CocSymbolConstructor Struct
+    highlight! link CocSymbolConstructor Type
     highlight! link CocSymbolDefault Text
-    highlight! link CocSymbolEnum Struct
-    highlight! link CocSymbolEnumMember Identifier
-    highlight! link CocSymbolEvent Function
+    highlight! link CocSymbolEnum Type
+    highlight! link CocSymbolEnumMember Property
+    highlight! link CocSymbolEvent FunctionBuiltin
     highlight! link CocSymbolField Identifier
     highlight! link CocSymbolFile Text
     highlight! link CocSymbolFunction Function
-    highlight! link CocSymbolInterface Struct
+    highlight! link CocSymbolInterface Type
     highlight! link CocSymbolKey Identifier
     highlight! link CocSymbolMethod Method
     highlight! link CocSymbolModule Identifier
-    highlight! link CocSymbolNamespace Struct
-    highlight! link CocSymbolNull TypeBuiltin
+    highlight! link CocSymbolNamespace Title
+    highlight! link CocSymbolNull StatementBuiltin
     highlight! link CocSymbolNumber Number
-    highlight! link CocSymbolObject Identifier
+    highlight! link CocSymbolObject Type
     highlight! link CocSymbolOperator Operator
-    highlight! link CocSymbolPackage Identifier
-    highlight! link CocSymbolProperty Identifier
+    highlight! link CocSymbolPackage String
+    highlight! link CocSymbolProperty Property
     highlight! link CocSymbolString String
-    highlight! link CocSymbolStruct Struct
-    highlight! link CocSymbolTypeParameter Identifier
+    highlight! link CocSymbolStruct Type
+    highlight! link CocSymbolTypeParameter Type
     highlight! link CocSymbolVariable Identifier
 
     " Coc others.
@@ -448,27 +448,27 @@ highlight! link diffSubname Title
     " Coc semantic highlight.
     if exists('g:coc_default_semantic_highlight_groups') &&
           \ g:coc_default_semantic_highlight_groups == 1
-      highlight! link CocSem_class Struct
+      highlight! link CocSem_class Type
       highlight! link CocSem_comment Comment
-      highlight! link CocSem_enum Struct
-      highlight! link CocSem_enumMember Identifier
-      highlight! link CocSem_event Function
+      highlight! link CocSem_enum Type
+      highlight! link CocSem_enumMember Property
+      highlight! link CocSem_event FunctionBuiltin
       highlight! link CocSem_function Function
-      highlight! link CocSem_interface Struct
+      highlight! link CocSem_interface Type
       highlight! link CocSem_keyword Keyword
       highlight! link CocSem_macro Macro
       highlight! link CocSem_method Method
-      highlight! link CocSem_modifier Struct
-      highlight! link CocSem_namespace Struct
+      highlight! link CocSem_modifier Type
+      highlight! link CocSem_namespace Title
       highlight! link CocSem_number Number
       highlight! link CocSem_operator Operator
       highlight! link CocSem_parameter Identifier
-      highlight! link CocSem_property Identifier
-      highlight! link CocSem_regexp TypeBuiltin
+      highlight! link CocSem_property Property
+      highlight! link CocSem_regexp StatementBuiltin
       highlight! link CocSem_string String
-      highlight! link CocSem_struct Struct
+      highlight! link CocSem_struct Type
       highlight! link CocSem_type Type
-      highlight! link CocSem_typeParameter Identifier
+      highlight! link CocSem_typeParameter Type
       highlight! link CocSem_variable Identifier
     endif
   endif
@@ -559,31 +559,31 @@ highlight! link diffSubname Title
     highlight! link CmpItemAbbrDeprecatedDefault Error
     highlight! link CmpItemAbbrMatchDefault Accent
     highlight! link CmpItemAbbrMatchFuzzyDefault Accent
-    highlight! link CmpItemKindClassDefault Struct
-    highlight! link CmpItemKindColorDefault Constant
+    highlight! link CmpItemKindClassDefault Type
+    highlight! link CmpItemKindColorDefault StatementBuiltin
     highlight! link CmpItemKindConstantDefault Constant
-    highlight! link CmpItemKindConstructorDefault Struct
+    highlight! link CmpItemKindConstructorDefault Type
     highlight! link CmpItemKindDefault Text
-    highlight! link CmpItemKindEnumDefault Struct
-    highlight! link CmpItemKindEnumMemberDefault Identifier
-    highlight! link CmpItemKindEventDefault Function
+    highlight! link CmpItemKindEnumDefault Type
+    highlight! link CmpItemKindEnumMemberDefault Property
+    highlight! link CmpItemKindEventDefault FunctionBuiltin
     highlight! link CmpItemKindFieldDefault Identifier
     highlight! link CmpItemKindFileDefault Text
     highlight! link CmpItemKindFolderDefault Text
     highlight! link CmpItemKindFunctionDefault Function
-    highlight! link CmpItemKindInterfaceDefault Struct
+    highlight! link CmpItemKindInterfaceDefault Type
     highlight! link CmpItemKindKeywordDefault Keyword
     highlight! link CmpItemKindMethodDefault Method
-    highlight! link CmpItemKindModuleDefault Identifier
+    highlight! link CmpItemKindModuleDefault Structure
     highlight! link CmpItemKindOperatorDefault Operator
-    highlight! link CmpItemKindPropertyDefault Identifier
+    highlight! link CmpItemKindPropertyDefault Property
     highlight! link CmpItemKindReferenceDefault Accent
     highlight! link CmpItemKindSnippetDefault Text
-    highlight! link CmpItemKindStructDefault Struct
+    highlight! link CmpItemKindStructDefault Type
     highlight! link CmpItemKindTextDefault Text
-    highlight! link CmpItemKindTypeParameterDefault Identifier
-    highlight! link CmpItemKindUnitDefault Constant
-    highlight! link CmpItemKindValueDefault Constant
+    highlight! link CmpItemKindTypeParameterDefault Type
+    highlight! link CmpItemKindUnitDefault Number
+    highlight! link CmpItemKindValueDefault Text
     highlight! link CmpItemKindVariableDefault Identifier
     highlight! link CmpItemMenuDefault NormalFloat
   endif
@@ -649,23 +649,23 @@ highlight! link diffSubname Title
     call s:Highlighter('TSLiteral', s:italic, s:none, s:fg_0, s:none)
     call s:Highlighter('TSNote', s:bold, s:br_green, s:bg_1, s:none)
     call s:Highlighter('TSTitle', s:bold_italic, s:none, s:fg_1, s:none)
-    highlight! link TSAnnotation Dimmed
+    highlight! link TSAnnotation SpecialComment
     highlight! link TSAttribute Identifier
     highlight! link TSBoolean Boolean
-    highlight! link TSCharacter Character
+    highlight! link TSCharacter SpecialChar
     highlight! link TSComment Comment
     highlight! link TSConditional Conditional
     highlight! link TSConstant Constant
-    highlight! link TSConstBuiltin TypeBuiltin
-    highlight! link TSConstMacro Type
-    highlight! link TSConstructor Struct
+    highlight! link TSConstBuiltin StatementBuiltin
+    highlight! link TSConstMacro StatementBuiltin
+    highlight! link TSConstructor Type
     highlight! link TSCurrentScope Visual
     highlight! link TSDanger DiagnosticError
     highlight! link TSDefinition Identifier
     highlight! link TSDefinitionUsage Accent
     highlight! link TSEnvironment Type
     highlight! link TSEnvironmentName Identifier
-    highlight! link TSException Statement
+    highlight! link TSException Exception
     highlight! link TSField Identifier
     highlight! link TSFloat Float
     highlight! link TSFunction Function
@@ -675,33 +675,33 @@ highlight! link diffSubname Title
     highlight! link TSKeyword Keyword
     highlight! link TSKeywordFunction Type
     highlight! link TSKeywordOperator Operator
-    highlight! link TSKeywordReturn Statement
+    highlight! link TSKeywordReturn Keyword
     highlight! link TSLabel Label
     highlight! link TSMath FunctionBuiltin
     highlight! link TSMethod Method
-    highlight! link TSNamespace Struct
+    highlight! link TSNamespace Title
     highlight! link TSNone None
     highlight! link TSNumber Number
     highlight! link TSOperator Operator
     highlight! link TSParameter Identifier
     highlight! link TSParameterReference Accent
-    highlight! link TSProperty Identifier
+    highlight! link TSProperty Property
     highlight! link TSPunctDelimiter Delimiter
     highlight! link TSPunctBracket Delimiter
-    highlight! link TSPunctSpecial TypeBuiltin
+    highlight! link TSPunctSpecial StatementBuiltin
     highlight! link TSRepeat Repeat
     highlight! link TSString String
-    highlight! link TSStringRegex TypeBuiltin
-    highlight! link TSStringEscape TypeBuiltin
-    highlight! link TSStringSpecial TypeBuiltin
-    highlight! link TSSymbol Type
+    highlight! link TSStringRegex StatementBuiltin
+    highlight! link TSStringEscape StatementBuiltin
+    highlight! link TSStringSpecial StatementBuiltin
+    highlight! link TSSymbol Identifier
     highlight! link TSTag Tag
     highlight! link TSTagAttribute Identifier
-    highlight! link TSTagDelimiter Type
+    highlight! link TSTagDelimiter Delimiter
     highlight! link TSText Text
     highlight! link TSTextReference Accent
     highlight! link TSType Type
-    highlight! link TSTypeBuiltin Type
+    highlight! link TSTypeBuiltin TypeBuiltin
     highlight! link TSURI Link
     highlight! link TSVariable Identifier
     highlight! link TSVariableBuiltin IdentifierBuiltin
@@ -851,7 +851,7 @@ highlight! link diffSubname Title
     highlight! link TelescopeResultsDiffChange DiffChange
     highlight! link TelescopeResultsDiffDelete DiffDelete
     highlight! link TelescopeResultsDiffUntracked Ignore
-    highlight! link TelescopeResultsClass Struct
+    highlight! link TelescopeResultsClass Type
     highlight! link TelescopeResultsComment Comment
     highlight! link TelescopeResultsConstant Constant
     highlight! link TelescopeResultsField Identifier
@@ -862,8 +862,8 @@ highlight! link diffSubname Title
     highlight! link TelescopeResultsNormal NormalFloat
     highlight! link TelescopeResultsNumber Number
     highlight! link TelescopeResultsOperator Operator
-    highlight! link TelescopeResultsSpecialComment StatementBuiltin
-    highlight! link TelescopeResultsStruct Struct
+    highlight! link TelescopeResultsSpecialComment SpecialComment
+    highlight! link TelescopeResultsStruct Type
     highlight! link TelescopeResultsTitle Title
     highlight! link TelescopeResultsVariable Identifier
     highlight! link TelescopeSelection Visual

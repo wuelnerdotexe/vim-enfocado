@@ -114,9 +114,11 @@ If you want to reduce the loading time of **Enfocado**, you can specify the plug
 " NOTE: To see a list of all available plugins, run
 " `:h enfocado-colorscheme` at the vim commandline.
 let g:enfocado_plugins = [
-  \ 'ale',
+  \ 'cmp',
+  \ 'copilot',
   \ 'fzf',
   \ 'gitgutter',
+  \ 'lsp',
   \ 'matchup',
   \ 'nerdtree',
   \ 'netrw',
