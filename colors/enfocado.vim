@@ -646,9 +646,8 @@ highlight! link diffSubname Title
 " }}}
 " nvim-treesitter: {{{
   if s:Plugin_is_activated('treesitter', 1)
-    call s:Highlighter('TSLiteral', s:italic, s:none, s:fg_0, s:none)
     call s:Highlighter('TSNote', s:bold, s:br_green, s:bg_1, s:none)
-    call s:Highlighter('TSTitle', s:bold_italic, s:none, s:fg_1, s:none)
+    call s:Highlighter('TSTitle', s:none, s:none, s:fg_1, s:none)
     highlight! link TSAnnotation SpecialComment
     highlight! link TSAttribute Identifier
     highlight! link TSBoolean Boolean
@@ -659,10 +658,7 @@ highlight! link diffSubname Title
     highlight! link TSConstBuiltin StatementBuiltin
     highlight! link TSConstMacro StatementBuiltin
     highlight! link TSConstructor Type
-    highlight! link TSCurrentScope Visual
     highlight! link TSDanger DiagnosticError
-    highlight! link TSDefinition Identifier
-    highlight! link TSDefinitionUsage Accent
     highlight! link TSEnvironment Type
     highlight! link TSEnvironmentName Identifier
     highlight! link TSException Exception
@@ -677,6 +673,7 @@ highlight! link diffSubname Title
     highlight! link TSKeywordOperator Operator
     highlight! link TSKeywordReturn Keyword
     highlight! link TSLabel Label
+    highlight! link TSLiteral Text
     highlight! link TSMath FunctionBuiltin
     highlight! link TSMethod Method
     highlight! link TSNamespace Title
