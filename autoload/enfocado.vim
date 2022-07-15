@@ -47,7 +47,7 @@ function! enfocado#getColorScheme()
 
     " Colors return.
     return l:colors
-  elseif &background  ==# 'light'
+  else
     " Selenized white color scheme.
     let l:colors.bg_0 = ['#FFFFFF', 231]
     let l:colors.bg_1 = ['#EBEBEB', 255]

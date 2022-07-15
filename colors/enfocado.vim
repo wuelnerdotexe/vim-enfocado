@@ -145,6 +145,7 @@ if g:enfocado_style == 'neon'
   call s:Highlighter('WildMenu', s:bold, s:bg_2, s:br_magenta, s:none)
 
   " Neon syntax.
+  call s:Highlighter('Constant', s:none, s:none, s:magenta, s:none)
   call s:Highlighter('Function', s:italic, s:none, s:br_magenta, s:none)
   call s:Highlighter('FunctionBuiltin', s:italic, s:none, s:br_green, s:none)
   call s:Highlighter('Identifier', s:none, s:none, s:magenta, s:none)
@@ -166,6 +167,7 @@ else
   call s:Highlighter('WildMenu', s:bold, s:bg_2, s:br_green, s:none)
 
   " Nature syntax.
+  call s:Highlighter('Constant', s:none, s:none, s:green, s:none)
   call s:Highlighter('Function', s:italic, s:none, s:br_green, s:none)
   call s:Highlighter('FunctionBuiltin', s:italic, s:none, s:br_magenta, s:none)
   call s:Highlighter('Identifier', s:none, s:none, s:green, s:none)
@@ -255,15 +257,15 @@ endif
 
 " General syntax.
 call s:Highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
-call s:Highlighter('Constant', s:none, s:none, s:cyan, s:none)
 call s:Highlighter('Error', s:none, s:none, s:br_red, s:none)
 call s:Highlighter('Link', s:underline, s:none, s:br_cyan, s:br_cyan)
+call s:Highlighter('String', s:none, s:none, s:cyan, s:br_cyan)
 call s:Highlighter('Text', s:none, s:none, s:fg_0, s:none)
 call s:Highlighter('Todo', s:bold, s:br_cyan, s:bg_1, s:none)
 highlight! link Boolean StatementBuiltin
 highlight! link Character StatementBuiltin
 highlight! link Conditional Statement
-highlight! link Debug Constant
+highlight! link Debug Success
 highlight! link Define PreProc
 highlight! link Delimiter Text
 highlight! link Exception Statement
@@ -279,8 +281,7 @@ highlight! link PreCondit PreProc
 highlight! link Repeat Statement
 highlight! link SpecialChar StatementBuiltin
 highlight! link SpecialComment StatementBuiltin
-highlight! link StorageClass Statement
-highlight! link String Constant
+highlight! link StorageClass Type
 highlight! link Structure Type
 highlight! link Tag Statement
 highlight! link Typedef Type
@@ -419,14 +420,14 @@ highlight! link diffSubname Title
     highlight! link CocSymbolEnum Type
     highlight! link CocSymbolEnumMember Property
     highlight! link CocSymbolEvent FunctionBuiltin
-    highlight! link CocSymbolField Identifier
+    highlight! link CocSymbolField Property
     highlight! link CocSymbolFile Text
     highlight! link CocSymbolFunction Function
     highlight! link CocSymbolInterface Type
     highlight! link CocSymbolKey Identifier
     highlight! link CocSymbolMethod Method
-    highlight! link CocSymbolModule Identifier
-    highlight! link CocSymbolNamespace Title
+    highlight! link CocSymbolModule Text
+    highlight! link CocSymbolNamespace Text
     highlight! link CocSymbolNull StatementBuiltin
     highlight! link CocSymbolNumber Number
     highlight! link CocSymbolObject Type
@@ -459,7 +460,7 @@ highlight! link diffSubname Title
       highlight! link CocSem_macro Macro
       highlight! link CocSem_method Method
       highlight! link CocSem_modifier Type
-      highlight! link CocSem_namespace Title
+      highlight! link CocSem_namespace Text
       highlight! link CocSem_number Number
       highlight! link CocSem_operator Operator
       highlight! link CocSem_parameter Identifier
@@ -567,14 +568,14 @@ highlight! link diffSubname Title
     highlight! link CmpItemKindEnumDefault Type
     highlight! link CmpItemKindEnumMemberDefault Property
     highlight! link CmpItemKindEventDefault FunctionBuiltin
-    highlight! link CmpItemKindFieldDefault Identifier
+    highlight! link CmpItemKindFieldDefault Property
     highlight! link CmpItemKindFileDefault Text
     highlight! link CmpItemKindFolderDefault Text
     highlight! link CmpItemKindFunctionDefault Function
     highlight! link CmpItemKindInterfaceDefault Type
     highlight! link CmpItemKindKeywordDefault Keyword
     highlight! link CmpItemKindMethodDefault Method
-    highlight! link CmpItemKindModuleDefault Structure
+    highlight! link CmpItemKindModuleDefault Text
     highlight! link CmpItemKindOperatorDefault Operator
     highlight! link CmpItemKindPropertyDefault Property
     highlight! link CmpItemKindReferenceDefault Accent
@@ -646,10 +647,14 @@ highlight! link diffSubname Title
 " }}}
 " nvim-treesitter: {{{
   if s:Plugin_is_activated('treesitter', 1)
-    call s:Highlighter('TSNote', s:bold, s:br_green, s:bg_1, s:none)
+    call s:Highlighter('TSDanger', s:bold, s:br_red, s:bg_1, s:none)
+    call s:Highlighter('TSNote', s:bold, s:br_yellow, s:bg_1, s:none)
+    call s:Highlighter('TSWarning', s:bold, s:br_orange, s:bg_1, s:none)
+    call s:Highlighter('TSLiteral', s:italic, s:none, s:fg_0, s:none)
+    call s:Highlighter('TSNone', s:none, s:none, s:none, s:none)
     call s:Highlighter('TSTitle', s:none, s:none, s:fg_1, s:none)
     highlight! link TSAnnotation SpecialComment
-    highlight! link TSAttribute Identifier
+    highlight! link TSAttribute SpecialComment
     highlight! link TSBoolean Boolean
     highlight! link TSCharacter SpecialChar
     highlight! link TSComment Comment
@@ -658,11 +663,14 @@ highlight! link diffSubname Title
     highlight! link TSConstBuiltin StatementBuiltin
     highlight! link TSConstMacro StatementBuiltin
     highlight! link TSConstructor Type
-    highlight! link TSDanger DiagnosticError
-    highlight! link TSEnvironment Type
-    highlight! link TSEnvironmentName Identifier
+    highlight! link TSDebug Debug
+    highlight! link TSDefine PreProc
+    highlight! link TSDefinition PreProc
+    highlight! link TSEnvironment Text
+    highlight! link TSEnvironmentName StatementBuiltin
+    highlight! link TSError Error
     highlight! link TSException Exception
-    highlight! link TSField Identifier
+    highlight! link TSField Property
     highlight! link TSFloat Float
     highlight! link TSFunction Function
     highlight! link TSFuncBuiltin FunctionBuiltin
@@ -673,20 +681,20 @@ highlight! link diffSubname Title
     highlight! link TSKeywordOperator Operator
     highlight! link TSKeywordReturn Keyword
     highlight! link TSLabel Label
-    highlight! link TSLiteral Text
-    highlight! link TSMath FunctionBuiltin
+    highlight! link TSMath StatementBuiltin
     highlight! link TSMethod Method
-    highlight! link TSNamespace Title
-    highlight! link TSNone None
+    highlight! link TSNamespace Text
     highlight! link TSNumber Number
     highlight! link TSOperator Operator
     highlight! link TSParameter Identifier
-    highlight! link TSParameterReference Accent
+    highlight! link TSParameterReference Indentifier
+    highlight! link TSPreProc PreProc
     highlight! link TSProperty Property
     highlight! link TSPunctDelimiter Delimiter
     highlight! link TSPunctBracket Delimiter
     highlight! link TSPunctSpecial StatementBuiltin
     highlight! link TSRepeat Repeat
+    highlight! link TSStorageClass StorageClass
     highlight! link TSString String
     highlight! link TSStringRegex StatementBuiltin
     highlight! link TSStringEscape StatementBuiltin
@@ -696,13 +704,14 @@ highlight! link diffSubname Title
     highlight! link TSTagAttribute Identifier
     highlight! link TSTagDelimiter Delimiter
     highlight! link TSText Text
-    highlight! link TSTextReference Accent
+    highlight! link TSTextReference TSLiteral
+    highlight! link TSTodo Todo
     highlight! link TSType Type
     highlight! link TSTypeBuiltin TypeBuiltin
+    highlight! link TSTypeQualifier Type
     highlight! link TSURI Link
     highlight! link TSVariable Identifier
     highlight! link TSVariableBuiltin IdentifierBuiltin
-    highlight! link TSWarning DiagnosticWarn
     highlight! TSEmphasis term=italic cterm=italic gui=italic
     highlight! TSStrike term=strikethrough cterm=strikethrough gui=strikethrough
     highlight! TSStrong term=bold cterm=bold gui=bold
@@ -710,7 +719,7 @@ highlight! link diffSubname Title
 
     " TSModule info.
     highlight! link TSModuleInfoGood Success
-    highlight! link TSModuleInfoBad Error
+    highlight! link TSModuleInfoBad DiagnosticError
     highlight! link TSModuleInfoHeader Accent
     highlight! link TSModuleInfoNamespace Title
     highlight! link TSModuleInfoParser Text
@@ -858,7 +867,7 @@ highlight! link diffSubname Title
     highlight! link TelescopeResultsClass Type
     highlight! link TelescopeResultsComment Comment
     highlight! link TelescopeResultsConstant Constant
-    highlight! link TelescopeResultsField Identifier
+    highlight! link TelescopeResultsField Property
     highlight! link TelescopeResultsFunction Function
     highlight! link TelescopeResultsIdentifier Identifier
     highlight! link TelescopeResultsLineNr LineNr
