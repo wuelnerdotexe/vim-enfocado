@@ -124,7 +124,7 @@ let g:enfocado_plugins = [
   \ 'netrw',
   \ 'plug',
   \ 'startify',
-  \ 'yank'
+  \ 'visual-multi'
   \ ]
 ```
 
@@ -218,11 +218,11 @@ The following plugins are supported:
 - [vim-airline](https://github.com/vim-airline/vim-airline)
 - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-- [vim-highlightedyank](https://github.com/machakann/vim-highlightedyank)
 - [vim-matchup](https://github.com/andymass/vim-matchup)
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [vim-signify](https://github.com/mhinz/vim-signify)
 - [vim-startify](https://github.com/mhinz/vim-startify)
+- [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
 - [vista.vim](https://github.com/liuchengxu/vista.vim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
 

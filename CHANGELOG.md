@@ -60,7 +60,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 Added support for the following plugins:
 
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-- [vim-highlightedyank](https://github.com/machakann/vim-highlightedyank)
 
 ### Changed
 

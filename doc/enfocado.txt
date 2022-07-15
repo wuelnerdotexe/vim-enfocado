@@ -66,8 +66,8 @@ supported plugins so far:
 `  \ 'tree',`
 `  \ 'treesitter',`
 `  \ 'vista',`
-`  \ 'which-key',`
-`  \ 'yank',`
+`  \ 'visual-multi',`
+`  \ 'which-key'`
 `  \ ]`
 
 or also indicate the `all` option to highlight all supported plugins:

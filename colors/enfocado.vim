@@ -475,7 +475,7 @@ highlight! link diffSubname Title
 " }}}
 " copilot.vim: {{{
   if s:Plugin_is_activated('copilot', 1)
-    call s:Highlighter('CopilotSuggestion', s:none, s:bg_0, s:dim_0, s:none)
+    highlight! link CopilotSuggestion Comment
   endif
 " }}}
 " dashboard-nvim: {{{
@@ -917,11 +917,6 @@ highlight! link diffSubname Title
     highlight! link GitGutterChangeDeleteLineNr GitGutterChangeDelete
   endif
 " }}}
-" vim-highlightedyank: {{{
-  if s:Plugin_is_activated('yank', 0)
-    highlight! link HighlightedyankRegion Visual
-  endif
-" }}}
 " vim-matchup: {{{
   if s:Plugin_is_activated('matchup', 0)
     highlight! link MatchBackground Visual
@@ -984,6 +979,21 @@ highlight! link diffSubname Title
     highlight! link StartifySlash StartifyPath
     highlight! link StartifySpecial StartifyPath
     highlight! link StartifyVar StartifyPath
+  endif
+" }}}
+" vim-visual-multi: {{{
+  if s:Plugin_is_activated('visual-multi', 0)
+    if !exists('g:VM_theme_set_by_colorscheme') ||
+          \ g:VM_theme_set_by_colorscheme != 0
+      if g:enfocado_style == 'neon'
+        call s:Highlighter('VM_Extend', s:bold, s:bg_2, s:magenta, s:none)
+      else
+        call s:Highlighter('VM_Extend', s:bold, s:bg_2, s:green, s:none)
+      endif
+      call s:Highlighter('VM_Insert', s:none, s:bg_1, s:yellow, s:none)
+      highlight! link VM_Cursor Cursor
+      highlight! link VM_Mono VM_Cursor
+    endif
   endif
 " }}}
 " vista.vim: {{{
