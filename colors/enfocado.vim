@@ -708,6 +708,13 @@ highlight! link diffSubname Title
     highlight! TSStrong term=bold cterm=bold gui=bold
     highlight! TSUnderline term=underline cterm=underline gui=underline
 
+    " TSModule info.
+    highlight! link TSModuleInfoGood Success
+    highlight! link TSModuleInfoBad Error
+    highlight! link TSModuleInfoHeader Accent
+    highlight! link TSModuleInfoNamespace Title
+    highlight! link TSModuleInfoParser Text
+
     " nvim-ts-rainbow module.
     if g:enfocado_style == 'neon'
       call s:Highlighter('rainbowcol1', s:none, s:none, s:violet, s:none)
@@ -985,6 +992,7 @@ highlight! link diffSubname Title
   if s:Plugin_is_activated('visual-multi', 0)
     if !exists('g:VM_theme_set_by_colorscheme') ||
           \ g:VM_theme_set_by_colorscheme != 0
+      let g:VM_theme_set_by_colorscheme = 1
       if g:enfocado_style == 'neon'
         call s:Highlighter('VM_Extend', s:bold, s:bg_2, s:magenta, s:none)
       else
