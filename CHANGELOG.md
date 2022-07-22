@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.8.0] - 2022-07-21
+
+### Added.
+
+- It is decided to change the constants and readonlys to yellow, to give the message that they cannot be modified.
+- Exceptions (try - catch) are now highlighted in dimmed orange to give a message of caution.
+
 ## [5.7.1] - 2022-07-16
 
 ### Added

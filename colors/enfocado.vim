@@ -145,7 +145,6 @@ if g:enfocado_style == 'neon'
   call s:Highlighter('WildMenu', s:bold, s:bg_2, s:br_magenta, s:none)
 
   " Neon syntax.
-  call s:Highlighter('Constant', s:none, s:none, s:magenta, s:none)
   call s:Highlighter('Function', s:italic, s:none, s:br_magenta, s:none)
   call s:Highlighter('FunctionBuiltin', s:italic, s:none, s:br_green, s:none)
   call s:Highlighter('Identifier', s:none, s:none, s:magenta, s:none)
@@ -167,7 +166,6 @@ else
   call s:Highlighter('WildMenu', s:bold, s:bg_2, s:br_green, s:none)
 
   " Nature syntax.
-  call s:Highlighter('Constant', s:none, s:none, s:green, s:none)
   call s:Highlighter('Function', s:italic, s:none, s:br_green, s:none)
   call s:Highlighter('FunctionBuiltin', s:italic, s:none, s:br_magenta, s:none)
   call s:Highlighter('Identifier', s:none, s:none, s:green, s:none)
@@ -257,7 +255,9 @@ endif
 
 " General syntax.
 call s:Highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
-call s:Highlighter('Error', s:none, s:none, s:br_red, s:none)
+call s:Highlighter('Constant', s:none, s:none, s:yellow, s:none)
+call s:Highlighter('Error', s:bold, s:none, s:br_red, s:none)
+call s:Highlighter('Exception', s:none, s:none, s:orange, s:none)
 call s:Highlighter('Link', s:underline, s:none, s:br_cyan, s:br_cyan)
 call s:Highlighter('String', s:none, s:none, s:cyan, s:br_cyan)
 call s:Highlighter('Text', s:none, s:none, s:fg_0, s:none)
@@ -268,7 +268,6 @@ highlight! link Conditional Statement
 highlight! link Debug Success
 highlight! link Define PreProc
 highlight! link Delimiter Text
-highlight! link Exception Statement
 highlight! link Float Number
 highlight! link Include PreProc
 highlight! link Keyword Statement
@@ -660,8 +659,8 @@ highlight! link diffSubname Title
     highlight! link TSComment Comment
     highlight! link TSConditional Conditional
     highlight! link TSConstant Constant
-    highlight! link TSConstBuiltin StatementBuiltin
-    highlight! link TSConstMacro StatementBuiltin
+    highlight! link TSConstBuiltin Constant
+    highlight! link TSConstMacro Constant
     highlight! link TSConstructor Type
     highlight! link TSDebug Debug
     highlight! link TSDefine PreProc
