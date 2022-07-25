@@ -212,6 +212,7 @@ call s:Highlighter('PmenuSbar', s:none, s:bg_1, s:none, s:none)
 call s:Highlighter('PmenuSel', s:none, s:bg_2, s:none, s:none)
 call s:Highlighter('PmenuThumb', s:none, s:bg_2, s:none, s:none)
 call s:Highlighter('Question', s:none, s:none, s:br_yellow, s:none)
+call s:Highlighter('QuickFixLine', s:none, s:bg_1, s:br_orange, s:none)
 call s:Highlighter('RedrawDebugClear', s:none, s:none, s:br_yellow, s:none)
 call s:Highlighter('RedrawDebugComposed', s:none, s:none, s:br_green, s:none)
 call s:Highlighter('RedrawDebugNormal', s:none, s:none, s:fg_1, s:none)
@@ -238,16 +239,20 @@ call s:Highlighter('Visual', s:none, s:bg_2, s:none, s:none)
 call s:Highlighter('VisualNC', s:none, s:bg_2, s:none, s:none)
 call s:Highlighter('VisualNOS', s:none, s:bg_2, s:none, s:none)
 call s:Highlighter('WarningMsg', s:none, s:none, s:br_orange, s:none)
+highlight! link CursorLineSign CursorLineNr
+highlight! link CursorLineFold CursorLine
 highlight! link EndOfBuffer NonText
 highlight! link Line ColorColumn
 highlight! link LineNrAbove LineNr
 highlight! link LineNrBelow LineNr
 highlight! link MsgArea Dimmed
 highlight! link MsgSeparator StatusLineNC
-highlight! link QuickFixLine Search
 highlight! link Substitute Search
 highlight! link TermCursorNC None
 highlight! link Whitespace NonText
+highlight! link WinBar Dimmed
+highlight! link WinBarNC WinBar
+highlight! link WinSeparator VertSplit
 if has('nvim')
   highlight! FloatShadow ctermbg=16 guibg=#000000 blend=60
   highlight! FloatShadowThrough ctermbg=16 guibg=#000000 blend=100
@@ -310,6 +315,21 @@ highlight! link DiagnosticVirtualTextWarn DiagnosticFloatingWarn
 " ------------------------------------------------------------------------------
 " SECTION: Filetypes syntax groups highlighting.
 " ------------------------------------------------------------------------------
+" Help.
+highlight! link helpHeadline Title
+highlight! link helpSectionDelim Dimmed
+highlight! link helpExample Text
+highlight! link helpBar Dimmed
+highlight! link helpHyperTextJump String
+highlight! link helpHyperTextEntry String
+highlight! link helpVim Accent
+highlight! link helpCommand Text
+highlight! link helpHeader Title
+highlight! link helpNote Todo
+highlight! link helpWarning DiagnosticWarn
+highlight! link helpDeprecated DiagnosticError
+highlight! link helpURL Link
+
 " Diff.
 highlight! link diffAdded DiffAdd
 highlight! link diffBDiffer Text

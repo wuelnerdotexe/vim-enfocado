@@ -77,6 +77,8 @@ let s:palette.tabline.tabsel = [[s:dim_0, s:bg_2, 'bold']]
 " Alerts.
 let s:palette.normal.error = [[s:bg_1, s:br_red]]
 let s:palette.normal.warning = [[s:bg_1, s:br_orange]]
+let s:palette.normal.info = [[s:bg_1, s:br_yellow]]
+let s:palette.normal.hints = [[s:bg_1, s:br_blue]]
 
 " Lightline name theme.
 let g:lightline#colorscheme#enfocado#palette = lightline#colorscheme#flatten(s:palette)
