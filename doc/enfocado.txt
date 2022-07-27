@@ -45,6 +45,7 @@ supported plugins so far:
 `  \ 'cmp',`
 `  \ 'coc',`
 `  \ 'copilot',`
+`  \ 'ctrlp',`
 `  \ 'dashboard',`
 `  \ 'floaterm',`
 `  \ 'fzf',`

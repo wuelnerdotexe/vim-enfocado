@@ -199,6 +199,7 @@ The following plugins are supported:
 - [ale](https://github.com/dense-analysis/ale)
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [copilot.vim](https://github.com/github/copilot.vim)
+- [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)

@@ -191,7 +191,7 @@ call s:Highlighter('DiffChange', s:none, s:none, s:yellow, s:none)
 call s:Highlighter('DiffDelete', s:none, s:none, s:red, s:none)
 call s:Highlighter('DiffText', s:none, s:bg_2, s:yellow, s:none)
 call s:Highlighter('Dimmed', s:none, s:none, s:dim_0, s:none)
-call s:Highlighter('Directory', s:none, s:none, s:dim_0, s:none)
+call s:Highlighter('Directory', s:bold, s:none, s:br_blue, s:none)
 call s:Highlighter('ErrorMsg', s:none, s:none, s:br_red, s:none)
 call s:Highlighter('Folded', s:none, s:none, s:dim_0, s:none)
 call s:Highlighter('FoldColumn', s:none, s:none, s:dim_0, s:none)
@@ -535,24 +535,24 @@ highlight! link diffSubname Title
 " }}}
 " nerdtree: {{{
   if s:Plugin_is_activated('nerdtree', 0)
-    call s:Highlighter('NERDTreeFile', s:none, s:none, s:dim_0, s:none)
-    highlight! link NERDTreeBookmark Dimmed
+    call s:Highlighter('NERDTreeLink', s:bold, s:none, s:br_cyan, s:none)
+    call s:Highlighter('NERDTreeExecFile', s:none, s:none, s:green, s:none)
+    call s:Highlighter('NERDTreeRO', s:bold, s:none, s:yellow, s:none)
+    highlight! link NERDTreeBookmark NERDTreeFile
     highlight! link NERDTreeBookmarkHeader Title
     highlight! link NERDTreeClosable Dimmed
     highlight! link NERDTreeCWD Ignore
-    highlight! link NERDTreeDir Dimmed
+    highlight! link NERDTreeDir Directory
     highlight! link NERDTreeDirSlash Dimmed
-    highlight! link NERDTreeExecFile Dimmed
+    highlight! link NERDTreeFile Text
     highlight! link NERDTreeHelp Text
     highlight! link NERDTreeHelpCommand Text
     highlight! link NERDTreeHelpKey Text
     highlight! link NERDTreeHelpTitle Title
-    highlight! link NERDTreeLink Dimmed
-    highlight! link NERDTreeLinkDir Dimmed
-    highlight! link NERDTreeLinkFile Dimmed
-    highlight! link NERDTreeLinkTarget Ignore
+    highlight! link NERDTreeLinkDir NERDTreeLink
+    highlight! link NERDTreeLinkFile NERDTreeLink
+    highlight! link NERDTreeLinkTarget NERDTreeFile
     highlight! link NERDTreeOpenable Dimmed
-    highlight! link NERDTreeRO Dimmed
     highlight! link NERDTreeToggleOff Dimmed
     highlight! link NERDTreeToggleOn Text
     highlight! link NERDTreeUp Dimmed
@@ -560,16 +560,16 @@ highlight! link diffSubname Title
 " }}}
 " netrw: {{{
   if s:Plugin_is_activated('netrw', 0)
+    call s:Highlighter('netrwLink', s:bold, s:none, s:br_cyan, s:none)
+    call s:Highlighter('netrwExe', s:none, s:none, s:green, s:none)
     highlight! link netrwClassify Dimmed
     highlight! link netrwCmdSep Ignore
     highlight! link netrwComment Comment
-    highlight! link netrwDir Dimmed
-    highlight! link netrwExe Dimmed
+    highlight! link netrwDir Directory
     highlight! link netrwHelpCmd Text
-    highlight! link netrwLink Dimmed
     highlight! link netrwList Dimmed
-    highlight! link netrwPlain Dimmed
-    highlight! link netrwSymLink Dimmed
+    highlight! link netrwPlain Text
+    highlight! link netrwSymLink netrwLink
     highlight! link netrwVersion Ignore
   endif
 " }}}
@@ -631,6 +631,9 @@ highlight! link diffSubname Title
     highlight! link LspInstallerError DiagnosticError
     highlight! link LspInstallerHighlighted Search
     highlight! link LspInstallerLink Link
+    highlight! link LspInstallerVersionCheckLoader Accent
+    highlight! link LspInstallerHeaderHelp DiagnosticInfo
+    highlight! link LspInstallerVersionCheckLoaderDone Success
   endif
 " }}}
 " nvim-notify: {{{
@@ -765,13 +768,14 @@ highlight! link diffSubname Title
 " }}}
 " nvim-tree.lua: {{{
   if s:Plugin_is_activated('tree', 1)
-    call s:Highlighter('NvimTreeNormal', s:none, s:bg_0, s:dim_0, s:none)
-    call s:Highlighter('NvimTreeNormalNC', s:none, s:bg_0, s:dim_0, s:none)
+    call s:Highlighter('NvimTreeNormal', s:none, s:bg_0, s:fg_0, s:none)
+    call s:Highlighter('NvimTreeNormalNC', s:none, s:bg_0, s:fg_0, s:none)
+    call s:Highlighter('NvimTreeExecFile', s:none, s:none, s:green, s:none)
+    call s:Highlighter('NvimTreeImageFile', s:none, s:none, s:yellow, s:none)
     highlight! link NvimTreeCursorColumn Line
     highlight! link NvimTreeCursorLine Line
-    highlight! link NvimTreeEmptyFolderName Dimmed
+    highlight! link NvimTreeEmptyFolderName Directory
     highlight! link NvimTreeEndOfBuffer EndOfBuffer
-    highlight! link NvimTreeExecFile Dimmed
     highlight! link NvimTreeFileDeleted DiffDelete
     highlight! link NvimTreeFileDirty DiffDelete
     highlight! link NvimTreeFileMerge DiffChange
@@ -787,18 +791,17 @@ highlight! link diffSubname Title
     highlight! link NvimTreeGitNew DiffAdd
     highlight! link NvimTreeGitRenamed DiffAdd
     highlight! link NvimTreeGitStaged DiffChange
-    highlight! link NvimTreeImageFile Dimmed
     highlight! link NvimTreeIndentMarker NonText
     highlight! link NvimTreeLspDiagnosticsError DiagnosticError
     highlight! link NvimTreeLspDiagnosticsHint DiagnosticHint
     highlight! link NvimTreeLspDiagnosticsInformation DiagnosticInfo
     highlight! link NvimTreeLspDiagnosticsWarning DiagnosticWarn
-    highlight! link NvimTreeOpenedFile Dimmed
-    highlight! link NvimTreeOpenedFolderName Dimmed
+    highlight! link NvimTreeOpenedFile Accent
+    highlight! link NvimTreeOpenedFolderName Directory
     highlight! link NvimTreePopup NormalFloat
     highlight! link NvimTreeRootFolder Ignore
     highlight! link NvimTreeSignColumn SignColumn
-    highlight! link NvimTreeSpecialFile Dimmed
+    highlight! link NvimTreeSpecialFile SpecialComment
     highlight! link NvimTreeStatusLine StatusLine
     highlight! link NvimTreeStatusLineNC StatusLineNC
     highlight! link NvimTreeSymlink Dimmed
@@ -856,7 +859,6 @@ highlight! link diffSubname Title
 " telescope.nvim: {{{
   if s:Plugin_is_activated('telescope', 1)
     call s:Highlighter('TelescopePreviewDate', s:none, s:none, s:blue, s:none)
-    call s:Highlighter('TelescopePreviewDirectory', s:bold, s:none, s:br_blue, s:none)
     call s:Highlighter('TelescopePreviewExecute', s:none, s:none, s:green, s:none)
     call s:Highlighter('TelescopePreviewLink', s:none, s:none, s:magenta, s:none)
     call s:Highlighter('TelescopePreviewRead', s:bold, s:none, s:yellow, s:none)
@@ -868,6 +870,7 @@ highlight! link diffSubname Title
     highlight! link TelescopeMultiSelection Visual
     highlight! link TelescopeNormal NormalFloat
     highlight! link TelescopePreviewBorder FloatBorder
+    highlight! link TelescopePreviewDirectory Directory
     highlight! link TelescopePreviewMatch Search
     highlight! link TelescopePreviewMessage DiagnosticInfo
     highlight! link TelescopePreviewMessageFillchar DiagnosticInfo
@@ -1047,11 +1050,50 @@ highlight! link diffSubname Title
 " }}}
 " which-key.nvim: {{{
   if s:Plugin_is_activated('which-key', 0)
-    highlight! link WhichKey Text
-    highlight! link WhichKeyDesc Text
+    highlight! link WhichKey MoreMsg
+    highlight! link WhichKeyDesc Accent
     highlight! link WhichKeyFloat NormalFloat
     highlight! link WhichKeyGroup Dimmed
     highlight! link WhichKeySeparator NonText
     highlight! link WhichKeyValue Text
+  endif
+" }}}
+" ctrlp.vim: {{{
+  if s:Plugin_is_activated('ctrlp', 0)
+    " For the CtrlP buffer.
+    highlight! link CtrlPNoEntries MoreMsg
+    highlight! link CtrlPMatch Accent
+    highlight! link CtrlPLinePre NonText
+    highlight! link CtrlPPrtBase Accent
+    highlight! link CtrlPPrtText Text
+    highlight! link CtrlPPrtCursor Cursor
+
+    " Buffer explorer mode.
+    highlight! link CtrlPBufferNr Text
+    highlight! link CtrlPBufferInd Text
+    highlight! link CtrlPBufferHid Dimmed
+    highlight! link CtrlPBufferHidMod CtrlPBufferInd
+    highlight! link CtrlPBufferVis Text
+    highlight! link CtrlPBufferVisMod CtrPBufferVis
+    highlight! link CtrlPBufferCur Accent
+    highlight! link CtrlPBufferCurMod CtrPBufferCur
+    highlight! link CtrlPBufferPath Dimmed
+
+    " In extensions.
+    highlight! link CtrlPTabExtra Dimmed
+    highlight! link CtrlPBufName Text
+    highlight! link CtrlPTagKind Text
+    highlight! link CtrlPqfLineCol LineNr
+    highlight! link CtrlPUndoT Text
+    highlight! link CtrlPUndoBr NonText
+    highlight! link CtrlPUndoNr Text
+    highlight! link CtrlPUndoSv Text
+    highlight! link CtrlPUndoPo Accent
+    highlight! link CtrlPBookmark Text
+
+    " Statuslines.
+    highlight! link CtrlPMode1 Statusline
+    highlight! link CtrlPMode2 Statusline
+    highlight! link CtrlPStats Accent
   endif
 " }}}
