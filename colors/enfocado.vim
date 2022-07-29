@@ -105,142 +105,116 @@ let g:terminal_color_15 = s:fg_1[0]
 " Enfocado configuration variables are initialized.
 let g:enfocado_style = get(g:, 'enfocado_style', 'nature')
 let g:enfocado_plugins = get(g:, 'enfocado_plugins', ['all'])
-
-" A function is created to check on-demand plugins.
-function s:Plugin_is_activated(name, only_nvim)
-  if (g:enfocado_plugins == ['none']) || (a:only_nvim && !has('nvim'))
-    return 0
-  elseif (a:only_nvim && has('nvim')) || !a:only_nvim
-    if g:enfocado_plugins == ['all']
-      return 1
-    else
-      return index(g:enfocado_plugins, a:name) >= 0 ? 1 : 0
-    endif
-  endif
-endfunction
-
-" A function is created to highlight the groups.
-function s:Highlighter(group, attr, bg, fg, sp)
-  execute 'highlight! '.a:group.
-        \ ' term='.a:attr[1].
-        \ ' cterm='.a:attr[1].
-        \ ' ctermfg='.a:fg[1].
-        \ ' ctermbg='.a:bg[1].
-        \ ' gui='.a:attr[0].
-        \ ' guifg='.a:fg[0].
-        \ ' guibg='.a:bg[0].
-        \ ' guisp='.a:sp[0]
-endfunction
 " ------------------------------------------------------------------------------
 " SECTION: Neo(Vim) base groups highlighting.
 " ------------------------------------------------------------------------------
 " Enfocado style diffs.
 if g:enfocado_style == 'neon'
   " Neon interfaz.
-  call s:Highlighter('Accent', s:none, s:none, s:br_magenta, s:none)
-  call s:Highlighter('FloatBorder', s:none, s:bg_1, s:magenta, s:none)
-  call s:Highlighter('IncSearch', s:bold, s:bg_2, s:br_magenta, s:none)
-  call s:Highlighter('Search', s:bold, s:bg_2, s:br_magenta, s:none)
-  call s:Highlighter('ToolbarButton', s:none, s:magenta, s:bg_1, s:none)
-  call s:Highlighter('WildMenu', s:bold, s:bg_2, s:br_magenta, s:none)
+  call enfocado#highlighter('Accent', s:none, s:none, s:br_magenta, s:none)
+  call enfocado#highlighter('FloatBorder', s:none, s:bg_1, s:magenta, s:none)
+  call enfocado#highlighter('IncSearch', s:bold, s:bg_2, s:br_magenta, s:none)
+  call enfocado#highlighter('Search', s:bold, s:bg_2, s:br_magenta, s:none)
+  call enfocado#highlighter('ToolbarButton', s:none, s:magenta, s:bg_1, s:none)
+  call enfocado#highlighter('WildMenu', s:bold, s:bg_2, s:br_magenta, s:none)
 
   " Neon syntax.
-  call s:Highlighter('Function', s:italic, s:none, s:br_magenta, s:none)
-  call s:Highlighter('FunctionBuiltin', s:italic, s:none, s:br_green, s:none)
-  call s:Highlighter('Identifier', s:none, s:none, s:magenta, s:none)
-  call s:Highlighter('IdentifierBuiltin', s:none, s:none, s:green, s:none)
-  call s:Highlighter('PreProc', s:none, s:none, s:violet, s:none)
-  call s:Highlighter('Property', s:none, s:none, s:violet, s:none)
-  call s:Highlighter('Special', s:none, s:none, s:br_blue, s:none)
-  call s:Highlighter('Statement', s:none, s:none, s:violet, s:none)
-  call s:Highlighter('StatementBuiltin', s:none, s:none, s:blue, s:none)
-  call s:Highlighter('Type', s:bold, s:none, s:br_violet, s:none)
-  call s:Highlighter('TypeBuiltin', s:bold, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('Function', s:italic, s:none, s:br_magenta, s:none)
+  call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_green, s:none)
+  call enfocado#highlighter('Identifier', s:none, s:none, s:magenta, s:none)
+  call enfocado#highlighter('IdentifierBuiltin', s:none, s:none, s:green, s:none)
+  call enfocado#highlighter('PreProc', s:none, s:none, s:violet, s:none)
+  call enfocado#highlighter('Property', s:none, s:none, s:violet, s:none)
+  call enfocado#highlighter('Special', s:none, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('Statement', s:none, s:none, s:violet, s:none)
+  call enfocado#highlighter('StatementBuiltin', s:none, s:none, s:blue, s:none)
+  call enfocado#highlighter('Type', s:bold, s:none, s:br_violet, s:none)
+  call enfocado#highlighter('TypeBuiltin', s:bold, s:none, s:br_blue, s:none)
 else
   " Nature interfaz.
-  call s:Highlighter('Accent', s:none, s:none, s:br_green, s:none)
-  call s:Highlighter('FloatBorder', s:none, s:bg_1, s:green, s:none)
-  call s:Highlighter('IncSearch', s:bold, s:bg_2, s:br_green, s:none)
-  call s:Highlighter('Search', s:bold, s:bg_2, s:br_green, s:none)
-  call s:Highlighter('ToolbarButton', s:none, s:green, s:bg_1, s:none)
-  call s:Highlighter('WildMenu', s:bold, s:bg_2, s:br_green, s:none)
+  call enfocado#highlighter('Accent', s:none, s:none, s:br_green, s:none)
+  call enfocado#highlighter('FloatBorder', s:none, s:bg_1, s:green, s:none)
+  call enfocado#highlighter('IncSearch', s:bold, s:bg_2, s:br_green, s:none)
+  call enfocado#highlighter('Search', s:bold, s:bg_2, s:br_green, s:none)
+  call enfocado#highlighter('ToolbarButton', s:none, s:green, s:bg_1, s:none)
+  call enfocado#highlighter('WildMenu', s:bold, s:bg_2, s:br_green, s:none)
 
   " Nature syntax.
-  call s:Highlighter('Function', s:italic, s:none, s:br_green, s:none)
-  call s:Highlighter('FunctionBuiltin', s:italic, s:none, s:br_magenta, s:none)
-  call s:Highlighter('Identifier', s:none, s:none, s:green, s:none)
-  call s:Highlighter('IdentifierBuiltin', s:none, s:none, s:magenta, s:none)
-  call s:Highlighter('PreProc', s:none, s:none, s:blue, s:none)
-  call s:Highlighter('Property', s:none, s:none, s:br_blue, s:none)
-  call s:Highlighter('Special', s:none, s:none, s:br_violet, s:none)
-  call s:Highlighter('Statement', s:none, s:none, s:blue, s:none)
-  call s:Highlighter('StatementBuiltin', s:none, s:none, s:violet, s:none)
-  call s:Highlighter('Type', s:bold, s:none, s:br_blue, s:none)
-  call s:Highlighter('TypeBuiltin', s:bold, s:none, s:br_violet, s:none)
+  call enfocado#highlighter('Function', s:italic, s:none, s:br_green, s:none)
+  call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_magenta, s:none)
+  call enfocado#highlighter('Identifier', s:none, s:none, s:green, s:none)
+  call enfocado#highlighter('IdentifierBuiltin', s:none, s:none, s:magenta, s:none)
+  call enfocado#highlighter('PreProc', s:none, s:none, s:blue, s:none)
+  call enfocado#highlighter('Property', s:none, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('Special', s:none, s:none, s:br_violet, s:none)
+  call enfocado#highlighter('Statement', s:none, s:none, s:blue, s:none)
+  call enfocado#highlighter('StatementBuiltin', s:none, s:none, s:violet, s:none)
+  call enfocado#highlighter('Type', s:bold, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('TypeBuiltin', s:bold, s:none, s:br_violet, s:none)
 endif
 
 " General interfaz.
-call s:Highlighter('ColorColumn', s:none, s:bg_1, s:none, s:none)
-call s:Highlighter('Conceal', s:none, s:none, s:bg_2, s:none)
-call s:Highlighter('Cursor', s:none, s:fg_0, s:bg_1, s:none)
-call s:Highlighter('CursorColumn', s:none, s:bg_1, s:none, s:none)
-call s:Highlighter('CursorLine', s:none, s:bg_1, s:none, s:none)
-call s:Highlighter('CursorLineNr', s:none, s:none, s:dim_0, s:none)
-call s:Highlighter('DiffAdd', s:none, s:none, s:green, s:none)
-call s:Highlighter('DiffChange', s:none, s:none, s:yellow, s:none)
-call s:Highlighter('DiffDelete', s:none, s:none, s:red, s:none)
-call s:Highlighter('DiffText', s:none, s:bg_2, s:yellow, s:none)
-call s:Highlighter('Dimmed', s:none, s:none, s:dim_0, s:none)
-call s:Highlighter('Directory', s:bold, s:none, s:br_blue, s:none)
-call s:Highlighter('ErrorMsg', s:none, s:none, s:br_red, s:none)
-call s:Highlighter('FileLink', s:bold, s:none, s:br_cyan, s:none)
-call s:Highlighter('FileExec', s:none, s:none, s:green, s:none)
-call s:Highlighter('Folded', s:none, s:none, s:dim_0, s:none)
-call s:Highlighter('FoldColumn', s:none, s:none, s:dim_0, s:none)
-call s:Highlighter('Ignore', s:none, s:none, s:bg_2, s:none)
-call s:Highlighter('lCursor', s:none, s:fg_0, s:bg_1, s:none)
-call s:Highlighter('LineNr', s:none, s:none, s:bg_2, s:none)
-call s:Highlighter('MatchParen', s:none, s:bg_2, s:none, s:none)
-call s:Highlighter('ModeMsg', s:none, s:none, s:dim_0, s:none)
-call s:Highlighter('MoreMsg', s:none, s:none, s:br_yellow, s:none)
-call s:Highlighter('None', s:none, s:none, s:none, s:none)
-call s:Highlighter('NonText', s:none, s:none, s:bg_2, s:none)
-call s:Highlighter('Normal', s:none, s:bg_0, s:fg_0, s:none)
-call s:Highlighter('NormalFloat', s:none, s:bg_1, s:fg_0, s:none)
-call s:Highlighter('NormalNC', s:none, s:bg_0, s:fg_0, s:none)
-call s:Highlighter('NvimInternalError', s:none, s:none, s:br_red, s:none)
-call s:Highlighter('Pmenu', s:none, s:bg_1, s:fg_0, s:none)
-call s:Highlighter('PmenuSbar', s:none, s:bg_1, s:none, s:none)
-call s:Highlighter('PmenuSel', s:none, s:bg_2, s:none, s:none)
-call s:Highlighter('PmenuThumb', s:none, s:bg_2, s:none, s:none)
-call s:Highlighter('Question', s:none, s:none, s:br_yellow, s:none)
-call s:Highlighter('QuickFixLine', s:none, s:bg_1, s:br_orange, s:none)
-call s:Highlighter('RedrawDebugClear', s:none, s:none, s:br_yellow, s:none)
-call s:Highlighter('RedrawDebugComposed', s:none, s:none, s:br_green, s:none)
-call s:Highlighter('RedrawDebugNormal', s:none, s:none, s:fg_1, s:none)
-call s:Highlighter('RedrawDebugRecompose', s:none, s:none, s:br_red, s:none)
-call s:Highlighter('SignColumn', s:none, s:none, s:none, s:none)
-call s:Highlighter('SpecialKey', s:none, s:none, s:bg_2, s:none)
-call s:Highlighter('SpellBad', s:undercurl, s:none, s:none, s:red)
-call s:Highlighter('SpellCap', s:undercurl, s:none, s:none, s:blue)
-call s:Highlighter('SpellLocal', s:undercurl, s:none, s:none, s:cyan)
-call s:Highlighter('SpellRare', s:undercurl, s:none, s:none, s:magenta)
-call s:Highlighter('StatusLine', s:none, s:bg_1, s:dim_0, s:none)
-call s:Highlighter('StatusLineNC', s:none, s:bg_1, s:bg_2, s:none)
-call s:Highlighter('StatuslineTerm', s:none, s:bg_1, s:dim_0, s:none)
-call s:Highlighter('StatuslineTermNC', s:none, s:bg_1, s:bg_2, s:none)
-call s:Highlighter('Success', s:none, s:none, s:br_green, s:none)
-call s:Highlighter('TabLine', s:none, s:bg_1, s:bg_2, s:none)
-call s:Highlighter('TabLineFill', s:none, s:bg_1, s:bg_2, s:none)
-call s:Highlighter('TabLineSel', s:none, s:none, s:dim_0, s:none)
-call s:Highlighter('TermCursor', s:none, s:fg_0, s:bg_1, s:none)
-call s:Highlighter('Title', s:bold, s:none, s:fg_1, s:none)
-call s:Highlighter('ToolbarLine', s:none, s:bg_1, s:dim_0, s:none)
-call s:Highlighter('VertSplit', s:none, s:none, s:base, s:none)
-call s:Highlighter('Visual', s:none, s:bg_2, s:none, s:none)
-call s:Highlighter('VisualNC', s:none, s:bg_2, s:none, s:none)
-call s:Highlighter('VisualNOS', s:none, s:bg_2, s:none, s:none)
-call s:Highlighter('WarningMsg', s:none, s:none, s:br_orange, s:none)
+call enfocado#highlighter('ColorColumn', s:none, s:bg_1, s:none, s:none)
+call enfocado#highlighter('Conceal', s:none, s:none, s:bg_2, s:none)
+call enfocado#highlighter('Cursor', s:none, s:fg_0, s:bg_1, s:none)
+call enfocado#highlighter('CursorColumn', s:none, s:bg_1, s:none, s:none)
+call enfocado#highlighter('CursorLine', s:none, s:bg_1, s:none, s:none)
+call enfocado#highlighter('CursorLineNr', s:none, s:none, s:dim_0, s:none)
+call enfocado#highlighter('DiffAdd', s:none, s:none, s:green, s:none)
+call enfocado#highlighter('DiffChange', s:none, s:none, s:yellow, s:none)
+call enfocado#highlighter('DiffDelete', s:none, s:none, s:red, s:none)
+call enfocado#highlighter('DiffText', s:none, s:bg_2, s:yellow, s:none)
+call enfocado#highlighter('Dimmed', s:none, s:none, s:dim_0, s:none)
+call enfocado#highlighter('Directory', s:bold, s:none, s:br_blue, s:none)
+call enfocado#highlighter('ErrorMsg', s:none, s:none, s:br_red, s:none)
+call enfocado#highlighter('FileLink', s:bold, s:none, s:br_cyan, s:none)
+call enfocado#highlighter('FileExec', s:none, s:none, s:green, s:none)
+call enfocado#highlighter('Folded', s:none, s:none, s:dim_0, s:none)
+call enfocado#highlighter('FoldColumn', s:none, s:none, s:dim_0, s:none)
+call enfocado#highlighter('Ignore', s:none, s:none, s:bg_2, s:none)
+call enfocado#highlighter('lCursor', s:none, s:fg_0, s:bg_1, s:none)
+call enfocado#highlighter('LineNr', s:none, s:none, s:bg_2, s:none)
+call enfocado#highlighter('MatchParen', s:none, s:bg_2, s:none, s:none)
+call enfocado#highlighter('ModeMsg', s:none, s:none, s:dim_0, s:none)
+call enfocado#highlighter('MoreMsg', s:none, s:none, s:br_yellow, s:none)
+call enfocado#highlighter('None', s:none, s:none, s:none, s:none)
+call enfocado#highlighter('NonText', s:none, s:none, s:bg_2, s:none)
+call enfocado#highlighter('Normal', s:none, s:bg_0, s:fg_0, s:none)
+call enfocado#highlighter('NormalFloat', s:none, s:bg_1, s:fg_0, s:none)
+call enfocado#highlighter('NormalNC', s:none, s:bg_0, s:fg_0, s:none)
+call enfocado#highlighter('NvimInternalError', s:none, s:none, s:br_red, s:none)
+call enfocado#highlighter('Pmenu', s:none, s:bg_1, s:fg_0, s:none)
+call enfocado#highlighter('PmenuSbar', s:none, s:bg_1, s:none, s:none)
+call enfocado#highlighter('PmenuSel', s:none, s:bg_2, s:none, s:none)
+call enfocado#highlighter('PmenuThumb', s:none, s:bg_2, s:none, s:none)
+call enfocado#highlighter('Question', s:none, s:none, s:br_yellow, s:none)
+call enfocado#highlighter('QuickFixLine', s:none, s:bg_1, s:br_orange, s:none)
+call enfocado#highlighter('RedrawDebugClear', s:none, s:none, s:br_yellow, s:none)
+call enfocado#highlighter('RedrawDebugComposed', s:none, s:none, s:br_green, s:none)
+call enfocado#highlighter('RedrawDebugNormal', s:none, s:none, s:fg_1, s:none)
+call enfocado#highlighter('RedrawDebugRecompose', s:none, s:none, s:br_red, s:none)
+call enfocado#highlighter('SignColumn', s:none, s:none, s:none, s:none)
+call enfocado#highlighter('SpecialKey', s:none, s:none, s:bg_2, s:none)
+call enfocado#highlighter('SpellBad', s:undercurl, s:none, s:none, s:red)
+call enfocado#highlighter('SpellCap', s:undercurl, s:none, s:none, s:blue)
+call enfocado#highlighter('SpellLocal', s:undercurl, s:none, s:none, s:cyan)
+call enfocado#highlighter('SpellRare', s:undercurl, s:none, s:none, s:magenta)
+call enfocado#highlighter('StatusLine', s:none, s:bg_1, s:dim_0, s:none)
+call enfocado#highlighter('StatusLineNC', s:none, s:bg_1, s:bg_2, s:none)
+call enfocado#highlighter('StatuslineTerm', s:none, s:bg_1, s:dim_0, s:none)
+call enfocado#highlighter('StatuslineTermNC', s:none, s:bg_1, s:bg_2, s:none)
+call enfocado#highlighter('Success', s:none, s:none, s:br_green, s:none)
+call enfocado#highlighter('TabLine', s:none, s:bg_1, s:bg_2, s:none)
+call enfocado#highlighter('TabLineFill', s:none, s:bg_1, s:bg_2, s:none)
+call enfocado#highlighter('TabLineSel', s:none, s:none, s:dim_0, s:none)
+call enfocado#highlighter('TermCursor', s:none, s:fg_0, s:bg_1, s:none)
+call enfocado#highlighter('Title', s:bold, s:none, s:fg_1, s:none)
+call enfocado#highlighter('ToolbarLine', s:none, s:bg_1, s:dim_0, s:none)
+call enfocado#highlighter('VertSplit', s:none, s:none, s:base, s:none)
+call enfocado#highlighter('Visual', s:none, s:bg_2, s:none, s:none)
+call enfocado#highlighter('VisualNC', s:none, s:bg_2, s:none, s:none)
+call enfocado#highlighter('VisualNOS', s:none, s:bg_2, s:none, s:none)
+call enfocado#highlighter('WarningMsg', s:none, s:none, s:br_orange, s:none)
 highlight! link CursorLineSign CursorLineNr
 highlight! link CursorLineFold CursorLine
 highlight! link EndOfBuffer NonText
@@ -261,14 +235,14 @@ if has('nvim')
 endif
 
 " General syntax.
-call s:Highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
-call s:Highlighter('Constant', s:none, s:none, s:yellow, s:none)
-call s:Highlighter('Error', s:bold, s:none, s:br_red, s:none)
-call s:Highlighter('Exception', s:none, s:none, s:orange, s:none)
-call s:Highlighter('Link', s:underline, s:none, s:br_cyan, s:br_cyan)
-call s:Highlighter('String', s:none, s:none, s:cyan, s:br_cyan)
-call s:Highlighter('Text', s:none, s:none, s:fg_0, s:none)
-call s:Highlighter('Todo', s:bold, s:br_cyan, s:bg_1, s:none)
+call enfocado#highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
+call enfocado#highlighter('Constant', s:none, s:none, s:yellow, s:none)
+call enfocado#highlighter('Error', s:bold, s:none, s:br_red, s:none)
+call enfocado#highlighter('Exception', s:none, s:none, s:orange, s:none)
+call enfocado#highlighter('Link', s:underline, s:none, s:br_cyan, s:br_cyan)
+call enfocado#highlighter('String', s:none, s:none, s:cyan, s:br_cyan)
+call enfocado#highlighter('Text', s:none, s:none, s:fg_0, s:none)
+call enfocado#highlighter('Todo', s:bold, s:br_cyan, s:bg_1, s:none)
 highlight! link Boolean StatementBuiltin
 highlight! link Character StatementBuiltin
 highlight! link Conditional Statement
@@ -294,18 +268,18 @@ highlight! link Typedef Type
 highlight! Underlined term=underline cterm=underline gui=underline
 
 " Neovim diagnostic.
-call s:Highlighter('DiagnosticError', s:none, s:none, s:br_red, s:none)
-call s:Highlighter('DiagnosticHint', s:none, s:none, s:br_blue, s:none)
-call s:Highlighter('DiagnosticInfo', s:none, s:none, s:br_yellow, s:none)
-call s:Highlighter('DiagnosticWarn', s:none, s:none, s:br_orange, s:none)
-call s:Highlighter('DiagnosticFloatingError', s:none, s:bg_1, s:br_red, s:none)
-call s:Highlighter('DiagnosticFloatingHint', s:none, s:bg_1, s:br_blue, s:none)
-call s:Highlighter('DiagnosticFloatingInfo', s:none, s:bg_1, s:br_yellow, s:none)
-call s:Highlighter('DiagnosticFloatingWarn', s:none, s:bg_1, s:br_orange, s:none)
-call s:Highlighter('DiagnosticUnderlineError', s:undercurl, s:none, s:none, s:br_red)
-call s:Highlighter('DiagnosticUnderlineHint', s:undercurl, s:none, s:none, s:br_blue)
-call s:Highlighter('DiagnosticUnderlineInfo', s:undercurl, s:none, s:none, s:br_yellow)
-call s:Highlighter('DiagnosticUnderlineWarn', s:undercurl, s:none, s:none, s:br_orange)
+call enfocado#highlighter('DiagnosticError', s:none, s:none, s:br_red, s:none)
+call enfocado#highlighter('DiagnosticHint', s:none, s:none, s:br_blue, s:none)
+call enfocado#highlighter('DiagnosticInfo', s:none, s:none, s:br_yellow, s:none)
+call enfocado#highlighter('DiagnosticWarn', s:none, s:none, s:br_orange, s:none)
+call enfocado#highlighter('DiagnosticFloatingError', s:none, s:bg_1, s:br_red, s:none)
+call enfocado#highlighter('DiagnosticFloatingHint', s:none, s:bg_1, s:br_blue, s:none)
+call enfocado#highlighter('DiagnosticFloatingInfo', s:none, s:bg_1, s:br_yellow, s:none)
+call enfocado#highlighter('DiagnosticFloatingWarn', s:none, s:bg_1, s:br_orange, s:none)
+call enfocado#highlighter('DiagnosticUnderlineError', s:undercurl, s:none, s:none, s:br_red)
+call enfocado#highlighter('DiagnosticUnderlineHint', s:undercurl, s:none, s:none, s:br_blue)
+call enfocado#highlighter('DiagnosticUnderlineInfo', s:undercurl, s:none, s:none, s:br_yellow)
+call enfocado#highlighter('DiagnosticUnderlineWarn', s:undercurl, s:none, s:none, s:br_orange)
 highlight! link DiagnosticSignError DiagnosticError
 highlight! link DiagnosticSignHint DiagnosticHint
 highlight! link DiagnosticSignInfo DiagnosticInfo
@@ -354,7 +328,7 @@ highlight! link diffSubname Title
 " SECTION: Plugins for Neo(Vim) groups highlighting.
 " ------------------------------------------------------------------------------
 " ale: {{{
-  if s:Plugin_is_activated('ale', 0)
+  if enfocado#plugin_is_activated('ale', 0)
     highlight! link ALEError DiagnosticUnderlineError
     highlight! link ALEInfo DiagnosticUnderlineInfo
     highlight! link ALEWarning DiagnosticUnderlineWarn
@@ -377,7 +351,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " coc.nvim: {{{
-  if s:Plugin_is_activated('coc', 0)
+  if enfocado#plugin_is_activated('coc', 0)
     " Coc markdown.
     highlight! link CocMarkdownHeader Title
     highlight! link CocMarkdownLink Link
@@ -496,12 +470,12 @@ highlight! link diffSubname Title
   endif
 " }}}
 " copilot.vim: {{{
-  if s:Plugin_is_activated('copilot', 1)
+  if enfocado#plugin_is_activated('copilot', 1)
     highlight! link CopilotSuggestion Comment
   endif
 " }}}
 " ctrlp.vim: {{{
-  if s:Plugin_is_activated('ctrlp', 0)
+  if enfocado#plugin_is_activated('ctrlp', 0)
     " For the CtrlP buffer.
     highlight! link CtrlPNoEntries MoreMsg
     highlight! link CtrlPMatch Accent
@@ -540,7 +514,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " dashboard-nvim: {{{
-  if s:Plugin_is_activated('dashboard', 0)
+  if enfocado#plugin_is_activated('dashboard', 0)
     highlight! link DashboardHeader Accent
     highlight! link DashboardCenter Text
     highlight! link DashboardShortCut Text
@@ -548,7 +522,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " fzf.vim: {{{
-  if s:Plugin_is_activated('fzf', 0)
+  if enfocado#plugin_is_activated('fzf', 0)
     " fzf apply enfocado groups.
     if !exists('g:fzf_colors')
       let g:fzf_colors = {
@@ -569,13 +543,13 @@ highlight! link diffSubname Title
     endif
 
     " Others FZF groups.
-    call s:Highlighter('Fzf1', s:bold, s:bg_2, s:dim_0, s:none)
-    call s:Highlighter('Fzf2', s:none, s:bg_1, s:dim_0, s:none)
-    call s:Highlighter('Fzf3', s:none, s:bg_0, s:dim_0, s:none)
+    call enfocado#highlighter('Fzf1', s:bold, s:bg_2, s:dim_0, s:none)
+    call enfocado#highlighter('Fzf2', s:none, s:bg_1, s:dim_0, s:none)
+    call enfocado#highlighter('Fzf3', s:none, s:bg_0, s:dim_0, s:none)
   endif
 " }}}
 " nerdtree: {{{
-  if s:Plugin_is_activated('nerdtree', 0)
+  if enfocado#plugin_is_activated('nerdtree', 0)
     highlight! link NERDTreeBookmark NERDTreeFile
     highlight! link NERDTreeBookmarkHeader Title
     highlight! link NERDTreeClosable Dimmed
@@ -600,7 +574,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " netrw: {{{
-  if s:Plugin_is_activated('netrw', 0)
+  if enfocado#plugin_is_activated('netrw', 0)
     highlight! link netrwClassify Dimmed
     highlight! link netrwCmdSep Ignore
     highlight! link netrwComment Comment
@@ -615,7 +589,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " nvim-cmp: {{{
-  if s:Plugin_is_activated('cmp', 1)
+  if enfocado#plugin_is_activated('cmp', 1)
     highlight! link CmpItemAbbrDefault Text
     highlight! link CmpItemAbbrDeprecatedDefault Error
     highlight! link CmpItemAbbrMatchDefault Accent
@@ -650,7 +624,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " nvim-lspconfig: {{{
-  if s:Plugin_is_activated('lsp', 1)
+  if enfocado#plugin_is_activated('lsp', 1)
     highlight! link LspCodeLens Dimmed
     highlight! link LspCodeLensSeparator NonText
     highlight! link LspReferenceRead Visual
@@ -660,7 +634,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " nvim-lsp-installer: {{{
-  if s:Plugin_is_activated('lsp-installer', 1)
+  if enfocado#plugin_is_activated('lsp-installer', 1)
     highlight! link LspInstallerHeader Title
     highlight! link LspInstallerServerExpanded Text
     highlight! link LspInstallerHeading Title
@@ -678,12 +652,12 @@ highlight! link diffSubname Title
   endif
 " }}}
 " nvim-notify: {{{
-  if s:Plugin_is_activated('notify', 1)
-    call s:Highlighter('NotifyERRORBorder', s:none, s:none, s:br_red, s:none)
-    call s:Highlighter('NotifyDEBUGBorder', s:none, s:none, s:dim_0, s:none)
-    call s:Highlighter('NotifyINFOBorder', s:none, s:none, s:br_yellow, s:none)
-    call s:Highlighter('NotifyTRACEBorder', s:none, s:none, s:br_magenta, s:none)
-    call s:Highlighter('NotifyWARNBorder', s:none, s:none, s:br_orange, s:none)
+  if enfocado#plugin_is_activated('notify', 1)
+    call enfocado#highlighter('NotifyERRORBorder', s:none, s:none, s:br_red, s:none)
+    call enfocado#highlighter('NotifyDEBUGBorder', s:none, s:none, s:dim_0, s:none)
+    call enfocado#highlighter('NotifyINFOBorder', s:none, s:none, s:br_yellow, s:none)
+    call enfocado#highlighter('NotifyTRACEBorder', s:none, s:none, s:br_magenta, s:none)
+    call enfocado#highlighter('NotifyWARNBorder', s:none, s:none, s:br_orange, s:none)
     highlight! link NotifyERRORIcon NotifyERRORBorder
     highlight! link NotifyDEBUGIcon NotifyDEBUGBorder
     highlight! link NotifyINFOIcon NotifyINFOBorder
@@ -704,18 +678,18 @@ highlight! link diffSubname Title
   endif
 " }}}
 " nvim-scrollview: {{{
-  if s:Plugin_is_activated('scrollview', 1)
+  if enfocado#plugin_is_activated('scrollview', 1)
     highlight! link ScrollView Line
   endif
 " }}}
 " nvim-treesitter: {{{
-  if s:Plugin_is_activated('treesitter', 1)
-    call s:Highlighter('TSDanger', s:bold, s:br_red, s:bg_1, s:none)
-    call s:Highlighter('TSNote', s:bold, s:br_yellow, s:bg_1, s:none)
-    call s:Highlighter('TSWarning', s:bold, s:br_orange, s:bg_1, s:none)
-    call s:Highlighter('TSLiteral', s:italic, s:none, s:fg_0, s:none)
-    call s:Highlighter('TSNone', s:none, s:none, s:none, s:none)
-    call s:Highlighter('TSTitle', s:none, s:none, s:fg_1, s:none)
+  if enfocado#plugin_is_activated('treesitter', 1)
+    call enfocado#highlighter('TSDanger', s:bold, s:br_red, s:bg_1, s:none)
+    call enfocado#highlighter('TSNote', s:bold, s:br_yellow, s:bg_1, s:none)
+    call enfocado#highlighter('TSWarning', s:bold, s:br_orange, s:bg_1, s:none)
+    call enfocado#highlighter('TSLiteral', s:italic, s:none, s:fg_0, s:none)
+    call enfocado#highlighter('TSNone', s:none, s:none, s:none, s:none)
+    call enfocado#highlighter('TSTitle', s:none, s:none, s:fg_1, s:none)
     highlight! link TSAnnotation SpecialComment
     highlight! link TSAttribute SpecialComment
     highlight! link TSBoolean Boolean
@@ -789,27 +763,27 @@ highlight! link diffSubname Title
 
     " nvim-ts-rainbow module.
     if g:enfocado_style == 'neon'
-      call s:Highlighter('rainbowcol1', s:none, s:none, s:violet, s:none)
-      call s:Highlighter('rainbowcol2', s:none, s:none, s:cyan, s:none)
-      call s:Highlighter('rainbowcol3', s:none, s:none, s:magenta, s:none)
-      call s:Highlighter('rainbowcol4', s:none, s:none, s:br_violet, s:none)
-      call s:Highlighter('rainbowcol5', s:none, s:none, s:br_cyan, s:none)
-      call s:Highlighter('rainbowcol6', s:none, s:none, s:br_magenta, s:none)
-      call s:Highlighter('rainbowcol7', s:none, s:none, s:violet, s:none)
+      call enfocado#highlighter('rainbowcol1', s:none, s:none, s:violet, s:none)
+      call enfocado#highlighter('rainbowcol2', s:none, s:none, s:cyan, s:none)
+      call enfocado#highlighter('rainbowcol3', s:none, s:none, s:magenta, s:none)
+      call enfocado#highlighter('rainbowcol4', s:none, s:none, s:br_violet, s:none)
+      call enfocado#highlighter('rainbowcol5', s:none, s:none, s:br_cyan, s:none)
+      call enfocado#highlighter('rainbowcol6', s:none, s:none, s:br_magenta, s:none)
+      call enfocado#highlighter('rainbowcol7', s:none, s:none, s:violet, s:none)
     else
-      call s:Highlighter('rainbowcol1', s:none, s:none, s:blue, s:none)
-      call s:Highlighter('rainbowcol2', s:none, s:none, s:cyan, s:none)
-      call s:Highlighter('rainbowcol3', s:none, s:none, s:green, s:none)
-      call s:Highlighter('rainbowcol4', s:none, s:none, s:br_blue, s:none)
-      call s:Highlighter('rainbowcol5', s:none, s:none, s:br_cyan, s:none)
-      call s:Highlighter('rainbowcol6', s:none, s:none, s:br_green, s:none)
-      call s:Highlighter('rainbowcol7', s:none, s:none, s:blue, s:none)
+      call enfocado#highlighter('rainbowcol1', s:none, s:none, s:blue, s:none)
+      call enfocado#highlighter('rainbowcol2', s:none, s:none, s:cyan, s:none)
+      call enfocado#highlighter('rainbowcol3', s:none, s:none, s:green, s:none)
+      call enfocado#highlighter('rainbowcol4', s:none, s:none, s:br_blue, s:none)
+      call enfocado#highlighter('rainbowcol5', s:none, s:none, s:br_cyan, s:none)
+      call enfocado#highlighter('rainbowcol6', s:none, s:none, s:br_green, s:none)
+      call enfocado#highlighter('rainbowcol7', s:none, s:none, s:blue, s:none)
     endif
   endif
 " }}}
 " nvim-tree.lua: {{{
-  if s:Plugin_is_activated('tree', 1)
-    call s:Highlighter('NvimTreeImageFile', s:bold, s:none, s:magenta, s:none)
+  if enfocado#plugin_is_activated('tree', 1)
+    call enfocado#highlighter('NvimTreeImageFile', s:bold, s:none, s:magenta, s:none)
     highlight! link NvimTreeCursorColumn Line
     highlight! link NvimTreeCursorLine Line
     highlight! link NvimTreeEmptyFolderName Directory
@@ -851,7 +825,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " packer.nvim: {{{
-  if s:Plugin_is_activated('packer', 1)
+  if enfocado#plugin_is_activated('packer', 1)
     highlight! link packerWorking Accent
     highlight! link packerSuccess Success
     highlight! link packerFail DiagnosticError
@@ -875,7 +849,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " rainbow: {{{
-  if s:Plugin_is_activated('rainbow', 0)
+  if enfocado#plugin_is_activated('rainbow', 0)
     if g:enfocado_style == 'neon'
       let s:rainbow_guifgs = [s:violet[0], s:cyan[0], s:magenta[0], s:br_violet[0]]
       let s:rainbow_ctermfgs = [s:violet[1], s:cyan[1], s:magenta[1], s:br_violet[1]]
@@ -898,12 +872,12 @@ highlight! link diffSubname Title
   endif
 " }}}
 " telescope.nvim: {{{
-  if s:Plugin_is_activated('telescope', 1)
-    call s:Highlighter('TelescopePreviewDate', s:none, s:none, s:blue, s:none)
-    call s:Highlighter('TelescopePreviewRead', s:bold, s:none, s:yellow, s:none)
-    call s:Highlighter('TelescopePreviewSize', s:bold, s:none, s:green, s:none)
-    call s:Highlighter('TelescopePreviewUser', s:bold, s:none, s:br_yellow, s:none)
-    call s:Highlighter('TelescopePreviewWrite', s:bold, s:none, s:red, s:none)
+  if enfocado#plugin_is_activated('telescope', 1)
+    call enfocado#highlighter('TelescopePreviewDate', s:none, s:none, s:blue, s:none)
+    call enfocado#highlighter('TelescopePreviewRead', s:bold, s:none, s:yellow, s:none)
+    call enfocado#highlighter('TelescopePreviewSize', s:bold, s:none, s:green, s:none)
+    call enfocado#highlighter('TelescopePreviewUser', s:bold, s:none, s:br_yellow, s:none)
+    call enfocado#highlighter('TelescopePreviewWrite', s:bold, s:none, s:red, s:none)
     highlight! link TelescopeBorder FloatBorder
     highlight! link TelescopeMatching Accent
     highlight! link TelescopeMultiSelection Visual
@@ -948,36 +922,36 @@ highlight! link diffSubname Title
   endif
 " }}}
 " todo-comments.nvim: {{{
-  if s:Plugin_is_activated('todo-comments', 1)
-    call s:Highlighter('TodoBgFIX', s:bold, s:br_red, s:bg_1, s:none)
-    call s:Highlighter('TodoBgHACK', s:bold, s:br_yellow, s:bg_1, s:none)
-    call s:Highlighter('TodoBgNOTE', s:bold, s:br_green, s:bg_1, s:none)
-    call s:Highlighter('TodoBgPERF', s:bold, s:br_magenta, s:bg_1, s:none)
-    call s:Highlighter('TodoBgTODO', s:bold, s:br_cyan, s:bg_1, s:none)
-    call s:Highlighter('TodoBgWARN', s:bold, s:br_orange, s:bg_1, s:none)
-    call s:Highlighter('TodoFgFIX', s:none, s:none, s:br_red, s:none)
-    call s:Highlighter('TodoFgHACK', s:none, s:none, s:br_yellow, s:none)
-    call s:Highlighter('TodoFgNOTE', s:none, s:none, s:br_green, s:none)
-    call s:Highlighter('TodoFgPERF', s:none, s:none, s:br_magenta, s:none)
-    call s:Highlighter('TodoFgTODO', s:none, s:none, s:br_cyan, s:none)
-    call s:Highlighter('TodoFgWARN', s:none, s:none, s:br_orange, s:none)
-    call s:Highlighter('TodoSignFIX', s:none, s:none, s:br_red, s:none)
-    call s:Highlighter('TodoSignHACK', s:none, s:none, s:br_yellow, s:none)
-    call s:Highlighter('TodoSignNOTE', s:none, s:none, s:br_green, s:none)
-    call s:Highlighter('TodoSignPERF', s:none, s:none, s:br_magenta, s:none)
-    call s:Highlighter('TodoSignTODO', s:none, s:none, s:br_cyan, s:none)
-    call s:Highlighter('TodoSignWARN', s:none, s:none, s:br_orange, s:none)
+  if enfocado#plugin_is_activated('todo-comments', 1)
+    call enfocado#highlighter('TodoBgFIX', s:bold, s:br_red, s:bg_1, s:none)
+    call enfocado#highlighter('TodoBgHACK', s:bold, s:br_yellow, s:bg_1, s:none)
+    call enfocado#highlighter('TodoBgNOTE', s:bold, s:br_green, s:bg_1, s:none)
+    call enfocado#highlighter('TodoBgPERF', s:bold, s:br_magenta, s:bg_1, s:none)
+    call enfocado#highlighter('TodoBgTODO', s:bold, s:br_cyan, s:bg_1, s:none)
+    call enfocado#highlighter('TodoBgWARN', s:bold, s:br_orange, s:bg_1, s:none)
+    call enfocado#highlighter('TodoFgFIX', s:none, s:none, s:br_red, s:none)
+    call enfocado#highlighter('TodoFgHACK', s:none, s:none, s:br_yellow, s:none)
+    call enfocado#highlighter('TodoFgNOTE', s:none, s:none, s:br_green, s:none)
+    call enfocado#highlighter('TodoFgPERF', s:none, s:none, s:br_magenta, s:none)
+    call enfocado#highlighter('TodoFgTODO', s:none, s:none, s:br_cyan, s:none)
+    call enfocado#highlighter('TodoFgWARN', s:none, s:none, s:br_orange, s:none)
+    call enfocado#highlighter('TodoSignFIX', s:none, s:none, s:br_red, s:none)
+    call enfocado#highlighter('TodoSignHACK', s:none, s:none, s:br_yellow, s:none)
+    call enfocado#highlighter('TodoSignNOTE', s:none, s:none, s:br_green, s:none)
+    call enfocado#highlighter('TodoSignPERF', s:none, s:none, s:br_magenta, s:none)
+    call enfocado#highlighter('TodoSignTODO', s:none, s:none, s:br_cyan, s:none)
+    call enfocado#highlighter('TodoSignWARN', s:none, s:none, s:br_orange, s:none)
   endif
 " }}}
 " vim-floaterm: {{{
-  if s:Plugin_is_activated('floaterm', 0)
+  if enfocado#plugin_is_activated('floaterm', 0)
     highlight! link Floaterm NormalFloat
     highlight! link FloatermBorder FloatBorder
     highlight! link FloatermNC NormalFloat
   endif
 " }}}
 " vim-gitgutter: {{{
-  if s:Plugin_is_activated('gitgutter', 0)
+  if enfocado#plugin_is_activated('gitgutter', 0)
     highlight! link GitGutterAdd DiffAdd
     highlight! link GitGutterAddInvisible None
     highlight! link GitGutterAddLine GitGutterAdd
@@ -997,7 +971,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " vim-matchup: {{{
-  if s:Plugin_is_activated('matchup', 0)
+  if enfocado#plugin_is_activated('matchup', 0)
     highlight! link MatchBackground Visual
     highlight! link MatchParenCur Visual
     highlight! link MatchWord Visual
@@ -1005,7 +979,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " vim-plug: {{{
-  if s:Plugin_is_activated('plug', 0)
+  if enfocado#plugin_is_activated('plug', 0)
     highlight! link plug1 Title
     highlight! link plug2 Accent
     highlight! link plugBracket Text
@@ -1030,7 +1004,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " vim-signify: {{{
-  if s:Plugin_is_activated('signify', 0)
+  if enfocado#plugin_is_activated('signify', 0)
     if exists('g:signify_line_highlight') && g:signify_line_highlight == 1
       highlight! link SignifyLineAdd SignifySignAdd
       highlight! link SignifyLineChange SignifySignChange
@@ -1046,8 +1020,8 @@ highlight! link diffSubname Title
   endif
 " }}}
 " vim-startify: {{{
-  if s:Plugin_is_activated('startify', 0)
-    call s:Highlighter('StartifySelect', s:none, s:bg_2, s:fg_1, s:none)
+  if enfocado#plugin_is_activated('startify', 0)
+    call enfocado#highlighter('StartifySelect', s:none, s:bg_2, s:fg_1, s:none)
     highlight! link StartifyBracket Ignore
     highlight! link StartifyFile Accent
     highlight! link StartifyFooter Dimmed
@@ -1061,23 +1035,23 @@ highlight! link diffSubname Title
   endif
 " }}}
 " vim-visual-multi: {{{
-  if s:Plugin_is_activated('visual-multi', 0)
+  if enfocado#plugin_is_activated('visual-multi', 0)
     if !exists('g:VM_theme_set_by_colorscheme') ||
           \ g:VM_theme_set_by_colorscheme != 0
       let g:VM_theme_set_by_colorscheme = 1
       if g:enfocado_style == 'neon'
-        call s:Highlighter('VM_Extend', s:bold, s:bg_2, s:magenta, s:none)
+        call enfocado#highlighter('VM_Extend', s:bold, s:bg_2, s:magenta, s:none)
       else
-        call s:Highlighter('VM_Extend', s:bold, s:bg_2, s:green, s:none)
+        call enfocado#highlighter('VM_Extend', s:bold, s:bg_2, s:green, s:none)
       endif
-      call s:Highlighter('VM_Insert', s:none, s:bg_1, s:yellow, s:none)
+      call enfocado#highlighter('VM_Insert', s:none, s:bg_1, s:yellow, s:none)
       highlight! link VM_Cursor Cursor
       highlight! link VM_Mono VM_Cursor
     endif
   endif
 " }}}
 " vista.vim: {{{
-  if s:Plugin_is_activated('vista', 0)
+  if enfocado#plugin_is_activated('vista', 0)
     highlight! link VistaBracket Ignore
     highlight! link VistaChildrenNr Ignore
     highlight! link VistaColon Ignore
@@ -1090,7 +1064,7 @@ highlight! link diffSubname Title
   endif
 " }}}
 " which-key.nvim: {{{
-  if s:Plugin_is_activated('which-key', 0)
+  if enfocado#plugin_is_activated('which-key', 0)
     highlight! link WhichKey MoreMsg
     highlight! link WhichKeyDesc Accent
     highlight! link WhichKeyFloat NormalFloat

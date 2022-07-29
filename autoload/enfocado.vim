@@ -81,3 +81,29 @@ function! enfocado#getColorScheme()
     return l:colors
   endif
 endfunction
+
+" A function is created to check on-demand plugins.
+function enfocado#plugin_is_activated(name, only_nvim)
+  if (g:enfocado_plugins == ['none']) || (a:only_nvim && !has('nvim'))
+    return 0
+  elseif (a:only_nvim && has('nvim')) || !a:only_nvim
+    if g:enfocado_plugins == ['all']
+      return 1
+    else
+      return index(g:enfocado_plugins, a:name) >= 0 ? 1 : 0
+    endif
+  endif
+endfunction
+
+" A function is created to highlight the groups.
+function enfocado#highlighter(group, attr, bg, fg, sp)
+  execute 'highlight! '.a:group.
+        \ ' term='.a:attr[1].
+        \ ' cterm='.a:attr[1].
+        \ ' ctermfg='.a:fg[1].
+        \ ' ctermbg='.a:bg[1].
+        \ ' gui='.a:attr[0].
+        \ ' guifg='.a:fg[0].
+        \ ' guibg='.a:bg[0].
+        \ ' guisp='.a:sp[0]
+endfunction
