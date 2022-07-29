@@ -193,6 +193,8 @@ call s:Highlighter('DiffText', s:none, s:bg_2, s:yellow, s:none)
 call s:Highlighter('Dimmed', s:none, s:none, s:dim_0, s:none)
 call s:Highlighter('Directory', s:bold, s:none, s:br_blue, s:none)
 call s:Highlighter('ErrorMsg', s:none, s:none, s:br_red, s:none)
+call s:Highlighter('FileLink', s:bold, s:none, s:br_cyan, s:none)
+call s:Highlighter('FileExec', s:none, s:none, s:green, s:none)
 call s:Highlighter('Folded', s:none, s:none, s:dim_0, s:none)
 call s:Highlighter('FoldColumn', s:none, s:none, s:dim_0, s:none)
 call s:Highlighter('Ignore', s:none, s:none, s:bg_2, s:none)
@@ -498,6 +500,45 @@ highlight! link diffSubname Title
     highlight! link CopilotSuggestion Comment
   endif
 " }}}
+" ctrlp.vim: {{{
+  if s:Plugin_is_activated('ctrlp', 0)
+    " For the CtrlP buffer.
+    highlight! link CtrlPNoEntries MoreMsg
+    highlight! link CtrlPMatch Accent
+    highlight! link CtrlPLinePre NonText
+    highlight! link CtrlPPrtBase Accent
+    highlight! link CtrlPPrtText Text
+    highlight! link CtrlPPrtCursor Cursor
+
+    " Buffer explorer mode.
+    highlight! link CtrlPBufferNr Text
+    highlight! link CtrlPBufferInd Text
+    highlight! link CtrlPBufferHid Dimmed
+    highlight! link CtrlPBufferHidMod CtrlPBufferInd
+    highlight! link CtrlPBufferVis Text
+    highlight! link CtrlPBufferVisMod CtrPBufferVis
+    highlight! link CtrlPBufferCur Accent
+    highlight! link CtrlPBufferCurMod CtrPBufferCur
+    highlight! link CtrlPBufferPath Dimmed
+
+    " In extensions.
+    highlight! link CtrlPTabExtra Dimmed
+    highlight! link CtrlPBufName Text
+    highlight! link CtrlPTagKind Text
+    highlight! link CtrlPqfLineCol LineNr
+    highlight! link CtrlPUndoT Text
+    highlight! link CtrlPUndoBr NonText
+    highlight! link CtrlPUndoNr Text
+    highlight! link CtrlPUndoSv Text
+    highlight! link CtrlPUndoPo Accent
+    highlight! link CtrlPBookmark Text
+
+    " Statuslines.
+    highlight! link CtrlPMode1 Statusline
+    highlight! link CtrlPMode2 Statusline
+    highlight! link CtrlPStats Accent
+  endif
+" }}}
 " dashboard-nvim: {{{
   if s:Plugin_is_activated('dashboard', 0)
     highlight! link DashboardHeader Accent
@@ -535,24 +576,24 @@ highlight! link diffSubname Title
 " }}}
 " nerdtree: {{{
   if s:Plugin_is_activated('nerdtree', 0)
-    call s:Highlighter('NERDTreeLink', s:bold, s:none, s:br_cyan, s:none)
-    call s:Highlighter('NERDTreeExecFile', s:none, s:none, s:green, s:none)
-    call s:Highlighter('NERDTreeRO', s:bold, s:none, s:yellow, s:none)
     highlight! link NERDTreeBookmark NERDTreeFile
     highlight! link NERDTreeBookmarkHeader Title
     highlight! link NERDTreeClosable Dimmed
     highlight! link NERDTreeCWD Ignore
     highlight! link NERDTreeDir Directory
     highlight! link NERDTreeDirSlash Dimmed
+    highlight! link NERDTreeExecFile FileExec
     highlight! link NERDTreeFile Text
     highlight! link NERDTreeHelp Text
     highlight! link NERDTreeHelpCommand Text
     highlight! link NERDTreeHelpKey Text
     highlight! link NERDTreeHelpTitle Title
+    highlight! link NERDTreeLink FileLink
     highlight! link NERDTreeLinkDir NERDTreeLink
     highlight! link NERDTreeLinkFile NERDTreeLink
     highlight! link NERDTreeLinkTarget NERDTreeFile
     highlight! link NERDTreeOpenable Dimmed
+    highlight! link NERDTreeRO NERDTreeFile
     highlight! link NERDTreeToggleOff Dimmed
     highlight! link NERDTreeToggleOn Text
     highlight! link NERDTreeUp Dimmed
@@ -560,13 +601,13 @@ highlight! link diffSubname Title
 " }}}
 " netrw: {{{
   if s:Plugin_is_activated('netrw', 0)
-    call s:Highlighter('netrwLink', s:bold, s:none, s:br_cyan, s:none)
-    call s:Highlighter('netrwExe', s:none, s:none, s:green, s:none)
     highlight! link netrwClassify Dimmed
     highlight! link netrwCmdSep Ignore
     highlight! link netrwComment Comment
     highlight! link netrwDir Directory
+    highlight! link netrwExe FileExec
     highlight! link netrwHelpCmd Text
+    highlight! link netrwLink FileLink
     highlight! link netrwList Dimmed
     highlight! link netrwPlain Text
     highlight! link netrwSymLink netrwLink
@@ -768,14 +809,12 @@ highlight! link diffSubname Title
 " }}}
 " nvim-tree.lua: {{{
   if s:Plugin_is_activated('tree', 1)
-    call s:Highlighter('NvimTreeNormal', s:none, s:bg_0, s:fg_0, s:none)
-    call s:Highlighter('NvimTreeNormalNC', s:none, s:bg_0, s:fg_0, s:none)
-    call s:Highlighter('NvimTreeExecFile', s:none, s:none, s:green, s:none)
-    call s:Highlighter('NvimTreeImageFile', s:none, s:none, s:yellow, s:none)
+    call s:Highlighter('NvimTreeImageFile', s:bold, s:none, s:magenta, s:none)
     highlight! link NvimTreeCursorColumn Line
     highlight! link NvimTreeCursorLine Line
     highlight! link NvimTreeEmptyFolderName Directory
     highlight! link NvimTreeEndOfBuffer EndOfBuffer
+    highlight! link NvimTreeExecFile FileExec
     highlight! link NvimTreeFileDeleted DiffDelete
     highlight! link NvimTreeFileDirty DiffDelete
     highlight! link NvimTreeFileMerge DiffChange
@@ -786,7 +825,7 @@ highlight! link diffSubname Title
     highlight! link NvimTreeFolderName Dimmed
     highlight! link NvimTreeGitDeleted DiffDelete
     highlight! link NvimTreeGitDirty DiffDelete
-    highlight! link NvimTreeGitIgnored Ignore
+    highlight! link NvimTreeGitIgnored Text
     highlight! link NvimTreeGitMerge DiffChange
     highlight! link NvimTreeGitNew DiffAdd
     highlight! link NvimTreeGitRenamed DiffAdd
@@ -796,6 +835,8 @@ highlight! link diffSubname Title
     highlight! link NvimTreeLspDiagnosticsHint DiagnosticHint
     highlight! link NvimTreeLspDiagnosticsInformation DiagnosticInfo
     highlight! link NvimTreeLspDiagnosticsWarning DiagnosticWarn
+    highlight! link NvimTreeNormal Normal
+    highlight! link NvimTreeNormalNC NormalNC
     highlight! link NvimTreeOpenedFile Accent
     highlight! link NvimTreeOpenedFolderName Directory
     highlight! link NvimTreePopup NormalFloat
@@ -804,7 +845,7 @@ highlight! link diffSubname Title
     highlight! link NvimTreeSpecialFile SpecialComment
     highlight! link NvimTreeStatusLine StatusLine
     highlight! link NvimTreeStatusLineNC StatusLineNC
-    highlight! link NvimTreeSymlink Dimmed
+    highlight! link NvimTreeSymlink FileLink
     highlight! link NvimTreeVertSplit VertSplit
     highlight! link NvimTreeWindowPicker Accent
   endif
@@ -859,8 +900,6 @@ highlight! link diffSubname Title
 " telescope.nvim: {{{
   if s:Plugin_is_activated('telescope', 1)
     call s:Highlighter('TelescopePreviewDate', s:none, s:none, s:blue, s:none)
-    call s:Highlighter('TelescopePreviewExecute', s:none, s:none, s:green, s:none)
-    call s:Highlighter('TelescopePreviewLink', s:none, s:none, s:magenta, s:none)
     call s:Highlighter('TelescopePreviewRead', s:bold, s:none, s:yellow, s:none)
     call s:Highlighter('TelescopePreviewSize', s:bold, s:none, s:green, s:none)
     call s:Highlighter('TelescopePreviewUser', s:bold, s:none, s:br_yellow, s:none)
@@ -871,6 +910,8 @@ highlight! link diffSubname Title
     highlight! link TelescopeNormal NormalFloat
     highlight! link TelescopePreviewBorder FloatBorder
     highlight! link TelescopePreviewDirectory Directory
+    highlight! link TelescopePreviewExecute FileExec
+    highlight! link TelescopePreviewLink FileLink
     highlight! link TelescopePreviewMatch Search
     highlight! link TelescopePreviewMessage DiagnosticInfo
     highlight! link TelescopePreviewMessageFillchar DiagnosticInfo
@@ -1056,44 +1097,5 @@ highlight! link diffSubname Title
     highlight! link WhichKeyGroup Dimmed
     highlight! link WhichKeySeparator NonText
     highlight! link WhichKeyValue Text
-  endif
-" }}}
-" ctrlp.vim: {{{
-  if s:Plugin_is_activated('ctrlp', 0)
-    " For the CtrlP buffer.
-    highlight! link CtrlPNoEntries MoreMsg
-    highlight! link CtrlPMatch Accent
-    highlight! link CtrlPLinePre NonText
-    highlight! link CtrlPPrtBase Accent
-    highlight! link CtrlPPrtText Text
-    highlight! link CtrlPPrtCursor Cursor
-
-    " Buffer explorer mode.
-    highlight! link CtrlPBufferNr Text
-    highlight! link CtrlPBufferInd Text
-    highlight! link CtrlPBufferHid Dimmed
-    highlight! link CtrlPBufferHidMod CtrlPBufferInd
-    highlight! link CtrlPBufferVis Text
-    highlight! link CtrlPBufferVisMod CtrPBufferVis
-    highlight! link CtrlPBufferCur Accent
-    highlight! link CtrlPBufferCurMod CtrPBufferCur
-    highlight! link CtrlPBufferPath Dimmed
-
-    " In extensions.
-    highlight! link CtrlPTabExtra Dimmed
-    highlight! link CtrlPBufName Text
-    highlight! link CtrlPTagKind Text
-    highlight! link CtrlPqfLineCol LineNr
-    highlight! link CtrlPUndoT Text
-    highlight! link CtrlPUndoBr NonText
-    highlight! link CtrlPUndoNr Text
-    highlight! link CtrlPUndoSv Text
-    highlight! link CtrlPUndoPo Accent
-    highlight! link CtrlPBookmark Text
-
-    " Statuslines.
-    highlight! link CtrlPMode1 Statusline
-    highlight! link CtrlPMode2 Statusline
-    highlight! link CtrlPStats Accent
   endif
 " }}}
