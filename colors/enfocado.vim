@@ -302,10 +302,10 @@ call s:Highlighter('DiagnosticFloatingError', s:none, s:bg_1, s:br_red, s:none)
 call s:Highlighter('DiagnosticFloatingHint', s:none, s:bg_1, s:br_blue, s:none)
 call s:Highlighter('DiagnosticFloatingInfo', s:none, s:bg_1, s:br_yellow, s:none)
 call s:Highlighter('DiagnosticFloatingWarn', s:none, s:bg_1, s:br_orange, s:none)
-call s:Highlighter('DiagnosticUnderlineError', s:underline, s:none, s:br_red, s:br_red)
-call s:Highlighter('DiagnosticUnderlineHint', s:underline, s:none, s:br_blue, s:br_blue)
-call s:Highlighter('DiagnosticUnderlineInfo', s:underline, s:none, s:br_yellow, s:br_yellow)
-call s:Highlighter('DiagnosticUnderlineWarn', s:underline, s:none, s:br_orange, s:br_orange)
+call s:Highlighter('DiagnosticUnderlineError', s:undercurl, s:none, s:none, s:br_red)
+call s:Highlighter('DiagnosticUnderlineHint', s:undercurl, s:none, s:none, s:br_blue)
+call s:Highlighter('DiagnosticUnderlineInfo', s:undercurl, s:none, s:none, s:br_yellow)
+call s:Highlighter('DiagnosticUnderlineWarn', s:undercurl, s:none, s:none, s:br_orange)
 highlight! link DiagnosticSignError DiagnosticError
 highlight! link DiagnosticSignHint DiagnosticHint
 highlight! link DiagnosticSignInfo DiagnosticInfo
