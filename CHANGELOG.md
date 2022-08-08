@@ -4,31 +4,43 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.11.0] - 2022-08-08
+
+### Added
+
+- Pseudo transparency of colors is added to some groups (only available for termguicolors).
+- Added support for [vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace) plugin.
+
+### Fixed
+
+- Function names are standardized.
+- The cases of hexadecimal colors are standardized.
+
 ## [5.10.0] - 2022-07-30
 
-### Added.
+### Added
 
 - Now the functions are on-demand increasing the loading speed of Enfocado.
 
-### Fixed.
+### Fixed
 
 - Underlined diagnostics are now undercurl, making the experience more elegant.
 
 ## [5.9.2] - 2022-07-29
 
-### Fixed.
+### Fixed
 
 - Fixed some colors in file explorers.
 
 ## [5.9.1] - 2022-07-28
 
-### Fixed.
+### Fixed
 
 - Documentation fixed.
 
 ## [5.9.0] - 2022-07-27
 
-### Added.
+### Added
 
 - File explorers now follow linux color standards.
 - Support for [CtrlP](https://github.com/ctrlpvim/ctrlp.vim) plugin is added.
@@ -36,13 +48,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [5.8.1] - 2022-07-23
 
-### Fixed.
+### Fixed
 
 - Small corrections are madded.
 
 ## [5.8.0] - 2022-07-21
 
-### Added.
+### Added
 
 - It is decided to change the constants and readonlys to yellow, to give the message that they cannot be modified.
 - Exceptions (try - catch) are now highlighted in dimmed orange to give a message of caution.
@@ -278,4 +290,4 @@ Support is added for the following plugins:
 
 - Initial release
 
-<p align="center">¡Con 💖 de <strong>Latinoamérica</strong> para el mundo!</p>
+<p align="center">With 💖 from <strong>LATAM</strong> to the world!</p>

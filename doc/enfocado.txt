@@ -68,7 +68,8 @@ supported plugins so far:
 `  \ 'treesitter',`
 `  \ 'vista',`
 `  \ 'visual-multi',`
-`  \ 'which-key'`
+`  \ 'which-key',`
+`  \ 'whitespace'`
 `  \ ]`
 
 or also indicate the `all` option to highlight all supported plugins:
@@ -103,7 +104,6 @@ To make the background transparent, you can use the following:
 `augroup enfocado_customization`
   `autocmd!`
       `autocmd ColorScheme enfocado highlight Normal ctermbg=NONE guibg=NONE`
-      `autocmd ColorScheme enfocado highlight NormalNC ctermbg=NONE guibg=NONE`
 `augroup END`
 
 Note: The usage codes must be written in your .vimrc or init.vim.

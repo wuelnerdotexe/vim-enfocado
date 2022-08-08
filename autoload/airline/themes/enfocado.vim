@@ -58,7 +58,7 @@ let g:airline#themes#enfocado#palette.normal =
         \ )
 
 " Normal mode alerts.
-let g:airline#themes#enfocado#palette.normal.airline_error = s:term
+let g:airline#themes#enfocado#palette.normal.airline_term = s:term
 let g:airline#themes#enfocado#palette.normal.airline_error = s:error
 let g:airline#themes#enfocado#palette.normal.airline_warning = s:warning
 

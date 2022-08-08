@@ -153,7 +153,6 @@ To make the **background transparent**, you can use the following:
 augroup enfocado_customization
   autocmd!
     autocmd ColorScheme enfocado ++nested highlight Normal ctermbg=NONE guibg=NONE
-    autocmd ColorScheme enfocado ++nested highlight NormalNC ctermbg=NONE guibg=NONE
 augroup END
 ```
 
@@ -182,7 +181,7 @@ This vim configs comes with **Enfocado for Vim** already installed by default!
 
 ## Maintainer
 
-> Hola 👋, soy **[Wuelner](https://linktr.ee/wuelnerdotexe)**, un **software developer de Guatemala**, apasionado por crear soluciones minimalistas utilizando fundamentos sólidos enfocados en **"cómo deben ser las cosas"**.
+> Hi 👋, I'm **[Wuelner](https://linktr.ee/wuelnerdotexe)**, a **software developer from Guatemala**, passionate about creating minimalist solutions using solid fundamentals focused on **"how things should be"**.
 
 ## Contributing
 
@@ -217,6 +216,7 @@ The following plugins are supported:
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [vim-airline](https://github.com/vim-airline/vim-airline)
+- [vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
 - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 - [vim-matchup](https://github.com/andymass/vim-matchup)
@@ -237,4 +237,4 @@ The following plugins are supported:
 
 [MIT &copy; Wuelner Martínez.](https://github.com/wuelnerdotexe/vim-enfocado/blob/main/LICENSE)
 
-<p align="center">¡Con 💖 de <strong>Latinoamérica</strong> para el mundo!</p>
+<p align="center">With 💖 from <strong>LATAM</strong> to the world!</p>
