@@ -46,14 +46,14 @@ function! enfocado#getColorScheme()
     let l:colors.base = ['#000000', 16]
 
     " Pseudo transparency colors.
-    let l:colors.blend_search = ['#62552e', 'NONE']
     let l:colors.blend_error = ['#462624', 'NONE']
-    let l:colors.blend_info = ['#433a20', 'NONE']
     let l:colors.blend_hint = ['#233246', 'NONE']
+    let l:colors.blend_info = ['#433a20', 'NONE']
     let l:colors.blend_warn = ['#453024', 'NONE']
     let l:colors.blend_added = ['#2c3326', 'NONE']
-    let l:colors.blend_removed = ['#2e1e1d', 'NONE']
     let l:colors.blend_modified = ['#2c281b', 'NONE']
+    let l:colors.blend_removed = ['#2e1e1d', 'NONE']
+    let l:colors.blend_search = ['#62552e', 'NONE']
 
     " Colors return.
     return l:colors
@@ -88,14 +88,14 @@ function! enfocado#getColorScheme()
     let l:colors.base = l:colors.bg_1
 
     " Pseudo transparency colors.
-    let l:colors.blend_search = ['#d9cca4', 'NONE']
     let l:colors.blend_error = ['#f2cccc', 'NONE']
-    let l:colors.blend_info = ['#efe7cc', 'NONE']
     let l:colors.blend_hint = ['#ccddf5', 'NONE']
+    let l:colors.blend_info = ['#efe7cc', 'NONE']
     let l:colors.blend_warn = ['#f1d7cc', 'NONE']
     let l:colors.blend_added = ['#e8f4e5', 'NONE']
-    let l:colors.blend_removed = ['#fbe5e6', 'NONE']
     let l:colors.blend_modified = ['#f9f4e5', 'NONE']
+    let l:colors.blend_removed = ['#fbe5e6', 'NONE']
+    let l:colors.blend_search = ['#d9cca4', 'NONE']
 
     " Colors return.
     return l:colors

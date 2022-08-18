@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.12.0] - 2022-08-17
+
+### Added
+
+- Added a table in the documentation to expose and understand syntax colors.
+
+### Fixed
+
+- Fixed issue #8 where it was originally reported in discussion #7 that Enfocado highlights all Whitespaces as warnings.
+- The color for the constants is corrected.
+
 ## [5.11.0] - 2022-08-08
 
 ### Added

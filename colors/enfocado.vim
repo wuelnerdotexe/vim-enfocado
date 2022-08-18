@@ -132,7 +132,7 @@ if g:enfocado_style == 'neon'
   call enfocado#highlighter('Identifier', s:none, s:none, s:magenta, s:none)
   call enfocado#highlighter('IdentifierBuiltin', s:none, s:none, s:green, s:none)
   call enfocado#highlighter('PreProc', s:none, s:none, s:violet, s:none)
-  call enfocado#highlighter('Property', s:none, s:none, s:violet, s:none)
+  call enfocado#highlighter('Property', s:none, s:none, s:br_violet, s:none)
   call enfocado#highlighter('Special', s:none, s:none, s:br_blue, s:none)
   call enfocado#highlighter('Statement', s:none, s:none, s:violet, s:none)
   call enfocado#highlighter('StatementBuiltin', s:none, s:none, s:blue, s:none)
@@ -249,7 +249,8 @@ endif
 
 " General syntax.
 call enfocado#highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
-call enfocado#highlighter('Constant', s:none, s:none, s:yellow, s:none)
+call enfocado#highlighter('Constant', s:none, s:none, s:fg_0, s:none)
+call enfocado#highlighter('ConstIdentifier', s:none, s:none, s:yellow, s:none)
 call enfocado#highlighter('Error', s:bold, s:none, s:br_red, s:none)
 call enfocado#highlighter('Exception', s:none, s:none, s:orange, s:none)
 call enfocado#highlighter('Link', s:underline, s:none, s:br_cyan, s:br_cyan)
@@ -442,7 +443,7 @@ highlight! link diffSubname Title
     highlight! link CocSymbolArray Identifier
     highlight! link CocSymbolBoolean Boolean
     highlight! link CocSymbolClass Type
-    highlight! link CocSymbolConstant Constant
+    highlight! link CocSymbolConstant ConstIdentifier
     highlight! link CocSymbolConstructor Type
     highlight! link CocSymbolDefault Text
     highlight! link CocSymbolEnum Type
@@ -629,7 +630,7 @@ highlight! link diffSubname Title
     highlight! link CmpItemAbbrMatchFuzzyDefault Accent
     highlight! link CmpItemKindClassDefault Type
     highlight! link CmpItemKindColorDefault StatementBuiltin
-    highlight! link CmpItemKindConstantDefault Constant
+    highlight! link CmpItemKindConstantDefault ConstIdentifier
     highlight! link CmpItemKindConstructorDefault Type
     highlight! link CmpItemKindDefault Text
     highlight! link CmpItemKindEnumDefault Type
@@ -637,7 +638,7 @@ highlight! link diffSubname Title
     highlight! link CmpItemKindEventDefault FunctionBuiltin
     highlight! link CmpItemKindFieldDefault Property
     highlight! link CmpItemKindFileDefault Text
-    highlight! link CmpItemKindFolderDefault Text
+    highlight! link CmpItemKindFolderDefault Directory
     highlight! link CmpItemKindFunctionDefault Function
     highlight! link CmpItemKindInterfaceDefault Type
     highlight! link CmpItemKindKeywordDefault Keyword
@@ -729,9 +730,9 @@ highlight! link diffSubname Title
     highlight! link TSCharacter SpecialChar
     highlight! link TSComment Comment
     highlight! link TSConditional Conditional
-    highlight! link TSConstant Constant
-    highlight! link TSConstBuiltin Constant
-    highlight! link TSConstMacro Constant
+    highlight! link TSConstant ConstIdentifier
+    highlight! link TSConstBuiltin ConstIdentifier
+    highlight! link TSConstMacro ConstIdentifier
     highlight! link TSConstructor Type
     highlight! link TSDebug Debug
     highlight! link TSDefine PreProc
@@ -936,7 +937,7 @@ highlight! link diffSubname Title
     highlight! link TelescopeResultsDiffUntracked Ignore
     highlight! link TelescopeResultsClass Type
     highlight! link TelescopeResultsComment Comment
-    highlight! link TelescopeResultsConstant Constant
+    highlight! link TelescopeResultsConstant ConstIdentifier
     highlight! link TelescopeResultsField Property
     highlight! link TelescopeResultsFunction Function
     highlight! link TelescopeResultsIdentifier Identifier
@@ -978,10 +979,7 @@ highlight! link diffSubname Title
 " }}}
 " vim-better-whitespace: {{{
 if enfocado#pluginIsActivated('whitespace', 0)
-  call enfocado#highlighter('Whitespace', s:none, s:br_orange, s:bg_1, s:none)
   call enfocado#highlighter('ExtraWhitespace', s:none, s:br_red, s:bg_1, s:none)
-elseif !exists('g:loaded_better_whitespace_plugin')
-  call enfocado#highlighter('Whitespace', s:none, s:br_red, s:bg_1, s:none)
 endif
 " }}}
 " vim-floaterm: {{{
