@@ -160,6 +160,15 @@ else
 endif
 
 " General interfaz.
+if &relativenumber
+  call enfocado#highlighter('LineNrAbove', s:none, s:none, s:bg_2, s:none)
+  call enfocado#highlighter('LineNr', s:none, s:none, s:dim_0, s:none)
+  highlight! link LineNrBelow LineNrAbove
+else
+  call enfocado#highlighter('LineNr', s:none, s:none, s:bg_2, s:none)
+  highlight! link LineNrAbove LineNr
+  highlight! link LineNrBelow LineNr
+endif
 if (has('termguicolors') && &termguicolors) || has('gui_running')
   call enfocado#highlighter('IncSearch', s:none, s:blend_search, s:none, s:none)
   call enfocado#highlighter('Search', s:none, s:blend_search, s:none, s:none)
@@ -186,9 +195,6 @@ call enfocado#highlighter('Folded', s:none, s:none, s:dim_0, s:none)
 call enfocado#highlighter('FoldColumn', s:none, s:none, s:dim_0, s:none)
 call enfocado#highlighter('Ignore', s:none, s:none, s:bg_2, s:none)
 call enfocado#highlighter('lCursor', s:none, s:fg_0, s:bg_1, s:none)
-call enfocado#highlighter('LineNrAbove', s:none, s:none, s:bg_2, s:none)
-call enfocado#highlighter('LineNr', s:none, s:none, s:dim_0, s:none)
-call enfocado#highlighter('LineNrBelow', s:none, s:none, s:bg_2, s:none)
 call enfocado#highlighter('MatchParen', s:none, s:bg_2, s:none, s:none)
 call enfocado#highlighter('ModeMsg', s:none, s:none, s:dim_0, s:none)
 call enfocado#highlighter('MoreMsg', s:none, s:none, s:br_yellow, s:none)

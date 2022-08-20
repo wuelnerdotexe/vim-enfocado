@@ -158,7 +158,7 @@ augroup enfocado_customization
 augroup END
 ```
 
-Note: The usage codes must be written in your `.vimrc` or `init.vim`.
+NOTE: The usage codes must be written in your `.vimrc` or `init.vim`.
 
 ### Syntax
 
@@ -186,7 +186,7 @@ Master your theme, understand and recognize syntax, improve your muscle memory.
 | Bright orange   | `#fa9153` |     `#ba3700`     | ~~`NONE`~~  |  ~~Not used in the syntax~~  |  ~~Not used in the syntax~~  |
 | Bright violet   | `#b891f5` |     `#6b40c3`     |   `Bold`    |        Built-in types        |            Types             |
 
-DISCLAIMER: **Enfocado** doesn't customize individual tokens for each language, it just defines the default base, if your syntax doesn't look as described here, it's not our responsibility, it's the responsibility of those who assign wrong tokens to some language's syntax, and we don't lose here our time in correcting those problems constantly.
+DISCLAIMER: **Enfocado** doesn't customize individual tokens for each language, it just defines the default base, if your syntax doesn't look as described here, it's not our responsibility, it's the responsibility of those who assign wrong tokens to some language's syntax, and we don't correct those problems constantly.
 
 ## Recommendations
 
