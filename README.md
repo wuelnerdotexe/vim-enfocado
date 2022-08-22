@@ -178,7 +178,7 @@ Master your theme, understand and recognize syntax, improve your muscle memory.
 | Orange          | `#e67f43` |     `#d04a00`     |   `NONE`    |   Exceptions (`trycatch`)    |   Exceptions (`trycatch`)    |
 | Violet          | `#a580e2` |     `#7f51d6`     |   `NONE`    |      Built-in keywords       |           Keywords           |
 | Bright red      | `#ff5e56` |     `#bf0000`     |   `Bold`    |            Errors            |            Errors            |
-| Bright yellow   | `#83c746` |     `#008400`     |  `Italic`   |       Constant methods       |       Constant methods       |
+| Bright yellow   | `#83c746` |     `#008400`     | ~~`NONE`~~  |  ~~Not used in the syntax~~  |  ~~Not used in the syntax~~  |
 | Bright green    | `#efc541` |     `#af8500`     |  `Italic`   |           Methods            |       Built-in methods       |
 | Bright blue     | `#4f9cfe` |     `#0054cf`     |   `Bold`    |            Types             |        Built-in types        |
 | Bright magenta  | `#ff81ca` |     `#c7008b`     |  `Italic`   |       Built-in methods       |           Methods            |
