@@ -672,24 +672,6 @@ highlight! link diffSubname Title
     highlight! link LspSignatureActiveParameter Accent
   endif
 " }}}
-" nvim-lsp-installer: {{{
-  if enfocado#pluginIsActivated('lsp-installer', 1)
-    highlight! link LspInstallerHeader Title
-    highlight! link LspInstallerServerExpanded Text
-    highlight! link LspInstallerHeading Title
-    highlight! link LspInstallerGreen Success
-    highlight! link LspInstallerVaderSaber Text
-    highlight! link LspInstallerOrange DiagnosticWarn
-    highlight! link LspInstallerMuted Ignore
-    highlight! link LspInstallerLabel Text
-    highlight! link LspInstallerError DiagnosticError
-    highlight! link LspInstallerHighlighted Search
-    highlight! link LspInstallerLink Link
-    highlight! link LspInstallerVersionCheckLoader Accent
-    highlight! link LspInstallerHeaderHelp DiagnosticInfo
-    highlight! link LspInstallerVersionCheckLoaderDone Success
-  endif
-" }}}
 " nvim-notify: {{{
   if enfocado#pluginIsActivated('notify', 1)
     call enfocado#highlighter('NotifyERRORBorder', s:none, s:none, s:br_red, s:none)

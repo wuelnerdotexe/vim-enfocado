@@ -120,7 +120,6 @@ let g:enfocado_plugins = [
   \ 'ctrlp',
   \ 'gitgutter',
   \ 'lsp',
-  \ 'lsp-installer',
   \ 'matchup',
   \ 'nerdtree',
   \ 'netrw',
@@ -240,7 +239,6 @@ The following plugins are supported:
 - [nerdtree](https://github.com/preservim/nerdtree)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer/)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)

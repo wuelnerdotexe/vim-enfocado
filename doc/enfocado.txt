@@ -51,7 +51,6 @@ supported plugins so far:
 `  \ 'fzf',`
 `  \ 'gitgutter',`
 `  \ 'lsp',`
-`  \ 'lsp-installer',`
 `  \ 'matchup',`
 `  \ 'nerdtree',`
 `  \ 'netrw',`
