@@ -132,7 +132,6 @@ if g:enfocado_style == 'neon'
   call enfocado#highlighter('Identifier', s:none, s:none, s:magenta, s:none)
   call enfocado#highlighter('IdentifierBuiltin', s:none, s:none, s:green, s:none)
   call enfocado#highlighter('PreProc', s:none, s:none, s:violet, s:none)
-  call enfocado#highlighter('Property', s:none, s:none, s:br_violet, s:none)
   call enfocado#highlighter('Special', s:none, s:none, s:br_blue, s:none)
   call enfocado#highlighter('Statement', s:none, s:none, s:violet, s:none)
   call enfocado#highlighter('StatementBuiltin', s:none, s:none, s:blue, s:none)
@@ -151,7 +150,6 @@ else
   call enfocado#highlighter('Identifier', s:none, s:none, s:green, s:none)
   call enfocado#highlighter('IdentifierBuiltin', s:none, s:none, s:magenta, s:none)
   call enfocado#highlighter('PreProc', s:none, s:none, s:blue, s:none)
-  call enfocado#highlighter('Property', s:none, s:none, s:br_blue, s:none)
   call enfocado#highlighter('Special', s:none, s:none, s:br_violet, s:none)
   call enfocado#highlighter('Statement', s:none, s:none, s:blue, s:none)
   call enfocado#highlighter('StatementBuiltin', s:none, s:none, s:violet, s:none)
@@ -161,9 +159,9 @@ endif
 
 " General interfaz.
 if &relativenumber
-  call enfocado#highlighter('LineNrAbove', s:none, s:none, s:bg_2, s:none)
   call enfocado#highlighter('LineNr', s:none, s:none, s:dim_0, s:none)
-  highlight! link LineNrBelow LineNrAbove
+  call enfocado#highlighter('LineNrAbove', s:none, s:none, s:bg_2, s:none)
+  call enfocado#highlighter('LineNrBelow', s:none, s:none, s:bg_2, s:none)
 else
   call enfocado#highlighter('LineNr', s:none, s:none, s:bg_2, s:none)
   highlight! link LineNrAbove LineNr
@@ -255,7 +253,6 @@ endif
 
 " General syntax.
 call enfocado#highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
-call enfocado#highlighter('Constant', s:none, s:none, s:fg_0, s:none)
 call enfocado#highlighter('ConstIdentifier', s:none, s:none, s:yellow, s:none)
 call enfocado#highlighter('Error', s:bold, s:none, s:br_red, s:none)
 call enfocado#highlighter('Exception', s:none, s:none, s:orange, s:none)
@@ -264,8 +261,9 @@ call enfocado#highlighter('String', s:none, s:none, s:cyan, s:br_cyan)
 call enfocado#highlighter('Text', s:none, s:none, s:fg_0, s:none)
 call enfocado#highlighter('Todo', s:bold, s:br_cyan, s:bg_1, s:none)
 highlight! link Boolean StatementBuiltin
-highlight! link Character StatementBuiltin
+highlight! link Character String
 highlight! link Conditional Statement
+highlight! link Constant Text
 highlight! link Debug Success
 highlight! link Define PreProc
 highlight! link Delimiter Text
@@ -275,9 +273,10 @@ highlight! link Keyword Statement
 highlight! link Label Statement
 highlight! link Macro Define
 highlight! link Method Function
-highlight! link Number Text
+highlight! link Number Constant
 highlight! link Operator Statement
 highlight! link PreCondit PreProc
+highlight! link Property Type
 highlight! link Repeat Statement
 highlight! link SpecialChar StatementBuiltin
 highlight! link SpecialComment StatementBuiltin
@@ -733,7 +732,7 @@ highlight! link diffSubname Title
     highlight! link TSAnnotation SpecialComment
     highlight! link TSAttribute SpecialComment
     highlight! link TSBoolean Boolean
-    highlight! link TSCharacter SpecialChar
+    highlight! link TSCharacter Character
     highlight! link TSComment Comment
     highlight! link TSConditional Conditional
     highlight! link TSConstant ConstIdentifier
