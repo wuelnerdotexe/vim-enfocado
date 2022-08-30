@@ -119,6 +119,7 @@ let g:enfocado_plugins = [
   \ 'cmp',
   \ 'ctrlp',
   \ 'gitgutter',
+  \ 'indent-blankline',
   \ 'lsp',
   \ 'matchup',
   \ 'nerdtree',
@@ -234,6 +235,7 @@ The following plugins are supported:
 - [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
 - [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
 - [nerdtree](https://github.com/preservim/nerdtree)
