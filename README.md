@@ -50,16 +50,8 @@ What you **won't have** if you **don't install Enfocado**:
 
 Install via your preferred package manager. Example using [vim-plug](https://github.com/junegunn/vim-plug):
 
-Stable Version:
-
 ```vim
 Plug 'wuelnerdotexe/vim-enfocado'
-```
-
-Development version:
-
-```vim
-Plug 'wuelnerdotexe/vim-enfocado', { 'branch': 'development' }
 ```
 
 ## Usage
