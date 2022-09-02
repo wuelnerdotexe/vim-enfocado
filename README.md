@@ -110,11 +110,12 @@ If you want to reduce the loading time of **Enfocado**, you can specify the plug
 let g:enfocado_plugins = [
   \ 'cmp',
   \ 'ctrlp',
+  \ 'fern',
   \ 'gitgutter',
+  \ 'glyph-palette',
   \ 'indent-blankline',
   \ 'lsp',
   \ 'matchup',
-  \ 'nerdtree',
   \ 'netrw',
   \ 'plug',
   \ 'startify',
@@ -226,7 +227,9 @@ The following plugins are supported:
 - [copilot.vim](https://github.com/github/copilot.vim)
 - [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
+- [fern.vim](https://github.com/lambdalisue/fern.vim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
 - [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
 - [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)

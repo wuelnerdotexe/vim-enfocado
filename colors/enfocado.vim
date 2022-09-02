@@ -565,6 +565,29 @@ highlight! link diffSubname Title
     highlight! link DashboardFooter Dimmed
   endif
 " }}}
+" fern.vim: {{{
+  if enfocado#pluginIsActivated('fern', 0)
+    highlight! link FernSpinner DiagnosticInfo
+    highlight! link FernMarkedLine Accent
+    highlight! link FernMarkedText Accent
+    highlight! link FernRootSymbol NonText
+    highlight! link FernRootText Dimmed
+    highlight! link FernLeafSymbol FernRootSymbol
+    highlight! link FernLeafText Text
+    highlight! link FernBranchSymbol FernRootSymbol
+    highlight! link FernBranchText Directory
+    highlight! link FernWindowSelectIndicator Accent
+    highlight! link FernWindowSelectStatusLine StatusLine
+
+    " fern-git-status.vim plugin.
+    highlight! link FernGitStatusBracket NonText
+    highlight! link FernGitStatusIndex Success
+    highlight! link FernGitStatusWorktree Text
+    highlight! link FernGitStatusUnmerged DiffChange
+    highlight! link FernGitStatusUntracked Ignore
+    highlight! link FernGitStatusIgnored Ignore
+  endif
+" }}}
 " fzf.vim: {{{
   if enfocado#pluginIsActivated('fzf', 0)
     " fzf apply enfocado groups.
@@ -590,6 +613,27 @@ highlight! link diffSubname Title
     call enfocado#highlighter('Fzf1', s:bold, s:bg_2, s:dim_0, s:none)
     call enfocado#highlighter('Fzf2', s:nocombine, s:bg_1, s:dim_0, s:none)
     call enfocado#highlighter('Fzf3', s:nocombine, s:bg_0, s:dim_0, s:none)
+  endif
+" }}}
+" glyph-palette.vim: {{{
+  if enfocado#pluginIsActivated('glyph-palette', 0)
+    call enfocado#highlighter('GlyphPalette0', s:nocombine, s:none, s:bg_1, s:none)
+    call enfocado#highlighter('GlyphPalette1', s:nocombine, s:none, s:red, s:none)
+    call enfocado#highlighter('GlyphPalette2', s:nocombine, s:none, s:green, s:none)
+    call enfocado#highlighter('GlyphPalette3', s:nocombine, s:none, s:yellow, s:none)
+    call enfocado#highlighter('GlyphPalette4', s:nocombine, s:none, s:blue, s:none)
+    call enfocado#highlighter('GlyphPalette5', s:nocombine, s:none, s:magenta, s:none)
+    call enfocado#highlighter('GlyphPalette6', s:nocombine, s:none, s:cyan, s:none)
+    call enfocado#highlighter('GlyphPalette7', s:nocombine, s:none, s:dim_0, s:none)
+    call enfocado#highlighter('GlyphPalette8', s:nocombine, s:none, s:bg_2, s:none)
+    call enfocado#highlighter('GlyphPalette9', s:nocombine, s:none, s:br_red, s:none)
+    call enfocado#highlighter('GlyphPalette10', s:nocombine, s:none, s:br_green, s:none)
+    call enfocado#highlighter('GlyphPalette11', s:nocombine, s:none, s:br_yellow, s:none)
+    call enfocado#highlighter('GlyphPalette12', s:nocombine, s:none, s:br_blue, s:none)
+    call enfocado#highlighter('GlyphPalette13', s:nocombine, s:none, s:br_magenta, s:none)
+    call enfocado#highlighter('GlyphPalette14', s:nocombine, s:none, s:br_cyan, s:none)
+    call enfocado#highlighter('GlyphPalette15', s:nocombine, s:none, s:fg_1, s:none)
+    highlight! link GlyphPaletteDirectory Directory
   endif
 " }}}
 " indent-blankline: {{{

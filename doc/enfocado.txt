@@ -47,9 +47,11 @@ supported plugins so far:
 `  \ 'copilot',`
 `  \ 'ctrlp',`
 `  \ 'dashboard',`
+`  \ 'fern',`
 `  \ 'floaterm',`
 `  \ 'fzf',`
 `  \ 'gitgutter',`
+`  \ 'glyph-palette',`
 `  \ 'indent-blankline',`
 `  \ 'lsp',`
 `  \ 'matchup',`
