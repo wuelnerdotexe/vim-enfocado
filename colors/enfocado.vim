@@ -1061,6 +1061,14 @@ endif
     highlight! link GitGutterChangeDeleteLineNr GitGutterChangeDelete
   endif
 " }}}
+" vim-illuminate: {{{
+  if enfocado#pluginIsActivated('illuminate', 0)
+    highlight! link IlluminatedWord Visual
+    highlight! link IlluminatedWordText IlluminatedWord
+    highlight! link IlluminatedWordRead IlluminatedWord
+    highlight! link IlluminatedWordWrite IlluminatedWord
+  endif
+" }}}
 " vim-matchup: {{{
   if enfocado#pluginIsActivated('matchup', 0)
     highlight! link MatchBackground Visual

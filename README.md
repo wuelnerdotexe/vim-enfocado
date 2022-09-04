@@ -109,10 +109,11 @@ If you want to reduce the loading time of **Enfocado**, you can specify the plug
 " `:h enfocado-colorscheme` at the vim commandline.
 let g:enfocado_plugins = [
   \ 'cmp',
-  \ 'ctrlp',
   \ 'fern',
+  \ 'fzf',
   \ 'gitgutter',
   \ 'glyph-palette',
+  \ 'illuminate',
   \ 'indent-blankline',
   \ 'lsp',
   \ 'matchup',
@@ -248,6 +249,7 @@ The following plugins are supported:
 - [vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
 - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+- [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 - [vim-matchup](https://github.com/andymass/vim-matchup)
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [vim-signify](https://github.com/mhinz/vim-signify)
