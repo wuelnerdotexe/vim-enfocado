@@ -602,9 +602,9 @@ highlight! link diffSubname Title
             \ 'hl': ['fg', 'Match'],
             \ 'hl+': ['fg', 'Match'],
             \ 'info': ['fg', 'DiagnosticInfo'],
-            \ 'marker': ['fg', 'NormalFloat'],
-            \ 'pointer': ['fg', 'NormalFloat'],
-            \ 'prompt': ['fg', 'NonText'],
+            \ 'marker': ['fg', 'Dimmed'],
+            \ 'pointer': ['fg', 'Dimmed'],
+            \ 'prompt': ['fg', 'Dimmed'],
             \ 'spinner': ['fg', 'DiagnosticInfo']
           \ }
     endif
@@ -641,25 +641,8 @@ highlight! link diffSubname Title
     call enfocado#highlighter('IndentBlanklineChar', s:none, s:none, s:bg_2, s:none)
     call enfocado#highlighter('IndentBlanklineSpaceChar', s:none, s:none, s:bg_2, s:none)
     call enfocado#highlighter('IndentBlanklineSpaceCharBlankline', s:none, s:none, s:bg_2, s:none)
-    if g:enfocado_style == 'neon'
-      call enfocado#highlighter('IndentBlanklineContextChar', s:none, s:none, s:br_magenta, s:none)
-      call enfocado#highlighter('IndentBlanklineContextStart', s:underline, s:none, s:none, s:br_magenta)
-      call enfocado#highlighter('IndentBlanklineIndent1', s:none, s:none, s:violet, s:none)
-      call enfocado#highlighter('IndentBlanklineIndent2', s:none, s:none, s:cyan, s:none)
-      call enfocado#highlighter('IndentBlanklineIndent3', s:none, s:none, s:magenta, s:none)
-      call enfocado#highlighter('IndentBlanklineIndent4', s:none, s:none, s:br_violet, s:none)
-      call enfocado#highlighter('IndentBlanklineIndent5', s:none, s:none, s:br_cyan, s:none)
-      call enfocado#highlighter('IndentBlanklineIndent6', s:none, s:none, s:br_magenta, s:none)
-    else
-      call enfocado#highlighter('IndentBlanklineContextChar', s:none, s:none, s:br_green, s:none)
-      call enfocado#highlighter('IndentBlanklineContextStart', s:underline, s:none, s:none, s:br_green)
-      call enfocado#highlighter('IndentBlanklineIndent1', s:none, s:none, s:blue, s:none)
-      call enfocado#highlighter('IndentBlanklineIndent2', s:none, s:none, s:cyan, s:none)
-      call enfocado#highlighter('IndentBlanklineIndent3', s:none, s:none, s:green, s:none)
-      call enfocado#highlighter('IndentBlanklineIndent4', s:none, s:none, s:br_blue, s:none)
-      call enfocado#highlighter('IndentBlanklineIndent5', s:none, s:none, s:br_cyan, s:none)
-      call enfocado#highlighter('IndentBlanklineIndent6', s:none, s:none, s:br_green, s:none)
-    endif
+    call enfocado#highlighter('IndentBlanklineContextChar', s:none, s:none, s:dim_0, s:none)
+    call enfocado#highlighter('IndentBlanklineContextStart', s:underline, s:none, s:none, s:dim_0)
   endif
 " }}}
 " nerdtree: {{{
