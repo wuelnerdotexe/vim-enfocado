@@ -581,7 +581,7 @@ highlight! link diffSubname Title
 
     " fern-git-status.vim plugin.
     highlight! link FernGitStatusBracket NonText
-    highlight! link FernGitStatusIndex Success
+    highlight! link FernGitStatusIndex Accent
     highlight! link FernGitStatusWorktree Text
     highlight! link FernGitStatusUnmerged DiffChange
     highlight! link FernGitStatusUntracked Ignore
@@ -1006,18 +1006,21 @@ highlight! link diffSubname Title
     call enfocado#highlighter('TodoBgHACK', s:bold, s:br_yellow, s:bg_1, s:none)
     call enfocado#highlighter('TodoBgNOTE', s:bold, s:br_green, s:bg_1, s:none)
     call enfocado#highlighter('TodoBgPERF', s:bold, s:br_magenta, s:bg_1, s:none)
+    call enfocado#highlighter('TodoBgTEST', s:bold, s:br_orange, s:bg_1, s:none)
     call enfocado#highlighter('TodoBgTODO', s:bold, s:br_cyan, s:bg_1, s:none)
     call enfocado#highlighter('TodoBgWARN', s:bold, s:br_orange, s:bg_1, s:none)
     call enfocado#highlighter('TodoFgFIX', s:nocombine, s:none, s:br_red, s:none)
     call enfocado#highlighter('TodoFgHACK', s:nocombine, s:none, s:br_yellow, s:none)
     call enfocado#highlighter('TodoFgNOTE', s:nocombine, s:none, s:br_green, s:none)
     call enfocado#highlighter('TodoFgPERF', s:nocombine, s:none, s:br_magenta, s:none)
+    call enfocado#highlighter('TodoFgTEST', s:nocombine, s:none, s:br_orange, s:none)
     call enfocado#highlighter('TodoFgTODO', s:nocombine, s:none, s:br_cyan, s:none)
     call enfocado#highlighter('TodoFgWARN', s:nocombine, s:none, s:br_orange, s:none)
     call enfocado#highlighter('TodoSignFIX', s:nocombine, s:none, s:br_red, s:none)
     call enfocado#highlighter('TodoSignHACK', s:nocombine, s:none, s:br_yellow, s:none)
     call enfocado#highlighter('TodoSignNOTE', s:nocombine, s:none, s:br_green, s:none)
     call enfocado#highlighter('TodoSignPERF', s:nocombine, s:none, s:br_magenta, s:none)
+    call enfocado#highlighter('TodoSignTEST', s:nocombine, s:none, s:br_orange, s:none)
     call enfocado#highlighter('TodoSignTODO', s:nocombine, s:none, s:br_cyan, s:none)
     call enfocado#highlighter('TodoSignWARN', s:nocombine, s:none, s:br_orange, s:none)
   endif
