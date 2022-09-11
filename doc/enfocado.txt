@@ -42,6 +42,7 @@ supported plugins so far:
 
 `let g:enfocado_plugins = [`
 `  \ 'ale',`
+`  \ 'bufferline',`
 `  \ 'cmp',`
 `  \ 'coc',`
 `  \ 'copilot',`

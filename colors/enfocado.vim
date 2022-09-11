@@ -387,6 +387,96 @@ highlight! link diffSubname Title
     highlight! link ALESignColumnWithErrors ALEErrorSign
   endif
 " }}}
+" bufferline: {{{
+  if enfocado#pluginIsActivated('bufferline', 1)
+    " Buffers.
+    call enfocado#highlighter('BufferLineFill', s:none, s:base, s:bg_2, s:none)
+    highlight! link BufferLineBackground BufferLineFill
+    highlight! link BufferLineBuffer BufferLineBackground
+    highlight! link BufferLineNumbers BufferLineBuffer
+    highlight! link BufferLineCloseButton BufferLineBuffer
+    highlight! link BufferLineModified BufferLineCloseButton
+    highlight! link BufferLineDiagnostic BufferLineBuffer
+
+    " Selecteds.
+    if g:enfocado_style == 'neon'
+      call enfocado#highlighter('BufferLineBufferSelected', s:none, s:none, s:br_magenta, s:none)
+    else
+      call enfocado#highlighter('BufferLineBufferSelected', s:none, s:none, s:br_green, s:none)
+    endif
+    highlight! link BufferLineNumbersSelected BufferLineBufferSelected
+    highlight! link BufferLineCloseButtonSelected BufferLineBufferSelected
+    highlight! link BufferLineModifiedSelected BufferLineCloseButtonSelected
+    highlight! link BufferLineDiagnosticSelected BufferLineBufferSelected
+    highlight! link BufferLineIndicatorSelected BufferLineBufferSelected
+
+    " Visibles.
+    call enfocado#highlighter('BufferLineBufferVisible', s:none, s:none, s:dim_0, s:none)
+    highlight! link BufferLineNumbersVisible BufferLineBufferVisible
+    highlight! link BufferLineCloseButtonVisible BufferLineBufferVisible
+    highlight! link BufferLineModifiedVisible BufferLineCloseButtonVisible
+    highlight! link BufferLineDiagnosticVisible BufferLineBufferVisible
+    highlight! link BufferLineIndicatorVisible BufferLineBufferVisible
+
+    " Errors.
+    call enfocado#highlighter('BufferLineErrorDiagnosticSelected', s:bold, s:bg_0, s:br_red, s:none)
+    highlight! link BufferLineErrorSelected BufferLineBufferSelected
+    highlight! link BufferLineErrorDiagnostic BufferLineBuffer
+    highlight! link BufferLineError BufferLineBuffer
+    highlight! link BufferLineErrorDiagnosticVisible BufferLineBufferVisible
+    highlight! link BufferLineErrorVisible BufferLineBufferVisible
+
+    " Warnings.
+    call enfocado#highlighter('BufferLineWarningDiagnosticSelected', s:bold, s:bg_0, s:br_orange, s:none)
+    highlight! link BufferLineWarningSelected BufferLineBufferSelected
+    highlight! link BufferLineWarningDiagnostic BufferLineBuffer
+    highlight! link BufferLineWarning BufferLineBuffer
+    highlight! link BufferLineWarningDiagnosticVisible BufferLineBufferVisible
+    highlight! link BufferLineWarningVisible BufferLineBufferVisible
+
+    " Infos.
+    call enfocado#highlighter('BufferLineInfoDiagnosticSelected', s:bold, s:bg_0, s:br_yellow, s:none)
+    highlight! link BufferLineInfoSelected BufferLineBufferSelected
+    highlight! link BufferLineInfoDiagnostic BufferLineBuffer
+    highlight! link BufferLineInfo BufferLineBuffer
+    highlight! link BufferLineInfoDiagnosticVisible BufferLineBufferVisible
+    highlight! link BufferLineInfoVisible BufferLineBufferVisible
+
+    " Hints.
+    call enfocado#highlighter('BufferLineHintDiagnosticSelected', s:bold, s:bg_0, s:br_yellow, s:none)
+    highlight! link BufferLineHintSelected BufferLineBufferSelected
+    highlight! link BufferLineHintDiagnostic BufferLineBuffer
+    highlight! link BufferLineHint BufferLineBuffer
+    highlight! link BufferLineHintDiagnosticVisible BufferLineBufferVisible
+    highlight! link BufferLineHintVisible BufferLineBufferVisible
+
+    " Duplicateds.
+    call enfocado#highlighter('BufferLineDuplicate', s:none, s:base, s:bg_1, s:none)
+    call enfocado#highlighter('BufferLineDuplicateVisible', s:none, s:bg_0, s:bg_2, s:none)
+    highlight! link BufferLineDuplicateSelected BufferLineBufferVisible
+
+    " Groups.
+    call enfocado#highlighter('BufferLineGroupLabel', s:none, s:none, s:bg_2, s:none)
+    highlight! link BufferLineGroupSeparator BufferLineGroupLabel
+
+    " Picks.
+    call enfocado#highlighter('BufferLinePick', s:bold, s:base, s:br_yellow, s:none)
+    call enfocado#highlighter('BufferLinePickSelected', s:bold, s:bg_0, s:br_yellow, s:none)
+    highlight! link BufferLinePickVisible BufferLinePickSelected
+
+    " Separators.
+    call enfocado#highlighter('BufferLineSeparator', s:none, s:base, s:base, s:none)
+    call enfocado#highlighter('BufferLineSeparatorSelected', s:none, s:bg_0, s:base, s:none)
+    highlight! link BufferLineSeparatorVisible BufferLineSeparatorSelected
+
+    " Tabs.
+    call enfocado#highlighter('BufferLineTabSeparatorSelected', s:none, s:bg_0, s:bg_0, s:none)
+    highlight! link BufferLineTab BufferLineBuffer
+    highlight! link BufferLineTabSelected BufferLineBufferSelected
+    highlight! link BufferLineTabClose BufferLineTabSelected
+    highlight! link BufferLineTabSeparator BufferLineSeparator
+  endif
+" }}}
 " coc.nvim: {{{
   if enfocado#pluginIsActivated('coc', 0)
     " Coc markdown.
@@ -869,15 +959,15 @@ highlight! link diffSubname Title
     highlight! link NvimTreeEndOfBuffer EndOfBuffer
     highlight! link NvimTreeExecFile FileExec
     highlight! link NvimTreeFileDeleted DiffDelete
-    highlight! link NvimTreeFileDirty DiffDelete
+    highlight! link NvimTreeFileDirty DiffChange
     highlight! link NvimTreeFileMerge DiffChange
     highlight! link NvimTreeFileNew DiffAdd
     highlight! link NvimTreeFileRenamed DiffAdd
     highlight! link NvimTreeFileStaged DiffChange
-    highlight! link NvimTreeFolderIcon Dimmed
-    highlight! link NvimTreeFolderName Dimmed
+    highlight! link NvimTreeFolderIcon Directory
+    highlight! link NvimTreeFolderName Directory
     highlight! link NvimTreeGitDeleted DiffDelete
-    highlight! link NvimTreeGitDirty DiffDelete
+    highlight! link NvimTreeGitDirty DiffChange
     highlight! link NvimTreeGitIgnored Text
     highlight! link NvimTreeGitMerge DiffChange
     highlight! link NvimTreeGitNew DiffAdd
@@ -893,7 +983,7 @@ highlight! link diffSubname Title
     highlight! link NvimTreeOpenedFile Accent
     highlight! link NvimTreeOpenedFolderName Directory
     highlight! link NvimTreePopup NormalFloat
-    highlight! link NvimTreeRootFolder Ignore
+    highlight! link NvimTreeRootFolder Dimmed
     highlight! link NvimTreeSignColumn SignColumn
     highlight! link NvimTreeSpecialFile SpecialComment
     highlight! link NvimTreeStatusLine StatusLine
