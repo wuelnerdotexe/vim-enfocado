@@ -468,6 +468,7 @@ highlight! link diffSubname Title
     call enfocado#highlighter('BufferLineSeparator', s:none, s:base, s:base, s:none)
     call enfocado#highlighter('BufferLineSeparatorSelected', s:none, s:bg_0, s:base, s:none)
     highlight! link BufferLineSeparatorVisible BufferLineSeparatorSelected
+    highlight! link BufferLineOffsetSeparator BufferLineIndicatorSelected
 
     " Tabs.
     call enfocado#highlighter('BufferLineTabSeparatorSelected', s:none, s:bg_0, s:bg_0, s:none)
