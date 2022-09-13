@@ -734,6 +734,23 @@ highlight! link diffSubname Title
     call enfocado#highlighter('IndentBlanklineSpaceCharBlankline', s:none, s:none, s:bg_2, s:none)
     call enfocado#highlighter('IndentBlanklineContextChar', s:none, s:none, s:dim_0, s:none)
     call enfocado#highlighter('IndentBlanklineContextStart', s:underline, s:none, s:none, s:dim_0)
+
+    " Enfocado groups.
+    if g:enfocado_style == 'neon'
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent1', s:nocombine, s:none, s:violet, s:none)
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent2', s:nocombine, s:none, s:cyan, s:none)
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent3', s:nocombine, s:none, s:magenta, s:none)
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent4', s:nocombine, s:none, s:br_violet, s:none)
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent5', s:nocombine, s:none, s:br_cyan, s:none)
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent6', s:nocombine, s:none, s:br_magenta, s:none)
+    else
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent1', s:nocombine, s:none, s:blue, s:none)
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent2', s:nocombine, s:none, s:cyan, s:none)
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent3', s:nocombine, s:none, s:green, s:none)
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent4', s:nocombine, s:none, s:br_blue, s:none)
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent5', s:nocombine, s:none, s:br_cyan, s:none)
+      call enfocado#highlighter('EnfocadoIndentBlanklineIndent6', s:nocombine, s:none, s:br_green, s:none)
+    endif
   endif
 " }}}
 " nerdtree: {{{

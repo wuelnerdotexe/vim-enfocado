@@ -4,11 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [5.16.0] - 2022-09-11
+## [5.16.0] - 2022-09-12
 
 ### Added
 
 - Added support for the [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) plugin.
+- Added **Enfocado** groups for use with the indent-blankline plugin.
 
 ### Fixed
 
