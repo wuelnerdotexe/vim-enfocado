@@ -4,17 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [5.16.0] - 2022-09-12
+## [5.16.0] - 2022-09-13
 
 ### Added
 
 - Added support for the [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) plugin.
 - Added **Enfocado** groups for use with the indent-blankline plugin.
 
+### Changed
+
+- Optimized to get the **Enfocado** styles, which now allows accent colors to be used before and after loading the colorscheme in other plugins with `let colors = enfocado#getColorScheme` or in Lua with `local colors = vim.fn['enfocado#getColorScheme']()` in the style of an API.
+
 ### Fixed
 
 - Fix Git for Fern colors and add a new one for todo-comments.
 - Fixed some NvimTree colors.
+- Fixed code indentation.
 
 ## [5.15.0] - 2022-09-04
 

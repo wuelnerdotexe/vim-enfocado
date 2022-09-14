@@ -63,3 +63,4 @@ let s:p.tabline.tabsel = [[s:dim_0, s:bg_2]]
 
 " Lightline name theme.
 let g:lightline#colorscheme#enfocado#palette = lightline#colorscheme#flatten(s:p)
+

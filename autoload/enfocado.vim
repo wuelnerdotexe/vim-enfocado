@@ -14,7 +14,7 @@ function! enfocado#getColorScheme()
   " Colors are initialized.
   let l:colors = {}
 
-" Dark or light scheme is initialized.
+  " Dark or light scheme is initialized.
   if &background ==# 'dark'
     " Selenized black color scheme.
     let l:colors.bg_0 = ['#181818', 234]
@@ -54,9 +54,6 @@ function! enfocado#getColorScheme()
     let l:colors.blend_modified = ['#2c281b', 'NONE']
     let l:colors.blend_removed = ['#2e1e1d', 'NONE']
     let l:colors.blend_search = ['#62552e', 'NONE']
-
-    " Colors return.
-    return l:colors
   else
     " Selenized white color scheme.
     let l:colors.bg_0 = ['#ffffff', 231]
@@ -96,23 +93,49 @@ function! enfocado#getColorScheme()
     let l:colors.blend_modified = ['#f9f4e5', 'NONE']
     let l:colors.blend_removed = ['#fbe5e6', 'NONE']
     let l:colors.blend_search = ['#d9cca4', 'NONE']
-
-    " Colors return.
-    return l:colors
   endif
+
+  " Get Enfocado style.
+  let g:enfocado_style = get(g:, 'enfocado_style', 'nature')
+
+  " Style colors.
+  if g:enfocado_style ==# 'nature'
+    " Nature accent colors.
+    let l:colors.accent_1 = l:colors.green
+    let l:colors.accent_2 = l:colors.blue
+    let l:colors.br_accent_1 = l:colors.br_green
+    let l:colors.br_accent_2 = l:colors.br_blue
+
+    " Nature reverse colors (neon colors).
+    let l:colors.reverse_1 = l:colors.magenta
+    let l:colors.reverse_2 = l:colors.violet
+    let l:colors.br_reverse_1 = l:colors.br_magenta
+    let l:colors.br_reverse_2 = l:colors.br_violet
+  else
+    " Neon accent colors.
+    let l:colors.accent_1 = l:colors.magenta
+    let l:colors.accent_2 = l:colors.violet
+    let l:colors.br_accent_1 = l:colors.br_magenta
+    let l:colors.br_accent_2 = l:colors.br_violet
+
+    " Neon reverse colors (nature colors).
+    let l:colors.reverse_1 = l:colors.green
+    let l:colors.reverse_2 = l:colors.blue
+    let l:colors.br_reverse_1 = l:colors.br_green
+    let l:colors.br_reverse_2 = l:colors.br_blue
+  endif
+
+  " Colors return.
+  return l:colors
 endfunction
 
 " A function is created to highlight the groups.
 function enfocado#highlighter(group, attr, bg, fg, sp)
-  execute 'highlight! '.a:group.
-        \ ' term='.a:attr[1].
-        \ ' cterm='.a:attr[1].
-        \ ' ctermfg='.a:fg[1].
-        \ ' ctermbg='.a:bg[1].
-        \ ' gui='.a:attr[0].
-        \ ' guifg='.a:fg[0].
-        \ ' guibg='.a:bg[0].
-        \ ' guisp='.a:sp[0]
+  execute 'highlight! '.a:group . ' ' .
+        \ 'cterm='.a:attr[1] . ' ' . 'gui='.a:attr[0] . ' ' .
+        \ 'ctermbg='.a:bg[1] . ' ' . 'guibg='.a:bg[0] . ' ' .
+        \ 'ctermfg='.a:fg[1] . ' ' . 'guifg='.a:fg[0] . ' ' .
+        \ 'guisp='.a:sp[0]
 endfunction
 
 " A function is created to check on-demand plugins.
@@ -127,3 +150,4 @@ function enfocado#pluginIsActivated(name, only_nvim)
     endif
   endif
 endfunction
+

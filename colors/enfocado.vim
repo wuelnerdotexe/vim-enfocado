@@ -18,9 +18,8 @@ endif
 " The Enfocado theme is initialized.
 let g:colors_name = 'enfocado'
 
-" Enfocado configuration variables are initialized.
-let g:enfocado_style = get(g:, 'enfocado_style', 'nature')
-let g:enfocado_plugins = get(g:, 'enfocado_plugins', ['all'])
+" Get plugins activated.
+let g:enfocado_plugins = get(g:, 'enfocado_plugins', [ 'all' ])
 
 " Get the color scheme.
 let s:colorScheme = enfocado#getColorScheme()
@@ -62,6 +61,16 @@ let s:blend_added = s:colorScheme.blend_added
 let s:blend_removed = s:colorScheme.blend_removed
 let s:blend_modified = s:colorScheme.blend_modified
 
+let s:accent_1 = s:colorScheme.accent_1
+let s:accent_2 = s:colorScheme.accent_2
+let s:br_accent_1 = s:colorScheme.br_accent_1
+let s:br_accent_2 = s:colorScheme.br_accent_2
+
+let s:reverse_1 = s:colorScheme.reverse_1
+let s:reverse_2 = s:colorScheme.reverse_2
+let s:br_reverse_1 = s:colorScheme.br_reverse_1
+let s:br_reverse_2 = s:colorScheme.br_reverse_2
+
 " Attributes are declared.
 let s:none = ['NONE', 'NONE']
 let s:nocombine = ['nocombine,NONE', 'nocombine,NONE']
@@ -81,23 +90,23 @@ endif
 
 " Vim terminal variables are assigned.
 let g:terminal_ansi_colors = [
-      \ s:bg_1[0],
-      \ s:red[0],
-      \ s:green[0],
-      \ s:yellow[0],
-      \ s:blue[0],
-      \ s:magenta[0],
-      \ s:cyan[0],
-      \ s:dim_0[0],
-      \ s:bg_2[0],
-      \ s:br_red[0],
-      \ s:br_green[0],
-      \ s:br_yellow[0],
-      \ s:br_blue[0],
-      \ s:br_magenta[0],
-      \ s:br_cyan[0],
-      \ s:fg_1[0]
-    \ ]
+      \   s:bg_1[0],
+      \   s:red[0],
+      \   s:green[0],
+      \   s:yellow[0],
+      \   s:blue[0],
+      \   s:magenta[0],
+      \   s:cyan[0],
+      \   s:dim_0[0],
+      \   s:bg_2[0],
+      \   s:br_red[0],
+      \   s:br_green[0],
+      \   s:br_yellow[0],
+      \   s:br_blue[0],
+      \   s:br_magenta[0],
+      \   s:br_cyan[0],
+      \   s:fg_1[0]
+      \ ]
 
 " Neovim terminal variables are assigned.
 let g:terminal_color_0 = s:bg_1[0]
@@ -119,49 +128,6 @@ let g:terminal_color_15 = s:fg_1[0]
 " ------------------------------------------------------------------------------
 " SECTION: Neo(Vim) base groups highlighting.
 " ------------------------------------------------------------------------------
-" Enfocado style diffs.
-if g:enfocado_style == 'neon'
-  " Neon interfaz.
-  call enfocado#highlighter('Accent', s:none, s:none, s:br_magenta, s:none)
-  call enfocado#highlighter('FloatBorder', s:nocombine, s:bg_1, s:br_magenta, s:none)
-  call enfocado#highlighter('Match', s:bold, s:none, s:br_magenta, s:none)
-  call enfocado#highlighter('MatchFuzzy', s:nocombine, s:none, s:magenta, s:none)
-  call enfocado#highlighter('ToolbarButton', s:nocombine, s:magenta, s:bg_1, s:none)
-  call enfocado#highlighter('WildMenu', s:bold, s:bg_2, s:br_magenta, s:none)
-
-  " Neon syntax.
-  call enfocado#highlighter('Function', s:italic, s:none, s:br_magenta, s:none)
-  call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_green, s:none)
-  call enfocado#highlighter('Identifier', s:nocombine, s:none, s:magenta, s:none)
-  call enfocado#highlighter('IdentifierBuiltin', s:nocombine, s:none, s:green, s:none)
-  call enfocado#highlighter('PreProc', s:nocombine, s:none, s:violet, s:none)
-  call enfocado#highlighter('Special', s:nocombine, s:none, s:br_blue, s:none)
-  call enfocado#highlighter('Statement', s:nocombine, s:none, s:violet, s:none)
-  call enfocado#highlighter('StatementBuiltin', s:nocombine, s:none, s:blue, s:none)
-  call enfocado#highlighter('Type', s:bold, s:none, s:br_violet, s:none)
-  call enfocado#highlighter('TypeBuiltin', s:bold, s:none, s:br_blue, s:none)
-else
-  " Nature interfaz.
-  call enfocado#highlighter('Accent', s:none, s:none, s:br_green, s:none)
-  call enfocado#highlighter('FloatBorder', s:nocombine, s:bg_1, s:br_green, s:none)
-  call enfocado#highlighter('Match', s:bold, s:none, s:br_green, s:none)
-  call enfocado#highlighter('MatchFuzzy', s:nocombine, s:none, s:green, s:none)
-  call enfocado#highlighter('ToolbarButton', s:nocombine, s:green, s:bg_1, s:none)
-  call enfocado#highlighter('WildMenu', s:bold, s:bg_2, s:br_green, s:none)
-
-  " Nature syntax.
-  call enfocado#highlighter('Function', s:italic, s:none, s:br_green, s:none)
-  call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_magenta, s:none)
-  call enfocado#highlighter('Identifier', s:nocombine, s:none, s:green, s:none)
-  call enfocado#highlighter('IdentifierBuiltin', s:nocombine, s:none, s:magenta, s:none)
-  call enfocado#highlighter('PreProc', s:nocombine, s:none, s:blue, s:none)
-  call enfocado#highlighter('Special', s:nocombine, s:none, s:br_violet, s:none)
-  call enfocado#highlighter('Statement', s:nocombine, s:none, s:blue, s:none)
-  call enfocado#highlighter('StatementBuiltin', s:nocombine, s:none, s:violet, s:none)
-  call enfocado#highlighter('Type', s:bold, s:none, s:br_blue, s:none)
-  call enfocado#highlighter('TypeBuiltin', s:bold, s:none, s:br_violet, s:none)
-endif
-
 " General interfaz.
 if &relativenumber
   call enfocado#highlighter('LineNr', s:none, s:none, s:dim_0, s:none)
@@ -179,6 +145,14 @@ else
   call enfocado#highlighter('IncSearch', s:none, s:br_yellow, s:bg_1, s:none)
   call enfocado#highlighter('Search', s:none, s:br_yellow, s:bg_1, s:none)
 endif
+call enfocado#highlighter('Accent', s:none, s:none, s:br_accent_1, s:none)
+call enfocado#highlighter('FloatBorder', s:nocombine, s:bg_1, s:br_accent_1, s:none)
+call enfocado#highlighter('Match', s:bold, s:none, s:br_accent_1, s:none)
+call enfocado#highlighter('MatchFuzzy', s:nocombine, s:none, s:accent_1, s:none)
+call enfocado#highlighter('ToolbarButton', s:nocombine, s:accent_1, s:bg_1, s:none)
+call enfocado#highlighter('WildMenu', s:bold, s:bg_2, s:br_accent_1, s:none)
+
+
 call enfocado#highlighter('ColorColumn', s:none, s:bg_1, s:none, s:none)
 call enfocado#highlighter('Conceal', s:nocombine, s:none, s:bg_2, s:none)
 call enfocado#highlighter('Cursor', s:none, s:fg_0, s:bg_1, s:none)
@@ -257,6 +231,17 @@ if has('nvim')
 endif
 
 " General syntax.
+call enfocado#highlighter('Function', s:italic, s:none, s:br_accent_1, s:none)
+call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_reverse_1, s:none)
+call enfocado#highlighter('Identifier', s:nocombine, s:none, s:accent_1, s:none)
+call enfocado#highlighter('IdentifierBuiltin', s:nocombine, s:none, s:reverse_1, s:none)
+call enfocado#highlighter('PreProc', s:nocombine, s:none, s:accent_2, s:none)
+call enfocado#highlighter('Special', s:nocombine, s:none, s:br_reverse_2, s:none)
+call enfocado#highlighter('Statement', s:nocombine, s:none, s:accent_2, s:none)
+call enfocado#highlighter('StatementBuiltin', s:nocombine, s:none, s:reverse_2, s:none)
+call enfocado#highlighter('Type', s:bold, s:none, s:br_accent_2, s:none)
+call enfocado#highlighter('TypeBuiltin', s:bold, s:none, s:br_reverse_2, s:none)
+
 call enfocado#highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
 call enfocado#highlighter('ConstIdentifier', s:none, s:none, s:yellow, s:none)
 call enfocado#highlighter('Error', s:none, s:none, s:br_red, s:none)
@@ -359,779 +344,751 @@ highlight! link diffSubname Title
 " SECTION: Plugins for Neo(Vim) groups highlighting.
 " ------------------------------------------------------------------------------
 " ale: {{{
-  if enfocado#pluginIsActivated('ale', 0)
-    if (has('termguicolors') && &termguicolors) || has('gui_running')
-      call enfocado#highlighter('ALEErrorLine', s:none, s:blend_error, s:none, s:none)
-      call enfocado#highlighter('ALEInfoLine', s:none, s:blend_info, s:none, s:none)
-      call enfocado#highlighter('ALEWarningLine', s:none, s:blend_warn, s:none, s:none)
-    else
-      call enfocado#highlighter('ALEErrorLine', s:none, s:br_red, s:fg_0, s:none)
-      call enfocado#highlighter('ALEInfoLine', s:none, s:br_yellow, s:fg_0, s:none)
-      call enfocado#highlighter('ALEWarningLine', s:none, s:br_orange, s:fg_0, s:none)
-    endif
-    highlight! link ALEError DiagnosticUnderlineError
-    highlight! link ALEInfo DiagnosticUnderlineInfo
-    highlight! link ALEWarning DiagnosticUnderlineWarn
-    highlight! link ALEErrorSign DiagnosticSignError
-    highlight! link ALEInfoSign DiagnosticSignInfo
-    highlight! link ALEWarningSign DiagnosticSignWarn
-    highlight! link ALEVirtualTextError DiagnosticVirtualTextError
-    highlight! link ALEVirtualTextInfo DiagnosticVirtualTextInfo
-    highlight! link ALEVirtualTextWarning DiagnosticVirtualTextWarn
-    highlight! link ALEStyleError ALEError
-    highlight! link ALEStyleWarning ALEWarning
-    highlight! link ALEStyleErrorSign ALEErrorSign
-    highlight! link ALEStyleWarningSign ALEWarningSign
-    highlight! link ALEVirtualTextStyleError ALEVirtualTextError
-    highlight! link ALEVirtualTextStyleWarning ALEVirtualTextWarning
-    highlight! link ALESignColumnWithErrors ALEErrorSign
+if enfocado#pluginIsActivated('ale', 0)
+  if (has('termguicolors') && &termguicolors) || has('gui_running')
+    call enfocado#highlighter('ALEErrorLine', s:none, s:blend_error, s:none, s:none)
+    call enfocado#highlighter('ALEInfoLine', s:none, s:blend_info, s:none, s:none)
+    call enfocado#highlighter('ALEWarningLine', s:none, s:blend_warn, s:none, s:none)
+  else
+    call enfocado#highlighter('ALEErrorLine', s:none, s:br_red, s:fg_0, s:none)
+    call enfocado#highlighter('ALEInfoLine', s:none, s:br_yellow, s:fg_0, s:none)
+    call enfocado#highlighter('ALEWarningLine', s:none, s:br_orange, s:fg_0, s:none)
   endif
+  highlight! link ALEError DiagnosticUnderlineError
+  highlight! link ALEInfo DiagnosticUnderlineInfo
+  highlight! link ALEWarning DiagnosticUnderlineWarn
+  highlight! link ALEErrorSign DiagnosticSignError
+  highlight! link ALEInfoSign DiagnosticSignInfo
+  highlight! link ALEWarningSign DiagnosticSignWarn
+  highlight! link ALEVirtualTextError DiagnosticVirtualTextError
+  highlight! link ALEVirtualTextInfo DiagnosticVirtualTextInfo
+  highlight! link ALEVirtualTextWarning DiagnosticVirtualTextWarn
+  highlight! link ALEStyleError ALEError
+  highlight! link ALEStyleWarning ALEWarning
+  highlight! link ALEStyleErrorSign ALEErrorSign
+  highlight! link ALEStyleWarningSign ALEWarningSign
+  highlight! link ALEVirtualTextStyleError ALEVirtualTextError
+  highlight! link ALEVirtualTextStyleWarning ALEVirtualTextWarning
+  highlight! link ALESignColumnWithErrors ALEErrorSign
+endif
 " }}}
 " bufferline: {{{
-  if enfocado#pluginIsActivated('bufferline', 1)
-    " Buffers.
-    call enfocado#highlighter('BufferLineFill', s:none, s:base, s:bg_2, s:none)
-    highlight! link BufferLineBackground BufferLineFill
-    highlight! link BufferLineBuffer BufferLineBackground
-    highlight! link BufferLineNumbers BufferLineBuffer
-    highlight! link BufferLineCloseButton BufferLineBuffer
-    highlight! link BufferLineModified BufferLineCloseButton
-    highlight! link BufferLineDiagnostic BufferLineBuffer
+if enfocado#pluginIsActivated('bufferline', 1)
+  " Buffers.
+  call enfocado#highlighter('BufferLineFill', s:nocombine, s:base, s:bg_2, s:none)
+  highlight! link BufferLineBackground BufferLineFill
+  highlight! link BufferLineBuffer BufferLineBackground
+  highlight! link BufferLineNumbers BufferLineBuffer
+  highlight! link BufferLineCloseButton BufferLineBuffer
+  highlight! link BufferLineModified BufferLineCloseButton
+  highlight! link BufferLineDiagnostic BufferLineBuffer
 
-    " Selecteds.
-    if g:enfocado_style == 'neon'
-      call enfocado#highlighter('BufferLineBufferSelected', s:none, s:none, s:br_magenta, s:none)
-    else
-      call enfocado#highlighter('BufferLineBufferSelected', s:none, s:none, s:br_green, s:none)
-    endif
-    highlight! link BufferLineNumbersSelected BufferLineBufferSelected
-    highlight! link BufferLineCloseButtonSelected BufferLineBufferSelected
-    highlight! link BufferLineModifiedSelected BufferLineCloseButtonSelected
-    highlight! link BufferLineDiagnosticSelected BufferLineBufferSelected
-    highlight! link BufferLineIndicatorSelected BufferLineBufferSelected
+  " Selecteds.
+  call enfocado#highlighter('BufferLineBufferSelected', s:nocombine, s:none, s:br_accent_1, s:none)
+  highlight! link BufferLineNumbersSelected BufferLineBufferSelected
+  highlight! link BufferLineCloseButtonSelected BufferLineBufferSelected
+  highlight! link BufferLineModifiedSelected BufferLineCloseButtonSelected
+  highlight! link BufferLineDiagnosticSelected BufferLineBufferSelected
+  highlight! link BufferLineIndicatorSelected BufferLineBufferSelected
 
-    " Visibles.
-    call enfocado#highlighter('BufferLineBufferVisible', s:none, s:none, s:dim_0, s:none)
-    highlight! link BufferLineNumbersVisible BufferLineBufferVisible
-    highlight! link BufferLineCloseButtonVisible BufferLineBufferVisible
-    highlight! link BufferLineModifiedVisible BufferLineCloseButtonVisible
-    highlight! link BufferLineDiagnosticVisible BufferLineBufferVisible
-    highlight! link BufferLineIndicatorVisible BufferLineBufferVisible
+  " Visibles.
+  call enfocado#highlighter('BufferLineBufferVisible', s:nocombine, s:none, s:dim_0, s:none)
+  highlight! link BufferLineNumbersVisible BufferLineBufferVisible
+  highlight! link BufferLineCloseButtonVisible BufferLineBufferVisible
+  highlight! link BufferLineModifiedVisible BufferLineCloseButtonVisible
+  highlight! link BufferLineDiagnosticVisible BufferLineBufferVisible
+  highlight! link BufferLineIndicatorVisible BufferLineBufferVisible
 
-    " Errors.
-    call enfocado#highlighter('BufferLineErrorDiagnosticSelected', s:bold, s:bg_0, s:br_red, s:none)
-    highlight! link BufferLineErrorSelected BufferLineBufferSelected
-    highlight! link BufferLineErrorDiagnostic BufferLineBuffer
-    highlight! link BufferLineError BufferLineBuffer
-    highlight! link BufferLineErrorDiagnosticVisible BufferLineBufferVisible
-    highlight! link BufferLineErrorVisible BufferLineBufferVisible
+  " Errors.
+  call enfocado#highlighter('BufferLineErrorDiagnosticSelected', s:bold, s:bg_0, s:br_red, s:none)
+  highlight! link BufferLineErrorSelected BufferLineBufferSelected
+  highlight! link BufferLineErrorDiagnostic BufferLineBuffer
+  highlight! link BufferLineError BufferLineBuffer
+  highlight! link BufferLineErrorDiagnosticVisible BufferLineBufferVisible
+  highlight! link BufferLineErrorVisible BufferLineBufferVisible
 
-    " Warnings.
-    call enfocado#highlighter('BufferLineWarningDiagnosticSelected', s:bold, s:bg_0, s:br_orange, s:none)
-    highlight! link BufferLineWarningSelected BufferLineBufferSelected
-    highlight! link BufferLineWarningDiagnostic BufferLineBuffer
-    highlight! link BufferLineWarning BufferLineBuffer
-    highlight! link BufferLineWarningDiagnosticVisible BufferLineBufferVisible
-    highlight! link BufferLineWarningVisible BufferLineBufferVisible
+  " Warnings.
+  call enfocado#highlighter('BufferLineWarningDiagnosticSelected', s:bold, s:bg_0, s:br_orange, s:none)
+  highlight! link BufferLineWarningSelected BufferLineBufferSelected
+  highlight! link BufferLineWarningDiagnostic BufferLineBuffer
+  highlight! link BufferLineWarning BufferLineBuffer
+  highlight! link BufferLineWarningDiagnosticVisible BufferLineBufferVisible
+  highlight! link BufferLineWarningVisible BufferLineBufferVisible
 
-    " Infos.
-    call enfocado#highlighter('BufferLineInfoDiagnosticSelected', s:bold, s:bg_0, s:br_yellow, s:none)
-    highlight! link BufferLineInfoSelected BufferLineBufferSelected
-    highlight! link BufferLineInfoDiagnostic BufferLineBuffer
-    highlight! link BufferLineInfo BufferLineBuffer
-    highlight! link BufferLineInfoDiagnosticVisible BufferLineBufferVisible
-    highlight! link BufferLineInfoVisible BufferLineBufferVisible
+  " Infos.
+  call enfocado#highlighter('BufferLineInfoDiagnosticSelected', s:bold, s:bg_0, s:br_yellow, s:none)
+  highlight! link BufferLineInfoSelected BufferLineBufferSelected
+  highlight! link BufferLineInfoDiagnostic BufferLineBuffer
+  highlight! link BufferLineInfo BufferLineBuffer
+  highlight! link BufferLineInfoDiagnosticVisible BufferLineBufferVisible
+  highlight! link BufferLineInfoVisible BufferLineBufferVisible
 
-    " Hints.
-    call enfocado#highlighter('BufferLineHintDiagnosticSelected', s:bold, s:bg_0, s:br_yellow, s:none)
-    highlight! link BufferLineHintSelected BufferLineBufferSelected
-    highlight! link BufferLineHintDiagnostic BufferLineBuffer
-    highlight! link BufferLineHint BufferLineBuffer
-    highlight! link BufferLineHintDiagnosticVisible BufferLineBufferVisible
-    highlight! link BufferLineHintVisible BufferLineBufferVisible
+  " Hints.
+  call enfocado#highlighter('BufferLineHintDiagnosticSelected', s:bold, s:bg_0, s:br_yellow, s:none)
+  highlight! link BufferLineHintSelected BufferLineBufferSelected
+  highlight! link BufferLineHintDiagnostic BufferLineBuffer
+  highlight! link BufferLineHint BufferLineBuffer
+  highlight! link BufferLineHintDiagnosticVisible BufferLineBufferVisible
+  highlight! link BufferLineHintVisible BufferLineBufferVisible
 
-    " Duplicateds.
-    call enfocado#highlighter('BufferLineDuplicate', s:none, s:base, s:bg_1, s:none)
-    call enfocado#highlighter('BufferLineDuplicateVisible', s:none, s:bg_0, s:bg_2, s:none)
-    highlight! link BufferLineDuplicateSelected BufferLineBufferVisible
+  " Duplicateds.
+  call enfocado#highlighter('BufferLineDuplicate', s:nocombine, s:base, s:bg_1, s:none)
+  call enfocado#highlighter('BufferLineDuplicateSelected', s:nocombine, s:none, s:accent_1, s:none)
+  call enfocado#highlighter('BufferLineDuplicateVisible', s:nocombine, s:none, s:bg_2, s:none)
 
-    " Groups.
-    call enfocado#highlighter('BufferLineGroupLabel', s:none, s:none, s:bg_2, s:none)
-    highlight! link BufferLineGroupSeparator BufferLineGroupLabel
+  " Groups.
+  call enfocado#highlighter('BufferLineGroupLabel', s:nocombine, s:none, s:bg_2, s:none)
+  highlight! link BufferLineGroupSeparator BufferLineGroupLabel
 
-    " Picks.
-    call enfocado#highlighter('BufferLinePick', s:bold, s:base, s:br_yellow, s:none)
-    call enfocado#highlighter('BufferLinePickSelected', s:bold, s:bg_0, s:br_yellow, s:none)
-    highlight! link BufferLinePickVisible BufferLinePickSelected
+  " Picks.
+  call enfocado#highlighter('BufferLinePick', s:bold, s:base, s:br_yellow, s:none)
+  call enfocado#highlighter('BufferLinePickSelected', s:bold, s:bg_0, s:br_yellow, s:none)
+  highlight! link BufferLinePickVisible BufferLinePickSelected
 
-    " Separators.
-    call enfocado#highlighter('BufferLineSeparator', s:none, s:base, s:base, s:none)
-    call enfocado#highlighter('BufferLineSeparatorSelected', s:none, s:bg_0, s:base, s:none)
-    highlight! link BufferLineSeparatorVisible BufferLineSeparatorSelected
-    highlight! link BufferLineOffsetSeparator BufferLineIndicatorSelected
+  " Separators.
+  call enfocado#highlighter('BufferLineSeparator', s:nocombine, s:base, s:base, s:none)
+  call enfocado#highlighter('BufferLineSeparatorSelected', s:nocombine, s:bg_0, s:base, s:none)
+  highlight! link BufferLineSeparatorVisible BufferLineSeparatorSelected
+  highlight! link BufferLineOffsetSeparator BufferLineIndicatorSelected
 
-    " Tabs.
-    call enfocado#highlighter('BufferLineTabSeparatorSelected', s:none, s:bg_0, s:bg_0, s:none)
-    highlight! link BufferLineTab BufferLineBuffer
-    highlight! link BufferLineTabSelected BufferLineBufferSelected
-    highlight! link BufferLineTabClose BufferLineTabSelected
-    highlight! link BufferLineTabSeparator BufferLineSeparator
-  endif
+  " Tabs.
+  call enfocado#highlighter('BufferLineTabSeparatorSelected', s:nocombine, s:bg_0, s:bg_0, s:none)
+  highlight! link BufferLineTab BufferLineBuffer
+  highlight! link BufferLineTabSelected BufferLineBufferSelected
+  highlight! link BufferLineTabClose BufferLineTabSelected
+  highlight! link BufferLineTabSeparator BufferLineSeparator
+endif
 " }}}
 " coc.nvim: {{{
-  if enfocado#pluginIsActivated('coc', 0)
-    " Coc markdown.
-    highlight! link CocMarkdownHeader Title
-    highlight! link CocMarkdownLink Link
-    highlight! CocBold term=bold cterm=bold gui=bold
-    highlight! CocItalic term=italic cterm=italic gui=italic
-    highlight! CocStrikeThrough term=strikethrough cterm=strikethrough gui=strikethrough
-    highlight! CocUnderline term=underline cterm=underline gui=underline
+if enfocado#pluginIsActivated('coc', 0)
+  " Coc markdown.
+  highlight! link CocMarkdownHeader Title
+  highlight! link CocMarkdownLink Link
+  highlight! CocBold term=bold cterm=bold gui=bold
+  highlight! CocItalic term=italic cterm=italic gui=italic
+  highlight! CocStrikeThrough term=strikethrough cterm=strikethrough gui=strikethrough
+  highlight! CocUnderline term=underline cterm=underline gui=underline
 
-    " Coc diagnostics.
-    if (has('termguicolors') && &termguicolors) || has('gui_running')
-      call enfocado#highlighter('CocErrorLine', s:none, s:blend_error, s:none, s:none)
-      call enfocado#highlighter('CocHintLine', s:none, s:blend_hint, s:none, s:none)
-      call enfocado#highlighter('CocInfoLine', s:none, s:blend_info, s:none, s:none)
-      call enfocado#highlighter('CocWarningLine', s:none, s:blend_warn, s:none, s:none)
-    else
-      call enfocado#highlighter('CocErrorLine', s:none, s:br_red, s:fg_0, s:none)
-      call enfocado#highlighter('CocHintLine', s:none, s:br_blue, s:fg_0, s:none)
-      call enfocado#highlighter('CocInfoLine', s:none, s:br_yellow, s:fg_0, s:none)
-      call enfocado#highlighter('CocWarningLine', s:none, s:br_orange, s:fg_0, s:none)
-    endif
-    highlight! link CocErrorHighlight DiagnosticUnderlineError
-    highlight! link CocHintHighlight DiagnosticUnderlineHint
-    highlight! link CocInfoHighlight DiagnosticUnderlineInfo
-    highlight! link CocWarningHighlight DiagnosticUnderlineWarn
-    highlight! link CocErrorSign DiagnosticError
-    highlight! link CocHintSign DiagnosticHint
-    highlight! link CocInfoSign DiagnosticInfo
-    highlight! link CocWarningSign DiagnosticWarn
-    highlight! link CocErrorVirtualText DiagnosticVirtualTextError
-    highlight! link CocHintVirtualText DiagnosticVirtualTextHint
-    highlight! link CocInfoVirtualText DiagnosticVirtualTextInfo
-    highlight! link CocWarningVirtualText DiagnosticVirtualTextWarn
-    highlight! link CocDeprecatedHighlight Error
-    highlight! link CocFadeOut Comment
-    highlight! link CocUnusedHighlight Comment
-
-    " Coc document highlight.
-    highlight! link CocHighlightRead Visual
-    highlight! link CocHighlightWrite Visual
-    highlight! link CocHighlightText Visual
-
-    " Coc float window/popup.
-    highlight! link CocFloating NormalFloat
-    highlight! link CocErrorFloat DiagnosticFloatingError
-    highlight! link CocHintFloat DiagnosticFloatingHint
-    highlight! link CocInfoFloat DiagnosticFloatingInfo
-    highlight! link CocWarningFloat DiagnosticFloatingWarn
-
-    " Coc list.
-    highlight! link CocListMode StatusLine
-    highlight! link CocListPath StatusLine
-    highlight! link CocSelectedLine Visual
-    highlight! link CocSelectedText Visual
-
-    " Coc tree view.
-    highlight! link CocTreeDescription Dimmed
-    highlight! link CocTreeOpenClose Dimmed
-    highlight! link CocTreeSelected Visual
-    highlight! link CocTreeTitle Title
-
-    " Coc symbol icons.
-    highlight! link CocSymbolArray Identifier
-    highlight! link CocSymbolBoolean Boolean
-    highlight! link CocSymbolClass Type
-    highlight! link CocSymbolConstant ConstIdentifier
-    highlight! link CocSymbolConstructor Type
-    highlight! link CocSymbolDefault Text
-    highlight! link CocSymbolEnum Type
-    highlight! link CocSymbolEnumMember Property
-    highlight! link CocSymbolEvent FunctionBuiltin
-    highlight! link CocSymbolField Property
-    highlight! link CocSymbolFile Text
-    highlight! link CocSymbolFunction Function
-    highlight! link CocSymbolInterface Type
-    highlight! link CocSymbolKey Identifier
-    highlight! link CocSymbolMethod Method
-    highlight! link CocSymbolModule Text
-    highlight! link CocSymbolNamespace Text
-    highlight! link CocSymbolNull StatementBuiltin
-    highlight! link CocSymbolNumber Number
-    highlight! link CocSymbolObject Type
-    highlight! link CocSymbolOperator Operator
-    highlight! link CocSymbolPackage String
-    highlight! link CocSymbolProperty Property
-    highlight! link CocSymbolString String
-    highlight! link CocSymbolStruct Type
-    highlight! link CocSymbolTypeParameter Type
-    highlight! link CocSymbolVariable Identifier
-
-    " Coc others.
-    highlight! link CocCodeLens Dimmed
-    highlight! link CocCursorRange Visual
-    highlight! link CocHoverRange Visual
-    highlight! link CocMenuSel Visual
-    highlight! link CocSelectedRange Visual
-
-    " Coc semantic highlight.
-    if exists('g:coc_default_semantic_highlight_groups') &&
-          \ g:coc_default_semantic_highlight_groups == 1
-      highlight! link CocSem_class Type
-      highlight! link CocSem_comment Comment
-      highlight! link CocSem_enum Type
-      highlight! link CocSem_enumMember Property
-      highlight! link CocSem_event FunctionBuiltin
-      highlight! link CocSem_function Function
-      highlight! link CocSem_interface Type
-      highlight! link CocSem_keyword Keyword
-      highlight! link CocSem_macro Macro
-      highlight! link CocSem_method Method
-      highlight! link CocSem_modifier Type
-      highlight! link CocSem_namespace Text
-      highlight! link CocSem_number Number
-      highlight! link CocSem_operator Operator
-      highlight! link CocSem_parameter Identifier
-      highlight! link CocSem_property Property
-      highlight! link CocSem_regexp StatementBuiltin
-      highlight! link CocSem_string String
-      highlight! link CocSem_struct Type
-      highlight! link CocSem_type Type
-      highlight! link CocSem_typeParameter Type
-      highlight! link CocSem_variable Identifier
-    endif
+  " Coc diagnostics.
+  if (has('termguicolors') && &termguicolors) || has('gui_running')
+    call enfocado#highlighter('CocErrorLine', s:none, s:blend_error, s:none, s:none)
+    call enfocado#highlighter('CocHintLine', s:none, s:blend_hint, s:none, s:none)
+    call enfocado#highlighter('CocInfoLine', s:none, s:blend_info, s:none, s:none)
+    call enfocado#highlighter('CocWarningLine', s:none, s:blend_warn, s:none, s:none)
+  else
+    call enfocado#highlighter('CocErrorLine', s:none, s:br_red, s:fg_0, s:none)
+    call enfocado#highlighter('CocHintLine', s:none, s:br_blue, s:fg_0, s:none)
+    call enfocado#highlighter('CocInfoLine', s:none, s:br_yellow, s:fg_0, s:none)
+    call enfocado#highlighter('CocWarningLine', s:none, s:br_orange, s:fg_0, s:none)
   endif
+  highlight! link CocErrorHighlight DiagnosticUnderlineError
+  highlight! link CocHintHighlight DiagnosticUnderlineHint
+  highlight! link CocInfoHighlight DiagnosticUnderlineInfo
+  highlight! link CocWarningHighlight DiagnosticUnderlineWarn
+  highlight! link CocErrorSign DiagnosticError
+  highlight! link CocHintSign DiagnosticHint
+  highlight! link CocInfoSign DiagnosticInfo
+  highlight! link CocWarningSign DiagnosticWarn
+  highlight! link CocErrorVirtualText DiagnosticVirtualTextError
+  highlight! link CocHintVirtualText DiagnosticVirtualTextHint
+  highlight! link CocInfoVirtualText DiagnosticVirtualTextInfo
+  highlight! link CocWarningVirtualText DiagnosticVirtualTextWarn
+  highlight! link CocDeprecatedHighlight Error
+  highlight! link CocFadeOut Comment
+  highlight! link CocUnusedHighlight Comment
+
+  " Coc document highlight.
+  highlight! link CocHighlightRead Visual
+  highlight! link CocHighlightWrite Visual
+  highlight! link CocHighlightText Visual
+
+  " Coc float window/popup.
+  highlight! link CocFloating NormalFloat
+  highlight! link CocErrorFloat DiagnosticFloatingError
+  highlight! link CocHintFloat DiagnosticFloatingHint
+  highlight! link CocInfoFloat DiagnosticFloatingInfo
+  highlight! link CocWarningFloat DiagnosticFloatingWarn
+
+  " Coc list.
+  highlight! link CocListMode StatusLine
+  highlight! link CocListPath StatusLine
+  highlight! link CocSelectedLine Visual
+  highlight! link CocSelectedText Visual
+
+  " Coc tree view.
+  highlight! link CocTreeDescription Dimmed
+  highlight! link CocTreeOpenClose Dimmed
+  highlight! link CocTreeSelected Visual
+  highlight! link CocTreeTitle Title
+
+  " Coc symbol icons.
+  highlight! link CocSymbolArray Identifier
+  highlight! link CocSymbolBoolean Boolean
+  highlight! link CocSymbolClass Type
+  highlight! link CocSymbolConstant ConstIdentifier
+  highlight! link CocSymbolConstructor Type
+  highlight! link CocSymbolDefault Text
+  highlight! link CocSymbolEnum Type
+  highlight! link CocSymbolEnumMember Property
+  highlight! link CocSymbolEvent FunctionBuiltin
+  highlight! link CocSymbolField Property
+  highlight! link CocSymbolFile Text
+  highlight! link CocSymbolFunction Function
+  highlight! link CocSymbolInterface Type
+  highlight! link CocSymbolKey Identifier
+  highlight! link CocSymbolMethod Method
+  highlight! link CocSymbolModule Text
+  highlight! link CocSymbolNamespace Text
+  highlight! link CocSymbolNull StatementBuiltin
+  highlight! link CocSymbolNumber Number
+  highlight! link CocSymbolObject Type
+  highlight! link CocSymbolOperator Operator
+  highlight! link CocSymbolPackage String
+  highlight! link CocSymbolProperty Property
+  highlight! link CocSymbolString String
+  highlight! link CocSymbolStruct Type
+  highlight! link CocSymbolTypeParameter Type
+  highlight! link CocSymbolVariable Identifier
+
+  " Coc others.
+  highlight! link CocCodeLens Dimmed
+  highlight! link CocCursorRange Visual
+  highlight! link CocHoverRange Visual
+  highlight! link CocMenuSel Visual
+  highlight! link CocSelectedRange Visual
+
+  " Coc semantic highlight.
+  if exists('g:coc_default_semantic_highlight_groups') &&
+        \ g:coc_default_semantic_highlight_groups == 1
+    highlight! link CocSem_class Type
+    highlight! link CocSem_comment Comment
+    highlight! link CocSem_enum Type
+    highlight! link CocSem_enumMember Property
+    highlight! link CocSem_event FunctionBuiltin
+    highlight! link CocSem_function Function
+    highlight! link CocSem_interface Type
+    highlight! link CocSem_keyword Keyword
+    highlight! link CocSem_macro Macro
+    highlight! link CocSem_method Method
+    highlight! link CocSem_modifier Type
+    highlight! link CocSem_namespace Text
+    highlight! link CocSem_number Number
+    highlight! link CocSem_operator Operator
+    highlight! link CocSem_parameter Identifier
+    highlight! link CocSem_property Property
+    highlight! link CocSem_regexp StatementBuiltin
+    highlight! link CocSem_string String
+    highlight! link CocSem_struct Type
+    highlight! link CocSem_type Type
+    highlight! link CocSem_typeParameter Type
+    highlight! link CocSem_variable Identifier
+  endif
+endif
 " }}}
 " copilot.vim: {{{
-  if enfocado#pluginIsActivated('copilot', 1)
-    highlight! link CopilotSuggestion Comment
-  endif
+if enfocado#pluginIsActivated('copilot', 1)
+  highlight! link CopilotSuggestion Comment
+endif
 " }}}
 " ctrlp.vim: {{{
-  if enfocado#pluginIsActivated('ctrlp', 0)
-    " For the CtrlP buffer.
-    highlight! link CtrlPNoEntries MoreMsg
-    highlight! link CtrlPMatch Match
-    highlight! link CtrlPLinePre NonText
-    highlight! link CtrlPPrtBase Accent
-    highlight! link CtrlPPrtText Text
-    highlight! link CtrlPPrtCursor Cursor
+if enfocado#pluginIsActivated('ctrlp', 0)
+  " For the CtrlP buffer.
+  highlight! link CtrlPNoEntries MoreMsg
+  highlight! link CtrlPMatch Match
+  highlight! link CtrlPLinePre NonText
+  highlight! link CtrlPPrtBase Accent
+  highlight! link CtrlPPrtText Text
+  highlight! link CtrlPPrtCursor Cursor
 
-    " Buffer explorer mode.
-    highlight! link CtrlPBufferNr Text
-    highlight! link CtrlPBufferInd Text
-    highlight! link CtrlPBufferHid Dimmed
-    highlight! link CtrlPBufferHidMod CtrlPBufferInd
-    highlight! link CtrlPBufferVis Text
-    highlight! link CtrlPBufferVisMod CtrPBufferVis
-    highlight! link CtrlPBufferCur Accent
-    highlight! link CtrlPBufferCurMod CtrPBufferCur
-    highlight! link CtrlPBufferPath Dimmed
+  " Buffer explorer mode.
+  highlight! link CtrlPBufferNr Text
+  highlight! link CtrlPBufferInd Text
+  highlight! link CtrlPBufferHid Dimmed
+  highlight! link CtrlPBufferHidMod CtrlPBufferInd
+  highlight! link CtrlPBufferVis Text
+  highlight! link CtrlPBufferVisMod CtrPBufferVis
+  highlight! link CtrlPBufferCur Accent
+  highlight! link CtrlPBufferCurMod CtrPBufferCur
+  highlight! link CtrlPBufferPath Dimmed
 
-    " In extensions.
-    highlight! link CtrlPTabExtra Dimmed
-    highlight! link CtrlPBufName Text
-    highlight! link CtrlPTagKind Text
-    highlight! link CtrlPqfLineCol LineNr
-    highlight! link CtrlPUndoT Text
-    highlight! link CtrlPUndoBr NonText
-    highlight! link CtrlPUndoNr Text
-    highlight! link CtrlPUndoSv Text
-    highlight! link CtrlPUndoPo Accent
-    highlight! link CtrlPBookmark Text
+  " In extensions.
+  highlight! link CtrlPTabExtra Dimmed
+  highlight! link CtrlPBufName Text
+  highlight! link CtrlPTagKind Text
+  highlight! link CtrlPqfLineCol LineNr
+  highlight! link CtrlPUndoT Text
+  highlight! link CtrlPUndoBr NonText
+  highlight! link CtrlPUndoNr Text
+  highlight! link CtrlPUndoSv Text
+  highlight! link CtrlPUndoPo Accent
+  highlight! link CtrlPBookmark Text
 
-    " Statuslines.
-    highlight! link CtrlPMode1 Statusline
-    highlight! link CtrlPMode2 Statusline
-    highlight! link CtrlPStats Accent
-  endif
+  " Statuslines.
+  highlight! link CtrlPMode1 Statusline
+  highlight! link CtrlPMode2 Statusline
+  highlight! link CtrlPStats Accent
+endif
 " }}}
 " dashboard-nvim: {{{
-  if enfocado#pluginIsActivated('dashboard', 0)
-    highlight! link DashboardHeader Accent
-    highlight! link DashboardCenter Text
-    highlight! link DashboardShortCut Text
-    highlight! link DashboardFooter Dimmed
-  endif
+if enfocado#pluginIsActivated('dashboard', 0)
+  highlight! link DashboardHeader Accent
+  highlight! link DashboardCenter Text
+  highlight! link DashboardShortCut Text
+  highlight! link DashboardFooter Dimmed
+endif
 " }}}
 " fern.vim: {{{
-  if enfocado#pluginIsActivated('fern', 0)
-    highlight! link FernSpinner DiagnosticInfo
-    highlight! link FernMarkedLine Accent
-    highlight! link FernMarkedText Accent
-    highlight! link FernRootSymbol NonText
-    highlight! link FernRootText Dimmed
-    highlight! link FernLeafSymbol FernRootSymbol
-    highlight! link FernLeafText Text
-    highlight! link FernBranchSymbol FernRootSymbol
-    highlight! link FernBranchText Directory
-    highlight! link FernWindowSelectIndicator Accent
-    highlight! link FernWindowSelectStatusLine StatusLine
+if enfocado#pluginIsActivated('fern', 0)
+  highlight! link FernSpinner DiagnosticInfo
+  highlight! link FernMarkedLine Accent
+  highlight! link FernMarkedText Accent
+  highlight! link FernRootSymbol NonText
+  highlight! link FernRootText Dimmed
+  highlight! link FernLeafSymbol FernRootSymbol
+  highlight! link FernLeafText Text
+  highlight! link FernBranchSymbol FernRootSymbol
+  highlight! link FernBranchText Directory
+  highlight! link FernWindowSelectIndicator Accent
+  highlight! link FernWindowSelectStatusLine StatusLine
 
-    " fern-git-status.vim plugin.
-    highlight! link FernGitStatusBracket NonText
-    highlight! link FernGitStatusIndex Accent
-    highlight! link FernGitStatusWorktree Text
-    highlight! link FernGitStatusUnmerged DiffChange
-    highlight! link FernGitStatusUntracked Ignore
-    highlight! link FernGitStatusIgnored Ignore
-  endif
+  " fern-git-status.vim plugin.
+  highlight! link FernGitStatusBracket NonText
+  highlight! link FernGitStatusIndex Accent
+  highlight! link FernGitStatusWorktree Text
+  highlight! link FernGitStatusUnmerged DiffChange
+  highlight! link FernGitStatusUntracked Ignore
+  highlight! link FernGitStatusIgnored Ignore
+endif
 " }}}
 " fzf.vim: {{{
-  if enfocado#pluginIsActivated('fzf', 0)
-    " fzf apply enfocado groups.
-    if !exists('g:fzf_colors')
-      let g:fzf_colors = {
-            \ 'bg': ['bg', 'NormalFloat'],
-            \ 'bg+': ['bg', 'PmenuSel'],
-            \ 'border': ['fg', 'FloatBorder'],
-            \ 'fg': ['fg', 'NormalFloat'],
-            \ 'fg+': ['fg', 'NormalFloat'],
-            \ 'header': ['fg', 'Title'],
-            \ 'hl': ['fg', 'Match'],
-            \ 'hl+': ['fg', 'Match'],
-            \ 'info': ['fg', 'DiagnosticInfo'],
-            \ 'marker': ['fg', 'Dimmed'],
-            \ 'pointer': ['fg', 'Dimmed'],
-            \ 'prompt': ['fg', 'Dimmed'],
-            \ 'spinner': ['fg', 'DiagnosticInfo']
+if enfocado#pluginIsActivated('fzf', 0)
+  " fzf apply enfocado groups.
+  if !exists('g:fzf_colors')
+    let g:fzf_colors = {
+          \   'bg': ['bg', 'NormalFloat'],
+          \   'bg+': ['bg', 'PmenuSel'],
+          \   'border': ['fg', 'FloatBorder'],
+          \   'fg': ['fg', 'NormalFloat'],
+          \   'fg+': ['fg', 'NormalFloat'],
+          \   'header': ['fg', 'Title'],
+          \   'hl': ['fg', 'Match'],
+          \   'hl+': ['fg', 'Match'],
+          \   'info': ['fg', 'DiagnosticInfo'],
+          \   'marker': ['fg', 'Dimmed'],
+          \   'pointer': ['fg', 'Dimmed'],
+          \   'prompt': ['fg', 'Dimmed'],
+          \   'spinner': ['fg', 'DiagnosticInfo']
           \ }
-    endif
-
-    " Others FZF groups.
-    call enfocado#highlighter('Fzf1', s:bold, s:bg_2, s:dim_0, s:none)
-    call enfocado#highlighter('Fzf2', s:nocombine, s:bg_1, s:dim_0, s:none)
-    call enfocado#highlighter('Fzf3', s:nocombine, s:bg_0, s:dim_0, s:none)
   endif
+
+  " Others FZF groups.
+  call enfocado#highlighter('Fzf1', s:bold, s:bg_2, s:dim_0, s:none)
+  call enfocado#highlighter('Fzf2', s:nocombine, s:bg_1, s:dim_0, s:none)
+  call enfocado#highlighter('Fzf3', s:nocombine, s:bg_0, s:dim_0, s:none)
+endif
 " }}}
 " glyph-palette.vim: {{{
-  if enfocado#pluginIsActivated('glyph-palette', 0)
-    call enfocado#highlighter('GlyphPalette0', s:nocombine, s:none, s:bg_1, s:none)
-    call enfocado#highlighter('GlyphPalette1', s:nocombine, s:none, s:red, s:none)
-    call enfocado#highlighter('GlyphPalette2', s:nocombine, s:none, s:green, s:none)
-    call enfocado#highlighter('GlyphPalette3', s:nocombine, s:none, s:yellow, s:none)
-    call enfocado#highlighter('GlyphPalette4', s:nocombine, s:none, s:blue, s:none)
-    call enfocado#highlighter('GlyphPalette5', s:nocombine, s:none, s:magenta, s:none)
-    call enfocado#highlighter('GlyphPalette6', s:nocombine, s:none, s:cyan, s:none)
-    call enfocado#highlighter('GlyphPalette7', s:nocombine, s:none, s:dim_0, s:none)
-    call enfocado#highlighter('GlyphPalette8', s:nocombine, s:none, s:bg_2, s:none)
-    call enfocado#highlighter('GlyphPalette9', s:nocombine, s:none, s:br_red, s:none)
-    call enfocado#highlighter('GlyphPalette10', s:nocombine, s:none, s:br_green, s:none)
-    call enfocado#highlighter('GlyphPalette11', s:nocombine, s:none, s:br_yellow, s:none)
-    call enfocado#highlighter('GlyphPalette12', s:nocombine, s:none, s:br_blue, s:none)
-    call enfocado#highlighter('GlyphPalette13', s:nocombine, s:none, s:br_magenta, s:none)
-    call enfocado#highlighter('GlyphPalette14', s:nocombine, s:none, s:br_cyan, s:none)
-    call enfocado#highlighter('GlyphPalette15', s:nocombine, s:none, s:fg_1, s:none)
-    highlight! link GlyphPaletteDirectory Directory
-  endif
+if enfocado#pluginIsActivated('glyph-palette', 0)
+  call enfocado#highlighter('GlyphPalette0', s:nocombine, s:none, s:bg_1, s:none)
+  call enfocado#highlighter('GlyphPalette1', s:nocombine, s:none, s:red, s:none)
+  call enfocado#highlighter('GlyphPalette2', s:nocombine, s:none, s:green, s:none)
+  call enfocado#highlighter('GlyphPalette3', s:nocombine, s:none, s:yellow, s:none)
+  call enfocado#highlighter('GlyphPalette4', s:nocombine, s:none, s:blue, s:none)
+  call enfocado#highlighter('GlyphPalette5', s:nocombine, s:none, s:magenta, s:none)
+  call enfocado#highlighter('GlyphPalette6', s:nocombine, s:none, s:cyan, s:none)
+  call enfocado#highlighter('GlyphPalette7', s:nocombine, s:none, s:dim_0, s:none)
+  call enfocado#highlighter('GlyphPalette8', s:nocombine, s:none, s:bg_2, s:none)
+  call enfocado#highlighter('GlyphPalette9', s:nocombine, s:none, s:br_red, s:none)
+  call enfocado#highlighter('GlyphPalette10', s:nocombine, s:none, s:br_green, s:none)
+  call enfocado#highlighter('GlyphPalette11', s:nocombine, s:none, s:br_yellow, s:none)
+  call enfocado#highlighter('GlyphPalette12', s:nocombine, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('GlyphPalette13', s:nocombine, s:none, s:br_magenta, s:none)
+  call enfocado#highlighter('GlyphPalette14', s:nocombine, s:none, s:br_cyan, s:none)
+  call enfocado#highlighter('GlyphPalette15', s:nocombine, s:none, s:fg_1, s:none)
+  highlight! link GlyphPaletteDirectory Directory
+endif
 " }}}
 " indent-blankline: {{{
-  if enfocado#pluginIsActivated('indent-blankline', 1)
-    call enfocado#highlighter('IndentBlanklineChar', s:none, s:none, s:bg_2, s:none)
-    call enfocado#highlighter('IndentBlanklineSpaceChar', s:none, s:none, s:bg_2, s:none)
-    call enfocado#highlighter('IndentBlanklineSpaceCharBlankline', s:none, s:none, s:bg_2, s:none)
-    call enfocado#highlighter('IndentBlanklineContextChar', s:none, s:none, s:dim_0, s:none)
-    call enfocado#highlighter('IndentBlanklineContextStart', s:underline, s:none, s:none, s:dim_0)
+if enfocado#pluginIsActivated('indent-blankline', 1)
+  call enfocado#highlighter('IndentBlanklineChar', s:none, s:none, s:bg_2, s:none)
+  call enfocado#highlighter('IndentBlanklineSpaceChar', s:none, s:none, s:bg_2, s:none)
+  call enfocado#highlighter('IndentBlanklineSpaceCharBlankline', s:none, s:none, s:bg_2, s:none)
+  call enfocado#highlighter('IndentBlanklineContextChar', s:none, s:none, s:dim_0, s:none)
+  call enfocado#highlighter('IndentBlanklineContextStart', s:underline, s:none, s:none, s:dim_0)
 
-    " Enfocado groups.
-    if g:enfocado_style == 'neon'
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent1', s:nocombine, s:none, s:violet, s:none)
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent2', s:nocombine, s:none, s:cyan, s:none)
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent3', s:nocombine, s:none, s:magenta, s:none)
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent4', s:nocombine, s:none, s:br_violet, s:none)
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent5', s:nocombine, s:none, s:br_cyan, s:none)
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent6', s:nocombine, s:none, s:br_magenta, s:none)
-    else
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent1', s:nocombine, s:none, s:blue, s:none)
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent2', s:nocombine, s:none, s:cyan, s:none)
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent3', s:nocombine, s:none, s:green, s:none)
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent4', s:nocombine, s:none, s:br_blue, s:none)
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent5', s:nocombine, s:none, s:br_cyan, s:none)
-      call enfocado#highlighter('EnfocadoIndentBlanklineIndent6', s:nocombine, s:none, s:br_green, s:none)
-    endif
-  endif
+  " Enfocado groups.
+  call enfocado#highlighter('EnfocadoIndentBlanklineIndent1', s:none, s:none, s:accent_2, s:none)
+  call enfocado#highlighter('EnfocadoIndentBlanklineIndent2', s:none, s:none, s:cyan, s:none)
+  call enfocado#highlighter('EnfocadoIndentBlanklineIndent3', s:none, s:none, s:accent_1, s:none)
+  call enfocado#highlighter('EnfocadoIndentBlanklineIndent4', s:none, s:none, s:br_accent_2, s:none)
+  call enfocado#highlighter('EnfocadoIndentBlanklineIndent5', s:none, s:none, s:br_cyan, s:none)
+  call enfocado#highlighter('EnfocadoIndentBlanklineIndent6', s:none, s:none, s:br_accent_1, s:none)
+endif
 " }}}
 " nerdtree: {{{
-  if enfocado#pluginIsActivated('nerdtree', 0)
-    highlight! link NERDTreeBookmark NERDTreeFile
-    highlight! link NERDTreeBookmarkHeader Title
-    highlight! link NERDTreeClosable Dimmed
-    highlight! link NERDTreeCWD Ignore
-    highlight! link NERDTreeDir Directory
-    highlight! link NERDTreeDirSlash Dimmed
-    highlight! link NERDTreeExecFile FileExec
-    highlight! link NERDTreeFile Text
-    highlight! link NERDTreeHelp Text
-    highlight! link NERDTreeHelpCommand Text
-    highlight! link NERDTreeHelpKey Text
-    highlight! link NERDTreeHelpTitle Title
-    highlight! link NERDTreeLink FileLink
-    highlight! link NERDTreeLinkDir NERDTreeLink
-    highlight! link NERDTreeLinkFile NERDTreeLink
-    highlight! link NERDTreeLinkTarget NERDTreeFile
-    highlight! link NERDTreeOpenable Dimmed
-    highlight! link NERDTreeRO NERDTreeFile
-    highlight! link NERDTreeToggleOff Dimmed
-    highlight! link NERDTreeToggleOn Text
-    highlight! link NERDTreeUp Dimmed
-  endif
+if enfocado#pluginIsActivated('nerdtree', 0)
+  highlight! link NERDTreeBookmark NERDTreeFile
+  highlight! link NERDTreeBookmarkHeader Title
+  highlight! link NERDTreeClosable Dimmed
+  highlight! link NERDTreeCWD Ignore
+  highlight! link NERDTreeDir Directory
+  highlight! link NERDTreeDirSlash Dimmed
+  highlight! link NERDTreeExecFile FileExec
+  highlight! link NERDTreeFile Text
+  highlight! link NERDTreeHelp Text
+  highlight! link NERDTreeHelpCommand Text
+  highlight! link NERDTreeHelpKey Text
+  highlight! link NERDTreeHelpTitle Title
+  highlight! link NERDTreeLink FileLink
+  highlight! link NERDTreeLinkDir NERDTreeLink
+  highlight! link NERDTreeLinkFile NERDTreeLink
+  highlight! link NERDTreeLinkTarget NERDTreeFile
+  highlight! link NERDTreeOpenable Dimmed
+  highlight! link NERDTreeRO NERDTreeFile
+  highlight! link NERDTreeToggleOff Dimmed
+  highlight! link NERDTreeToggleOn Text
+  highlight! link NERDTreeUp Dimmed
+endif
 " }}}
 " netrw: {{{
-  if enfocado#pluginIsActivated('netrw', 0)
-    highlight! link netrwClassify Dimmed
-    highlight! link netrwCmdSep Ignore
-    highlight! link netrwComment Comment
-    highlight! link netrwDir Directory
-    highlight! link netrwExe FileExec
-    highlight! link netrwHelpCmd Text
-    highlight! link netrwLink FileLink
-    highlight! link netrwList Dimmed
-    highlight! link netrwPlain Text
-    highlight! link netrwSymLink netrwLink
-    highlight! link netrwVersion Ignore
-  endif
+if enfocado#pluginIsActivated('netrw', 0)
+  highlight! link netrwClassify Dimmed
+  highlight! link netrwCmdSep Ignore
+  highlight! link netrwComment Comment
+  highlight! link netrwDir Directory
+  highlight! link netrwExe FileExec
+  highlight! link netrwHelpCmd Text
+  highlight! link netrwLink FileLink
+  highlight! link netrwList Dimmed
+  highlight! link netrwPlain Text
+  highlight! link netrwSymLink netrwLink
+  highlight! link netrwVersion Ignore
+endif
 " }}}
 " nvim-cmp: {{{
-  if enfocado#pluginIsActivated('cmp', 1)
-    highlight! link CmpItemAbbr Text
-    highlight! link CmpItemAbbrDeprecated Error
-    highlight! link CmpItemAbbrMatch Match
-    highlight! link CmpItemAbbrMatchFuzzy MatchFuzzy
-    highlight! link CmpItemKindClass Type
-    highlight! link CmpItemKindColor StatementBuiltin
-    highlight! link CmpItemKindConstant ConstIdentifier
-    highlight! link CmpItemKindConstructor Type
-    highlight! link CmpItemKind Text
-    highlight! link CmpItemKindEnum Type
-    highlight! link CmpItemKindEnumMember Property
-    highlight! link CmpItemKindEvent FunctionBuiltin
-    highlight! link CmpItemKindField Property
-    highlight! link CmpItemKindFile Text
-    highlight! link CmpItemKindFolder Directory
-    highlight! link CmpItemKindFunction Function
-    highlight! link CmpItemKindInterface Type
-    highlight! link CmpItemKindKeyword Keyword
-    highlight! link CmpItemKindMethod Method
-    highlight! link CmpItemKindModule Text
-    highlight! link CmpItemKindOperator Operator
-    highlight! link CmpItemKindProperty Property
-    highlight! link CmpItemKindReference Accent
-    highlight! link CmpItemKindSnippet Text
-    highlight! link CmpItemKindStruct Type
-    highlight! link CmpItemKindText Text
-    highlight! link CmpItemKindTypeParameter Type
-    highlight! link CmpItemKindUnit Number
-    highlight! link CmpItemKindValue Text
-    highlight! link CmpItemKindVariable Identifier
-    highlight! link CmpItemMenu NormalFloat
-  endif
+if enfocado#pluginIsActivated('cmp', 1)
+  highlight! link CmpItemAbbr Text
+  highlight! link CmpItemAbbrDeprecated Error
+  highlight! link CmpItemAbbrMatch Match
+  highlight! link CmpItemAbbrMatchFuzzy MatchFuzzy
+  highlight! link CmpItemKindClass Type
+  highlight! link CmpItemKindColor StatementBuiltin
+  highlight! link CmpItemKindConstant ConstIdentifier
+  highlight! link CmpItemKindConstructor Type
+  highlight! link CmpItemKind Text
+  highlight! link CmpItemKindEnum Type
+  highlight! link CmpItemKindEnumMember Property
+  highlight! link CmpItemKindEvent FunctionBuiltin
+  highlight! link CmpItemKindField Property
+  highlight! link CmpItemKindFile Text
+  highlight! link CmpItemKindFolder Directory
+  highlight! link CmpItemKindFunction Function
+  highlight! link CmpItemKindInterface Type
+  highlight! link CmpItemKindKeyword Keyword
+  highlight! link CmpItemKindMethod Method
+  highlight! link CmpItemKindModule Text
+  highlight! link CmpItemKindOperator Operator
+  highlight! link CmpItemKindProperty Property
+  highlight! link CmpItemKindReference Accent
+  highlight! link CmpItemKindSnippet Text
+  highlight! link CmpItemKindStruct Type
+  highlight! link CmpItemKindText Text
+  highlight! link CmpItemKindTypeParameter Type
+  highlight! link CmpItemKindUnit Number
+  highlight! link CmpItemKindValue Text
+  highlight! link CmpItemKindVariable Identifier
+  highlight! link CmpItemMenu NormalFloat
+endif
 " }}}
 " nvim-lspconfig: {{{
-  if enfocado#pluginIsActivated('lsp', 1)
-    highlight! link LspCodeLens Dimmed
-    highlight! link LspCodeLensSeparator NonText
-    highlight! link LspReferenceRead Visual
-    highlight! link LspReferenceText Visual
-    highlight! link LspReferenceWrite Visual
-    highlight! link LspSignatureActiveParameter Accent
-  endif
+if enfocado#pluginIsActivated('lsp', 1)
+  highlight! link LspCodeLens Dimmed
+  highlight! link LspCodeLensSeparator NonText
+  highlight! link LspReferenceRead Visual
+  highlight! link LspReferenceText Visual
+  highlight! link LspReferenceWrite Visual
+  highlight! link LspSignatureActiveParameter Accent
+endif
 " }}}
 " nvim-notify: {{{
-  if enfocado#pluginIsActivated('notify', 1)
-    call enfocado#highlighter('NotifyERRORBorder', s:nocombine, s:none, s:br_red, s:none)
-    call enfocado#highlighter('NotifyDEBUGBorder', s:nocombine, s:none, s:dim_0, s:none)
-    call enfocado#highlighter('NotifyINFOBorder', s:nocombine, s:none, s:br_yellow, s:none)
-    call enfocado#highlighter('NotifyTRACEBorder', s:nocombine, s:none, s:br_magenta, s:none)
-    call enfocado#highlighter('NotifyWARNBorder', s:nocombine, s:none, s:br_orange, s:none)
-    highlight! link NotifyERRORIcon NotifyERRORBorder
-    highlight! link NotifyDEBUGIcon NotifyDEBUGBorder
-    highlight! link NotifyINFOIcon NotifyINFOBorder
-    highlight! link NotifyTRACEIcon NotifyTRACEBorder
-    highlight! link NotifyWARNIcon NotifyWARNBorder
-    highlight! link NotifyERRORTitle Title
-    highlight! link NotifyDEBUGTitle Title
-    highlight! link NotifyINFOTitle Title
-    highlight! link NotifyTRACETitle Title
-    highlight! link NotifyWARNTitle Title
-    highlight! link NotifyERRORBody Text
-    highlight! link NotifyDEBUGBody Text
-    highlight! link NotifyINFOBody Text
-    highlight! link NotifyTRACEBody Text
-    highlight! link NotifyWARNBody Text
-    highlight! link NotifyLogTime Debug
-    highlight! link NotifyLogTitle Title
-  endif
+if enfocado#pluginIsActivated('notify', 1)
+  call enfocado#highlighter('NotifyERRORBorder', s:nocombine, s:none, s:br_red, s:none)
+  call enfocado#highlighter('NotifyDEBUGBorder', s:nocombine, s:none, s:dim_0, s:none)
+  call enfocado#highlighter('NotifyINFOBorder', s:nocombine, s:none, s:br_yellow, s:none)
+  call enfocado#highlighter('NotifyTRACEBorder', s:nocombine, s:none, s:br_magenta, s:none)
+  call enfocado#highlighter('NotifyWARNBorder', s:nocombine, s:none, s:br_orange, s:none)
+  highlight! link NotifyERRORIcon NotifyERRORBorder
+  highlight! link NotifyDEBUGIcon NotifyDEBUGBorder
+  highlight! link NotifyINFOIcon NotifyINFOBorder
+  highlight! link NotifyTRACEIcon NotifyTRACEBorder
+  highlight! link NotifyWARNIcon NotifyWARNBorder
+  highlight! link NotifyERRORTitle Title
+  highlight! link NotifyDEBUGTitle Title
+  highlight! link NotifyINFOTitle Title
+  highlight! link NotifyTRACETitle Title
+  highlight! link NotifyWARNTitle Title
+  highlight! link NotifyERRORBody Text
+  highlight! link NotifyDEBUGBody Text
+  highlight! link NotifyINFOBody Text
+  highlight! link NotifyTRACEBody Text
+  highlight! link NotifyWARNBody Text
+  highlight! link NotifyLogTime Debug
+  highlight! link NotifyLogTitle Title
+endif
 " }}}
 " nvim-scrollview: {{{
-  if enfocado#pluginIsActivated('scrollview', 1)
-    highlight! link ScrollView Line
-  endif
+if enfocado#pluginIsActivated('scrollview', 1)
+  highlight! link ScrollView Line
+endif
 " }}}
 " nvim-treesitter: {{{
-  if enfocado#pluginIsActivated('treesitter', 1)
-    call enfocado#highlighter('TSDanger', s:bold, s:br_red, s:bg_1, s:none)
-    call enfocado#highlighter('TSNote', s:bold, s:br_yellow, s:bg_1, s:none)
-    call enfocado#highlighter('TSWarning', s:bold, s:br_orange, s:bg_1, s:none)
-    call enfocado#highlighter('TSLiteral', s:italic, s:none, s:fg_0, s:none)
-    call enfocado#highlighter('TSNone', s:none, s:none, s:none, s:none)
-    call enfocado#highlighter('TSTitle', s:nocombine, s:none, s:fg_1, s:none)
-    highlight! link TSAnnotation SpecialComment
-    highlight! link TSAttribute SpecialComment
-    highlight! link TSBoolean Boolean
-    highlight! link TSCharacter Character
-    highlight! link TSComment Comment
-    highlight! link TSConditional Conditional
-    highlight! link TSConstant ConstIdentifier
-    highlight! link TSConstBuiltin ConstIdentifier
-    highlight! link TSConstMacro ConstIdentifier
-    highlight! link TSConstructor Type
-    highlight! link TSDebug Debug
-    highlight! link TSDefine PreProc
-    highlight! link TSDefinition PreProc
-    highlight! link TSEnvironment Text
-    highlight! link TSEnvironmentName StatementBuiltin
-    highlight! link TSError Error
-    highlight! link TSException Exception
-    highlight! link TSField Property
-    highlight! link TSFloat Float
-    highlight! link TSFunction Function
-    highlight! link TSFuncBuiltin FunctionBuiltin
-    highlight! link TSFuncMacro Function
-    highlight! link TSInclude Include
-    highlight! link TSKeyword Keyword
-    highlight! link TSKeywordFunction Type
-    highlight! link TSKeywordOperator Operator
-    highlight! link TSKeywordReturn Keyword
-    highlight! link TSLabel Label
-    highlight! link TSMath StatementBuiltin
-    highlight! link TSMethod Method
-    highlight! link TSNamespace Text
-    highlight! link TSNumber Number
-    highlight! link TSOperator Operator
-    highlight! link TSParameter Identifier
-    highlight! link TSParameterReference Indentifier
-    highlight! link TSPreProc PreProc
-    highlight! link TSProperty Property
-    highlight! link TSPunctDelimiter Delimiter
-    highlight! link TSPunctBracket Delimiter
-    highlight! link TSPunctSpecial StatementBuiltin
-    highlight! link TSRepeat Repeat
-    highlight! link TSStorageClass StorageClass
-    highlight! link TSString String
-    highlight! link TSStringRegex StatementBuiltin
-    highlight! link TSStringEscape StatementBuiltin
-    highlight! link TSStringSpecial StatementBuiltin
-    highlight! link TSSymbol Identifier
-    highlight! link TSTag Tag
-    highlight! link TSTagAttribute Identifier
-    highlight! link TSTagDelimiter Delimiter
-    highlight! link TSText Text
-    highlight! link TSTextReference TSLiteral
-    highlight! link TSTodo Todo
-    highlight! link TSType Type
-    highlight! link TSTypeBuiltin TypeBuiltin
-    highlight! link TSTypeQualifier Type
-    highlight! link TSURI Link
-    highlight! link TSVariable Identifier
-    highlight! link TSVariableBuiltin IdentifierBuiltin
-    highlight! TSEmphasis term=italic cterm=italic gui=italic
-    highlight! TSStrike term=strikethrough cterm=strikethrough gui=strikethrough
-    highlight! TSStrong term=bold cterm=bold gui=bold
-    highlight! TSUnderline term=underline cterm=underline gui=underline
+if enfocado#pluginIsActivated('treesitter', 1)
+  call enfocado#highlighter('TSDanger', s:bold, s:br_red, s:bg_1, s:none)
+  call enfocado#highlighter('TSNote', s:bold, s:br_yellow, s:bg_1, s:none)
+  call enfocado#highlighter('TSWarning', s:bold, s:br_orange, s:bg_1, s:none)
+  call enfocado#highlighter('TSLiteral', s:italic, s:none, s:fg_0, s:none)
+  call enfocado#highlighter('TSNone', s:none, s:none, s:none, s:none)
+  call enfocado#highlighter('TSTitle', s:nocombine, s:none, s:fg_1, s:none)
+  highlight! link TSAnnotation SpecialComment
+  highlight! link TSAttribute SpecialComment
+  highlight! link TSBoolean Boolean
+  highlight! link TSCharacter Character
+  highlight! link TSComment Comment
+  highlight! link TSConditional Conditional
+  highlight! link TSConstant ConstIdentifier
+  highlight! link TSConstBuiltin ConstIdentifier
+  highlight! link TSConstMacro ConstIdentifier
+  highlight! link TSConstructor Type
+  highlight! link TSDebug Debug
+  highlight! link TSDefine PreProc
+  highlight! link TSDefinition PreProc
+  highlight! link TSEnvironment Text
+  highlight! link TSEnvironmentName StatementBuiltin
+  highlight! link TSError Error
+  highlight! link TSException Exception
+  highlight! link TSField Property
+  highlight! link TSFloat Float
+  highlight! link TSFunction Function
+  highlight! link TSFuncBuiltin FunctionBuiltin
+  highlight! link TSFuncMacro Function
+  highlight! link TSInclude Include
+  highlight! link TSKeyword Keyword
+  highlight! link TSKeywordFunction Type
+  highlight! link TSKeywordOperator Operator
+  highlight! link TSKeywordReturn Keyword
+  highlight! link TSLabel Label
+  highlight! link TSMath StatementBuiltin
+  highlight! link TSMethod Method
+  highlight! link TSNamespace Text
+  highlight! link TSNumber Number
+  highlight! link TSOperator Operator
+  highlight! link TSParameter Identifier
+  highlight! link TSParameterReference Indentifier
+  highlight! link TSPreProc PreProc
+  highlight! link TSProperty Property
+  highlight! link TSPunctDelimiter Delimiter
+  highlight! link TSPunctBracket Delimiter
+  highlight! link TSPunctSpecial StatementBuiltin
+  highlight! link TSRepeat Repeat
+  highlight! link TSStorageClass StorageClass
+  highlight! link TSString String
+  highlight! link TSStringRegex StatementBuiltin
+  highlight! link TSStringEscape StatementBuiltin
+  highlight! link TSStringSpecial StatementBuiltin
+  highlight! link TSSymbol Identifier
+  highlight! link TSTag Tag
+  highlight! link TSTagAttribute Identifier
+  highlight! link TSTagDelimiter Delimiter
+  highlight! link TSText Text
+  highlight! link TSTextReference TSLiteral
+  highlight! link TSTodo Todo
+  highlight! link TSType Type
+  highlight! link TSTypeBuiltin TypeBuiltin
+  highlight! link TSTypeQualifier Type
+  highlight! link TSURI Link
+  highlight! link TSVariable Identifier
+  highlight! link TSVariableBuiltin IdentifierBuiltin
+  highlight! TSEmphasis term=italic cterm=italic gui=italic
+  highlight! TSStrike term=strikethrough cterm=strikethrough gui=strikethrough
+  highlight! TSStrong term=bold cterm=bold gui=bold
+  highlight! TSUnderline term=underline cterm=underline gui=underline
 
-    " TSModule info.
-    highlight! link TSModuleInfoGood Success
-    highlight! link TSModuleInfoBad DiagnosticError
-    highlight! link TSModuleInfoHeader Accent
-    highlight! link TSModuleInfoNamespace Title
-    highlight! link TSModuleInfoParser Text
+  " TSModule info.
+  highlight! link TSModuleInfoGood Success
+  highlight! link TSModuleInfoBad DiagnosticError
+  highlight! link TSModuleInfoHeader Accent
+  highlight! link TSModuleInfoNamespace Title
+  highlight! link TSModuleInfoParser Text
 
-    " nvim-ts-rainbow module.
-    if g:enfocado_style == 'neon'
-      call enfocado#highlighter('rainbowcol1', s:none, s:none, s:violet, s:none)
-      call enfocado#highlighter('rainbowcol2', s:none, s:none, s:cyan, s:none)
-      call enfocado#highlighter('rainbowcol3', s:none, s:none, s:magenta, s:none)
-      call enfocado#highlighter('rainbowcol4', s:none, s:none, s:br_violet, s:none)
-      call enfocado#highlighter('rainbowcol5', s:none, s:none, s:br_cyan, s:none)
-      call enfocado#highlighter('rainbowcol6', s:none, s:none, s:br_magenta, s:none)
-      call enfocado#highlighter('rainbowcol7', s:none, s:none, s:violet, s:none)
-    else
-      call enfocado#highlighter('rainbowcol1', s:none, s:none, s:blue, s:none)
-      call enfocado#highlighter('rainbowcol2', s:none, s:none, s:cyan, s:none)
-      call enfocado#highlighter('rainbowcol3', s:none, s:none, s:green, s:none)
-      call enfocado#highlighter('rainbowcol4', s:none, s:none, s:br_blue, s:none)
-      call enfocado#highlighter('rainbowcol5', s:none, s:none, s:br_cyan, s:none)
-      call enfocado#highlighter('rainbowcol6', s:none, s:none, s:br_green, s:none)
-      call enfocado#highlighter('rainbowcol7', s:none, s:none, s:blue, s:none)
-    endif
-  endif
+  " nvim-ts-rainbow module.
+  call enfocado#highlighter('rainbowcol1', s:none, s:none, s:accent_2, s:none)
+  call enfocado#highlighter('rainbowcol2', s:none, s:none, s:cyan, s:none)
+  call enfocado#highlighter('rainbowcol3', s:none, s:none, s:accent_1, s:none)
+  call enfocado#highlighter('rainbowcol4', s:none, s:none, s:br_accent_2, s:none)
+  call enfocado#highlighter('rainbowcol5', s:none, s:none, s:br_cyan, s:none)
+  call enfocado#highlighter('rainbowcol6', s:none, s:none, s:br_accent_1, s:none)
+  highlight! link rainbowcol7 rainbowcol1
+endif
 " }}}
 " nvim-tree.lua: {{{
-  if enfocado#pluginIsActivated('tree', 1)
-    call enfocado#highlighter('NvimTreeImageFile', s:bold, s:none, s:magenta, s:none)
-    highlight! link NvimTreeCursorColumn Line
-    highlight! link NvimTreeCursorLine Line
-    highlight! link NvimTreeEmptyFolderName Directory
-    highlight! link NvimTreeEndOfBuffer EndOfBuffer
-    highlight! link NvimTreeExecFile FileExec
-    highlight! link NvimTreeFileDeleted DiffDelete
-    highlight! link NvimTreeFileDirty DiffChange
-    highlight! link NvimTreeFileMerge DiffChange
-    highlight! link NvimTreeFileNew DiffAdd
-    highlight! link NvimTreeFileRenamed DiffAdd
-    highlight! link NvimTreeFileStaged DiffChange
-    highlight! link NvimTreeFolderIcon Directory
-    highlight! link NvimTreeFolderName Directory
-    highlight! link NvimTreeGitDeleted DiffDelete
-    highlight! link NvimTreeGitDirty DiffChange
-    highlight! link NvimTreeGitIgnored Text
-    highlight! link NvimTreeGitMerge DiffChange
-    highlight! link NvimTreeGitNew DiffAdd
-    highlight! link NvimTreeGitRenamed DiffAdd
-    highlight! link NvimTreeGitStaged DiffChange
-    highlight! link NvimTreeIndentMarker NonText
-    highlight! link NvimTreeLspDiagnosticsError DiagnosticError
-    highlight! link NvimTreeLspDiagnosticsHint DiagnosticHint
-    highlight! link NvimTreeLspDiagnosticsInformation DiagnosticInfo
-    highlight! link NvimTreeLspDiagnosticsWarning DiagnosticWarn
-    highlight! link NvimTreeNormal Normal
-    highlight! link NvimTreeNormalNC NormalNC
-    highlight! link NvimTreeOpenedFile Accent
-    highlight! link NvimTreeOpenedFolderName Directory
-    highlight! link NvimTreePopup NormalFloat
-    highlight! link NvimTreeRootFolder Dimmed
-    highlight! link NvimTreeSignColumn SignColumn
-    highlight! link NvimTreeSpecialFile SpecialComment
-    highlight! link NvimTreeStatusLine StatusLine
-    highlight! link NvimTreeStatusLineNC StatusLineNC
-    highlight! link NvimTreeSymlink FileLink
-    highlight! link NvimTreeVertSplit VertSplit
-    highlight! link NvimTreeWindowPicker Accent
-  endif
+if enfocado#pluginIsActivated('tree', 1)
+  call enfocado#highlighter('NvimTreeImageFile', s:bold, s:none, s:magenta, s:none)
+  highlight! link NvimTreeCursorColumn Line
+  highlight! link NvimTreeCursorLine Line
+  highlight! link NvimTreeEmptyFolderName Directory
+  highlight! link NvimTreeEndOfBuffer EndOfBuffer
+  highlight! link NvimTreeExecFile FileExec
+  highlight! link NvimTreeFileDeleted DiffDelete
+  highlight! link NvimTreeFileDirty DiffChange
+  highlight! link NvimTreeFileMerge DiffChange
+  highlight! link NvimTreeFileNew DiffAdd
+  highlight! link NvimTreeFileRenamed DiffAdd
+  highlight! link NvimTreeFileStaged DiffChange
+  highlight! link NvimTreeFolderIcon Directory
+  highlight! link NvimTreeFolderName Directory
+  highlight! link NvimTreeGitDeleted DiffDelete
+  highlight! link NvimTreeGitDirty DiffChange
+  highlight! link NvimTreeGitIgnored Text
+  highlight! link NvimTreeGitMerge DiffChange
+  highlight! link NvimTreeGitNew DiffAdd
+  highlight! link NvimTreeGitRenamed DiffAdd
+  highlight! link NvimTreeGitStaged DiffChange
+  highlight! link NvimTreeIndentMarker NonText
+  highlight! link NvimTreeLspDiagnosticsError DiagnosticError
+  highlight! link NvimTreeLspDiagnosticsHint DiagnosticHint
+  highlight! link NvimTreeLspDiagnosticsInformation DiagnosticInfo
+  highlight! link NvimTreeLspDiagnosticsWarning DiagnosticWarn
+  highlight! link NvimTreeNormal Normal
+  highlight! link NvimTreeNormalNC NormalNC
+  highlight! link NvimTreeOpenedFile Accent
+  highlight! link NvimTreeOpenedFolderName Directory
+  highlight! link NvimTreePopup NormalFloat
+  highlight! link NvimTreeRootFolder Dimmed
+  highlight! link NvimTreeSignColumn SignColumn
+  highlight! link NvimTreeSpecialFile SpecialComment
+  highlight! link NvimTreeStatusLine StatusLine
+  highlight! link NvimTreeStatusLineNC StatusLineNC
+  highlight! link NvimTreeSymlink FileLink
+  highlight! link NvimTreeVertSplit VertSplit
+  highlight! link NvimTreeWindowPicker Accent
+endif
 " }}}
 " packer.nvim: {{{
-  if enfocado#pluginIsActivated('packer', 1)
-    highlight! link packerWorking Accent
-    highlight! link packerSuccess Success
-    highlight! link packerFail DiagnosticError
-    highlight! link packerStatus DiagnosticInfo
-    highlight! link packerStatusSuccess Success
-    highlight! link packerStatusFail DiagnosticError
-    highlight! link packerStatusCommit Dimmed
-    highlight! link packerHash Dimmed
-    highlight! link packerRelDate Dimmed
-    highlight! link packerProgress DiagnosticInfo
-    highlight! link packerOutput Debug
-    highlight! link packerTimeHigh Dimmed
-    highlight! link packerTimeMedium Dimmed
-    highlight! link packerTimeLow Dimmed
-    highlight! link packerTimeTrivial Dimmed
-    highlight! link packerPackageNotLoaded Dimmed
-    highlight! link packerPackageName Text
-    highlight! link packerString String
-    highlight! link packerBool Boolean
-    highlight! link packerBreakingChange DiagnosticWarn
-  endif
+if enfocado#pluginIsActivated('packer', 1)
+  highlight! link packerWorking Accent
+  highlight! link packerSuccess Success
+  highlight! link packerFail DiagnosticError
+  highlight! link packerStatus DiagnosticInfo
+  highlight! link packerStatusSuccess Success
+  highlight! link packerStatusFail DiagnosticError
+  highlight! link packerStatusCommit Dimmed
+  highlight! link packerHash Dimmed
+  highlight! link packerRelDate Dimmed
+  highlight! link packerProgress DiagnosticInfo
+  highlight! link packerOutput Debug
+  highlight! link packerTimeHigh Dimmed
+  highlight! link packerTimeMedium Dimmed
+  highlight! link packerTimeLow Dimmed
+  highlight! link packerTimeTrivial Dimmed
+  highlight! link packerPackageNotLoaded Dimmed
+  highlight! link packerPackageName Text
+  highlight! link packerString String
+  highlight! link packerBool Boolean
+  highlight! link packerBreakingChange DiagnosticWarn
+endif
 " }}}
 " rainbow: {{{
-  if enfocado#pluginIsActivated('rainbow', 0)
-    if g:enfocado_style == 'neon'
-      let s:rainbow_guifgs = [s:violet[0], s:cyan[0], s:magenta[0], s:br_violet[0]]
-      let s:rainbow_ctermfgs = [s:violet[1], s:cyan[1], s:magenta[1], s:br_violet[1]]
-    else
-      let s:rainbow_guifgs = [s:blue[0], s:cyan[0], s:green[0], s:br_blue[0]]
-      let s:rainbow_ctermfgs = [s:blue[1], s:cyan[1], s:green[1], s:br_blue[1]]
-    endif
+if enfocado#pluginIsActivated('rainbow', 0)
+  let s:rainbow_guifgs = [s:accent_2[0], s:cyan[0], s:accent_1[0], s:br_accent_2[0]]
+  let s:rainbow_ctermfgs = [s:accent_2[1], s:cyan[1], s:accent_1[1], s:br_accent_2[1]]
 
-    if !exists('g:rainbow_conf')
-      let g:rainbow_conf = {}
-    endif
-
-    if !has_key(g:rainbow_conf, 'guifgs')
-      let g:rainbow_conf['guifgs'] = s:rainbow_guifgs
-    endif
-
-    if !has_key(g:rainbow_conf, 'ctermfgs')
-      let g:rainbow_conf['ctermfgs'] = s:rainbow_ctermfgs
-    endif
+  if !exists('g:rainbow_conf')
+    let g:rainbow_conf = {}
   endif
+
+  if !has_key(g:rainbow_conf, 'guifgs')
+    let g:rainbow_conf['guifgs'] = s:rainbow_guifgs
+  endif
+
+  if !has_key(g:rainbow_conf, 'ctermfgs')
+    let g:rainbow_conf['ctermfgs'] = s:rainbow_ctermfgs
+  endif
+endif
 " }}}
 " telescope.nvim: {{{
-  if enfocado#pluginIsActivated('telescope', 1)
-    call enfocado#highlighter('TelescopePreviewDate', s:nocombine, s:none, s:blue, s:none)
-    call enfocado#highlighter('TelescopePreviewRead', s:bold, s:none, s:yellow, s:none)
-    call enfocado#highlighter('TelescopePreviewSize', s:bold, s:none, s:green, s:none)
-    call enfocado#highlighter('TelescopePreviewUser', s:bold, s:none, s:br_yellow, s:none)
-    call enfocado#highlighter('TelescopePreviewWrite', s:bold, s:none, s:red, s:none)
-    highlight! link TelescopeBorder FloatBorder
-    highlight! link TelescopeMatching Match
-    highlight! link TelescopeMultiSelection Visual
-    highlight! link TelescopeNormal NormalFloat
-    highlight! link TelescopePreviewBorder FloatBorder
-    highlight! link TelescopePreviewDirectory Directory
-    highlight! link TelescopePreviewExecute FileExec
-    highlight! link TelescopePreviewLink FileLink
-    highlight! link TelescopePreviewMatch Search
-    highlight! link TelescopePreviewMessage DiagnosticInfo
-    highlight! link TelescopePreviewMessageFillchar DiagnosticInfo
-    highlight! link TelescopePreviewNormal NormalFloat
-    highlight! link TelescopePreviewTitle Title
-    highlight! link TelescopePromptBorder FloatBorder
-    highlight! link TelescopePromptCounter DiagnosticInfo
-    highlight! link TelescopePromptNormal NormalFloat
-    highlight! link TelescopePromptPrefix Text
-    highlight! link TelescopePromptTitle Title
-    highlight! link TelescopeResultsBorder FloatBorder
-    highlight! link TelescopeResultsDiffAdd DiffAdd
-    highlight! link TelescopeResultsDiffChange DiffChange
-    highlight! link TelescopeResultsDiffDelete DiffDelete
-    highlight! link TelescopeResultsDiffUntracked Ignore
-    highlight! link TelescopeResultsClass Type
-    highlight! link TelescopeResultsComment Comment
-    highlight! link TelescopeResultsConstant ConstIdentifier
-    highlight! link TelescopeResultsField Property
-    highlight! link TelescopeResultsFunction Function
-    highlight! link TelescopeResultsIdentifier Identifier
-    highlight! link TelescopeResultsLineNr Ignore
-    highlight! link TelescopeResultsMethod Method
-    highlight! link TelescopeResultsNormal NormalFloat
-    highlight! link TelescopeResultsNumber Number
-    highlight! link TelescopeResultsOperator Operator
-    highlight! link TelescopeResultsSpecialComment SpecialComment
-    highlight! link TelescopeResultsStruct Type
-    highlight! link TelescopeResultsTitle Title
-    highlight! link TelescopeResultsVariable Identifier
-    highlight! link TelescopeSelection Visual
-    highlight! link TelescopeSelectionCaret Visual
-    highlight! link TelescopeTitle Title
-  endif
+if enfocado#pluginIsActivated('telescope', 1)
+  call enfocado#highlighter('TelescopePreviewDate', s:nocombine, s:none, s:blue, s:none)
+  call enfocado#highlighter('TelescopePreviewRead', s:bold, s:none, s:yellow, s:none)
+  call enfocado#highlighter('TelescopePreviewSize', s:bold, s:none, s:green, s:none)
+  call enfocado#highlighter('TelescopePreviewUser', s:bold, s:none, s:br_yellow, s:none)
+  call enfocado#highlighter('TelescopePreviewWrite', s:bold, s:none, s:red, s:none)
+  highlight! link TelescopeBorder FloatBorder
+  highlight! link TelescopeMatching Match
+  highlight! link TelescopeMultiSelection Visual
+  highlight! link TelescopeNormal NormalFloat
+  highlight! link TelescopePreviewBorder FloatBorder
+  highlight! link TelescopePreviewDirectory Directory
+  highlight! link TelescopePreviewExecute FileExec
+  highlight! link TelescopePreviewLink FileLink
+  highlight! link TelescopePreviewMatch Search
+  highlight! link TelescopePreviewMessage DiagnosticInfo
+  highlight! link TelescopePreviewMessageFillchar DiagnosticInfo
+  highlight! link TelescopePreviewNormal NormalFloat
+  highlight! link TelescopePreviewTitle Title
+  highlight! link TelescopePromptBorder FloatBorder
+  highlight! link TelescopePromptCounter DiagnosticInfo
+  highlight! link TelescopePromptNormal NormalFloat
+  highlight! link TelescopePromptPrefix Text
+  highlight! link TelescopePromptTitle Title
+  highlight! link TelescopeResultsBorder FloatBorder
+  highlight! link TelescopeResultsDiffAdd DiffAdd
+  highlight! link TelescopeResultsDiffChange DiffChange
+  highlight! link TelescopeResultsDiffDelete DiffDelete
+  highlight! link TelescopeResultsDiffUntracked Ignore
+  highlight! link TelescopeResultsClass Type
+  highlight! link TelescopeResultsComment Comment
+  highlight! link TelescopeResultsConstant ConstIdentifier
+  highlight! link TelescopeResultsField Property
+  highlight! link TelescopeResultsFunction Function
+  highlight! link TelescopeResultsIdentifier Identifier
+  highlight! link TelescopeResultsLineNr Ignore
+  highlight! link TelescopeResultsMethod Method
+  highlight! link TelescopeResultsNormal NormalFloat
+  highlight! link TelescopeResultsNumber Number
+  highlight! link TelescopeResultsOperator Operator
+  highlight! link TelescopeResultsSpecialComment SpecialComment
+  highlight! link TelescopeResultsStruct Type
+  highlight! link TelescopeResultsTitle Title
+  highlight! link TelescopeResultsVariable Identifier
+  highlight! link TelescopeSelection Visual
+  highlight! link TelescopeSelectionCaret Visual
+  highlight! link TelescopeTitle Title
+endif
 " }}}
 " todo-comments.nvim: {{{
-  if enfocado#pluginIsActivated('todo-comments', 1)
-    call enfocado#highlighter('TodoBgFIX', s:bold, s:br_red, s:bg_1, s:none)
-    call enfocado#highlighter('TodoBgHACK', s:bold, s:br_yellow, s:bg_1, s:none)
-    call enfocado#highlighter('TodoBgNOTE', s:bold, s:br_green, s:bg_1, s:none)
-    call enfocado#highlighter('TodoBgPERF', s:bold, s:br_magenta, s:bg_1, s:none)
-    call enfocado#highlighter('TodoBgTEST', s:bold, s:br_orange, s:bg_1, s:none)
-    call enfocado#highlighter('TodoBgTODO', s:bold, s:br_cyan, s:bg_1, s:none)
-    call enfocado#highlighter('TodoBgWARN', s:bold, s:br_orange, s:bg_1, s:none)
-    call enfocado#highlighter('TodoFgFIX', s:nocombine, s:none, s:br_red, s:none)
-    call enfocado#highlighter('TodoFgHACK', s:nocombine, s:none, s:br_yellow, s:none)
-    call enfocado#highlighter('TodoFgNOTE', s:nocombine, s:none, s:br_green, s:none)
-    call enfocado#highlighter('TodoFgPERF', s:nocombine, s:none, s:br_magenta, s:none)
-    call enfocado#highlighter('TodoFgTEST', s:nocombine, s:none, s:br_orange, s:none)
-    call enfocado#highlighter('TodoFgTODO', s:nocombine, s:none, s:br_cyan, s:none)
-    call enfocado#highlighter('TodoFgWARN', s:nocombine, s:none, s:br_orange, s:none)
-    call enfocado#highlighter('TodoSignFIX', s:nocombine, s:none, s:br_red, s:none)
-    call enfocado#highlighter('TodoSignHACK', s:nocombine, s:none, s:br_yellow, s:none)
-    call enfocado#highlighter('TodoSignNOTE', s:nocombine, s:none, s:br_green, s:none)
-    call enfocado#highlighter('TodoSignPERF', s:nocombine, s:none, s:br_magenta, s:none)
-    call enfocado#highlighter('TodoSignTEST', s:nocombine, s:none, s:br_orange, s:none)
-    call enfocado#highlighter('TodoSignTODO', s:nocombine, s:none, s:br_cyan, s:none)
-    call enfocado#highlighter('TodoSignWARN', s:nocombine, s:none, s:br_orange, s:none)
-  endif
+if enfocado#pluginIsActivated('todo-comments', 1)
+  call enfocado#highlighter('TodoBgFIX', s:bold, s:br_red, s:bg_1, s:none)
+  call enfocado#highlighter('TodoBgHACK', s:bold, s:br_yellow, s:bg_1, s:none)
+  call enfocado#highlighter('TodoBgNOTE', s:bold, s:br_green, s:bg_1, s:none)
+  call enfocado#highlighter('TodoBgPERF', s:bold, s:br_magenta, s:bg_1, s:none)
+  call enfocado#highlighter('TodoBgTEST', s:bold, s:br_orange, s:bg_1, s:none)
+  call enfocado#highlighter('TodoBgTODO', s:bold, s:br_cyan, s:bg_1, s:none)
+  call enfocado#highlighter('TodoBgWARN', s:bold, s:br_orange, s:bg_1, s:none)
+  call enfocado#highlighter('TodoFgFIX', s:nocombine, s:none, s:br_red, s:none)
+  call enfocado#highlighter('TodoFgHACK', s:nocombine, s:none, s:br_yellow, s:none)
+  call enfocado#highlighter('TodoFgNOTE', s:nocombine, s:none, s:br_green, s:none)
+  call enfocado#highlighter('TodoFgPERF', s:nocombine, s:none, s:br_magenta, s:none)
+  call enfocado#highlighter('TodoFgTEST', s:nocombine, s:none, s:br_orange, s:none)
+  call enfocado#highlighter('TodoFgTODO', s:nocombine, s:none, s:br_cyan, s:none)
+  call enfocado#highlighter('TodoFgWARN', s:nocombine, s:none, s:br_orange, s:none)
+  call enfocado#highlighter('TodoSignFIX', s:nocombine, s:none, s:br_red, s:none)
+  call enfocado#highlighter('TodoSignHACK', s:nocombine, s:none, s:br_yellow, s:none)
+  call enfocado#highlighter('TodoSignNOTE', s:nocombine, s:none, s:br_green, s:none)
+  call enfocado#highlighter('TodoSignPERF', s:nocombine, s:none, s:br_magenta, s:none)
+  call enfocado#highlighter('TodoSignTEST', s:nocombine, s:none, s:br_orange, s:none)
+  call enfocado#highlighter('TodoSignTODO', s:nocombine, s:none, s:br_cyan, s:none)
+  call enfocado#highlighter('TodoSignWARN', s:nocombine, s:none, s:br_orange, s:none)
+endif
 " }}}
 " vim-better-whitespace: {{{
 if enfocado#pluginIsActivated('whitespace', 0)
@@ -1139,155 +1096,152 @@ if enfocado#pluginIsActivated('whitespace', 0)
 endif
 " }}}
 " vim-floaterm: {{{
-  if enfocado#pluginIsActivated('floaterm', 0)
-    highlight! link Floaterm NormalFloat
-    highlight! link FloatermBorder FloatBorder
-    highlight! link FloatermNC NormalFloat
-  endif
+if enfocado#pluginIsActivated('floaterm', 0)
+  highlight! link Floaterm NormalFloat
+  highlight! link FloatermBorder FloatBorder
+  highlight! link FloatermNC NormalFloat
+endif
 " }}}
 " vim-gitgutter: {{{
-  if enfocado#pluginIsActivated('gitgutter', 0)
-    if (has('termguicolors') && &termguicolors) || has('gui_running')
-      call enfocado#highlighter('GitGutterAddLine', s:none, s:blend_added, s:none, s:none)
-      call enfocado#highlighter('GitGutterChangeLine', s:none, s:blend_modified, s:none, s:none)
-      call enfocado#highlighter('GitGutterDeleteLine', s:none, s:blend_removed, s:none, s:none)
-      call enfocado#highlighter('GitGutterChangeDeleteLine', s:none, s:blend_removed, s:none, s:none)
-    else
-      call enfocado#highlighter('GitGutterAddLine', s:none, s:green, s:fg_0, s:none)
-      call enfocado#highlighter('GitGutterChangeLine', s:none, s:yellow, s:fg_0, s:none)
-      call enfocado#highlighter('GitGutterDeleteLine', s:none, s:red, s:fg_0, s:none)
-      call enfocado#highlighter('GitGutterChangeDeleteLine', s:none, s:red, s:fg_0, s:none)
-    endif
-    highlight! link GitGutterAdd DiffAdd
-    highlight! link GitGutterAddInvisible None
-    highlight! link GitGutterAddLineNr GitGutterAdd
-    highlight! link GitGutterChange DiffChange
-    highlight! link GitGutterChangeInvisible None
-    highlight! link GitGutterChangeLineNr GitGutterChange
-    highlight! link GitGutterDelete DiffDelete
-    highlight! link GitGutterDeleteInvisible None
-    highlight! link GitGutterDeleteLineNr GitGutterDelete
-    highlight! link GitGutterChangeDelete GitGutterChange
-    highlight! link GitGutterChangeDeleteInvisible GitGutterChangeInvisible
-    highlight! link GitGutterChangeDeleteLineNr GitGutterChangeDelete
+if enfocado#pluginIsActivated('gitgutter', 0)
+  if (has('termguicolors') && &termguicolors) || has('gui_running')
+    call enfocado#highlighter('GitGutterAddLine', s:none, s:blend_added, s:none, s:none)
+    call enfocado#highlighter('GitGutterChangeLine', s:none, s:blend_modified, s:none, s:none)
+    call enfocado#highlighter('GitGutterDeleteLine', s:none, s:blend_removed, s:none, s:none)
+    call enfocado#highlighter('GitGutterChangeDeleteLine', s:none, s:blend_removed, s:none, s:none)
+  else
+    call enfocado#highlighter('GitGutterAddLine', s:none, s:green, s:fg_0, s:none)
+    call enfocado#highlighter('GitGutterChangeLine', s:none, s:yellow, s:fg_0, s:none)
+    call enfocado#highlighter('GitGutterDeleteLine', s:none, s:red, s:fg_0, s:none)
+    call enfocado#highlighter('GitGutterChangeDeleteLine', s:none, s:red, s:fg_0, s:none)
   endif
+  highlight! link GitGutterAdd DiffAdd
+  highlight! link GitGutterAddInvisible None
+  highlight! link GitGutterAddLineNr GitGutterAdd
+  highlight! link GitGutterChange DiffChange
+  highlight! link GitGutterChangeInvisible None
+  highlight! link GitGutterChangeLineNr GitGutterChange
+  highlight! link GitGutterDelete DiffDelete
+  highlight! link GitGutterDeleteInvisible None
+  highlight! link GitGutterDeleteLineNr GitGutterDelete
+  highlight! link GitGutterChangeDelete GitGutterChange
+  highlight! link GitGutterChangeDeleteInvisible GitGutterChangeInvisible
+  highlight! link GitGutterChangeDeleteLineNr GitGutterChangeDelete
+endif
 " }}}
 " vim-illuminate: {{{
-  if enfocado#pluginIsActivated('illuminate', 0)
-    highlight! link IlluminatedWord Visual
-    highlight! link IlluminatedWordText IlluminatedWord
-    highlight! link IlluminatedWordRead IlluminatedWord
-    highlight! link IlluminatedWordWrite IlluminatedWord
-  endif
+if enfocado#pluginIsActivated('illuminate', 0)
+  highlight! link IlluminatedWord Visual
+  highlight! link IlluminatedWordText IlluminatedWord
+  highlight! link IlluminatedWordRead IlluminatedWord
+  highlight! link IlluminatedWordWrite IlluminatedWord
+endif
 " }}}
 " vim-matchup: {{{
-  if enfocado#pluginIsActivated('matchup', 0)
-    highlight! link MatchBackground Visual
-    highlight! link MatchParenCur Visual
-    highlight! link MatchWord Visual
-    highlight! link MatchWordCur Visual
-  endif
+if enfocado#pluginIsActivated('matchup', 0)
+  highlight! link MatchBackground Visual
+  highlight! link MatchParenCur Visual
+  highlight! link MatchWord Visual
+  highlight! link MatchWordCur Visual
+endif
 " }}}
 " vim-plug: {{{
-  if enfocado#pluginIsActivated('plug', 0)
-    highlight! link plug1 Title
-    highlight! link plug2 Accent
-    highlight! link plugBracket Text
-    highlight! link plugCommit Text
-    highlight! link plugDash Dimmed
-    highlight! link plugDeleted Ignore
-    highlight! link plugEdge Dimmed
-    highlight! link plugError DiagnosticError
-    highlight! link plugH2 Title
-    highlight! link plugInstall Accent
-    highlight! link plugMessage DiagnosticInfo
-    highlight! link plugName Text
-    highlight! link plugNotLoaded Dimmed
-    highlight! link plugNumber Number
-    highlight! link plugPlus Text
-    highlight! link plugRelDate Dimmed
-    highlight! link plugSha Dimmed
-    highlight! link plugStar Dimmed
-    highlight! link plugTag Text
-    highlight! link plugUpdate Accent
-    highlight! link plugX Text
-  endif
+if enfocado#pluginIsActivated('plug', 0)
+  highlight! link plug1 Title
+  highlight! link plug2 Accent
+  highlight! link plugBracket Text
+  highlight! link plugCommit Text
+  highlight! link plugDash Dimmed
+  highlight! link plugDeleted Ignore
+  highlight! link plugEdge Dimmed
+  highlight! link plugError DiagnosticError
+  highlight! link plugH2 Title
+  highlight! link plugInstall Accent
+  highlight! link plugMessage DiagnosticInfo
+  highlight! link plugName Text
+  highlight! link plugNotLoaded Dimmed
+  highlight! link plugNumber Number
+  highlight! link plugPlus Text
+  highlight! link plugRelDate Dimmed
+  highlight! link plugSha Dimmed
+  highlight! link plugStar Dimmed
+  highlight! link plugTag Text
+  highlight! link plugUpdate Accent
+  highlight! link plugX Text
+endif
 " }}}
 " vim-signify: {{{
-  if enfocado#pluginIsActivated('signify', 0)
-    if exists('g:signify_line_highlight') && g:signify_line_highlight == 1
-      if (has('termguicolors') && &termguicolors) || has('gui_running')
-        call enfocado#highlighter('SignifyLineAdd', s:none, s:blend_added, s:none, s:none)
-        call enfocado#highlighter('SignifyLineChange', s:none, s:blend_modified, s:none, s:none)
-        call enfocado#highlighter('SignifyLineChangeDelete', s:none, s:blend_modified, s:none, s:none)
-        call enfocado#highlighter('SignifyLineDelete', s:none, s:blend_removed, s:none, s:none)
-        call enfocado#highlighter('SignifyLineDeleteFirstLine', s:none, s:blend_removed, s:none, s:none)
-      else
-        call enfocado#highlighter('SignifyLineAdd', s:none, s:green, s:fg_0, s:none)
-        call enfocado#highlighter('SignifyLineChange', s:none, s:yellow, s:fg_0, s:none)
-        call enfocado#highlighter('SignifyLineChangeDelete', s:none, s:yellow, s:fg_0, s:none)
-        call enfocado#highlighter('SignifyLineDelete', s:none, s:red, s:fg_0, s:none)
-        call enfocado#highlighter('SignifyLineDeleteFirstLine', s:none, s:red, s:fg_0, s:none)
-      endif
+if enfocado#pluginIsActivated('signify', 0)
+  if exists('g:signify_line_highlight') && g:signify_line_highlight == 1
+    if (has('termguicolors') && &termguicolors) || has('gui_running')
+      call enfocado#highlighter('SignifyLineAdd', s:none, s:blend_added, s:none, s:none)
+      call enfocado#highlighter('SignifyLineChange', s:none, s:blend_modified, s:none, s:none)
+      call enfocado#highlighter('SignifyLineChangeDelete', s:none, s:blend_modified, s:none, s:none)
+      call enfocado#highlighter('SignifyLineDelete', s:none, s:blend_removed, s:none, s:none)
+      call enfocado#highlighter('SignifyLineDeleteFirstLine', s:none, s:blend_removed, s:none, s:none)
+    else
+      call enfocado#highlighter('SignifyLineAdd', s:none, s:green, s:fg_0, s:none)
+      call enfocado#highlighter('SignifyLineChange', s:none, s:yellow, s:fg_0, s:none)
+      call enfocado#highlighter('SignifyLineChangeDelete', s:none, s:yellow, s:fg_0, s:none)
+      call enfocado#highlighter('SignifyLineDelete', s:none, s:red, s:fg_0, s:none)
+      call enfocado#highlighter('SignifyLineDeleteFirstLine', s:none, s:red, s:fg_0, s:none)
     endif
-    highlight! link SignifySignAdd DiffAdd
-    highlight! link SignifySignChange DiffChange
-    highlight! link SignifySignChangeDelete SignifySignChange
-    highlight! link SignifySignDelete DiffDelete
-    highlight! link SignifySignDeleteFirstLine SignifySignDelete
   endif
+  highlight! link SignifySignAdd DiffAdd
+  highlight! link SignifySignChange DiffChange
+  highlight! link SignifySignChangeDelete SignifySignChange
+  highlight! link SignifySignDelete DiffDelete
+  highlight! link SignifySignDeleteFirstLine SignifySignDelete
+endif
 " }}}
 " vim-startify: {{{
-  if enfocado#pluginIsActivated('startify', 0)
-    call enfocado#highlighter('StartifySelect', s:none, s:bg_2, s:fg_1, s:none)
-    highlight! link StartifyBracket Ignore
-    highlight! link StartifyFile Accent
-    highlight! link StartifyFooter Dimmed
-    highlight! link StartifyHeader Accent
-    highlight! link StartifyNumber Dimmed
-    highlight! link StartifyPath Text
-    highlight! link StartifySection Title
-    highlight! link StartifySlash StartifyPath
-    highlight! link StartifySpecial StartifyPath
-    highlight! link StartifyVar StartifyPath
-  endif
+if enfocado#pluginIsActivated('startify', 0)
+  call enfocado#highlighter('StartifySelect', s:none, s:bg_2, s:fg_1, s:none)
+  highlight! link StartifyBracket Ignore
+  highlight! link StartifyFile Accent
+  highlight! link StartifyFooter Dimmed
+  highlight! link StartifyHeader Accent
+  highlight! link StartifyNumber Dimmed
+  highlight! link StartifyPath Text
+  highlight! link StartifySection Title
+  highlight! link StartifySlash StartifyPath
+  highlight! link StartifySpecial StartifyPath
+  highlight! link StartifyVar StartifyPath
+endif
 " }}}
 " vim-visual-multi: {{{
-  if enfocado#pluginIsActivated('visual-multi', 0)
-    if !exists('g:VM_theme_set_by_colorscheme') ||
-          \ g:VM_theme_set_by_colorscheme != 0
-      let g:VM_theme_set_by_colorscheme = 1
-      if g:enfocado_style == 'neon'
-        call enfocado#highlighter('VM_Extend', s:bold, s:bg_2, s:magenta, s:none)
-      else
-        call enfocado#highlighter('VM_Extend', s:bold, s:bg_2, s:green, s:none)
-      endif
-      call enfocado#highlighter('VM_Insert', s:none, s:bg_1, s:yellow, s:none)
-      highlight! link VM_Cursor Cursor
-      highlight! link VM_Mono VM_Cursor
-    endif
+if enfocado#pluginIsActivated('visual-multi', 0)
+  if !exists('g:VM_theme_set_by_colorscheme') ||
+        \ g:VM_theme_set_by_colorscheme != 0
+    let g:VM_theme_set_by_colorscheme = 1
+    call enfocado#highlighter('VM_Extend', s:bold, s:bg_2, s:accent_1, s:none)
+    call enfocado#highlighter('VM_Insert', s:none, s:bg_1, s:yellow, s:none)
+    highlight! link VM_Cursor Cursor
+    highlight! link VM_Mono VM_Cursor
   endif
+endif
 " }}}
 " vista.vim: {{{
-  if enfocado#pluginIsActivated('vista', 0)
-    highlight! link VistaBracket Ignore
-    highlight! link VistaChildrenNr Ignore
-    highlight! link VistaColon Ignore
-    highlight! link VistaFloat NormalFloat
-    highlight! link VistaIcon Ignore
-    highlight! link VistaLineNr Ignore
-    highlight! link VistaPrefix Ignore
-    highlight! link VistaScope Dimmed
-    highlight! link VistaTag Dimmed
-  endif
+if enfocado#pluginIsActivated('vista', 0)
+  highlight! link VistaBracket Ignore
+  highlight! link VistaChildrenNr Ignore
+  highlight! link VistaColon Ignore
+  highlight! link VistaFloat NormalFloat
+  highlight! link VistaIcon Ignore
+  highlight! link VistaLineNr Ignore
+  highlight! link VistaPrefix Ignore
+  highlight! link VistaScope Dimmed
+  highlight! link VistaTag Dimmed
+endif
 " }}}
 " which-key.nvim: {{{
-  if enfocado#pluginIsActivated('which-key', 0)
-    highlight! link WhichKey MoreMsg
-    highlight! link WhichKeyDesc Accent
-    highlight! link WhichKeyFloat NormalFloat
-    highlight! link WhichKeyGroup Dimmed
-    highlight! link WhichKeySeparator NonText
-    highlight! link WhichKeyValue Text
-  endif
+if enfocado#pluginIsActivated('which-key', 0)
+  highlight! link WhichKey MoreMsg
+  highlight! link WhichKeyDesc Accent
+  highlight! link WhichKeyFloat NormalFloat
+  highlight! link WhichKeyGroup Dimmed
+  highlight! link WhichKeySeparator NonText
+  highlight! link WhichKeyValue Text
+endif
 " }}}
+

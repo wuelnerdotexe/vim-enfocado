@@ -52,3 +52,4 @@ return {
     b = { fg = colors.bg_2, bg = colors.bg_1 }
   }
 }
+

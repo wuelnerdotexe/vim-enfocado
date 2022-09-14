@@ -33,16 +33,16 @@ let g:airline#themes#enfocado#palette = {}
 
 " Accent colors.
 let g:airline#themes#enfocado#palette.accents = {
-  \ 'red': [s:red[0], '', s:red[1], ''],
-  \ 'green': [s:green[0], '', s:green[1], ''],
-  \ 'yellow': [s:yellow[0], '', s:yellow[1], ''],
-  \ 'blue': [s:blue[0], '', s:blue[1], ''],
-  \ 'orange': [s:orange[0], '', s:orange[1], ''],
-  \ 'purple': [s:violet[0], '', s:violet[1], ''],
-  \ 'bold': [ '', '', '', '', 'bold' ],
-  \ 'italic': [ '', '', '', '', 'italic' ],
-  \ 'none': [ '', '', '', '', '' ]
-  \ }
+      \   'red': [s:red[0], '', s:red[1], ''],
+      \   'green': [s:green[0], '', s:green[1], ''],
+      \   'yellow': [s:yellow[0], '', s:yellow[1], ''],
+      \   'blue': [s:blue[0], '', s:blue[1], ''],
+      \   'orange': [s:orange[0], '', s:orange[1], ''],
+      \   'purple': [s:violet[0], '', s:violet[1], ''],
+      \   'bold': [ '', '', '', '', 'bold' ],
+      \   'italic': [ '', '', '', '', 'italic' ],
+      \   'none': [ '', '', '', '', '' ]
+      \ }
 
 " Alert colors.
 let s:term = [s:dim_0[0], s:bg_2[0], s:dim_0[1], s:bg_2[1], '']
@@ -52,10 +52,10 @@ let s:warning = [s:bg_1[0], s:br_orange[0], s:bg_1[1], s:br_orange[1], '']
 " Normal mode.
 let g:airline#themes#enfocado#palette.normal =
       \ airline#themes#generate_color_map(
-        \ [s:dim_0[0], s:bg_2[0], s:dim_0[1], s:bg_2[1], ''],
-        \ [s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1], ''],
-        \ [s:dim_0[0], s:bg_0[0], s:dim_0[1], s:bg_0[1], '']
-        \ )
+      \   [s:dim_0[0], s:bg_2[0], s:dim_0[1], s:bg_2[1], ''],
+      \   [s:dim_0[0], s:bg_1[0], s:dim_0[1], s:bg_1[1], ''],
+      \   [s:dim_0[0], s:bg_0[0], s:dim_0[1], s:bg_0[1], '']
+      \ )
 
 " Normal mode alerts.
 let g:airline#themes#enfocado#palette.normal.airline_term = s:term
@@ -89,12 +89,13 @@ let g:airline#themes#enfocado#palette.visual.airline_warning = s:warning
 " Inactive mode.
 let g:airline#themes#enfocado#palette.inactive =
       \ airline#themes#generate_color_map(
-        \ [s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1], ''],
-        \ [s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1], ''],
-        \ [s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1], '']
-        \ )
+      \   [s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1], ''],
+      \   [s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1], ''],
+      \   [s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1], '']
+      \ )
 
 " Inactive mode alerts.
 let g:airline#themes#enfocado#palette.inactive.airline_term = [s:bg_2[0], s:bg_1[0], s:bg_2[1], s:bg_1[1], '']
 let g:airline#themes#enfocado#palette.inactive.airline_error = [s:red[0], s:bg_1[0], s:red[1], s:bg_1[1], '']
 let g:airline#themes#enfocado#palette.inactive.airline_warning = [s:orange[0], s:bg_1[0], s:orange[1], s:bg_1[1], '']
+
