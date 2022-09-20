@@ -52,6 +52,7 @@ supported plugins so far:
 `  \ 'floaterm',`
 `  \ 'fzf',`
 `  \ 'gitgutter',`
+`  \ 'gitsigns',`
 `  \ 'glyph-palette',`
 `  \ 'illuminate',`
 `  \ 'indent-blankline',`

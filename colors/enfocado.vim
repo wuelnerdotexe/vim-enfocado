@@ -19,7 +19,7 @@ endif
 let g:colors_name = 'enfocado'
 
 " Get plugins activated.
-let g:enfocado_plugins = get(g:, 'enfocado_plugins', [ 'all' ])
+let g:enfocado_plugins = get(g:, 'enfocado_plugins', ['all'])
 
 " Get the color scheme.
 let s:colorScheme = enfocado#getColorScheme()
@@ -61,15 +61,15 @@ let s:blend_added = s:colorScheme.blend_added
 let s:blend_removed = s:colorScheme.blend_removed
 let s:blend_modified = s:colorScheme.blend_modified
 
+let s:accent_0 = s:colorScheme.accent_0
 let s:accent_1 = s:colorScheme.accent_1
-let s:accent_2 = s:colorScheme.accent_2
+let s:br_accent_0 = s:colorScheme.br_accent_0
 let s:br_accent_1 = s:colorScheme.br_accent_1
-let s:br_accent_2 = s:colorScheme.br_accent_2
 
+let s:reverse_0 = s:colorScheme.reverse_0
 let s:reverse_1 = s:colorScheme.reverse_1
-let s:reverse_2 = s:colorScheme.reverse_2
+let s:br_reverse_0 = s:colorScheme.br_reverse_0
 let s:br_reverse_1 = s:colorScheme.br_reverse_1
-let s:br_reverse_2 = s:colorScheme.br_reverse_2
 
 " Attributes are declared.
 let s:none = ['NONE', 'NONE']
@@ -145,12 +145,12 @@ else
   call enfocado#highlighter('IncSearch', s:none, s:br_yellow, s:bg_1, s:none)
   call enfocado#highlighter('Search', s:none, s:br_yellow, s:bg_1, s:none)
 endif
-call enfocado#highlighter('Accent', s:none, s:none, s:br_accent_1, s:none)
-call enfocado#highlighter('FloatBorder', s:nocombine, s:bg_1, s:br_accent_1, s:none)
-call enfocado#highlighter('Match', s:bold, s:none, s:br_accent_1, s:none)
-call enfocado#highlighter('MatchFuzzy', s:nocombine, s:none, s:accent_1, s:none)
-call enfocado#highlighter('ToolbarButton', s:nocombine, s:accent_1, s:bg_1, s:none)
-call enfocado#highlighter('WildMenu', s:bold, s:bg_2, s:br_accent_1, s:none)
+call enfocado#highlighter('Accent', s:none, s:none, s:br_accent_0, s:none)
+call enfocado#highlighter('FloatBorder', s:nocombine, s:bg_1, s:br_accent_0, s:none)
+call enfocado#highlighter('Match', s:bold, s:none, s:br_accent_0, s:none)
+call enfocado#highlighter('MatchFuzzy', s:nocombine, s:none, s:accent_0, s:none)
+call enfocado#highlighter('ToolbarButton', s:nocombine, s:accent_0, s:bg_1, s:none)
+call enfocado#highlighter('WildMenu', s:bold, s:bg_2, s:br_accent_0, s:none)
 
 
 call enfocado#highlighter('ColorColumn', s:none, s:bg_1, s:none, s:none)
@@ -231,16 +231,16 @@ if has('nvim')
 endif
 
 " General syntax.
-call enfocado#highlighter('Function', s:italic, s:none, s:br_accent_1, s:none)
-call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_reverse_1, s:none)
-call enfocado#highlighter('Identifier', s:nocombine, s:none, s:accent_1, s:none)
-call enfocado#highlighter('IdentifierBuiltin', s:nocombine, s:none, s:reverse_1, s:none)
-call enfocado#highlighter('PreProc', s:nocombine, s:none, s:accent_2, s:none)
-call enfocado#highlighter('Special', s:nocombine, s:none, s:br_reverse_2, s:none)
-call enfocado#highlighter('Statement', s:nocombine, s:none, s:accent_2, s:none)
-call enfocado#highlighter('StatementBuiltin', s:nocombine, s:none, s:reverse_2, s:none)
-call enfocado#highlighter('Type', s:bold, s:none, s:br_accent_2, s:none)
-call enfocado#highlighter('TypeBuiltin', s:bold, s:none, s:br_reverse_2, s:none)
+call enfocado#highlighter('Function', s:italic, s:none, s:br_accent_0, s:none)
+call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_reverse_0, s:none)
+call enfocado#highlighter('Identifier', s:nocombine, s:none, s:accent_0, s:none)
+call enfocado#highlighter('IdentifierBuiltin', s:nocombine, s:none, s:reverse_0, s:none)
+call enfocado#highlighter('PreProc', s:nocombine, s:none, s:accent_1, s:none)
+call enfocado#highlighter('Special', s:nocombine, s:none, s:br_reverse_1, s:none)
+call enfocado#highlighter('Statement', s:nocombine, s:none, s:accent_1, s:none)
+call enfocado#highlighter('StatementBuiltin', s:nocombine, s:none, s:reverse_1, s:none)
+call enfocado#highlighter('Type', s:bold, s:none, s:br_accent_1, s:none)
+call enfocado#highlighter('TypeBuiltin', s:bold, s:none, s:br_reverse_1, s:none)
 
 call enfocado#highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
 call enfocado#highlighter('ConstIdentifier', s:none, s:none, s:yellow, s:none)
@@ -350,9 +350,9 @@ if enfocado#pluginIsActivated('ale', 0)
     call enfocado#highlighter('ALEInfoLine', s:none, s:blend_info, s:none, s:none)
     call enfocado#highlighter('ALEWarningLine', s:none, s:blend_warn, s:none, s:none)
   else
-    call enfocado#highlighter('ALEErrorLine', s:none, s:br_red, s:fg_0, s:none)
-    call enfocado#highlighter('ALEInfoLine', s:none, s:br_yellow, s:fg_0, s:none)
-    call enfocado#highlighter('ALEWarningLine', s:none, s:br_orange, s:fg_0, s:none)
+    call enfocado#highlighter('ALEErrorLine', s:none, s:br_red, s:bg_1, s:none)
+    call enfocado#highlighter('ALEInfoLine', s:none, s:br_yellow, s:bg_1, s:none)
+    call enfocado#highlighter('ALEWarningLine', s:none, s:br_orange, s:bg_1, s:none)
   endif
   highlight! link ALEError DiagnosticUnderlineError
   highlight! link ALEInfo DiagnosticUnderlineInfo
@@ -384,7 +384,7 @@ if enfocado#pluginIsActivated('bufferline', 1)
   highlight! link BufferLineDiagnostic BufferLineBuffer
 
   " Selecteds.
-  call enfocado#highlighter('BufferLineBufferSelected', s:nocombine, s:none, s:br_accent_1, s:none)
+  call enfocado#highlighter('BufferLineBufferSelected', s:nocombine, s:none, s:br_accent_0, s:none)
   highlight! link BufferLineNumbersSelected BufferLineBufferSelected
   highlight! link BufferLineCloseButtonSelected BufferLineBufferSelected
   highlight! link BufferLineModifiedSelected BufferLineCloseButtonSelected
@@ -433,7 +433,7 @@ if enfocado#pluginIsActivated('bufferline', 1)
 
   " Duplicateds.
   call enfocado#highlighter('BufferLineDuplicate', s:nocombine, s:base, s:bg_1, s:none)
-  call enfocado#highlighter('BufferLineDuplicateSelected', s:nocombine, s:none, s:accent_1, s:none)
+  call enfocado#highlighter('BufferLineDuplicateSelected', s:nocombine, s:none, s:accent_0, s:none)
   call enfocado#highlighter('BufferLineDuplicateVisible', s:nocombine, s:none, s:bg_2, s:none)
 
   " Groups.
@@ -453,8 +453,8 @@ if enfocado#pluginIsActivated('bufferline', 1)
 
   " Tabs.
   call enfocado#highlighter('BufferLineTabSeparatorSelected', s:nocombine, s:bg_0, s:bg_0, s:none)
+  call enfocado#highlighter('BufferLineTabSelected', s:nocombine, s:none, s:br_accent_1, s:none)
   highlight! link BufferLineTab BufferLineBuffer
-  highlight! link BufferLineTabSelected BufferLineBufferSelected
   highlight! link BufferLineTabClose BufferLineTabSelected
   highlight! link BufferLineTabSeparator BufferLineSeparator
 endif
@@ -476,10 +476,10 @@ if enfocado#pluginIsActivated('coc', 0)
     call enfocado#highlighter('CocInfoLine', s:none, s:blend_info, s:none, s:none)
     call enfocado#highlighter('CocWarningLine', s:none, s:blend_warn, s:none, s:none)
   else
-    call enfocado#highlighter('CocErrorLine', s:none, s:br_red, s:fg_0, s:none)
-    call enfocado#highlighter('CocHintLine', s:none, s:br_blue, s:fg_0, s:none)
-    call enfocado#highlighter('CocInfoLine', s:none, s:br_yellow, s:fg_0, s:none)
-    call enfocado#highlighter('CocWarningLine', s:none, s:br_orange, s:fg_0, s:none)
+    call enfocado#highlighter('CocErrorLine', s:none, s:br_red, s:bg_1, s:none)
+    call enfocado#highlighter('CocHintLine', s:none, s:br_blue, s:bg_1, s:none)
+    call enfocado#highlighter('CocInfoLine', s:none, s:br_yellow, s:bg_1, s:none)
+    call enfocado#highlighter('CocWarningLine', s:none, s:br_orange, s:bg_1, s:none)
   endif
   highlight! link CocErrorHighlight DiagnosticUnderlineError
   highlight! link CocHintHighlight DiagnosticUnderlineHint
@@ -687,6 +687,35 @@ if enfocado#pluginIsActivated('fzf', 0)
   call enfocado#highlighter('Fzf3', s:nocombine, s:bg_0, s:dim_0, s:none)
 endif
 " }}}
+" gitsigns.nvim: {{{
+if enfocado#pluginIsActivated('gitgutter', 0)
+  if (has('termguicolors') && &termguicolors) || has('gui_running')
+    call enfocado#highlighter('GitSignsAddLn', s:none, s:blend_added, s:none, s:none)
+    call enfocado#highlighter('GitSignsChangeLn', s:none, s:blend_modified, s:none, s:none)
+  else
+    call enfocado#highlighter('GitSignsAddLn', s:none, s:green, s:bg_1, s:none)
+    call enfocado#highlighter('GitSignsChangeLn', s:none, s:yellow, s:bg_1, s:none)
+  endif
+  call enfocado#highlighter('GitSignsAddInline', s:none, s:green, s:bg_1, s:none)
+  call enfocado#highlighter('GitSignsDeleteInline', s:none, s:yellow, s:bg_1, s:none)
+  call enfocado#highlighter('GitSignsChangeInline', s:none, s:red, s:bg_1, s:none)
+  highlight! link GitSignsAdd DiffAdd
+  highlight! link GitSignsDelete DiffDelete
+  highlight! link GitSignsChange DiffChange
+  highlight! link GitSignsAddNr GitSignsAdd
+  highlight! link GitSignsChangeNr GitSignsChange
+  highlight! link GitSignsDeleteNr GitSignsDelete
+  highlight! link GitSignsAddPreview GitSignsAdd
+  highlight! link GitSignsDeletePreview GitSignsDelete
+  highlight! link GitSignsCurrentLineBlame Dimmed
+  highlight! link GitSignsAddLnInline GitSignsAddInline
+  highlight! link GitSignsChangeLnInline GitSignsChangeInline
+  highlight! link GitSignsDeleteLnInline GitSignsDeleteInline
+  highlight! link GitSignsAddLnVirtLnInLine GitSignsAddLnInline
+  highlight! link GitSignsChangeVirtLnInLine GitSignsChangeLnInline
+  highlight! link GitSignsDeleteVirtLnInLine GitSignsDeleteLnInline
+endif
+" }}}
 " glyph-palette.vim: {{{
 if enfocado#pluginIsActivated('glyph-palette', 0)
   call enfocado#highlighter('GlyphPalette0', s:nocombine, s:none, s:bg_1, s:none)
@@ -717,12 +746,12 @@ if enfocado#pluginIsActivated('indent-blankline', 1)
   call enfocado#highlighter('IndentBlanklineContextStart', s:underline, s:none, s:none, s:dim_0)
 
   " Enfocado groups.
-  call enfocado#highlighter('EnfocadoIndentBlanklineIndent1', s:none, s:none, s:accent_2, s:none)
+  call enfocado#highlighter('EnfocadoIndentBlanklineIndent1', s:none, s:none, s:accent_1, s:none)
   call enfocado#highlighter('EnfocadoIndentBlanklineIndent2', s:none, s:none, s:cyan, s:none)
-  call enfocado#highlighter('EnfocadoIndentBlanklineIndent3', s:none, s:none, s:accent_1, s:none)
-  call enfocado#highlighter('EnfocadoIndentBlanklineIndent4', s:none, s:none, s:br_accent_2, s:none)
+  call enfocado#highlighter('EnfocadoIndentBlanklineIndent3', s:none, s:none, s:accent_0, s:none)
+  call enfocado#highlighter('EnfocadoIndentBlanklineIndent4', s:none, s:none, s:br_accent_1, s:none)
   call enfocado#highlighter('EnfocadoIndentBlanklineIndent5', s:none, s:none, s:br_cyan, s:none)
-  call enfocado#highlighter('EnfocadoIndentBlanklineIndent6', s:none, s:none, s:br_accent_1, s:none)
+  call enfocado#highlighter('EnfocadoIndentBlanklineIndent6', s:none, s:none, s:br_accent_0, s:none)
 endif
 " }}}
 " nerdtree: {{{
@@ -921,12 +950,12 @@ if enfocado#pluginIsActivated('treesitter', 1)
   highlight! link TSModuleInfoParser Text
 
   " nvim-ts-rainbow module.
-  call enfocado#highlighter('rainbowcol1', s:none, s:none, s:accent_2, s:none)
+  call enfocado#highlighter('rainbowcol1', s:none, s:none, s:accent_1, s:none)
   call enfocado#highlighter('rainbowcol2', s:none, s:none, s:cyan, s:none)
-  call enfocado#highlighter('rainbowcol3', s:none, s:none, s:accent_1, s:none)
-  call enfocado#highlighter('rainbowcol4', s:none, s:none, s:br_accent_2, s:none)
+  call enfocado#highlighter('rainbowcol3', s:none, s:none, s:accent_0, s:none)
+  call enfocado#highlighter('rainbowcol4', s:none, s:none, s:br_accent_1, s:none)
   call enfocado#highlighter('rainbowcol5', s:none, s:none, s:br_cyan, s:none)
-  call enfocado#highlighter('rainbowcol6', s:none, s:none, s:br_accent_1, s:none)
+  call enfocado#highlighter('rainbowcol6', s:none, s:none, s:br_accent_0, s:none)
   highlight! link rainbowcol7 rainbowcol1
 endif
 " }}}
@@ -999,8 +1028,8 @@ endif
 " }}}
 " rainbow: {{{
 if enfocado#pluginIsActivated('rainbow', 0)
-  let s:rainbow_guifgs = [s:accent_2[0], s:cyan[0], s:accent_1[0], s:br_accent_2[0]]
-  let s:rainbow_ctermfgs = [s:accent_2[1], s:cyan[1], s:accent_1[1], s:br_accent_2[1]]
+  let s:rainbow_guifgs = [s:accent_1[0], s:cyan[0], s:accent_0[0], s:br_accent_1[0]]
+  let s:rainbow_ctermfgs = [s:accent_1[1], s:cyan[1], s:accent_0[1], s:br_accent_1[1]]
 
   if !exists('g:rainbow_conf')
     let g:rainbow_conf = {}
@@ -1110,10 +1139,10 @@ if enfocado#pluginIsActivated('gitgutter', 0)
     call enfocado#highlighter('GitGutterDeleteLine', s:none, s:blend_removed, s:none, s:none)
     call enfocado#highlighter('GitGutterChangeDeleteLine', s:none, s:blend_removed, s:none, s:none)
   else
-    call enfocado#highlighter('GitGutterAddLine', s:none, s:green, s:fg_0, s:none)
-    call enfocado#highlighter('GitGutterChangeLine', s:none, s:yellow, s:fg_0, s:none)
-    call enfocado#highlighter('GitGutterDeleteLine', s:none, s:red, s:fg_0, s:none)
-    call enfocado#highlighter('GitGutterChangeDeleteLine', s:none, s:red, s:fg_0, s:none)
+    call enfocado#highlighter('GitGutterAddLine', s:none, s:green, s:bg_1, s:none)
+    call enfocado#highlighter('GitGutterChangeLine', s:none, s:yellow, s:bg_1, s:none)
+    call enfocado#highlighter('GitGutterDeleteLine', s:none, s:red, s:bg_1, s:none)
+    call enfocado#highlighter('GitGutterChangeDeleteLine', s:none, s:red, s:bg_1, s:none)
   endif
   highlight! link GitGutterAdd DiffAdd
   highlight! link GitGutterAddInvisible None
@@ -1180,11 +1209,11 @@ if enfocado#pluginIsActivated('signify', 0)
       call enfocado#highlighter('SignifyLineDelete', s:none, s:blend_removed, s:none, s:none)
       call enfocado#highlighter('SignifyLineDeleteFirstLine', s:none, s:blend_removed, s:none, s:none)
     else
-      call enfocado#highlighter('SignifyLineAdd', s:none, s:green, s:fg_0, s:none)
-      call enfocado#highlighter('SignifyLineChange', s:none, s:yellow, s:fg_0, s:none)
-      call enfocado#highlighter('SignifyLineChangeDelete', s:none, s:yellow, s:fg_0, s:none)
-      call enfocado#highlighter('SignifyLineDelete', s:none, s:red, s:fg_0, s:none)
-      call enfocado#highlighter('SignifyLineDeleteFirstLine', s:none, s:red, s:fg_0, s:none)
+      call enfocado#highlighter('SignifyLineAdd', s:none, s:green, s:bg_1, s:none)
+      call enfocado#highlighter('SignifyLineChange', s:none, s:yellow, s:bg_1, s:none)
+      call enfocado#highlighter('SignifyLineChangeDelete', s:none, s:yellow, s:bg_1, s:none)
+      call enfocado#highlighter('SignifyLineDelete', s:none, s:red, s:bg_1, s:none)
+      call enfocado#highlighter('SignifyLineDeleteFirstLine', s:none, s:red, s:bg_1, s:none)
     endif
   endif
   highlight! link SignifySignAdd DiffAdd
@@ -1214,7 +1243,7 @@ if enfocado#pluginIsActivated('visual-multi', 0)
   if !exists('g:VM_theme_set_by_colorscheme') ||
         \ g:VM_theme_set_by_colorscheme != 0
     let g:VM_theme_set_by_colorscheme = 1
-    call enfocado#highlighter('VM_Extend', s:bold, s:bg_2, s:accent_1, s:none)
+    call enfocado#highlighter('VM_Extend', s:bold, s:bg_2, s:accent_0, s:none)
     call enfocado#highlighter('VM_Insert', s:none, s:bg_1, s:yellow, s:none)
     highlight! link VM_Cursor Cursor
     highlight! link VM_Mono VM_Cursor

@@ -101,28 +101,28 @@ function! enfocado#getColorScheme()
   " Style colors.
   if g:enfocado_style ==# 'nature'
     " Nature accent colors.
-    let l:colors.accent_1 = l:colors.green
-    let l:colors.accent_2 = l:colors.blue
-    let l:colors.br_accent_1 = l:colors.br_green
-    let l:colors.br_accent_2 = l:colors.br_blue
+    let l:colors.accent_0 = l:colors.green
+    let l:colors.accent_1 = l:colors.blue
+    let l:colors.br_accent_0 = l:colors.br_green
+    let l:colors.br_accent_1 = l:colors.br_blue
 
     " Nature reverse colors (neon colors).
-    let l:colors.reverse_1 = l:colors.magenta
-    let l:colors.reverse_2 = l:colors.violet
-    let l:colors.br_reverse_1 = l:colors.br_magenta
-    let l:colors.br_reverse_2 = l:colors.br_violet
+    let l:colors.reverse_0 = l:colors.magenta
+    let l:colors.reverse_1 = l:colors.violet
+    let l:colors.br_reverse_0 = l:colors.br_magenta
+    let l:colors.br_reverse_1 = l:colors.br_violet
   else
     " Neon accent colors.
-    let l:colors.accent_1 = l:colors.magenta
-    let l:colors.accent_2 = l:colors.violet
-    let l:colors.br_accent_1 = l:colors.br_magenta
-    let l:colors.br_accent_2 = l:colors.br_violet
+    let l:colors.accent_0 = l:colors.magenta
+    let l:colors.accent_1 = l:colors.violet
+    let l:colors.br_accent_0 = l:colors.br_magenta
+    let l:colors.br_accent_1 = l:colors.br_violet
 
     " Neon reverse colors (nature colors).
-    let l:colors.reverse_1 = l:colors.green
-    let l:colors.reverse_2 = l:colors.blue
-    let l:colors.br_reverse_1 = l:colors.br_green
-    let l:colors.br_reverse_2 = l:colors.br_blue
+    let l:colors.reverse_0 = l:colors.green
+    let l:colors.reverse_1 = l:colors.blue
+    let l:colors.br_reverse_0 = l:colors.br_green
+    let l:colors.br_reverse_1 = l:colors.br_blue
   endif
 
   " Colors return.

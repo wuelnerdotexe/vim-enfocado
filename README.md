@@ -112,6 +112,7 @@ let g:enfocado_plugins = [
   \ 'cmp',
   \ 'fern',
   \ 'fzf',
+  \ 'gitsigns',
   \ 'glyph-palette',
   \ 'illuminate',
   \ 'indent-blankline',
@@ -229,6 +230,7 @@ The following plugins are supported:
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
 - [fern.vim](https://github.com/lambdalisue/fern.vim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
 - [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
