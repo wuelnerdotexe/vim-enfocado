@@ -143,6 +143,7 @@ else
   call enfocado#highlighter('LineNr', s:none, s:none, s:bg_2, s:none)
 endif
 call enfocado#highlighter('Accent', s:none, s:none, s:br_accent_0, s:none)
+call enfocado#highlighter('Builtin', s:none, s:none, s:br_builtin_0, s:none)
 call enfocado#highlighter('ColorColumn', s:none, s:bg_1, s:none, s:none)
 call enfocado#highlighter('Conceal', s:nocombine, s:none, s:bg_2, s:none)
 call enfocado#highlighter('Cursor', s:none, s:fg_0, s:bg_1, s:none)
@@ -526,13 +527,13 @@ if enfocado#pluginIsActivated('coc', 0)
   highlight! link CocSymbolDefault Text
   highlight! link CocSymbolEnum Type
   highlight! link CocSymbolEnumMember Property
-  highlight! link CocSymbolEvent FunctionBuiltin
+  highlight! link CocSymbolEvent Builtin
   highlight! link CocSymbolField Property
   highlight! link CocSymbolFile Text
-  highlight! link CocSymbolFunction Function
+  highlight! link CocSymbolFunction Accent
   highlight! link CocSymbolInterface Type
   highlight! link CocSymbolKey Identifier
-  highlight! link CocSymbolMethod Method
+  highlight! link CocSymbolMethod Accent
   highlight! link CocSymbolModule Text
   highlight! link CocSymbolNamespace Text
   highlight! link CocSymbolNull StatementBuiltin
@@ -803,14 +804,14 @@ if enfocado#pluginIsActivated('cmp', 1)
   highlight! link CmpItemKind Text
   highlight! link CmpItemKindEnum Type
   highlight! link CmpItemKindEnumMember Property
-  highlight! link CmpItemKindEvent FunctionBuiltin
+  highlight! link CmpItemKindEvent Builtin
   highlight! link CmpItemKindField Property
   highlight! link CmpItemKindFile Text
   highlight! link CmpItemKindFolder Directory
-  highlight! link CmpItemKindFunction Function
+  highlight! link CmpItemKindFunction Accent
   highlight! link CmpItemKindInterface Type
   highlight! link CmpItemKindKeyword Keyword
-  highlight! link CmpItemKindMethod Method
+  highlight! link CmpItemKindMethod Accent
   highlight! link CmpItemKindModule Text
   highlight! link CmpItemKindOperator Operator
   highlight! link CmpItemKindProperty Property
