@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [5.16.0] - 2022-09-20
+## [5.16.0] - 2022-09-21
 
 ### Added
 
@@ -17,7 +17,7 @@ Added support for the following plugins:
 
 ### Changed
 
-- Optimized to get the **Enfocado** styles, which now allows accent colors to be used before and after loading the colorscheme in other plugins with `let colors = enfocado#getColorScheme` or in Lua with `local colors = vim.fn['enfocado#getColorScheme']()` in the style of an API.
+- Optimized to get the **Enfocado** styles, which now allows accent colors to be used before and after loading the colorscheme in other plugins with `enfocado#getColorScheme` or in Lua with `vim.fn['enfocado#getColorScheme']()` in the style of an API.
 
 ### Fixed
 

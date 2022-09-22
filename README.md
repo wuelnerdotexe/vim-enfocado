@@ -198,6 +198,7 @@ In order for the human text simulation to work as it should, I recommend that yo
 
 This vim configs comes with **Enfocado for Vim** already installed by default!
 
+- [Wuelner's Neovim Setup](https://github.com/wuelnerdotexe/nvim)
 - [CosmicNvim](https://github.com/CosmicNvim/CosmicNvim)
 - [CodeArt](https://github.com/artart222/CodeArt)
 
