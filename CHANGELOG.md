@@ -24,6 +24,7 @@ Added support for the following plugins:
 - Fix Git for Fern colors and add a new one for todo-comments.
 - Fixed some NvimTree colors.
 - Fixed code indentation.
+- Fixed issue #9 (Some kind icons in nvim-cmp are displayed in italic).
 
 ## [5.15.0] - 2022-09-04
 

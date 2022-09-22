@@ -66,10 +66,10 @@ let s:accent_1 = s:colorScheme.accent_1
 let s:br_accent_0 = s:colorScheme.br_accent_0
 let s:br_accent_1 = s:colorScheme.br_accent_1
 
-let s:reverse_0 = s:colorScheme.reverse_0
-let s:reverse_1 = s:colorScheme.reverse_1
-let s:br_reverse_0 = s:colorScheme.br_reverse_0
-let s:br_reverse_1 = s:colorScheme.br_reverse_1
+let s:builtin_0 = s:colorScheme.builtin_0
+let s:builtin_1 = s:colorScheme.builtin_1
+let s:br_builtin_0 = s:colorScheme.br_builtin_0
+let s:br_builtin_1 = s:colorScheme.br_builtin_1
 
 " Attributes are declared.
 let s:none = ['NONE', 'NONE']
@@ -233,19 +233,19 @@ call enfocado#highlighter('ConstIdentifier', s:none, s:none, s:yellow, s:none)
 call enfocado#highlighter('Error', s:none, s:none, s:br_red, s:none)
 call enfocado#highlighter('Exception', s:nocombine, s:none, s:orange, s:none)
 call enfocado#highlighter('Function', s:italic, s:none, s:br_accent_0, s:none)
-call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_reverse_0, s:none)
+call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_builtin_0, s:none)
 call enfocado#highlighter('Identifier', s:nocombine, s:none, s:accent_0, s:none)
-call enfocado#highlighter('IdentifierBuiltin', s:nocombine, s:none, s:reverse_0, s:none)
+call enfocado#highlighter('IdentifierBuiltin', s:nocombine, s:none, s:builtin_0, s:none)
 call enfocado#highlighter('Link', s:underline, s:none, s:br_cyan, s:br_cyan)
 call enfocado#highlighter('PreProc', s:nocombine, s:none, s:accent_1, s:none)
-call enfocado#highlighter('Special', s:nocombine, s:none, s:br_reverse_1, s:none)
+call enfocado#highlighter('Special', s:nocombine, s:none, s:br_builtin_1, s:none)
 call enfocado#highlighter('Statement', s:nocombine, s:none, s:accent_1, s:none)
-call enfocado#highlighter('StatementBuiltin', s:nocombine, s:none, s:reverse_1, s:none)
+call enfocado#highlighter('StatementBuiltin', s:nocombine, s:none, s:builtin_1, s:none)
 call enfocado#highlighter('String', s:nocombine, s:none, s:cyan, s:br_cyan)
 call enfocado#highlighter('Text', s:nocombine, s:none, s:fg_0, s:none)
 call enfocado#highlighter('Todo', s:bold, s:br_cyan, s:bg_1, s:none)
 call enfocado#highlighter('Type', s:bold, s:none, s:br_accent_1, s:none)
-call enfocado#highlighter('TypeBuiltin', s:bold, s:none, s:br_reverse_1, s:none)
+call enfocado#highlighter('TypeBuiltin', s:bold, s:none, s:br_builtin_1, s:none)
 highlight! link Boolean StatementBuiltin
 highlight! link Character String
 highlight! link Conditional Statement

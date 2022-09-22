@@ -106,11 +106,11 @@ function! enfocado#getColorScheme()
     let l:colors.br_accent_0 = l:colors.br_green
     let l:colors.br_accent_1 = l:colors.br_blue
 
-    " Nature reverse colors (neon colors).
-    let l:colors.reverse_0 = l:colors.magenta
-    let l:colors.reverse_1 = l:colors.violet
-    let l:colors.br_reverse_0 = l:colors.br_magenta
-    let l:colors.br_reverse_1 = l:colors.br_violet
+    " Nature builtin colors (neon colors).
+    let l:colors.builtin_0 = l:colors.magenta
+    let l:colors.builtin_1 = l:colors.violet
+    let l:colors.br_builtin_0 = l:colors.br_magenta
+    let l:colors.br_builtin_1 = l:colors.br_violet
   else
     " Neon accent colors.
     let l:colors.accent_0 = l:colors.magenta
@@ -118,11 +118,11 @@ function! enfocado#getColorScheme()
     let l:colors.br_accent_0 = l:colors.br_magenta
     let l:colors.br_accent_1 = l:colors.br_violet
 
-    " Neon reverse colors (nature colors).
-    let l:colors.reverse_0 = l:colors.green
-    let l:colors.reverse_1 = l:colors.blue
-    let l:colors.br_reverse_0 = l:colors.br_green
-    let l:colors.br_reverse_1 = l:colors.br_blue
+    " Neon builtin colors (nature colors).
+    let l:colors.builtin_0 = l:colors.green
+    let l:colors.builtin_1 = l:colors.blue
+    let l:colors.br_builtin_0 = l:colors.br_green
+    let l:colors.br_builtin_1 = l:colors.br_blue
   endif
 
   " Colors return.
