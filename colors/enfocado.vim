@@ -346,57 +346,31 @@ if enfocado#pluginIsActivated('aerial', 1)
   call enfocado#highlighter('AerialLineNC', s:none, s:bg_1, s:yellow, s:none)
 
   " Symbols.
-  highlight! link AerialArray Text
   highlight! link AerialArrayIcon Identifier
-  highlight! link AerialBoolean Text
   highlight! link AerialBooleanIcon StatementBuiltin
-  highlight! link AerialClass Text
   highlight! link AerialClassIcon Type
-  highlight! link AerialConstant Text
   highlight! link AerialConstantIcon ConstIdentifier
-  highlight! link AerialConstructor Text
   highlight! link AerialConstructorIcon Type
-  highlight! link AerialEnum Text
   highlight! link AerialEnumIcon Type
-  highlight! link AerialEnumMember Text
   highlight! link AerialEnumMemberIcon Property
-  highlight! link AerialEvent Text
   highlight! link AerialEventIcon Builtin
-  highlight! link AerialField Text
   highlight! link AerialFieldIcon Property
-  highlight! link AerialFile Text
   highlight! link AerialFileIcon Text
-  highlight! link AerialFunction Text
   highlight! link AerialFunctionIcon Accent
-  highlight! link AerialInterface Text
   highlight! link AerialInterfaceIcon Type
-  highlight! link AerialKey Text
   highlight! link AerialKeyIcon Identifier
-  highlight! link AerialMethod Text
   highlight! link AerialMethodIcon Accent
-  highlight! link AerialModule Text
   highlight! link AerialModuleIcon Text
-  highlight! link AerialNamespace Text
   highlight! link AerialNamespaceIcon Text
-  highlight! link AerialNull Text
   highlight! link AerialNullIcon StatementBuiltin
-  highlight! link AerialNumber Text
   highlight! link AerialNumberIcon Number
-  highlight! link AerialObject Text
   highlight! link AerialObjectIcon Type
-  highlight! link AerialOperator Text
   highlight! link AerialOperatorIcon Operator
-  highlight! link AerialPackage Text
   highlight! link AerialPackageIcon String
-  highlight! link AerialProperty Text
   highlight! link AerialPropertyIcon Property
-  highlight! link AerialString Text
   highlight! link AerialStringIcon String
-  highlight! link AerialStruct Text
   highlight! link AerialStructIcon Type
-  highlight! link AerialTypeParameter Text
   highlight! link AerialTypeParameterIcon Type
-  highlight! link AerialVariable Text
   highlight! link AerialVariableIcon Identifier
 
   " Indent lines.
