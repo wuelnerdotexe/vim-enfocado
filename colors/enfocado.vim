@@ -342,8 +342,8 @@ highlight! link diffSubname Title
 " ------------------------------------------------------------------------------
 " aerial.nvim: {{{
 if enfocado#pluginIsActivated('aerial', 1)
-  call enfocado#Highlighter('AerialLine', s:none, s:bg_1, s:br_yellow, s:none)
-  call enfocado#Highlighter('AerialLineNC', s:none, s:bg_1, s:yellow, s:none)
+  call enfocado#highlighter('AerialLine', s:none, s:bg_1, s:br_yellow, s:none)
+  call enfocado#highlighter('AerialLineNC', s:none, s:bg_1, s:yellow, s:none)
 
   " Symbols.
   highlight! link AerialArray Text
