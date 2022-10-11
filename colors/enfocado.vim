@@ -136,7 +136,7 @@ else
   call enfocado#highlighter('Search', s:none, s:br_yellow, s:bg_1, s:none)
 endif
 if &relativenumber && &number
-  call enfocado#highlighter('LineNr', s:none, s:bg_1, s:fg_0, s:none)
+  call enfocado#highlighter('LineNr', s:none, s:bg_1, s:dim_0, s:none)
 elseif !&relativenumber && &number
   call enfocado#highlighter('LineNr', s:none, s:none, s:dim_0, s:none)
 else
@@ -168,7 +168,7 @@ call enfocado#highlighter('LineNrAbove', s:none, s:none, s:bg_2, s:none)
 call enfocado#highlighter('Match', s:bold, s:none, s:br_accent_0, s:none)
 call enfocado#highlighter('MatchFuzzy', s:nocombine, s:none, s:accent_0, s:none)
 call enfocado#highlighter('MatchParen', s:none, s:bg_2, s:none, s:none)
-call enfocado#highlighter('ModeMsg', s:nocombine, s:none, s:dim_0, s:none)
+call enfocado#highlighter('ModeMsg', s:nocombine, s:none, s:fg_0, s:none)
 call enfocado#highlighter('MoreMsg', s:nocombine, s:none, s:br_yellow, s:none)
 call enfocado#highlighter('None', s:none, s:none, s:none, s:none)
 call enfocado#highlighter('NonText', s:nocombine, s:none, s:bg_2, s:none)
@@ -214,14 +214,14 @@ highlight! link CursorLineFold CursorLine
 highlight! link EndOfBuffer NonText
 highlight! link Line ColorColumn
 highlight! link LineNrBelow LineNrAbove
-highlight! link MsgArea Dimmed
+highlight! link MsgArea Text
 highlight! link MsgSeparator StatusLineNC
 highlight! link NormalNC Normal
 highlight! link Substitute Search
 highlight! link TermCursorNC None
 highlight! link Whitespace NonText
-highlight! link WinBar Dimmed
-highlight! link WinBarNC WinBar
+highlight! link WinBar Text
+highlight! link WinBarNC Dimmed
 highlight! link WinSeparator VertSplit
 if has('nvim')
   highlight! FloatShadow ctermbg=16 guibg=#000000 blend=10
@@ -340,6 +340,78 @@ highlight! link diffSubname Title
 " ------------------------------------------------------------------------------
 " SECTION: Plugins for Neo(Vim) groups highlighting.
 " ------------------------------------------------------------------------------
+" aerial.nvim: {{{
+if enfocado#pluginIsActivated('aerial', 1)
+  call enfocado#Highlighter('AerialLine', s:none, s:bg_1, s:br_yellow, s:none)
+  call enfocado#Highlighter('AerialLineNC', s:none, s:bg_1, s:yellow, s:none)
+
+  " Symbols.
+  highlight! link AerialArray Text
+  highlight! link AerialArrayIcon Identifier
+  highlight! link AerialBoolean Text
+  highlight! link AerialBooleanIcon StatementBuiltin
+  highlight! link AerialClass Text
+  highlight! link AerialClassIcon Type
+  highlight! link AerialConstant Text
+  highlight! link AerialConstantIcon ConstIdentifier
+  highlight! link AerialConstructor Text
+  highlight! link AerialConstructorIcon Type
+  highlight! link AerialEnum Text
+  highlight! link AerialEnumIcon Type
+  highlight! link AerialEnumMember Text
+  highlight! link AerialEnumMemberIcon Property
+  highlight! link AerialEvent Text
+  highlight! link AerialEventIcon Builtin
+  highlight! link AerialField Text
+  highlight! link AerialFieldIcon Property
+  highlight! link AerialFile Text
+  highlight! link AerialFileIcon Text
+  highlight! link AerialFunction Text
+  highlight! link AerialFunctionIcon Accent
+  highlight! link AerialInterface Text
+  highlight! link AerialInterfaceIcon Type
+  highlight! link AerialKey Text
+  highlight! link AerialKeyIcon Identifier
+  highlight! link AerialMethod Text
+  highlight! link AerialMethodIcon Accent
+  highlight! link AerialModule Text
+  highlight! link AerialModuleIcon Text
+  highlight! link AerialNamespace Text
+  highlight! link AerialNamespaceIcon Text
+  highlight! link AerialNull Text
+  highlight! link AerialNullIcon StatementBuiltin
+  highlight! link AerialNumber Text
+  highlight! link AerialNumberIcon Number
+  highlight! link AerialObject Text
+  highlight! link AerialObjectIcon Type
+  highlight! link AerialOperator Text
+  highlight! link AerialOperatorIcon Operator
+  highlight! link AerialPackage Text
+  highlight! link AerialPackageIcon String
+  highlight! link AerialProperty Text
+  highlight! link AerialPropertyIcon Property
+  highlight! link AerialString Text
+  highlight! link AerialStringIcon String
+  highlight! link AerialStruct Text
+  highlight! link AerialStructIcon Type
+  highlight! link AerialTypeParameter Text
+  highlight! link AerialTypeParameterIcon Type
+  highlight! link AerialVariable Text
+  highlight! link AerialVariableIcon Identifier
+
+  " Indent lines.
+  highlight! link AerialGuide NonText
+  highlight! link AerialGuide1 AerialGuide
+  highlight! link AerialGuide2 AerialGuide
+  highlight! link AerialGuide3 AerialGuide
+  highlight! link AerialGuide4 AerialGuide
+  highlight! link AerialGuide5 AerialGuide
+  highlight! link AerialGuide6 AerialGuide
+  highlight! link AerialGuide7 AerialGuide
+  highlight! link AerialGuide8 AerialGuide
+  highlight! link AerialGuide9 AerialGuide
+endif
+" }}}
 " ale: {{{
 if enfocado#pluginIsActivated('ale', 0)
   if (has('termguicolors') && &termguicolors) || has('gui_running')
@@ -450,7 +522,7 @@ if enfocado#pluginIsActivated('bufferline', 1)
 
   " Tabs.
   call enfocado#highlighter('BufferLineTabSeparatorSelected', s:nocombine, s:bg_0, s:bg_0, s:none)
-  call enfocado#highlighter('BufferLineTabSelected', s:nocombine, s:none, s:br_accent_1, s:none)
+  call enfocado#highlighter('BufferLineTabSelected', s:nocombine, s:none, s:accent_1, s:none)
   highlight! link BufferLineTab BufferLineBuffer
   highlight! link BufferLineTabClose BufferLineTabSelected
   highlight! link BufferLineTabSeparator BufferLineSeparator
@@ -899,7 +971,7 @@ if enfocado#pluginIsActivated('treesitter', 1)
   highlight! link TSFuncMacro Function
   highlight! link TSInclude Include
   highlight! link TSKeyword Keyword
-  highlight! link TSKeywordFunction Type
+  highlight! link TSKeywordFunction Function
   highlight! link TSKeywordOperator Operator
   highlight! link TSKeywordReturn Keyword
   highlight! link TSLabel Label
