@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [5.18.0] - 2022-10-17
 
+### Fixed
+
+- Fixed `AerialLine*` visibility colors.
+
 ### Changed
 
 - Remove obsolete `TS*` highlight groups.
