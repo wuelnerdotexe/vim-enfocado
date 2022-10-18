@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.18.0] - 2022-10-17
+
+### Changed
+
+- Remove obsolete `TS*` highlight groups.
+see issue [#3572](https://github.com/nvim-treesitter/nvim-treesitter/issues/3572), pull [#3656](https://github.com/nvim-treesitter/nvim-treesitter/pull/3656), and commit [42ab95d](https://github.com/nvim-treesitter/nvim-treesitter/commit/42ab95d5e11f247c6f0c8f5181b02e816caa4a4f)
+
 ## [5.17.0] - 2022-10-10
 
 ### Added
