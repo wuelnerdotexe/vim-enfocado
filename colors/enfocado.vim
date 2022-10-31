@@ -161,7 +161,7 @@ call enfocado#highlighter('FileLink', s:bold, s:none, s:br_cyan, s:none)
 call enfocado#highlighter('FileExec', s:nocombine, s:none, s:green, s:none)
 call enfocado#highlighter('FloatBorder', s:nocombine, s:bg_1, s:br_accent_0, s:none)
 call enfocado#highlighter('Folded', s:nocombine, s:none, s:dim_0, s:none)
-call enfocado#highlighter('FoldColumn', s:nocombine, s:none, s:dim_0, s:none)
+call enfocado#highlighter('FoldColumn', s:nocombine, s:none, s:bg_2, s:none)
 call enfocado#highlighter('Ignore', s:nocombine, s:none, s:bg_2, s:none)
 call enfocado#highlighter('lCursor', s:none, s:fg_0, s:bg_1, s:none)
 call enfocado#highlighter('LineNrAbove', s:none, s:none, s:bg_2, s:none)
@@ -687,11 +687,11 @@ if enfocado#pluginIsActivated('fern', 0)
   highlight! link FernSpinner DiagnosticInfo
   highlight! link FernMarkedLine Accent
   highlight! link FernMarkedText Accent
-  highlight! link FernRootSymbol NonText
-  highlight! link FernRootText Dimmed
-  highlight! link FernLeafSymbol FernRootSymbol
+  highlight! link FernRootSymbol FernRootText
+  highlight! link FernRootText FernBranchText
+  highlight! link FernLeafSymbol FernLeafText
   highlight! link FernLeafText Text
-  highlight! link FernBranchSymbol FernRootSymbol
+  highlight! link FernBranchSymbol FernBranchText
   highlight! link FernBranchText Directory
   highlight! link FernWindowSelectIndicator Accent
   highlight! link FernWindowSelectStatusLine StatusLine
