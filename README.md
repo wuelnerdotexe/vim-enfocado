@@ -118,7 +118,9 @@ let g:enfocado_plugins = [
   \   'indent-blankline',
   \   'lsp',
   \   'matchup',
+  \   'noice',
   \   'packer',
+  \   'smoothcursor',
   \   'telescope',
   \   'visual-multi'
   \ ]
@@ -239,6 +241,7 @@ The following plugins are supported:
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
 - [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
 - [nerdtree](https://github.com/preservim/nerdtree)
+- [noice.nvim](https://github.com/folke/noice.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
@@ -247,6 +250,7 @@ The following plugins are supported:
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [rainbow](https://github.com/luochen1990/rainbow)
+- [SmoothCursor.nvim](https://github.com/gen740/SmoothCursor.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [vim-airline](https://github.com/vim-airline/vim-airline)

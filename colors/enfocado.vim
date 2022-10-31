@@ -232,6 +232,7 @@ endif
 call enfocado#highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
 call enfocado#highlighter('ConstIdentifier', s:none, s:none, s:yellow, s:none)
 call enfocado#highlighter('Error', s:none, s:none, s:br_red, s:none)
+call enfocado#highlighter('Trace', s:nocombine, s:none, s:br_magenta, s:none)
 call enfocado#highlighter('Exception', s:nocombine, s:none, s:orange, s:none)
 call enfocado#highlighter('Function', s:italic, s:none, s:br_accent_0, s:none)
 call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_builtin_0, s:none)
@@ -251,7 +252,7 @@ highlight! link Boolean StatementBuiltin
 highlight! link Character String
 highlight! link Conditional Statement
 highlight! link Constant Text
-highlight! link Debug Success
+highlight! link Debug Dimmed
 highlight! link Define PreProc
 highlight! link Delimiter Text
 highlight! link Float Number
@@ -838,6 +839,83 @@ if enfocado#pluginIsActivated('netrw', 0)
   highlight! link netrwVersion Ignore
 endif
 " }}}
+" noice.nvim: {{{
+if enfocado#pluginIsActivated('noice', 1)
+  call enfocado#highlighter('NoiceConfirmBorder', s:nocombine, s:bg_1, s:br_yellow, s:none)
+  call enfocado#highlighter('NoiceFormatConfirm', s:nocombine, s:bg_2, s:yellow, s:none)
+  call enfocado#highlighter('NoiceFormatConfirmDefault', s:nocombine, s:br_yellow, s:bg_1, s:none)
+  highlight! link NoiceCmdlineIconCmdline NoiceCmdlineIcon
+  highlight! link NoiceCmdlineIconFilter NoiceCmdlineIcon
+  highlight! link NoiceCmdlineIconHelp NoiceCmdlineIcon
+  highlight! link NoiceCmdlineIconInput NoiceCmdlinePrompt
+  highlight! link NoiceCmdlineIconLua NoiceCmdlineIcon
+  highlight! link NoiceCmdlineIconSearch NoiceCmdlineIcon
+  highlight! link NoiceCmdlineIcon Text
+  highlight! link NoiceCmdline MsgArea
+  highlight! link NoiceCmdlinePopupBorderCmdline NoiceCmdlinePopupBorder
+  highlight! link NoiceCmdlinePopupBorderFilter NoiceCmdlinePopupBorder
+  highlight! link NoiceCmdlinePopupBorderHelp NoiceCmdlinePopupBorder
+  highlight! link NoiceCmdlinePopupBorderInput NoiceConfirmBorder
+  highlight! link NoiceCmdlinePopupBorderLua NoiceCmdlinePopupBorder
+  highlight! link NoiceCmdlinePopupBorder NoicePopupBorder
+  highlight! link NoiceCmdlinePopupBorderSearch NoiceCmdlinePopupBorder
+  highlight! link NoiceCmdlinePopup NoicePopup
+  highlight! link NoiceCmdlinePrompt Question
+  highlight! link NoiceConfirm NoicePopup
+  highlight! link NoiceCursor Cursor
+  highlight! link NoiceFormatDate Text
+  highlight! link NoiceFormatEvent Text
+  highlight! link NoiceFormatKind NonText
+  highlight! link NoiceFormatLevelDebug Debug
+  highlight! link NoiceFormatLevelError DiagnosticError
+  highlight! link NoiceFormatLevelInfo DiagnosticInfo
+  highlight! link NoiceFormatLevelOff Dimmed
+  highlight! link NoiceFormatLevelTrace Trace
+  highlight! link NoiceFormatLevelWarn DiagnosticWarn
+  highlight! link NoiceFormatProgressDone Success
+  highlight! link NoiceFormatProgressTodo Accent
+  highlight! link NoiceFormatTitle Title
+  highlight! link NoiceLspProgressClient Accent
+  highlight! link NoiceLspProgressSpinner DiagnosticInfo
+  highlight! link NoiceLspProgressTitle NoiceFormatTitle
+  highlight! link NoiceMini MsgArea
+  highlight! link NoicePopupBorder FloatBorder
+  highlight! link NoicePopupmenuBorder NoicePopupBorder
+  highlight! link NoicePopupmenuMatch Accent
+  highlight! link NoicePopupmenu Pmenu
+  highlight! link NoicePopupmenuSelected PmenuSel
+  highlight! link NoicePopup NormalFloat
+  highlight! link NoiceScrollbar PmenuSbar
+  highlight! link NoiceScrollbarThumb PmenuThumb
+  highlight! link NoiceSplitBorder VertSplit
+  highlight! link NoiceSplit Normal
+  highlight! link NoiceVirtualText DiagnosticVirtualTextInfo
+
+  " Completion item kinds.
+  highlight! link NoiceCompletionItemKindClass Type
+  highlight! link NoiceCompletionItemKindColor StatementBuiltin
+  highlight! link NoiceCompletionItemKindConstant ConstIdentifier
+  highlight! link NoiceCompletionItemKindConstructor Type
+  highlight! link NoiceCompletionItemKindDefault Text
+  highlight! link NoiceCompletionItemKindEnumMember Property
+  highlight! link NoiceCompletionItemKindEnum Type
+  highlight! link NoiceCompletionItemKindField Property
+  highlight! link NoiceCompletionItemKindFile Text
+  highlight! link NoiceCompletionItemKindFolder Directory
+  highlight! link NoiceCompletionItemKindFunction Accent
+  highlight! link NoiceCompletionItemKindInterface Type
+  highlight! link NoiceCompletionItemKindKeyword Keyword
+  highlight! link NoiceCompletionItemKindMethod Accent
+  highlight! link NoiceCompletionItemKindModule Text
+  highlight! link NoiceCompletionItemKindProperty Property
+  highlight! link NoiceCompletionItemKindSnippet Text
+  highlight! link NoiceCompletionItemKindStruct Type
+  highlight! link NoiceCompletionItemKindText Text
+  highlight! link NoiceCompletionItemKindUnit Number
+  highlight! link NoiceCompletionItemKindValue Text
+  highlight! link NoiceCompletionItemKindVariable Identifier
+endif
+" }}}
 " nvim-cmp: {{{
 if enfocado#pluginIsActivated('cmp', 1)
   highlight! link CmpItemAbbr Text
@@ -885,28 +963,26 @@ endif
 " }}}
 " nvim-notify: {{{
 if enfocado#pluginIsActivated('notify', 1)
-  call enfocado#highlighter('NotifyERRORBorder', s:nocombine, s:none, s:br_red, s:none)
-  call enfocado#highlighter('NotifyDEBUGBorder', s:nocombine, s:none, s:dim_0, s:none)
-  call enfocado#highlighter('NotifyINFOBorder', s:nocombine, s:none, s:br_yellow, s:none)
-  call enfocado#highlighter('NotifyTRACEBorder', s:nocombine, s:none, s:br_magenta, s:none)
-  call enfocado#highlighter('NotifyWARNBorder', s:nocombine, s:none, s:br_orange, s:none)
-  highlight! link NotifyERRORIcon NotifyERRORBorder
-  highlight! link NotifyDEBUGIcon NotifyDEBUGBorder
-  highlight! link NotifyINFOIcon NotifyINFOBorder
-  highlight! link NotifyTRACEIcon NotifyTRACEBorder
-  highlight! link NotifyWARNIcon NotifyWARNBorder
-  highlight! link NotifyERRORTitle Title
-  highlight! link NotifyDEBUGTitle Title
-  highlight! link NotifyINFOTitle Title
-  highlight! link NotifyTRACETitle Title
-  highlight! link NotifyWARNTitle Title
-  highlight! link NotifyERRORBody Text
-  highlight! link NotifyDEBUGBody Text
-  highlight! link NotifyINFOBody Text
-  highlight! link NotifyTRACEBody Text
-  highlight! link NotifyWARNBody Text
-  highlight! link NotifyLogTime Debug
-  highlight! link NotifyLogTitle Title
+  call enfocado#highlighter('NotifyERRORBorder', s:nocombine, s:bg_1, s:br_red, s:none)
+  call enfocado#highlighter('NotifyDEBUGBorder', s:nocombine, s:bg_1, s:dim_0, s:none)
+  call enfocado#highlighter('NotifyINFOBorder', s:nocombine, s:bg_1, s:br_yellow, s:none)
+  call enfocado#highlighter('NotifyTRACEBorder', s:nocombine, s:bg_1, s:br_magenta, s:none)
+  call enfocado#highlighter('NotifyWARNBorder', s:nocombine, s:bg_1, s:br_orange, s:none)
+  highlight! link NotifyERRORIcon DiagnosticError
+  highlight! link NotifyDEBUGIcon Debug
+  highlight! link NotifyINFOIcon DiagnosticInfo
+  highlight! link NotifyTRACEIcon Trace
+  highlight! link NotifyWARNIcon DiagnosticWarn
+  highlight! link NotifyERRORTitle NotifyERRORIcon
+  highlight! link NotifyDEBUGTitle NotifyDEBUGIcon
+  highlight! link NotifyINFOTitle NotifyINFOIcon
+  highlight! link NotifyTRACETitle NotifyTRACEIcon
+  highlight! link NotifyWARNTitle NotifyWARNIcon
+  highlight! link NotifyERRORBody NormalFloat
+  highlight! link NotifyDEBUGBody NormalFloat
+  highlight! link NotifyINFOBody NormalFloat
+  highlight! link NotifyTRACEBody NormalFloat
+  highlight! link NotifyWARNBody NormalFloat
 endif
 " }}}
 " nvim-scrollview: {{{
@@ -1061,7 +1137,7 @@ if enfocado#pluginIsActivated('packer', 1)
   highlight! link packerHash Dimmed
   highlight! link packerRelDate Dimmed
   highlight! link packerProgress DiagnosticInfo
-  highlight! link packerOutput Debug
+  highlight! link packerOutput Text
   highlight! link packerTimeHigh Dimmed
   highlight! link packerTimeMedium Dimmed
   highlight! link packerTimeLow Dimmed
@@ -1089,6 +1165,18 @@ if enfocado#pluginIsActivated('rainbow', 0)
   if !has_key(g:rainbow_conf, 'ctermfgs')
     let g:rainbow_conf['ctermfgs'] = s:rainbow_ctermfgs
   endif
+endif
+" }}}
+" SmoothCursor.nvim: {{{
+if enfocado#pluginIsActivated('smoothcursor', 1)
+  call enfocado#highlighter('SmoothCursor', s:nocombine, s:none, s:br_accent_0, s:none)
+  call enfocado#highlighter('SmoothCursorRed', s:nocombine, s:none, s:br_red, s:none)
+  call enfocado#highlighter('SmoothCursorGreen', s:nocombine, s:none, s:br_green, s:none)
+  call enfocado#highlighter('SmoothCursorYellow', s:nocombine, s:none, s:br_yellow, s:none)
+  call enfocado#highlighter('SmoothCursorBlue', s:nocombine, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('SmoothCursorPurple', s:nocombine, s:none, s:br_magenta, s:none)
+  call enfocado#highlighter('SmoothCursorAqua', s:nocombine, s:none, s:br_cyan, s:none)
+  call enfocado#highlighter('SmoothCursorOrange', s:nocombine, s:none, s:br_orange, s:none)
 endif
 " }}}
 " telescope.nvim: {{{

@@ -61,12 +61,14 @@ supported plugins so far:
 `  \   'matchup',`
 `  \   'nerdtree',`
 `  \   'netrw',`
+`  \   'noice',`
 `  \   'notify',`
 `  \   'packer',`
 `  \   'plug',`
 `  \   'rainbow',`
 `  \   'scrollview',`
 `  \   'signify'`
+`  \   'smoothcursor'`
 `  \   'startify'`
 `  \   'telescope',`
 `  \   'todo-comments',`
