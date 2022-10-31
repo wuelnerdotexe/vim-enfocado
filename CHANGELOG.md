@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Consistency improvements will be added to a [vim-notify](https://github.com/rcarriga/nvim-notify) and [fern.vim](https://github.com/lambdalisue/fern.vim) plugins.
 
-## [5.18.0] - 2022-10-17
+## [5.17.1] - 2022-10-17
 
 ### Fixed
 
