@@ -991,7 +991,7 @@ if enfocado#pluginIsActivated('scrollview', 1)
 endif
 " }}}
 " nvim-treesitter: {{{
-if enfocado#pluginIsActivated('treesitter', 1)
+if enfocado#pluginIsActivated('treesitter', 1) && has('nvim-0.8')
   call enfocado#highlighter('@text.danger', s:bold, s:br_red, s:bg_1, s:none)
   call enfocado#highlighter('@text.note', s:bold, s:br_yellow, s:bg_1, s:none)
   call enfocado#highlighter('@text.warning', s:bold, s:br_orange, s:bg_1, s:none)
