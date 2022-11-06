@@ -9,9 +9,13 @@
 "              the code and nothing else.
 " -----------------------------------------------------------------------------
 
+" Necessary variables are initialized.
+let s:hasTermguicolors = has('termguicolors') ? 1 : 0
+let s:hasGui_running = has('gui_running') ? 1 : 0
+
 " The script ends if the theme is not supported.
-if !(has('termguicolors') && &termguicolors) && &t_Co != 256 &&
-      \ !has('gui_running') && !has('syntax')
+if !(s:hasTermguicolors && &termguicolors) && &t_Co != 256 &&
+      \ !s:hasGui_running && !has('syntax')
   finish
 endif
 
@@ -128,7 +132,7 @@ let g:terminal_color_15 = s:fg_1[0]
 " SECTION: Neo(Vim) base groups highlighting.
 " ------------------------------------------------------------------------------
 " General interfaz.
-if (has('termguicolors') && &termguicolors) || has('gui_running')
+if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
   call enfocado#highlighter('IncSearch', s:none, s:blend_search, s:none, s:none)
   call enfocado#highlighter('Search', s:none, s:blend_search, s:none, s:none)
 else
@@ -180,7 +184,7 @@ call enfocado#highlighter('PmenuSbar', s:nocombine, s:bg_1, s:none, s:none)
 call enfocado#highlighter('PmenuSel', s:none, s:bg_2, s:none, s:none)
 call enfocado#highlighter('PmenuThumb', s:nocombine, s:bg_2, s:none, s:none)
 call enfocado#highlighter('Question', s:nocombine, s:none, s:br_yellow, s:none)
-call enfocado#highlighter('QuickFixLine', s:none, s:bg_1, s:br_orange, s:none)
+call enfocado#highlighter('QuickFixLine', s:none, s:bg_1, s:br_accent_0, s:none)
 call enfocado#highlighter('RedrawDebugClear', s:none, s:none, s:br_yellow, s:none)
 call enfocado#highlighter('RedrawDebugComposed', s:none, s:none, s:br_green, s:none)
 call enfocado#highlighter('RedrawDebugNormal', s:none, s:none, s:fg_1, s:none)
@@ -287,7 +291,7 @@ call enfocado#highlighter('DiagnosticUnderlineError', s:undercurl, s:none, s:non
 call enfocado#highlighter('DiagnosticUnderlineHint', s:undercurl, s:none, s:none, s:br_blue)
 call enfocado#highlighter('DiagnosticUnderlineInfo', s:undercurl, s:none, s:none, s:br_yellow)
 call enfocado#highlighter('DiagnosticUnderlineWarn', s:undercurl, s:none, s:none, s:br_orange)
-if (has('termguicolors') && &termguicolors) || has('gui_running')
+if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
   call enfocado#highlighter('DiagnosticVirtualTextError', s:bold, s:blend_error, s:br_red, s:none)
   call enfocado#highlighter('DiagnosticVirtualTextHint', s:bold, s:blend_hint, s:br_blue, s:none)
   call enfocado#highlighter('DiagnosticVirtualTextInfo', s:bold, s:blend_info, s:br_yellow, s:none)
@@ -390,7 +394,7 @@ endif
 " }}}
 " ale: {{{
 if enfocado#pluginIsActivated('ale', 0)
-  if (has('termguicolors') && &termguicolors) || has('gui_running')
+  if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
     call enfocado#highlighter('ALEErrorLine', s:none, s:blend_error, s:none, s:none)
     call enfocado#highlighter('ALEInfoLine', s:none, s:blend_info, s:none, s:none)
     call enfocado#highlighter('ALEWarningLine', s:none, s:blend_warn, s:none, s:none)
@@ -515,7 +519,7 @@ if enfocado#pluginIsActivated('coc', 0)
   highlight! CocUnderline term=underline cterm=underline gui=underline
 
   " Coc diagnostics.
-  if (has('termguicolors') && &termguicolors) || has('gui_running')
+  if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
     call enfocado#highlighter('CocErrorLine', s:none, s:blend_error, s:none, s:none)
     call enfocado#highlighter('CocHintLine', s:none, s:blend_hint, s:none, s:none)
     call enfocado#highlighter('CocInfoLine', s:none, s:blend_info, s:none, s:none)
@@ -734,7 +738,7 @@ endif
 " }}}
 " gitsigns.nvim: {{{
 if enfocado#pluginIsActivated('gitsigns', 1)
-  if (has('termguicolors') && &termguicolors) || has('gui_running')
+  if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
     call enfocado#highlighter('GitSignsAddLn', s:none, s:blend_added, s:none, s:none)
     call enfocado#highlighter('GitSignsChangeLn', s:none, s:blend_modified, s:none, s:none)
   else
@@ -1198,12 +1202,12 @@ if enfocado#pluginIsActivated('telescope', 1)
   highlight! link TelescopePreviewMessage DiagnosticInfo
   highlight! link TelescopePreviewMessageFillchar DiagnosticInfo
   highlight! link TelescopePreviewNormal NormalFloat
-  highlight! link TelescopePreviewTitle Title
+  highlight! link TelescopePreviewTitle TelescopePreviewBorder
   highlight! link TelescopePromptBorder FloatBorder
   highlight! link TelescopePromptCounter DiagnosticInfo
   highlight! link TelescopePromptNormal NormalFloat
   highlight! link TelescopePromptPrefix Text
-  highlight! link TelescopePromptTitle Title
+  highlight! link TelescopePromptTitle TelescopePromptBorder
   highlight! link TelescopeResultsBorder FloatBorder
   highlight! link TelescopeResultsDiffAdd DiffAdd
   highlight! link TelescopeResultsDiffChange DiffChange
@@ -1222,11 +1226,11 @@ if enfocado#pluginIsActivated('telescope', 1)
   highlight! link TelescopeResultsOperator Operator
   highlight! link TelescopeResultsSpecialComment SpecialComment
   highlight! link TelescopeResultsStruct Type
-  highlight! link TelescopeResultsTitle Title
+  highlight! link TelescopeResultsTitle TelescopeResultsBorder
   highlight! link TelescopeResultsVariable Identifier
   highlight! link TelescopeSelection Visual
   highlight! link TelescopeSelectionCaret Visual
-  highlight! link TelescopeTitle Title
+  highlight! link TelescopeTitle TelescopeBorder
 endif
 " }}}
 " todo-comments.nvim: {{{
@@ -1268,7 +1272,7 @@ endif
 " }}}
 " vim-gitgutter: {{{
 if enfocado#pluginIsActivated('gitgutter', 0)
-  if (has('termguicolors') && &termguicolors) || has('gui_running')
+  if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
     call enfocado#highlighter('GitGutterAddLine', s:none, s:blend_added, s:none, s:none)
     call enfocado#highlighter('GitGutterChangeLine', s:none, s:blend_modified, s:none, s:none)
     call enfocado#highlighter('GitGutterDeleteLine', s:none, s:blend_removed, s:none, s:none)
@@ -1337,7 +1341,7 @@ endif
 " vim-signify: {{{
 if enfocado#pluginIsActivated('signify', 0)
   if exists('g:signify_line_highlight') && g:signify_line_highlight == 1
-    if (has('termguicolors') && &termguicolors) || has('gui_running')
+    if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
       call enfocado#highlighter('SignifyLineAdd', s:none, s:blend_added, s:none, s:none)
       call enfocado#highlighter('SignifyLineChange', s:none, s:blend_modified, s:none, s:none)
       call enfocado#highlighter('SignifyLineChangeDelete', s:none, s:blend_modified, s:none, s:none)

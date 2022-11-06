@@ -140,9 +140,11 @@ endfunction
 
 " A function is created to check on-demand plugins.
 function enfocado#pluginIsActivated(name, only_nvim)
-  if (g:enfocado_plugins == ['none']) || (a:only_nvim && !has('nvim'))
+  let l:hasNvim = has('nvim') ? 1 : 0
+
+  if (g:enfocado_plugins == ['none']) || (a:only_nvim && !l:hasNvim)
     return 0
-  elseif (a:only_nvim && has('nvim')) || !a:only_nvim
+  elseif (a:only_nvim && l:hasNvim) || !a:only_nvim
     if g:enfocado_plugins == ['all']
       return 1
     else
