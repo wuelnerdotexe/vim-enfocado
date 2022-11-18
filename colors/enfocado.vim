@@ -153,7 +153,8 @@ call enfocado#highlighter('Conceal', s:nocombine, s:none, s:bg_2, s:none)
 call enfocado#highlighter('Cursor', s:none, s:fg_0, s:bg_1, s:none)
 call enfocado#highlighter('CursorColumn', s:none, s:bg_1, s:none, s:none)
 call enfocado#highlighter('CursorLine', s:none, s:bg_1, s:none, s:none)
-call enfocado#highlighter('CursorLineNr', s:none, s:none, s:dim_0, s:none)
+call enfocado#highlighter('CursorLineNr', s:none, s:bg_1, s:dim_0, s:none)
+call enfocado#highlighter('CursorLineSign', s:none, s:none, s:none, s:none)
 call enfocado#highlighter('DiffAdd', s:none, s:none, s:green, s:none)
 call enfocado#highlighter('DiffChange', s:none, s:none, s:yellow, s:none)
 call enfocado#highlighter('DiffDelete', s:none, s:none, s:red, s:none)
@@ -213,7 +214,6 @@ call enfocado#highlighter('VisualNC', s:none, s:bg_1, s:none, s:none)
 call enfocado#highlighter('VisualNOS', s:none, s:bg_2, s:none, s:none)
 call enfocado#highlighter('WarningMsg', s:nocombine, s:none, s:br_orange, s:none)
 call enfocado#highlighter('WildMenu', s:bold, s:bg_2, s:br_accent_0, s:none)
-highlight! link CursorLineSign CursorLineNr
 highlight! link CursorLineFold CursorLine
 highlight! link EndOfBuffer NonText
 highlight! link Line ColorColumn
@@ -851,7 +851,7 @@ if enfocado#pluginIsActivated('noice', 1)
   highlight! link NoiceCmdlineIconCmdline NoiceCmdlineIcon
   highlight! link NoiceCmdlineIconFilter NoiceCmdlineIcon
   highlight! link NoiceCmdlineIconHelp NoiceCmdlineIcon
-  highlight! link NoiceCmdlineIconInput NoiceCmdlinePrompt
+  highlight! link NoiceCmdlineIconInput NoiceCmdlineIcon
   highlight! link NoiceCmdlineIconLua NoiceCmdlineIcon
   highlight! link NoiceCmdlineIconSearch NoiceCmdlineIcon
   highlight! link NoiceCmdlineIcon Text
@@ -859,7 +859,7 @@ if enfocado#pluginIsActivated('noice', 1)
   highlight! link NoiceCmdlinePopupBorderCmdline NoiceCmdlinePopupBorder
   highlight! link NoiceCmdlinePopupBorderFilter NoiceCmdlinePopupBorder
   highlight! link NoiceCmdlinePopupBorderHelp NoiceCmdlinePopupBorder
-  highlight! link NoiceCmdlinePopupBorderInput NoiceConfirmBorder
+  highlight! link NoiceCmdlinePopupBorderInput NoiceCmdlinePopupBorder
   highlight! link NoiceCmdlinePopupBorderLua NoiceCmdlinePopupBorder
   highlight! link NoiceCmdlinePopupBorder NoicePopupBorder
   highlight! link NoiceCmdlinePopupBorderSearch NoiceCmdlinePopupBorder
