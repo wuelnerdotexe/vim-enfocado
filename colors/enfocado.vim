@@ -141,8 +141,6 @@ else
 endif
 if &relativenumber && &number
   call enfocado#highlighter('LineNr', s:none, s:bg_1, s:dim_0, s:none)
-elseif !&relativenumber && &number
-  call enfocado#highlighter('LineNr', s:none, s:none, s:dim_0, s:none)
 else
   call enfocado#highlighter('LineNr', s:none, s:none, s:bg_2, s:none)
 endif
