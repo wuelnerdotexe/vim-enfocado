@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 5.20.0 - 2022-11-30
+
+### Added
+
+Added support for the following plugins:
+
+- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+
+### Changed
+
+- The name of the most recent variables is standardized.
+
+### Removed
+
+- Now you don't need to declare "lsp" in `g:enfocado_plugins` (if you use it) to highlight it.
+
 ## [5.19.0] - 2022-11-06
 
 ### Changed

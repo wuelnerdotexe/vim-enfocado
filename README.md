@@ -111,14 +111,16 @@ let g:enfocado_plugins = [
   \   'aerial',
   \   'bufferline',
   \   'cmp',
+  \   'dap-ui',
   \   'fern',
   \   'gitsigns',
   \   'glyph-palette',
   \   'illuminate',
   \   'indent-blankline',
-  \   'lsp',
+  \   'lspconfig',
   \   'matchup',
   \   'noice',
+  \   'null-ls',
   \   'packer',
   \   'smoothcursor',
   \   'telescope',
@@ -232,6 +234,7 @@ The following plugins are supported:
 - [coc.nvim](https://github.com/neoclide/coc.nvim)
 - [copilot.vim](https://github.com/github/copilot.vim)
 - [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
+- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
 - [fern.vim](https://github.com/lambdalisue/fern.vim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
@@ -242,6 +245,7 @@ The following plugins are supported:
 - [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
 - [nerdtree](https://github.com/preservim/nerdtree)
 - [noice.nvim](https://github.com/folke/noice.nvim)
+- [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)

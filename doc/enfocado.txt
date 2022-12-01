@@ -48,6 +48,7 @@ supported plugins so far:
 `  \   'coc',`
 `  \   'copilot',`
 `  \   'ctrlp',`
+`  \   'dap-ui',`
 `  \   'dashboard',`
 `  \   'fern',`
 `  \   'floaterm',`
@@ -57,12 +58,13 @@ supported plugins so far:
 `  \   'glyph-palette',`
 `  \   'illuminate',`
 `  \   'indent-blankline',`
-`  \   'lsp',`
+`  \   'lspconfig',`
 `  \   'matchup',`
 `  \   'nerdtree',`
 `  \   'netrw',`
 `  \   'noice',`
 `  \   'notify',`
+`  \   'null-ls',`
 `  \   'packer',`
 `  \   'plug',`
 `  \   'rainbow',`

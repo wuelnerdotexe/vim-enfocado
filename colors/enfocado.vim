@@ -10,12 +10,12 @@
 " -----------------------------------------------------------------------------
 
 " Necessary variables are initialized.
-let s:hasTermguicolors = has('termguicolors') ? 1 : 0
-let s:hasGui_running = has('gui_running') ? 1 : 0
+let s:termguicolors = has('termguicolors') ? 1 : 0
+let s:gui_running = has('gui_running') ? 1 : 0
 
 " The script ends if the theme is not supported.
-if !(s:hasTermguicolors && &termguicolors) && &t_Co != 256 &&
-      \ !s:hasGui_running && !has('syntax')
+if !(s:termguicolors && &termguicolors) && &t_Co != 256 &&
+      \ !s:gui_running && !has('syntax')
   finish
 endif
 
@@ -132,7 +132,7 @@ let g:terminal_color_15 = s:fg_1[0]
 " SECTION: Neo(Vim) base groups highlighting.
 " ------------------------------------------------------------------------------
 " General interfaz.
-if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
+if (s:termguicolors && &termguicolors) || s:gui_running
   call enfocado#highlighter('IncSearch', s:none, s:blend_search, s:none, s:none)
   call enfocado#highlighter('Search', s:none, s:blend_search, s:none, s:none)
 else
@@ -276,7 +276,15 @@ highlight! link Tag Statement
 highlight! link Typedef Type
 highlight! Underlined term=underline cterm=underline gui=underline
 
-" Neovim diagnostic.
+" nvim-lsp: {{{
+highlight! link LspCodeLens Dimmed
+highlight! link LspCodeLensSeparator NonText
+highlight! link LspReferenceRead Visual
+highlight! link LspReferenceText Visual
+highlight! link LspReferenceWrite Visual
+highlight! link LspSignatureActiveParameter Accent
+
+" Diagnostics.
 call enfocado#highlighter('DiagnosticError', s:bold, s:none, s:br_red, s:none)
 call enfocado#highlighter('DiagnosticHint', s:bold, s:none, s:br_blue, s:none)
 call enfocado#highlighter('DiagnosticInfo', s:bold, s:none, s:br_yellow, s:none)
@@ -289,7 +297,7 @@ call enfocado#highlighter('DiagnosticUnderlineError', s:undercurl, s:none, s:non
 call enfocado#highlighter('DiagnosticUnderlineHint', s:undercurl, s:none, s:none, s:br_blue)
 call enfocado#highlighter('DiagnosticUnderlineInfo', s:undercurl, s:none, s:none, s:br_yellow)
 call enfocado#highlighter('DiagnosticUnderlineWarn', s:undercurl, s:none, s:none, s:br_orange)
-if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
+if (s:termguicolors && &termguicolors) || s:gui_running
   call enfocado#highlighter('DiagnosticVirtualTextError', s:bold, s:blend_error, s:br_red, s:none)
   call enfocado#highlighter('DiagnosticVirtualTextHint', s:bold, s:blend_hint, s:br_blue, s:none)
   call enfocado#highlighter('DiagnosticVirtualTextInfo', s:bold, s:blend_info, s:br_yellow, s:none)
@@ -304,6 +312,7 @@ highlight! link DiagnosticSignError DiagnosticError
 highlight! link DiagnosticSignHint DiagnosticHint
 highlight! link DiagnosticSignInfo DiagnosticInfo
 highlight! link DiagnosticSignWarn DiagnosticWarn
+" }}}
 " ------------------------------------------------------------------------------
 " SECTION: Filetypes syntax groups highlighting.
 " ------------------------------------------------------------------------------
@@ -392,7 +401,7 @@ endif
 " }}}
 " ale: {{{
 if enfocado#pluginIsActivated('ale', 0)
-  if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
+  if (s:termguicolors && &termguicolors) || s:gui_running
     call enfocado#highlighter('ALEErrorLine', s:none, s:blend_error, s:none, s:none)
     call enfocado#highlighter('ALEInfoLine', s:none, s:blend_info, s:none, s:none)
     call enfocado#highlighter('ALEWarningLine', s:none, s:blend_warn, s:none, s:none)
@@ -517,7 +526,7 @@ if enfocado#pluginIsActivated('coc', 0)
   highlight! CocUnderline term=underline cterm=underline gui=underline
 
   " Coc diagnostics.
-  if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
+  if (s:termguicolors && &termguicolors) || s:gui_running
     call enfocado#highlighter('CocErrorLine', s:none, s:blend_error, s:none, s:none)
     call enfocado#highlighter('CocHintLine', s:none, s:blend_hint, s:none, s:none)
     call enfocado#highlighter('CocInfoLine', s:none, s:blend_info, s:none, s:none)
@@ -736,7 +745,7 @@ endif
 " }}}
 " gitsigns.nvim: {{{
 if enfocado#pluginIsActivated('gitsigns', 1)
-  if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
+  if (s:termguicolors && &termguicolors) || s:gui_running
     call enfocado#highlighter('GitSignsAddLn', s:none, s:blend_added, s:none, s:none)
     call enfocado#highlighter('GitSignsChangeLn', s:none, s:blend_modified, s:none, s:none)
   else
@@ -918,6 +927,14 @@ if enfocado#pluginIsActivated('noice', 1)
   highlight! link NoiceCompletionItemKindVariable Identifier
 endif
 " }}}
+" null-ls: {{{
+if enfocado#pluginIsActivated('null-ls', 1)
+  highlight! link NullLsInfoHeader Title
+  highlight! link NullLsInfoTitle Title
+  highlight! link NullLsInfoBorder FloatBorder
+  highlight! link NullLsInfoSources Success
+endif
+" }}}
 " nvim-cmp: {{{
 if enfocado#pluginIsActivated('cmp', 1)
   highlight! link CmpItemAbbr Text
@@ -953,14 +970,55 @@ if enfocado#pluginIsActivated('cmp', 1)
   highlight! link CmpItemMenu NormalFloat
 endif
 " }}}
+" nvim-dap-ui: {{{
+if enfocado#pluginIsActivated('dap-ui', 1)
+  call enfocado#highlighter('DapUIPlayPause', s:nocombine, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('DapUIPlayPauseNC', s:nocombine, s:none, s:blue, s:none)
+  call enfocado#highlighter('DapUIRestart', s:nocombine, s:none, s:br_green, s:none)
+  call enfocado#highlighter('DapUIRestartNC', s:nocombine, s:none, s:green, s:none)
+  call enfocado#highlighter('DapUIStepBack', s:nocombine, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('DapUIStepBackNC', s:nocombine, s:none, s:blue, s:none)
+  call enfocado#highlighter('DapUIStepInto', s:nocombine, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('DapUIStepIntoNC', s:nocombine, s:none, s:blue, s:none)
+  call enfocado#highlighter('DapUIStepOut', s:nocombine, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('DapUIStepOutNC', s:nocombine, s:none, s:blue, s:none)
+  call enfocado#highlighter('DapUIStepOver', s:nocombine, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('DapUIStepOverNC', s:nocombine, s:none, s:blue, s:none)
+  call enfocado#highlighter('DapUIStop', s:nocombine, s:none, s:br_red, s:none)
+  call enfocado#highlighter('DapUIStopNC', s:nocombine, s:none, s:red, s:none)
+  call enfocado#highlighter('DapUIUnavailable', s:nocombine, s:none, s:dim_0, s:none)
+  call enfocado#highlighter('DapUIUnavailableNC', s:nocombine, s:none, s:bg_2, s:none)
+  highlight! link DapUIVariable Identifier
+  highlight! link DapUIScope Title
+  highlight! link DapUIType Type
+  highlight! link DapUIValue Text
+  highlight! link DapUIModifiedValue DiffChange
+  highlight! link DapUIDecoration Accent
+  highlight! link DapUIThread Success
+  highlight! link DapUIStoppedThread Error
+  highlight! link DapUIFrameName Title
+  highlight! link DapUISource Text
+  highlight! link DapUILineNumber LineNr
+  highlight! link DapUIFloatNormal NormalFloat
+  highlight! link DapUIFloatBorder FloatBorder
+  highlight! link DapUIWatchesEmpty Text
+  highlight! link DapUIWatchesValue Text
+  highlight! link DapUIWatchesError Error
+  highlight! link DapUIBreakpointsPath Text
+  highlight! link DapUIBreakpointsInfo DiagnosticInfo
+  highlight! link DapUIBreakpointsCurrentLine DiffChange
+  highlight! link DapUIBreakpointsLine LineNr
+  highlight! link DapUIBreakpointsDisabledLine LineNr
+  highlight! link DapUICurrentFrameName DiffChange
+endif
+" }}}
 " nvim-lspconfig: {{{
-if enfocado#pluginIsActivated('lsp', 1)
-  highlight! link LspCodeLens Dimmed
-  highlight! link LspCodeLensSeparator NonText
-  highlight! link LspReferenceRead Visual
-  highlight! link LspReferenceText Visual
-  highlight! link LspReferenceWrite Visual
-  highlight! link LspSignatureActiveParameter Accent
+if enfocado#pluginIsActivated('lspconfig', 1)
+  highlight! link LspInfoTitle Title
+  highlight! link LspInfoList Dimmed
+  highlight! link LspInfoFiletype Success
+  highlight! link LspInfoTip DiagnosticInfo
+  highlight! link LspInfoBorder FloatBorder
 endif
 " }}}
 " nvim-notify: {{{
@@ -1270,7 +1328,7 @@ endif
 " }}}
 " vim-gitgutter: {{{
 if enfocado#pluginIsActivated('gitgutter', 0)
-  if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
+  if (s:termguicolors && &termguicolors) || s:gui_running
     call enfocado#highlighter('GitGutterAddLine', s:none, s:blend_added, s:none, s:none)
     call enfocado#highlighter('GitGutterChangeLine', s:none, s:blend_modified, s:none, s:none)
     call enfocado#highlighter('GitGutterDeleteLine', s:none, s:blend_removed, s:none, s:none)
@@ -1339,7 +1397,7 @@ endif
 " vim-signify: {{{
 if enfocado#pluginIsActivated('signify', 0)
   if exists('g:signify_line_highlight') && g:signify_line_highlight == 1
-    if (s:hasTermguicolors && &termguicolors) || s:hasGui_running
+    if (s:termguicolors && &termguicolors) || s:gui_running
       call enfocado#highlighter('SignifyLineAdd', s:none, s:blend_added, s:none, s:none)
       call enfocado#highlighter('SignifyLineChange', s:none, s:blend_modified, s:none, s:none)
       call enfocado#highlighter('SignifyLineChangeDelete', s:none, s:blend_modified, s:none, s:none)
