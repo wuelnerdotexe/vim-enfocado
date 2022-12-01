@@ -142,7 +142,7 @@ endfunction
 function enfocado#pluginIsActivated(name, only_nvim)
   let l:nvim = has('nvim') ? 1 : 0
 
-  if (g:enfocado_plugins == ['none']) || (a:only_nvim && !l:hasNvim)
+  if (g:enfocado_plugins == ['none']) || (a:only_nvim && !l:nvim)
     return 0
   elseif (a:only_nvim && l:nvim) || !a:only_nvim
     if g:enfocado_plugins == ['all']
