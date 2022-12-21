@@ -85,8 +85,7 @@ let s:undercurl = ['undercurl', 'undercurl']
 
 " All highlights are removed.
 if !exists('syntax_on') || !exists('syntax_manual')
-  syntax enable
-  syntax reset
+  syntax on
 else
   syntax reset
 endif
