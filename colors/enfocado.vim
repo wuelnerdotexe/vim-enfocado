@@ -1257,12 +1257,12 @@ if enfocado#pluginIsActivated('telescope', 1)
   highlight! link TelescopePreviewMessage DiagnosticInfo
   highlight! link TelescopePreviewMessageFillchar DiagnosticInfo
   highlight! link TelescopePreviewNormal NormalFloat
-  highlight! link TelescopePreviewTitle TelescopePreviewBorder
+  highlight! link TelescopePreviewTitle TelescopeTitle
   highlight! link TelescopePromptBorder FloatBorder
   highlight! link TelescopePromptCounter DiagnosticInfo
   highlight! link TelescopePromptNormal NormalFloat
   highlight! link TelescopePromptPrefix Text
-  highlight! link TelescopePromptTitle TelescopePromptBorder
+  highlight! link TelescopePromptTitle TelescopeTitle
   highlight! link TelescopeResultsBorder FloatBorder
   highlight! link TelescopeResultsDiffAdd DiffAdd
   highlight! link TelescopeResultsDiffChange DiffChange
@@ -1281,11 +1281,11 @@ if enfocado#pluginIsActivated('telescope', 1)
   highlight! link TelescopeResultsOperator Operator
   highlight! link TelescopeResultsSpecialComment SpecialComment
   highlight! link TelescopeResultsStruct Type
-  highlight! link TelescopeResultsTitle TelescopeResultsBorder
+  highlight! link TelescopeResultsTitle TelescopeTitle
   highlight! link TelescopeResultsVariable Identifier
   highlight! link TelescopeSelection Visual
   highlight! link TelescopeSelectionCaret Visual
-  highlight! link TelescopeTitle TelescopeBorder
+  highlight! link TelescopeTitle TelescopeNormal
 endif
 " }}}
 " todo-comments.nvim: {{{
