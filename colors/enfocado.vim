@@ -139,7 +139,7 @@ else
   call enfocado#highlighter('Search', s:none, s:br_yellow, s:bg_1, s:none)
 endif
 if &relativenumber && &number
-  call enfocado#highlighter('LineNr', s:none, s:bg_1, s:dim_0, s:none)
+  call enfocado#highlighter('LineNr', s:none, s:bg_1, s:fg_0, s:none)
 else
   call enfocado#highlighter('LineNr', s:none, s:none, s:bg_2, s:none)
 endif
@@ -816,7 +816,7 @@ if enfocado#pluginIsActivated('nerdtree', 0)
   highlight! link NERDTreeClosable Dimmed
   highlight! link NERDTreeCWD Ignore
   highlight! link NERDTreeDir Directory
-  highlight! link NERDTreeDirSlash Dimmed
+  highlight! link NERDTreeDirSlash NERDTreeFile
   highlight! link NERDTreeExecFile FileExec
   highlight! link NERDTreeFile Text
   highlight! link NERDTreeHelp Text
