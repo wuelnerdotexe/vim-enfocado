@@ -58,6 +58,7 @@ supported plugins so far:
 `  \   'glyph-palette',`
 `  \   'illuminate',`
 `  \   'indent-blankline',`
+`  \   'lazy',`
 `  \   'lspconfig',`
 `  \   'matchup',`
 `  \   'nerdtree',`

@@ -117,11 +117,11 @@ let g:enfocado_plugins = [
   \   'glyph-palette',
   \   'illuminate',
   \   'indent-blankline',
+  \   'lazy',
   \   'lspconfig',
   \   'matchup',
   \   'noice',
   \   'null-ls',
-  \   'packer',
   \   'smoothcursor',
   \   'telescope',
   \   'visual-multi'
@@ -241,6 +241,7 @@ The following plugins are supported:
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
 - [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
 - [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
 - [nerdtree](https://github.com/preservim/nerdtree)

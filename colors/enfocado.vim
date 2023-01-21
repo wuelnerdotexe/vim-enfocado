@@ -82,6 +82,7 @@ let s:bold = ['nocombine,bold', 'nocombine,bold']
 let s:italic = ['nocombine,italic', 'nocombine,italic']
 let s:underline = ['underline', 'underline']
 let s:undercurl = ['undercurl', 'undercurl']
+let s:bold_underline = ['bold,underline', 'bold,underline']
 
 " All highlights are removed.
 if !exists('syntax_on') || !exists('syntax_manual')
@@ -160,7 +161,7 @@ call enfocado#highlighter('Dimmed', s:nocombine, s:none, s:dim_0, s:none)
 call enfocado#highlighter('Directory', s:bold, s:none, s:br_blue, s:none)
 call enfocado#highlighter('ErrorMsg', s:nocombine, s:none, s:br_red, s:none)
 call enfocado#highlighter('FileLink', s:bold, s:none, s:br_cyan, s:none)
-call enfocado#highlighter('FileExec', s:nocombine, s:none, s:green, s:none)
+call enfocado#highlighter('FileExec', s:bold, s:none, s:green, s:none)
 call enfocado#highlighter('FloatBorder', s:nocombine, s:bg_1, s:br_accent_0, s:none)
 call enfocado#highlighter('Folded', s:nocombine, s:none, s:dim_0, s:none)
 call enfocado#highlighter('FoldColumn', s:nocombine, s:none, s:bg_2, s:none)
@@ -217,6 +218,7 @@ highlight! link Line ColorColumn
 highlight! link LineNrBelow LineNrAbove
 highlight! link MsgArea Text
 highlight! link MsgSeparator StatusLineNC
+highlight! link FloatTitle NormalFloat
 highlight! link NormalNC Normal
 highlight! link Substitute Search
 highlight! link TermCursorNC None
@@ -1011,6 +1013,39 @@ if enfocado#pluginIsActivated('dap-ui', 1)
   highlight! link DapUICurrentFrameName DiffChange
 endif
 " }}}
+" lazy.nvim: {{{
+if enfocado#pluginIsActivated('lazy', 1)
+  call enfocado#highlighter("LazyButton", s:nocombine, s:bg_2, s:fg_0, s:none)
+  highlight! link LazyButtonActive ToolbarButton
+  highlight! link LazyComment Comment
+  highlight! link LazyCommit ConstIdentifier
+  highlight! link LazyCommitIssue Text
+  highlight! link LazyCommitScope Text
+  highlight! link LazyCommitType Text
+  highlight! link LazyDir Directory
+  highlight! link LazyH1 LazyButtonActive
+  highlight! link LazyH2 Title
+  highlight! link LazyNoCond Dimmed
+  highlight! link LazyNormal NormalFloat
+  highlight! link LazyProgressDone Success
+  highlight! link LazyProgressTodo NonText
+  highlight! link LazyProp Property
+  highlight! link LazyReasonCmd Question
+  highlight! link LazyReasonEvent Question
+  highlight! link LazyReasonFt Question
+  highlight! link LazyReasonImport Text
+  highlight! link LazyReasonKeys Question
+  highlight! link LazyReasonPlugin Directory
+  highlight! link LazyReasonRuntime Text
+  highlight! link LazyReasonSource Question
+  highlight! link LazyReasonStart Success
+  highlight! link LazySpecial Special
+  highlight! link LazyTaskError DiagnosticVirtualTextError
+  highlight! link LazyTaskOutput DiagnosticVirtualTextWarn
+  highlight! link LazyUrl Link
+  highlight! link LazyValue Constant
+endif
+" }}}
 " nvim-lspconfig: {{{
 if enfocado#pluginIsActivated('lspconfig', 1)
   highlight! link LspInfoTitle Title
@@ -1143,7 +1178,8 @@ endif
 " }}}
 " nvim-tree.lua: {{{
 if enfocado#pluginIsActivated('tree', 1)
-  call enfocado#highlighter('NvimTreeImageFile', s:bold, s:none, s:magenta, s:none)
+  call enfocado#highlighter('NvimTreeImageFile', s:bold, s:none, s:br_magenta, s:none)
+  call enfocado#highlighter('NvimTreeSpecialFile', s:bold_underline, s:none, s:br_yellow, s:yellow)
   highlight! link NvimTreeCursorColumn Line
   highlight! link NvimTreeCursorLine Line
   highlight! link NvimTreeEmptyFolderName Directory
@@ -1174,9 +1210,8 @@ if enfocado#pluginIsActivated('tree', 1)
   highlight! link NvimTreeOpenedFile Accent
   highlight! link NvimTreeOpenedFolderName Directory
   highlight! link NvimTreePopup NormalFloat
-  highlight! link NvimTreeRootFolder Dimmed
+  highlight! link NvimTreeRootFolder Directory
   highlight! link NvimTreeSignColumn SignColumn
-  highlight! link NvimTreeSpecialFile SpecialComment
   highlight! link NvimTreeStatusLine StatusLine
   highlight! link NvimTreeStatusLineNC StatusLineNC
   highlight! link NvimTreeSymlink FileLink
@@ -1241,10 +1276,10 @@ endif
 " telescope.nvim: {{{
 if enfocado#pluginIsActivated('telescope', 1)
   call enfocado#highlighter('TelescopePreviewDate', s:nocombine, s:none, s:blue, s:none)
-  call enfocado#highlighter('TelescopePreviewRead', s:bold, s:none, s:yellow, s:none)
-  call enfocado#highlighter('TelescopePreviewSize', s:bold, s:none, s:green, s:none)
+  call enfocado#highlighter('TelescopePreviewRead', s:bold, s:none, s:br_yellow, s:none)
+  call enfocado#highlighter('TelescopePreviewSize', s:nocombine, s:none, s:br_green, s:none)
   call enfocado#highlighter('TelescopePreviewUser', s:bold, s:none, s:br_yellow, s:none)
-  call enfocado#highlighter('TelescopePreviewWrite', s:bold, s:none, s:red, s:none)
+  call enfocado#highlighter('TelescopePreviewWrite', s:bold, s:none, s:br_red, s:none)
   highlight! link TelescopeBorder FloatBorder
   highlight! link TelescopeMatching Match
   highlight! link TelescopeMultiSelection Visual
