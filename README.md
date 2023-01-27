@@ -152,7 +152,7 @@ To make the **background transparent**, you can use the following:
 ```vim
 augroup enfocado_customization
   autocmd!
-    autocmd ColorScheme enfocado ++nested highlight Normal ctermbg=NONE guibg=NONE
+    autocmd ColorScheme enfocado highlight Normal ctermbg=NONE guibg=NONE
 augroup END
 ```
 
@@ -176,8 +176,8 @@ Master your theme, understand and recognize syntax, improve your muscle memory.
 | Orange          | `#e67f43` |     `#d04a00`     |   `NONE`    |   Exceptions (`trycatch`)    |   Exceptions (`trycatch`)    |
 | Violet          | `#a580e2` |     `#7f51d6`     |   `NONE`    |      Built-in keywords       |           Keywords           |
 | Bright red      | `#ff5e56` |     `#bf0000`     |   `Bold`    |            Errors            |            Errors            |
-| Bright yellow   | `#83c746` |     `#008400`     | ~~`NONE`~~  |  ~~Not used in the syntax~~  |  ~~Not used in the syntax~~  |
-| Bright green    | `#efc541` |     `#af8500`     |  `Italic`   |           Methods            |       Built-in methods       |
+| Bright yellow   | `#efc541` |     `#af8500`     | ~~`NONE`~~  |  ~~Not used in the syntax~~  |  ~~Not used in the syntax~~  |
+| Bright green    | `#83c746` |     `#008400`     |  `Italic`   |           Methods            |       Built-in methods       |
 | Bright blue     | `#4f9cfe` |     `#0054cf`     |   `Bold`    |            Types             |        Built-in types        |
 | Bright magenta  | `#ff81ca` |     `#c7008b`     |  `Italic`   |       Built-in methods       |           Methods            |
 | Bright cyan     | `#56d8c9` |     `#009a8a`     | `Underline` |            Links             |            Links             |
@@ -203,9 +203,8 @@ In order for the human text simulation to work as it should, I recommend that yo
 
 This vim configs comes with **Enfocado for Vim** already installed by default!
 
+- [CodeArt](https://github.com/artart222/CodeArt) by [artart222](https://github.com/artart222)
 - [Wuelner's Neovim Setup](https://github.com/wuelnerdotexe/nvim)
-- [CosmicNvim](https://github.com/CosmicNvim/CosmicNvim)
-- [CodeArt](https://github.com/artart222/CodeArt)
 
 ### Extras
 
