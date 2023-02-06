@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 5.22.0 - 2023-02-06
+
+### Added
+
+Added support for the following plugins:
+
+- [nvim-surround](https://github.com/kylechui/nvim-surround)
+- [substitute.nvim](https://github.com/gbprod/substitute.nvim)
+- [yanky.nvim](https://github.com/gbprod/yanky.nvim)
+
 ## 5.21.1 - 2023-01-26
 
 ### Fixed

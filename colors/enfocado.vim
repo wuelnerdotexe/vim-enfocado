@@ -83,6 +83,7 @@ let s:italic = ['nocombine,italic', 'nocombine,italic']
 let s:underline = ['underline', 'underline']
 let s:undercurl = ['undercurl', 'undercurl']
 let s:bold_underline = ['bold,underline', 'bold,underline']
+let s:reverse = ['reverse', 'reverse']
 
 " All highlights are removed.
 if !exists('syntax_on') || !exists('syntax_manual')
@@ -1084,6 +1085,11 @@ if enfocado#pluginIsActivated('scrollview', 1)
   highlight! link ScrollView Line
 endif
 " }}}
+" nvim-surround: {{{
+if enfocado#pluginIsActivated('surround', 1)
+  highlight! link NvimSurroundHighlight Search
+endif
+" }}}
 " nvim-treesitter: {{{
 if enfocado#pluginIsActivated('treesitter', 1) && has('nvim-0.8')
   call enfocado#highlighter('@text.danger', s:bold, s:br_red, s:bg_1, s:none)
@@ -1271,6 +1277,12 @@ if enfocado#pluginIsActivated('smoothcursor', 1)
   call enfocado#highlighter('SmoothCursorPurple', s:nocombine, s:none, s:br_magenta, s:none)
   call enfocado#highlighter('SmoothCursorAqua', s:nocombine, s:none, s:br_cyan, s:none)
   call enfocado#highlighter('SmoothCursorOrange', s:nocombine, s:none, s:br_orange, s:none)
+endif
+" }}}
+" substitute.nvim: {{{
+if enfocado#pluginIsActivated('substitute', 1)
+  highlight! link SubstituteRange Search
+  highlight! link SubstituteExchange Search
 endif
 " }}}
 " telescope.nvim: {{{
@@ -1500,6 +1512,12 @@ if enfocado#pluginIsActivated('which-key', 0)
   highlight! link WhichKeyGroup Dimmed
   highlight! link WhichKeySeparator NonText
   highlight! link WhichKeyValue Text
+endif
+" }}}
+" yanky.nvim: {{{
+if enfocado#pluginIsActivated('yanky', 1)
+  call enfocado#highlighter('YankyPut', s:reverse, s:none, s:none, s:none)
+  call enfocado#highlighter('YankyYanked', s:reverse, s:none, s:none, s:none)
 endif
 " }}}
 

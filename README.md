@@ -123,8 +123,11 @@ let g:enfocado_plugins = [
   \   'noice',
   \   'null-ls',
   \   'smoothcursor',
+  \   'substitute',
+  \   'surround',
   \   'telescope',
-  \   'visual-multi'
+  \   'visual-multi',
+  \   'yanky'
   \ ]
 ```
 
@@ -250,11 +253,13 @@ The following plugins are supported:
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)
+- [nvim-surround](https://github.com/kylechui/nvim-surround)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [rainbow](https://github.com/luochen1990/rainbow)
 - [SmoothCursor.nvim](https://github.com/gen740/SmoothCursor.nvim)
+- [substitute.nvim](https://github.com/gbprod/substitute.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [vim-airline](https://github.com/vim-airline/vim-airline)
@@ -269,6 +274,7 @@ The following plugins are supported:
 - [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
 - [vista.vim](https://github.com/liuchengxu/vista.vim)
 - [which-key.nvim](https://github.com/folke/which-key.nvim)
+- [yanky.nvim](https://github.com/gbprod/yanky.nvim)
 
 ## Credits
 

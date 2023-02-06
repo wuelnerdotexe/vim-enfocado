@@ -73,6 +73,8 @@ supported plugins so far:
 `  \   'signify'`
 `  \   'smoothcursor'`
 `  \   'startify'`
+`  \   'substitute'`
+`  \   'surround'`
 `  \   'telescope',`
 `  \   'todo-comments',`
 `  \   'tree',`
@@ -81,6 +83,7 @@ supported plugins so far:
 `  \   'visual-multi',`
 `  \   'which-key',`
 `  \   'whitespace'`
+`  \   'yanky'`
 `  \ ]`
 
 or also indicate the `all` option to highlight all supported plugins:
