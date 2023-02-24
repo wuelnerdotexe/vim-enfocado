@@ -61,6 +61,7 @@ supported plugins so far:
 `  \   'lazy',`
 `  \   'lspconfig',`
 `  \   'matchup',`
+`  \   'neo-tree',`
 `  \   'nerdtree',`
 `  \   'netrw',`
 `  \   'noice',`

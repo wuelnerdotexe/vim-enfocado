@@ -1047,6 +1047,55 @@ if enfocado#pluginIsActivated('lazy', 1)
   highlight! link LazyValue Constant
 endif
 " }}}
+" neo-tree.nvim: {{{
+if enfocado#pluginIsActivated('neo-tree', 1)
+  highlight! link NeoTreeBufferNumber Number
+  highlight! link NeoTreeCursorLine CursorLine
+  highlight! link NeoTreeDimText Dimmed
+  highlight! link NeoTreeDirectoryIcon NeoTreeDirectoryName
+  highlight! link NeoTreeDirectoryName Directory
+  highlight! link NeoTreeDotfile NeoTreeFileName
+  highlight! link NeoTreeFileIcon NeoTreeFileName
+  highlight! link NeoTreeFileName Text
+  highlight! link NeoTreeFileNameOpened Accent
+  highlight! link NeoTreeFilterTerm Search
+  highlight! link NeoTreeFloatBorder FloatBorder
+  highlight! link NeoTreeFloatTitle NormalFloat
+  highlight! link NeoTreeGitAdded DiffAdd
+  highlight! link NeoTreeGitConflict DiagnosticWarn
+  highlight! link NeoTreeGitDeleted DiffDelete
+  highlight! link NeoTreeGitIgnored Dimmed
+  highlight! link NeoTreeGitModified DiffChange
+  highlight! link NeoTreeGitUnstaged Dimmed
+  highlight! link NeoTreeGitUntracked Dimmed
+  highlight! link NeoTreeGitStaged DiffAdd
+  highlight! link NeoTreeHiddenByName Dimmed
+  highlight! link NeoTreeIndentMarker NonText
+  highlight! link NeoTreeExpander NonText
+  highlight! link NeoTreeNormal Normal
+  highlight! link NeoTreeNormalNC NormalNC
+  highlight! link NeoTreeSignColumn SignColumn
+  highlight! link NeoTreeStatusLine StatusLine
+  highlight! link NeoTreeStatusLineNC StatusLineNC
+  highlight! link NeoTreeVertSplit VertSplit
+  highlight! link NeoTreeWinSeparator WinSeparator
+  highlight! link NeoTreeEndOfBuffer EndOfBuffer
+  highlight! link NeoTreeRootName NeoTreeDirectoryName
+  highlight! link NeoTreeSymbolicLinkTarget FileLink
+  highlight! link NeoTreeTitleBar NeoTreeFloatTitle
+  highlight! link NeoTreeWindowsHidden Dimmed
+
+  " Tabs.
+  call enfocado#highlighter('NeoTreeTabInactive', s:nocombine, s:base, s:bg_2, s:none)
+  call enfocado#highlighter('NeoTreeTabActive', s:nocombine, s:none, s:br_accent_0, s:none)
+  call enfocado#highlighter('NeoTreeTabSeparatorInactive', s:nocombine, s:base, s:base, s:none)
+  call enfocado#highlighter('NeoTreeTabSeparatorActive', s:nocombine, s:none, s:br_accent_0, s:none)
+
+  " Others.
+  highlight! link NeoTreeModified Accent
+  highlight! link NeoTreeMessage MsgArea
+endif
+" }}}
 " nvim-lspconfig: {{{
 if enfocado#pluginIsActivated('lspconfig', 1)
   highlight! link LspInfoTitle Title

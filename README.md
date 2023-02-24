@@ -112,14 +112,13 @@ let g:enfocado_plugins = [
   \   'bufferline',
   \   'cmp',
   \   'dap-ui',
-  \   'fern',
   \   'gitsigns',
-  \   'glyph-palette',
   \   'illuminate',
   \   'indent-blankline',
   \   'lazy',
   \   'lspconfig',
   \   'matchup',
+  \   'neo-tree',
   \   'noice',
   \   'null-ls',
   \   'smoothcursor',
@@ -246,6 +245,7 @@ The following plugins are supported:
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
 - [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
+- [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [nerdtree](https://github.com/preservim/nerdtree)
 - [noice.nvim](https://github.com/folke/noice.nvim)
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
