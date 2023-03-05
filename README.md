@@ -125,6 +125,8 @@ let g:enfocado_plugins = [
   \   'substitute',
   \   'surround',
   \   'telescope',
+  \   'treesitter',
+  \   'ts-rainbow2',
   \   'visual-multi',
   \   'yanky'
   \ ]
@@ -256,6 +258,8 @@ The following plugins are supported:
 - [nvim-surround](https://github.com/kylechui/nvim-surround)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow)
+- [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [rainbow](https://github.com/luochen1990/rainbow)
 - [SmoothCursor.nvim](https://github.com/gen740/SmoothCursor.nvim)

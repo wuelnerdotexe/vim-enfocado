@@ -80,6 +80,8 @@ supported plugins so far:
 `  \   'todo-comments',`
 `  \   'tree',`
 `  \   'treesitter',`
+`  \   'ts-rainbow',`
+`  \   'ts-rainbow2',`
 `  \   'vista',`
 `  \   'visual-multi',`
 `  \   'which-key',`
