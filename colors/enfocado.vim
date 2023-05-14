@@ -1347,6 +1347,7 @@ endif
 if enfocado#pluginIsActivated('substitute', 1)
   highlight! link SubstituteRange Search
   highlight! link SubstituteExchange Search
+  highlight! link SubstituteSubstituted Search
 endif
 " }}}
 " telescope.nvim: {{{
