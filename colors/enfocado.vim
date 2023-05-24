@@ -329,6 +329,272 @@ highlight! link DiagnosticSignOk DiagnosticOk
 " Other diagnostics.
 call enfocado#highlighter('DiagnosticDeprecated', s:strikethrough, s:none, s:none, s:br_red)
 highlight! link DiagnosticUnnecessary Ignore
+
+" Standard semantic token types.
+highlight! link @lsp.type.class Type
+highlight! link @lsp.type.comment Comment
+highlight! link @lsp.type.decorator StatementBuiltin
+highlight! link @lsp.type.enum Type
+highlight! link @lsp.type.enumMember Property
+highlight! link @lsp.type.event FunctionBuiltin
+highlight! link @lsp.type.function Function
+highlight! link @lsp.type.interface Type
+highlight! link @lsp.type.keyword Keyword
+highlight! link @lsp.type.label Label
+highlight! link @lsp.type.macro Macro
+highlight! link @lsp.type.method Method
+highlight! link @lsp.type.namespace Text
+highlight! link @lsp.type.number Number
+highlight! link @lsp.type.operator Operator
+highlight! link @lsp.type.parameter Identifier
+highlight! link @lsp.type.property Property
+highlight! link @lsp.type.regexp StatementBuiltin
+highlight! link @lsp.type.string String
+highlight! link @lsp.type.struct Type
+highlight! link @lsp.type.typeParameter Type
+highlight! link @lsp.type.type Type
+highlight! link @lsp.type.variable Identifier
+
+" Async modifier.
+highlight! link @lsp.mod.async None
+highlight! link @lsp.typemod.class.async @lsp.type.class
+highlight! link @lsp.typemod.comment.async @lsp.type.comment
+highlight! link @lsp.typemod.decorator.async @lsp.type.decorator
+highlight! link @lsp.typemod.enum.async @lsp.type.enum
+highlight! link @lsp.typemod.enumMember.async @lsp.type.enumMember
+highlight! link @lsp.typemod.event.async @lsp.type.event
+highlight! link @lsp.typemod.function.async @lsp.type.function
+highlight! link @lsp.typemod.interface.async @lsp.type.interface
+highlight! link @lsp.typemod.keyword.async @lsp.type.keyword
+highlight! link @lsp.typemod.label.async @lsp.type.label
+highlight! link @lsp.typemod.macro.async @lsp.type.macro
+highlight! link @lsp.typemod.method.async @lsp.type.method
+highlight! link @lsp.typemod.namespace.async @lsp.type.namespace
+highlight! link @lsp.typemod.number.async @lsp.type.number
+highlight! link @lsp.typemod.operator.async @lsp.type.operator
+highlight! link @lsp.typemod.parameter.async @lsp.type.parameter
+highlight! link @lsp.typemod.property.async @lsp.type.property
+highlight! link @lsp.typemod.regexp.async @lsp.type.regexp
+highlight! link @lsp.typemod.string.async @lsp.type.string
+highlight! link @lsp.typemod.struct.async @lsp.type.struct
+highlight! link @lsp.typemod.typeParameter.async @lsp.type.typeParameter
+highlight! link @lsp.typemod.type.async @lsp.type.type
+highlight! link @lsp.typemod.variable.async @lsp.type.variable
+
+" Declaration modifier.
+highlight! link @lsp.mod.declaration None
+highlight! link @lsp.typemod.class.declaration @lsp.type.class
+highlight! link @lsp.typemod.comment.declaration @lsp.type.comment
+highlight! link @lsp.typemod.decorator.declaration @lsp.type.decorator
+highlight! link @lsp.typemod.enum.declaration @lsp.type.enum
+highlight! link @lsp.typemod.enumMember.declaration @lsp.type.enumMember
+highlight! link @lsp.typemod.event.declaration @lsp.type.event
+highlight! link @lsp.typemod.function.declaration @lsp.type.function
+highlight! link @lsp.typemod.interface.declaration @lsp.type.interface
+highlight! link @lsp.typemod.keyword.declaration @lsp.type.keyword
+highlight! link @lsp.typemod.label.declaration @lsp.type.label
+highlight! link @lsp.typemod.macro.declaration @lsp.type.macro
+highlight! link @lsp.typemod.method.declaration @lsp.type.method
+highlight! link @lsp.typemod.namespace.declaration @lsp.type.namespace
+highlight! link @lsp.typemod.number.declaration @lsp.type.number
+highlight! link @lsp.typemod.operator.declaration @lsp.type.operator
+highlight! link @lsp.typemod.parameter.declaration @lsp.type.parameter
+highlight! link @lsp.typemod.property.declaration @lsp.type.property
+highlight! link @lsp.typemod.regexp.declaration @lsp.type.regexp
+highlight! link @lsp.typemod.string.declaration @lsp.type.string
+highlight! link @lsp.typemod.struct.declaration @lsp.type.struct
+highlight! link @lsp.typemod.typeParameter.declaration @lsp.type.typeParameter
+highlight! link @lsp.typemod.type.declaration @lsp.type.type
+highlight! link @lsp.typemod.variable.declaration @lsp.type.variable
+
+" Definition modifier.
+highlight! link @lsp.mod.definition None
+highlight! link @lsp.typemod.class.definition @lsp.type.class
+highlight! link @lsp.typemod.comment.definition @lsp.type.comment
+highlight! link @lsp.typemod.decorator.definition @lsp.type.decorator
+highlight! link @lsp.typemod.enum.definition @lsp.type.enum
+highlight! link @lsp.typemod.enumMember.definition @lsp.type.enumMember
+highlight! link @lsp.typemod.event.definition @lsp.type.event
+highlight! link @lsp.typemod.function.definition @lsp.type.function
+highlight! link @lsp.typemod.interface.definition @lsp.type.interface
+highlight! link @lsp.typemod.keyword.definition @lsp.type.keyword
+highlight! link @lsp.typemod.label.definition @lsp.type.label
+highlight! link @lsp.typemod.macro.definition @lsp.type.macro
+highlight! link @lsp.typemod.method.definition @lsp.type.method
+highlight! link @lsp.typemod.namespace.definition @lsp.type.namespace
+highlight! link @lsp.typemod.number.definition @lsp.type.number
+highlight! link @lsp.typemod.operator.definition @lsp.type.operator
+highlight! link @lsp.typemod.parameter.definition @lsp.type.parameter
+highlight! link @lsp.typemod.property.definition @lsp.type.property
+highlight! link @lsp.typemod.regexp.definition @lsp.type.regexp
+highlight! link @lsp.typemod.string.definition @lsp.type.string
+highlight! link @lsp.typemod.struct.definition @lsp.type.struct
+highlight! link @lsp.typemod.typeParameter.definition @lsp.type.typeParameter
+highlight! link @lsp.typemod.type.definition @lsp.type.type
+highlight! link @lsp.typemod.variable.definition @lsp.type.variable
+
+" Documentation modifier.
+highlight! link @lsp.mod.documentation None
+highlight! link @lsp.typemod.class.documentation @lsp.type.class
+highlight! link @lsp.typemod.comment.documentation @lsp.type.comment
+highlight! link @lsp.typemod.decorator.documentation @lsp.type.decorator
+highlight! link @lsp.typemod.enum.documentation @lsp.type.enum
+highlight! link @lsp.typemod.enumMember.documentation @lsp.type.enumMember
+highlight! link @lsp.typemod.event.documentation @lsp.type.event
+highlight! link @lsp.typemod.function.documentation @lsp.type.function
+highlight! link @lsp.typemod.interface.documentation @lsp.type.interface
+highlight! link @lsp.typemod.keyword.documentation @lsp.type.keyword
+highlight! link @lsp.typemod.label.documentation @lsp.type.label
+highlight! link @lsp.typemod.macro.documentation @lsp.type.macro
+highlight! link @lsp.typemod.method.documentation @lsp.type.method
+highlight! link @lsp.typemod.namespace.documentation @lsp.type.namespace
+highlight! link @lsp.typemod.number.documentation @lsp.type.number
+highlight! link @lsp.typemod.operator.documentation @lsp.type.operator
+highlight! link @lsp.typemod.parameter.documentation @lsp.type.parameter
+highlight! link @lsp.typemod.property.documentation @lsp.type.property
+highlight! link @lsp.typemod.regexp.documentation @lsp.type.regexp
+highlight! link @lsp.typemod.string.documentation @lsp.type.string
+highlight! link @lsp.typemod.struct.documentation @lsp.type.struct
+highlight! link @lsp.typemod.typeParameter.documentation @lsp.type.typeParameter
+highlight! link @lsp.typemod.type.documentation @lsp.type.type
+highlight! link @lsp.typemod.variable.documentation @lsp.type.variable
+
+" Local modifier.
+highlight! link @lsp.mod.local None
+highlight! link @lsp.typemod.class.local @lsp.type.class
+highlight! link @lsp.typemod.comment.local @lsp.type.comment
+highlight! link @lsp.typemod.decorator.local @lsp.type.decorator
+highlight! link @lsp.typemod.enum.local @lsp.type.enum
+highlight! link @lsp.typemod.enumMember.local @lsp.type.enumMember
+highlight! link @lsp.typemod.event.local @lsp.type.event
+highlight! link @lsp.typemod.function.local @lsp.type.function
+highlight! link @lsp.typemod.interface.local @lsp.type.interface
+highlight! link @lsp.typemod.keyword.local @lsp.type.keyword
+highlight! link @lsp.typemod.label.local @lsp.type.label
+highlight! link @lsp.typemod.macro.local @lsp.type.macro
+highlight! link @lsp.typemod.method.local @lsp.type.method
+highlight! link @lsp.typemod.namespace.local @lsp.type.namespace
+highlight! link @lsp.typemod.number.local @lsp.type.number
+highlight! link @lsp.typemod.operator.local @lsp.type.operator
+highlight! link @lsp.typemod.parameter.local @lsp.type.parameter
+highlight! link @lsp.typemod.property.local @lsp.type.property
+highlight! link @lsp.typemod.regexp.local @lsp.type.regexp
+highlight! link @lsp.typemod.string.local @lsp.type.string
+highlight! link @lsp.typemod.struct.local @lsp.type.struct
+highlight! link @lsp.typemod.typeParameter.local @lsp.type.typeParameter
+highlight! link @lsp.typemod.type.local @lsp.type.type
+highlight! link @lsp.typemod.variable.local @lsp.type.variable
+
+" Modification modifier.
+highlight! link @lsp.mod.modification None
+highlight! link @lsp.typemod.class.modification @lsp.type.class
+highlight! link @lsp.typemod.comment.modification @lsp.type.comment
+highlight! link @lsp.typemod.decorator.modification @lsp.type.decorator
+highlight! link @lsp.typemod.enum.modification @lsp.type.enum
+highlight! link @lsp.typemod.enumMember.modification @lsp.type.enumMember
+highlight! link @lsp.typemod.event.modification @lsp.type.event
+highlight! link @lsp.typemod.function.modification @lsp.type.function
+highlight! link @lsp.typemod.interface.modification @lsp.type.interface
+highlight! link @lsp.typemod.keyword.modification @lsp.type.keyword
+highlight! link @lsp.typemod.label.modification @lsp.type.label
+highlight! link @lsp.typemod.macro.modification @lsp.type.macro
+highlight! link @lsp.typemod.method.modification @lsp.type.method
+highlight! link @lsp.typemod.namespace.modification @lsp.type.namespace
+highlight! link @lsp.typemod.number.modification @lsp.type.number
+highlight! link @lsp.typemod.operator.modification @lsp.type.operator
+highlight! link @lsp.typemod.parameter.modification @lsp.type.parameter
+highlight! link @lsp.typemod.property.modification @lsp.type.property
+highlight! link @lsp.typemod.regexp.modification @lsp.type.regexp
+highlight! link @lsp.typemod.string.modification @lsp.type.string
+highlight! link @lsp.typemod.struct.modification @lsp.type.struct
+highlight! link @lsp.typemod.typeParameter.modification @lsp.type.typeParameter
+highlight! link @lsp.typemod.type.modification @lsp.type.type
+highlight! link @lsp.typemod.variable.modification @lsp.type.variable
+
+" Static modifier.
+highlight! link @lsp.mod.static None
+highlight! link @lsp.typemod.class.static @lsp.type.class
+highlight! link @lsp.typemod.comment.static @lsp.type.comment
+highlight! link @lsp.typemod.decorator.static @lsp.type.decorator
+highlight! link @lsp.typemod.enum.static @lsp.type.enum
+highlight! link @lsp.typemod.enumMember.static @lsp.type.enumMember
+highlight! link @lsp.typemod.event.static @lsp.type.event
+highlight! link @lsp.typemod.function.static @lsp.type.function
+highlight! link @lsp.typemod.interface.static @lsp.type.interface
+highlight! link @lsp.typemod.keyword.static @lsp.type.keyword
+highlight! link @lsp.typemod.label.static @lsp.type.label
+highlight! link @lsp.typemod.macro.static @lsp.type.macro
+highlight! link @lsp.typemod.method.static @lsp.type.method
+highlight! link @lsp.typemod.namespace.static @lsp.type.namespace
+highlight! link @lsp.typemod.number.static @lsp.type.number
+highlight! link @lsp.typemod.operator.static @lsp.type.operator
+highlight! link @lsp.typemod.parameter.static @lsp.type.parameter
+highlight! link @lsp.typemod.property.static @lsp.type.property
+highlight! link @lsp.typemod.regexp.static @lsp.type.regexp
+highlight! link @lsp.typemod.string.static @lsp.type.string
+highlight! link @lsp.typemod.struct.static @lsp.type.struct
+highlight! link @lsp.typemod.typeParameter.static @lsp.type.typeParameter
+highlight! link @lsp.typemod.type.static @lsp.type.type
+highlight! link @lsp.typemod.variable.static @lsp.type.variable
+
+" DefaultLibrary modifier.
+highlight! link @lsp.mod.defaultLibrary None
+highlight! link @lsp.typemod.class.defaultLibrary TypeBuiltin
+highlight! link @lsp.typemod.comment.defaultLibrary Comment
+highlight! link @lsp.typemod.decorator.defaultLibrary Statement
+highlight! link @lsp.typemod.enum.defaultLibrary TypeBuiltin
+highlight! link @lsp.typemod.enumMember.defaultLibrary TypeBuiltin
+highlight! link @lsp.typemod.event.defaultLibrary Function
+highlight! link @lsp.typemod.function.defaultLibrary FunctionBuiltin
+highlight! link @lsp.typemod.interface.defaultLibrary TypeBuiltin
+highlight! link @lsp.typemod.keyword.defaultLibrary StatementBuiltin
+highlight! link @lsp.typemod.label.defaultLibrary StatementBuiltin
+highlight! link @lsp.typemod.macro.defaultLibrary StatementBuiltin
+highlight! link @lsp.typemod.method.defaultLibrary FunctionBuiltin
+highlight! link @lsp.typemod.namespace.defaultLibrary Text
+highlight! link @lsp.typemod.number.defaultLibrary Number
+highlight! link @lsp.typemod.operator.defaultLibrary StatementBuiltin
+highlight! link @lsp.typemod.parameter.defaultLibrary IndentifierBuiltin
+highlight! link @lsp.typemod.property.defaultLibrary TypeBuiltin
+highlight! link @lsp.typemod.regexp.defaultLibrary Statement
+highlight! link @lsp.typemod.string.defaultLibrary String
+highlight! link @lsp.typemod.struct.defaultLibrary TypeBuiltin
+highlight! link @lsp.typemod.typeParameter.defaultLibrary TypeBuiltin
+highlight! link @lsp.typemod.type.defaultLibrary TypeBuiltin
+highlight! link @lsp.typemod.variable.defaultLibrary IndentifierBuiltin
+
+" Abstract modifier.
+call enfocado#highlighter('@lsp.mod.abstract', s:nocombine, s:none, s:yellow, s:none)
+highlight! link @lsp.mod.async.abstract @lsp.mod.abstract
+highlight! link @lsp.mod.declaration.abstract @lsp.mod.abstract
+highlight! link @lsp.mod.definition.abstract @lsp.mod.abstract
+highlight! link @lsp.mod.documentation.abstract @lsp.mod.abstract
+highlight! link @lsp.mod.local.abstract @lsp.mod.abstract
+highlight! link @lsp.mod.modification.abstract @lsp.mod.abstract
+highlight! link @lsp.mod.static.abstract @lsp.mod.abstract
+highlight! link @lsp.mod.defaultLibrary.abstract @lsp.mod.abstract
+
+" Readonly modifier.
+call enfocado#highlighter('@lsp.mod.readonly', s:nocombine, s:none, s:yellow, s:none)
+highlight! link @lsp.mod.async.readonly @lsp.mod.readonly
+highlight! link @lsp.mod.declaration.readonly @lsp.mod.readonly
+highlight! link @lsp.mod.definition.readonly @lsp.mod.readonly
+highlight! link @lsp.mod.documentation.readonly @lsp.mod.readonly
+highlight! link @lsp.mod.local.readonly @lsp.mod.readonly
+highlight! link @lsp.mod.modification.readonly @lsp.mod.readonly
+highlight! link @lsp.mod.static.readonly @lsp.mod.readonly
+highlight! link @lsp.mod.defaultLibrary.readonly @lsp.mod.readonly
+
+" Deprecated modifier.
+call enfocado#highlighter('@lsp.mod.deprecated', s:nocombine, s:none, s:br_red, s:none)
+highlight! link @lsp.mod.async.deprecated @lsp.mod.deprecated
+highlight! link @lsp.mod.declaration.deprecated @lsp.mod.deprecated
+highlight! link @lsp.mod.definition.deprecated @lsp.mod.deprecated
+highlight! link @lsp.mod.documentation.deprecated @lsp.mod.deprecated
+highlight! link @lsp.mod.local.deprecated @lsp.mod.deprecated
+highlight! link @lsp.mod.modification.deprecated @lsp.mod.deprecated
+highlight! link @lsp.mod.static.deprecated @lsp.mod.deprecated
+highlight! link @lsp.mod.defaultLibrary.deprecated @lsp.mod.deprecated
 " }}}
 " ------------------------------------------------------------------------------
 " SECTION: Filetypes syntax groups highlighting.
