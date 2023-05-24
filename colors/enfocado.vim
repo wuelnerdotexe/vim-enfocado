@@ -231,8 +231,8 @@ highlight! link WinBar Text
 highlight! link WinBarNC Dimmed
 highlight! link WinSeparator VertSplit
 if has('nvim')
-  highlight! FloatShadow ctermbg=16 guibg=#000000 blend=10
-  highlight! FloatShadowThrough ctermbg=16 guibg=#000000 blend=10
+  highlight! FloatShadow term=NONE cterm=NONE ctermbg=16 ctermfg=16 guibg=#000000 gui=NONE guifg=#000000 blend=50
+  highlight! FloatShadowThrough term=NONE cterm=NONE ctermbg=16 ctermfg=16 guibg=#000000 gui=NONE guifg=#000000 blend=100
 endif
 
 " General syntax.
@@ -279,6 +279,8 @@ highlight! link StorageClass Type
 highlight! link Structure Type
 highlight! link Tag Statement
 highlight! link Typedef Type
+highlight! Bold term=bold cterm=bold gui=bold
+highlight! Italic term=italic cterm=italic gui=italic
 highlight! Underlined term=underline cterm=underline gui=underline
 
 " nvim-lsp: {{{
