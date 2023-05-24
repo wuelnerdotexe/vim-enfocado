@@ -1029,6 +1029,12 @@ if enfocado#pluginIsActivated('fern', 0)
   highlight! link FernGitStatusIgnored Ignore
 endif
 " }}}
+" fold-preview.nvim: {{{
+if enfocado#pluginIsActivated('fold-preview', 1)
+  highlight! link FoldPreview NormalFloat
+  highlight! link FoldPreviewBorder FloatBorder
+endif
+" }}}
 " fzf.vim: {{{
 if enfocado#pluginIsActivated('fzf', 0)
   " fzf apply enfocado groups.
