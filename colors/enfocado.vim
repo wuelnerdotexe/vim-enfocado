@@ -1597,9 +1597,6 @@ if enfocado#pluginIsActivated('treesitter', 1)
   highlight! link @tag.attribute Identifier
   highlight! link @tag.delimiter Delimiter
 
-  " Conceal.
-  highlight! link @conceal Conceal
-
   " TSModule info.
   highlight! link TSModuleInfoGood DiagnosticOk
   highlight! link TSModuleInfoBad DiagnosticError
