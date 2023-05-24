@@ -669,6 +669,36 @@ if enfocado#pluginIsActivated('aerial', 1)
   highlight! link AerialTypeParameterIcon Type
   highlight! link AerialVariableIcon Identifier
 
+  " Text symbols.
+  highlight! link AerialPrivate Text
+  highlight! link AerialProtected Text
+  highlight! link AerialArray Text
+  highlight! link AerialBoolean Text
+  highlight! link AerialClass Text
+  highlight! link AerialConstant Text
+  highlight! link AerialConstructor Text
+  highlight! link AerialEnum Text
+  highlight! link AerialEnumMember Text
+  highlight! link AerialEvent Text
+  highlight! link AerialField Text
+  highlight! link AerialFile Text
+  highlight! link AerialFunction Text
+  highlight! link AerialInterface Text
+  highlight! link AerialKey Text
+  highlight! link AerialMethod Text
+  highlight! link AerialModule Text
+  highlight! link AerialNamespace Text
+  highlight! link AerialNull Text
+  highlight! link AerialNumber Text
+  highlight! link AerialObject Text
+  highlight! link AerialOperator Text
+  highlight! link AerialPackage Text
+  highlight! link AerialProperty Text
+  highlight! link AerialString Text
+  highlight! link AerialStruct Text
+  highlight! link AerialTypeParameter Text
+  highlight! link AerialVariable Text
+
   " Indent lines.
   highlight! link AerialGuide NonText
   highlight! link AerialGuide1 AerialGuide
@@ -834,7 +864,7 @@ if enfocado#pluginIsActivated('coc', 0)
   highlight! link CocWarningVirtualText DiagnosticVirtualTextWarn
   highlight! link CocDeprecatedHighlight Error
   highlight! link CocFadeOut Comment
-  highlight! link CocUnusedHighlight Comment
+  highlight! link CocUnusedHighlight Ignore
 
   " Coc document highlight.
   highlight! link CocHighlightRead Visual
@@ -1029,21 +1059,32 @@ endif
 " gitsigns.nvim: {{{
 if enfocado#pluginIsActivated('gitsigns', 1)
   if (s:termguicolors && &termguicolors) || s:gui_running
-    call enfocado#highlighter('GitSignsAddLn', s:none, s:blend_added, s:none, s:none)
-    call enfocado#highlighter('GitSignsChangeLn', s:none, s:blend_modified, s:none, s:none)
+    call enfocado#highlighter('GitSignsAddVirtLn', s:none, s:blend_added, s:none, s:none)
+    call enfocado#highlighter('GitSignsChangeVirtLn', s:none, s:blend_modified, s:none, s:none)
+    call enfocado#highlighter('GitSignsDeleteVirtLn', s:none, s:blend_removed, s:none, s:none)
   else
-    call enfocado#highlighter('GitSignsAddLn', s:none, s:green, s:bg_1, s:none)
-    call enfocado#highlighter('GitSignsChangeLn', s:none, s:yellow, s:bg_1, s:none)
+    call enfocado#highlighter('GitSignsAddVirtLn', s:none, s:green, s:bg_1, s:none)
+    call enfocado#highlighter('GitSignsChangeVirtLn', s:none, s:yellow, s:bg_1, s:none)
+    call enfocado#highlighter('GitSignsDeleteVirtLn', s:none, s:red, s:bg_1, s:none)
   endif
   call enfocado#highlighter('GitSignsAddInline', s:none, s:green, s:bg_1, s:none)
-  call enfocado#highlighter('GitSignsDeleteInline', s:none, s:yellow, s:bg_1, s:none)
   call enfocado#highlighter('GitSignsChangeInline', s:none, s:red, s:bg_1, s:none)
+  call enfocado#highlighter('GitSignsDeleteInline', s:none, s:yellow, s:bg_1, s:none)
+  call enfocado#highlighter('GitSignsUntrackedLn', s:none, s:bg_1, s:bg_2, s:none)
   highlight! link GitSignsAdd DiffAdd
-  highlight! link GitSignsDelete DiffDelete
   highlight! link GitSignsChange DiffChange
+  highlight! link GitSignsDelete DiffDelete
+  highlight! link GitSignsChangedelete GitSignsChange
+  highlight! link GitSignsTopdelete GitSignsDelete
+  highlight! link GitSignsUntracked Ignore
   highlight! link GitSignsAddNr GitSignsAdd
   highlight! link GitSignsChangeNr GitSignsChange
   highlight! link GitSignsDeleteNr GitSignsDelete
+  highlight! link GitSignsChangedeleteNr GitSignsChangedelete
+  highlight! link GitSignsTopdeleteNr GitSignsTopdelete
+  highlight! link GitSignsUntrackedNr GitSignsUntracked
+  highlight! link GitSignsAddLn GitSignsAddVirtLn
+  highlight! link GitSignsChangeLn GitSignsChangeVirtLn
   highlight! link GitSignsAddPreview GitSignsAdd
   highlight! link GitSignsDeletePreview GitSignsDelete
   highlight! link GitSignsCurrentLineBlame Dimmed
@@ -1053,6 +1094,8 @@ if enfocado#pluginIsActivated('gitsigns', 1)
   highlight! link GitSignsAddLnVirtLnInLine GitSignsAddLnInline
   highlight! link GitSignsChangeVirtLnInLine GitSignsChangeLnInline
   highlight! link GitSignsDeleteVirtLnInLine GitSignsDeleteLnInline
+  highlight! link GitSignsChangedeleteLn GitSignsChangeLn
+  highlight! link GitSignsVirtLnum LineNr
 endif
 " }}}
 " glyph-palette.vim: {{{
@@ -1082,6 +1125,8 @@ if enfocado#pluginIsActivated('indent-blankline', 1)
   call enfocado#highlighter('IndentBlanklineSpaceChar', s:none, s:none, s:bg_2, s:none)
   call enfocado#highlighter('IndentBlanklineSpaceCharBlankline', s:none, s:none, s:bg_2, s:none)
   call enfocado#highlighter('IndentBlanklineContextChar', s:none, s:none, s:dim_0, s:none)
+  call enfocado#highlighter('IndentBlanklineCOntextSpaceChar', s:none, s:none, s:bg_2, s:none)
+  call enfocado#highlighter('IndentBlanklineContextSpaceCharBlankline', s:none, s:none, s:bg_2, s:none)
   call enfocado#highlighter('IndentBlanklineContextStart', s:underline, s:none, s:none, s:dim_0)
 
   " Enfocado groups.
@@ -1284,6 +1329,8 @@ if enfocado#pluginIsActivated('dap-ui', 1)
   highlight! link DapUIFrameName Title
   highlight! link DapUISource Text
   highlight! link DapUILineNumber LineNr
+  highlight! link DapUINormal Normal
+  highlight! link DapUINormalNC NormalNC
   highlight! link DapUIFloatNormal NormalFloat
   highlight! link DapUIFloatBorder FloatBorder
   highlight! link DapUIWatchesEmpty Text
@@ -1295,17 +1342,19 @@ if enfocado#pluginIsActivated('dap-ui', 1)
   highlight! link DapUIBreakpointsLine LineNr
   highlight! link DapUIBreakpointsDisabledLine LineNr
   highlight! link DapUICurrentFrameName DiffChange
+  highlight! link DapUIEndofBuffer EndOfBuffer
+  highlight! link DapUIWinSelect Accent
 endif
 " }}}
 " lazy.nvim: {{{
 if enfocado#pluginIsActivated('lazy', 1)
-  call enfocado#highlighter("LazyButton", s:nocombine, s:bg_2, s:fg_0, s:none)
-  highlight! link LazyButtonActive ToolbarButton
+  call enfocado#highlighter('LazyButton', s:nocombine, s:bg_2, s:fg_0, s:none)
+  call enfocado#highlighter('LazyButtonActive', s:nocombine, s:accent_0, s:bg_1, s:none)
   highlight! link LazyComment Comment
-  highlight! link LazyCommit ConstIdentifier
-  highlight! link LazyCommitIssue Text
-  highlight! link LazyCommitScope Text
-  highlight! link LazyCommitType Text
+  highlight! link LazyCommit Question
+  highlight! link LazyCommitIssue Keyword
+  highlight! link LazyCommitScope Indentifier
+  highlight! link LazyCommitType Keyword
   highlight! link LazyDir Directory
   highlight! link LazyH1 LazyButtonActive
   highlight! link LazyH2 Title
@@ -1328,6 +1377,10 @@ if enfocado#pluginIsActivated('lazy', 1)
   highlight! link LazyTaskOutput DiagnosticVirtualTextWarn
   highlight! link LazyUrl Link
   highlight! link LazyValue Constant
+  highlight! link LazyLocal Text
+  highlight! link LazyDimmed Dimmed
+endif
+" }}}
 " mason.nvim: {{{
 if enfocado#pluginIsActivated('mason', 1)
   highlight! link MasonNormal NormalFloat
@@ -1364,6 +1417,7 @@ if enfocado#pluginIsActivated('neo-tree', 1)
   highlight! link NeoTreeFileName Text
   highlight! link NeoTreeFileNameOpened Accent
   highlight! link NeoTreeFilterTerm Search
+  highlight! link NeoTreeFloatNormal NormalFloat
   highlight! link NeoTreeFloatBorder FloatBorder
   highlight! link NeoTreeFloatTitle NormalFloat
   highlight! link NeoTreeGitAdded DiffAdd
@@ -1371,6 +1425,7 @@ if enfocado#pluginIsActivated('neo-tree', 1)
   highlight! link NeoTreeGitDeleted DiffDelete
   highlight! link NeoTreeGitIgnored Dimmed
   highlight! link NeoTreeGitModified DiffChange
+  highlight! link NeoTreeGitRenamed DiffChange
   highlight! link NeoTreeGitUnstaged Dimmed
   highlight! link NeoTreeGitUntracked Dimmed
   highlight! link NeoTreeGitStaged DiffAdd
@@ -1677,10 +1732,12 @@ if enfocado#pluginIsActivated('telescope', 1)
   call enfocado#highlighter('TelescopePreviewWrite', s:bold, s:none, s:br_red, s:none)
   highlight! link TelescopeBorder FloatBorder
   highlight! link TelescopeMatching Match
+  highlight! link TelescopeMultiIcon Accent
   highlight! link TelescopeMultiSelection Visual
   highlight! link TelescopeNormal NormalFloat
   highlight! link TelescopePreviewBorder FloatBorder
   highlight! link TelescopePreviewDirectory Directory
+  highlight! link TelescopePreviewGroup TelescopePreviewUser
   highlight! link TelescopePreviewExecute FileExec
   highlight! link TelescopePreviewLink FileLink
   highlight! link TelescopePreviewMatch Search
