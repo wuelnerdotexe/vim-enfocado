@@ -148,6 +148,7 @@ else
   call enfocado#highlighter('LineNr', s:none, s:none, s:bg_2, s:none)
 endif
 call enfocado#highlighter('Accent', s:none, s:none, s:br_accent_0, s:none)
+call enfocado#highlighter('AccentSecondary', s:none, s:none, s:br_accent_1, s:none)
 call enfocado#highlighter('Builtin', s:none, s:none, s:br_builtin_0, s:none)
 call enfocado#highlighter('ColorColumn', s:none, s:bg_1, s:none, s:none)
 call enfocado#highlighter('Conceal', s:nocombine, s:none, s:bg_2, s:none)
@@ -1059,6 +1060,28 @@ if enfocado#pluginIsActivated('lazy', 1)
   highlight! link LazyTaskOutput DiagnosticVirtualTextWarn
   highlight! link LazyUrl Link
   highlight! link LazyValue Constant
+" mason.nvim: {{{
+if enfocado#pluginIsActivated('mason', 1)
+  highlight! link MasonNormal NormalFloat
+  call enfocado#highlighter('MasonHeader', s:nocombine, s:accent_0, s:bg_1, s:none)
+  call enfocado#highlighter('MasonHeaderSecondary', s:nocombine, s:accent_1, s:bg_1, s:none)
+
+  highlight! link MasonHighlight Accent
+  call enfocado#highlighter('MasonHighlightBlock', s:nocombine, s:accent_0, s:bg_1, s:none)
+  call enfocado#highlighter('MasonHighlightBlockBold', s:bold, s:accent_0, s:bg_1, s:none)
+
+  highlight! link MasonHighlightSecondary AccentSecondary
+  call enfocado#highlighter('MasonHighlightBlockSecondary', s:nocombine, s:accent_1, s:bg_1, s:none)
+  call enfocado#highlighter('MasonHighlightBlockBoldSecondary', s:bold, s:accent_1, s:bg_1, s:none)
+
+  highlight! link MasonMuted Dimmed
+  call enfocado#highlighter('MasonMutedBlock', s:nocombine, s:dim_0, s:bg_1, s:none)
+  call enfocado#highlighter('MasonMutedBlockBold', s:bold, s:dim_0, s:bg_1, s:none)
+
+  highlight! link MasonError DiagnosticError
+  highlight! link MasonWarning DiagnosticWarn
+  highlight! link MasonHeading Title
+  highlight! link MasonLink Link
 endif
 " }}}
 " neo-tree.nvim: {{{
