@@ -1179,79 +1179,94 @@ if enfocado#pluginIsActivated('surround', 1)
 endif
 " }}}
 " nvim-treesitter: {{{
-if enfocado#pluginIsActivated('treesitter', 1) && has('nvim-0.8')
+if enfocado#pluginIsActivated('treesitter', 1)
+  " Text.
   call enfocado#highlighter('@text.danger', s:bold, s:br_red, s:bg_1, s:none)
   call enfocado#highlighter('@text.note', s:bold, s:br_yellow, s:bg_1, s:none)
   call enfocado#highlighter('@text.warning', s:bold, s:br_orange, s:bg_1, s:none)
-  call enfocado#highlighter('@text.literal', s:italic, s:none, s:fg_0, s:none)
-  call enfocado#highlighter('@none', s:none, s:none, s:none, s:none)
   call enfocado#highlighter('@text.title', s:nocombine, s:none, s:fg_1, s:none)
-  highlight! link @annotation SpecialComment
-  highlight! link @attribute SpecialComment
-  highlight! link @boolean Boolean
-  highlight! link @character Character
-  highlight! link @character.special SpecialChar
-  highlight! link @comment Comment
-  highlight! link @conditional Conditional
-  highlight! link @constant.builtin ConstIdentifier
-  highlight! link @constant ConstIdentifier
-  highlight! link @constant.macro ConstIdentifier
-  highlight! link @constructor Type
-  highlight! link @debug Debug
-  highlight! link @define PreProc
-  highlight! link @error Error
-  highlight! link @exception Exception
-  highlight! link @field Property
-  highlight! link @float Float
-  highlight! link @function Function
-  highlight! link @function.builtin FunctionBuiltin
-  highlight! link @function.call Function
-  highlight! link @function.macro Function
-  highlight! link @include Include
-  highlight! link @keyword Keyword
-  highlight! link @keyword.function Type
-  highlight! link @keyword.operator Operator
-  highlight! link @keyword.return Keyword
-  highlight! link @label Label
-  highlight! link @method Method
-  highlight! link @method.call Method
-  highlight! link @namespace Text
-  highlight! link @number Number
-  highlight! link @operator Operator
-  highlight! link @parameter Identifier
-  highlight! link @parameter.reference Indentifier
-  highlight! link @preproc PreProc
-  highlight! link @property Property
-  highlight! link @punctuation.bracket Delimiter
-  highlight! link @punctuation.delimiter Delimiter
-  highlight! link @punctuation.special StatementBuiltin
-  highlight! link @repeat Repeat
-  highlight! link @storageclass StorageClass
-  highlight! link @string String
-  highlight! link @string.escape StatementBuiltin
-  highlight! link @string.regex StatementBuiltin
-  highlight! link @string.special StatementBuiltin
-  highlight! link @symbol Identifier
-  highlight! link @tag Tag
-  highlight! link @tag.attribute Identifier
-  highlight! link @tag.delimiter Delimiter
+  call enfocado#highlighter('@none', s:none, s:none, s:none, s:none)
+  call enfocado#highlighter('@text.literal', s:italic, s:none, s:fg_0, s:none)
   highlight! link @text Text
   highlight! link @text.environment.name StatementBuiltin
   highlight! link @text.environment Text
   highlight! link @text.math StatementBuiltin
-  highlight! link @text.reference TSLiteral
+  highlight! link @text.reference @text.literal
   highlight! link @text.uri Link
-  highlight! link @todo Todo
-  highlight! link @type Type
-  highlight! link @type.builtin TypeBuiltin
-  highlight! link @type.definition PreProc
-  highlight! link @type.qualifier Type
-  highlight! link @variable Identifier
-  highlight! link @variable.builtin IdentifierBuiltin
+  highlight! link @text.todo Todo
   highlight! @text.emphasis term=italic cterm=italic gui=italic
   highlight! @text.strike term=strikethrough cterm=strikethrough gui=strikethrough
   highlight! @text.strong term=bold cterm=bold gui=bold
   highlight! @text.underline term=underline cterm=underline gui=underline
+
+  " Miscs.
+  highlight! link @comment Comment
+  highlight! link @annotation SpecialComment
+  highlight! link @attribute SpecialComment
+  highlight! link @punctuation Delimiter
+  highlight! link @punctuation.bracket Delimiter
+  highlight! link @punctuation.delimiter Delimiter
+  highlight! link @punctuation.special StatementBuiltin
+
+  " Constants.
+  highlight! link @constant ConstIdentifier
+  highlight! link @constant.builtin ConstIdentifier
+  highlight! link @constant.macro ConstIdentifier
+  highlight! link @define PreProc
+  highlight! link @macro Macro
+  highlight! link @string String
+  highlight! link @string.escape StatementBuiltin
+  highlight! link @string.special StatementBuiltin
+  highlight! link @string.regex StatementBuiltin
+  highlight! link @character Character
+  highlight! link @character.special SpecialChar
+  highlight! link @number Number
+  highlight! link @boolean Boolean
+  highlight! link @float Float
+
+  " Functions.
+  highlight! link @function Function
+  highlight! link @function.builtin FunctionBuiltin
+  highlight! link @function.macro Function
+  highlight! link @function.call Function
+  highlight! link @parameter Identifier
+  highlight! link @parameter.reference Indentifier
+  highlight! link @method Method
+  highlight! link @method.call Method
+  highlight! link @field Property
+  highlight! link @property Property
+  highlight! link @constructor Type
+
+  " Keywords.
+  highlight! link @conditional Conditional
+  highlight! link @repeat Repeat
+  highlight! link @label Label
+  highlight! link @operator Operator
+  highlight! link @keyword Keyword
+  highlight! link @keyword.function Type
+  highlight! link @keyword.operator Operator
+  highlight! link @keyword.return Keyword
+  highlight! link @exception Exception
+  highlight! link @error Error
+
+  highlight! link @variable Identifier
+  highlight! link @variable.builtin IdentifierBuiltin
+  highlight! link @symbol Identifier
+  highlight! link @type Type
+  highlight! link @type.definition PreProc
+  highlight! link @type.builtin TypeBuiltin
+  highlight! link @type.qualifier Type
+  highlight! link @storageclass StorageClass
+  highlight! link @namespace Text
+  highlight! link @include Include
+  highlight! link @preproc PreProc
+  highlight! link @debug Debug
+  highlight! link @tag Tag
+  highlight! link @tag.attribute Identifier
+  highlight! link @tag.delimiter Delimiter
+
+  " Conceal.
+  highlight! link @conceal Conceal
 
   " TSModule info.
   highlight! link TSModuleInfoGood DiagnosticOk
