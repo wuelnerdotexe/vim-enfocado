@@ -1387,6 +1387,11 @@ if enfocado#pluginIsActivated('lazy', 1)
   highlight! link LazyDimmed Dimmed
 endif
 " }}}
+" lsp-inlayhints.nvim: {{{
+if enfocado#pluginIsActivated('lsp-inlayhints', 1)
+  call enfocado#highlighter('LspInlayHint', s:nocombine, s:bg_1, s:dim_0, s:none)
+endif
+" }}}
 " mason.nvim: {{{
 if enfocado#pluginIsActivated('mason', 1)
   highlight! link MasonNormal NormalFloat
