@@ -4,26 +4,39 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 5.25.0 - 2023-05-13
+## [6.0.0] - 2023-05-24
+
+### Added
+
+- Added support for LSP semantic tokens.
+- Added more LSP diagnostic groups.
+- Added more `treesitter` groups.
+- Various improvements are added.
+- Support for the following plugins:
+  - [fold-preview.nvim](https://github.com/anuvyklack/fold-preview.nvim)
+  - [lsp-inlayhints.nvim](https://github.com/lvimuser/lsp-inlayhints.nvim)
+  - [mason.nvim](https://github.com/williamboman/mason.nvim)
+
+## [5.25.0] - 2023-05-13
 
 ### Added
 
 - Complete support for `substitute.nvim`.
 - Added support for [cmp-tabnine](https://github.com/tzachar/cmp-tabnine).
 
-## 5.24.0 - 2023-03-05
+## [5.24.0] - 2023-03-05
 
 ### Added
 
 Added support for the [nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow) and [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2).
 
-## 5.23.0 - 2023-02-24
+## [5.23.0] - 2023-02-24
 
 ### Added
 
 - Added support for [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim) plugin.
 
-## 5.22.0 - 2023-02-06
+## [5.22.0] - 2023-02-06
 
 ### Added
 
@@ -33,14 +46,14 @@ Added support for the following plugins:
 - [substitute.nvim](https://github.com/gbprod/substitute.nvim)
 - [yanky.nvim](https://github.com/gbprod/yanky.nvim)
 
-## 5.21.1 - 2023-01-26
+## [5.21.1] - 2023-01-26
 
 ### Fixed
 
 - Fixed swapped colors in `README.md` file (based on https://github.com/wuelnerdotexe/vscode-enfocado/issues/1).
 - Example for `enfocado_customization` is optimized.
 
-## 5.21.0 - 2023-01-20
+## [5.21.0] - 2023-01-20
 
 ### Added
 
@@ -50,7 +63,7 @@ Added support for the following plugins:
 
 - Various improvements are madded for `dircolors` on `nvim-tree` and `nvim-telescope`.
 
-## 5.20.1 - 2022-12-20
+## [5.20.1] - 2022-12-20
 
 ### Fixed
 
@@ -60,7 +73,7 @@ Added support for the following plugins:
 
 - Consistency changes are made in `nvim-telescope`.
 
-## 5.20.0 - 2022-11-30
+## [5.20.0] - 2022-11-30
 
 ### Added
 

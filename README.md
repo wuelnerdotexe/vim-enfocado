@@ -29,6 +29,7 @@ What you **won't have** if you **don't install Enfocado**:
 
 ## Table of Contents
 
+- [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
   - [Statuslines](#statuslines)
@@ -45,6 +46,10 @@ What you **won't have** if you **don't install Enfocado**:
 - [Plugins](#plugins)
 - [Credits](#credits)
 - [License](#license)
+
+## Requirements
+
+- [Vim](https://www.vim.org/) >= 8.0 or [Neovim](https://neovim.io/) >= v0.9.0
 
 ## Installation
 
@@ -112,16 +117,16 @@ let g:enfocado_plugins = [
   \   'bufferline',
   \   'cmp',
   \   'dap-ui',
+  \   'fold-preview',
   \   'gitsigns',
   \   'illuminate',
   \   'indent-blankline',
   \   'lazy',
   \   'lspconfig',
-  \   'matchup',
+  \   'mason',
   \   'neo-tree',
   \   'noice',
   \   'null-ls',
-  \   'smoothcursor',
   \   'substitute',
   \   'surround',
   \   'telescope',
@@ -240,13 +245,16 @@ The following plugins are supported:
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
 - [fern.vim](https://github.com/lambdalisue/fern.vim)
+- [fold-preview.nvim](https://github.com/anuvyklack/fold-preview.nvim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
 - [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
+- [lsp-inlayhints.nvim](https://github.com/lvimuser/lsp-inlayhints.nvim)
 - [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
+- [mason.nvim](https://github.com/williamboman/mason.nvim)
 - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [nerdtree](https://github.com/preservim/nerdtree)
 - [noice.nvim](https://github.com/folke/noice.nvim)

@@ -52,6 +52,7 @@ supported plugins so far:
 `  \   'dashboard',`
 `  \   'fern',`
 `  \   'floaterm',`
+`  \   'fold-preview',`
 `  \   'fzf',`
 `  \   'gitgutter',`
 `  \   'gitsigns',`
@@ -60,6 +61,8 @@ supported plugins so far:
 `  \   'indent-blankline',`
 `  \   'lazy',`
 `  \   'lspconfig',`
+`  \   'lsp-inlayhints',`
+`  \   'mason',`
 `  \   'matchup',`
 `  \   'neo-tree',`
 `  \   'nerdtree',`
