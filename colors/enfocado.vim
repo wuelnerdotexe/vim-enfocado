@@ -61,6 +61,7 @@ let s:blend_error = s:colorScheme.blend_error
 let s:blend_info = s:colorScheme.blend_info
 let s:blend_hint = s:colorScheme.blend_hint
 let s:blend_warn = s:colorScheme.blend_warn
+let s:blend_ok = s:colorScheme.blend_ok
 let s:blend_added = s:colorScheme.blend_added
 let s:blend_removed = s:colorScheme.blend_removed
 let s:blend_modified = s:colorScheme.blend_modified
@@ -84,6 +85,7 @@ let s:underline = ['underline', 'underline']
 let s:undercurl = ['undercurl', 'undercurl']
 let s:bold_underline = ['bold,underline', 'bold,underline']
 let s:reverse = ['reverse', 'reverse']
+let s:strikethrough = ['strikethrough,NONE', 'strikethrough,NONE']
 
 " All highlights are removed.
 if !exists('syntax_on') || !exists('syntax_manual')
@@ -291,29 +293,39 @@ call enfocado#highlighter('DiagnosticError', s:bold, s:none, s:br_red, s:none)
 call enfocado#highlighter('DiagnosticHint', s:bold, s:none, s:br_blue, s:none)
 call enfocado#highlighter('DiagnosticInfo', s:bold, s:none, s:br_yellow, s:none)
 call enfocado#highlighter('DiagnosticWarn', s:bold, s:none, s:br_orange, s:none)
+call enfocado#highlighter('DiagnosticOk', s:bold, s:none, s:br_green, s:none)
 call enfocado#highlighter('DiagnosticFloatingError', s:bold, s:bg_1, s:br_red, s:none)
 call enfocado#highlighter('DiagnosticFloatingHint', s:bold, s:bg_1, s:br_blue, s:none)
 call enfocado#highlighter('DiagnosticFloatingInfo', s:bold, s:bg_1, s:br_yellow, s:none)
 call enfocado#highlighter('DiagnosticFloatingWarn', s:bold, s:bg_1, s:br_orange, s:none)
+call enfocado#highlighter('DiagnosticFloatingOk', s:bold, s:bg_1, s:br_green, s:none)
 call enfocado#highlighter('DiagnosticUnderlineError', s:undercurl, s:none, s:none, s:br_red)
 call enfocado#highlighter('DiagnosticUnderlineHint', s:undercurl, s:none, s:none, s:br_blue)
 call enfocado#highlighter('DiagnosticUnderlineInfo', s:undercurl, s:none, s:none, s:br_yellow)
 call enfocado#highlighter('DiagnosticUnderlineWarn', s:undercurl, s:none, s:none, s:br_orange)
+call enfocado#highlighter('DiagnosticUnderlineOk', s:undercurl, s:none, s:none, s:br_green)
 if (s:termguicolors && &termguicolors) || s:gui_running
   call enfocado#highlighter('DiagnosticVirtualTextError', s:bold, s:blend_error, s:br_red, s:none)
   call enfocado#highlighter('DiagnosticVirtualTextHint', s:bold, s:blend_hint, s:br_blue, s:none)
   call enfocado#highlighter('DiagnosticVirtualTextInfo', s:bold, s:blend_info, s:br_yellow, s:none)
   call enfocado#highlighter('DiagnosticVirtualTextWarn', s:bold, s:blend_warn, s:br_orange, s:none)
+  call enfocado#highlighter('DiagnosticVirtualTextOk', s:bold, s:blend_ok, s:br_green, s:none)
 else
   highlight! link DiagnosticVirtualTextError DiagnosticFloatingError
   highlight! link DiagnosticVirtualTextHint DiagnosticFloatingHint
   highlight! link DiagnosticVirtualTextInfo DiagnosticFloatingInfo
   highlight! link DiagnosticVirtualTextWarn DiagnosticFloatingWarn
+  highlight! link DiagnosticVirtualTextOk DiagnosticFloatingOk
 endif
 highlight! link DiagnosticSignError DiagnosticError
 highlight! link DiagnosticSignHint DiagnosticHint
 highlight! link DiagnosticSignInfo DiagnosticInfo
 highlight! link DiagnosticSignWarn DiagnosticWarn
+highlight! link DiagnosticSignOk DiagnosticOk
+
+" Other diagnostics.
+call enfocado#highlighter('DiagnosticDeprecated', s:strikethrough, s:none, s:none, s:br_red)
+highlight! link DiagnosticUnnecessary Ignore
 " }}}
 " ------------------------------------------------------------------------------
 " SECTION: Filetypes syntax groups highlighting.
@@ -885,7 +897,7 @@ if enfocado#pluginIsActivated('noice', 1)
   highlight! link NoiceFormatLevelOff Dimmed
   highlight! link NoiceFormatLevelTrace Trace
   highlight! link NoiceFormatLevelWarn DiagnosticWarn
-  highlight! link NoiceFormatProgressDone Success
+  highlight! link NoiceFormatProgressDone DiagnosticOk
   highlight! link NoiceFormatProgressTodo Accent
   highlight! link NoiceFormatTitle Title
   highlight! link NoiceLspProgressClient Accent
@@ -1102,7 +1114,7 @@ endif
 if enfocado#pluginIsActivated('lspconfig', 1)
   highlight! link LspInfoTitle Title
   highlight! link LspInfoList Dimmed
-  highlight! link LspInfoFiletype Success
+  highlight! link LspInfoFiletype DiagnosticOk
   highlight! link LspInfoTip DiagnosticInfo
   highlight! link LspInfoBorder FloatBorder
 endif
@@ -1217,7 +1229,7 @@ if enfocado#pluginIsActivated('treesitter', 1) && has('nvim-0.8')
   highlight! @text.underline term=underline cterm=underline gui=underline
 
   " TSModule info.
-  highlight! link TSModuleInfoGood Success
+  highlight! link TSModuleInfoGood DiagnosticOk
   highlight! link TSModuleInfoBad DiagnosticError
   highlight! link TSModuleInfoHeader Accent
   highlight! link TSModuleInfoNamespace Title
@@ -1292,10 +1304,10 @@ endif
 " packer.nvim: {{{
 if enfocado#pluginIsActivated('packer', 1)
   highlight! link packerWorking Accent
-  highlight! link packerSuccess Success
+  highlight! link packerSuccess DiagnosticOk
   highlight! link packerFail DiagnosticError
   highlight! link packerStatus DiagnosticInfo
-  highlight! link packerStatusSuccess Success
+  highlight! link packerStatusSuccess DiagnosticOk
   highlight! link packerStatusFail DiagnosticError
   highlight! link packerStatusCommit Dimmed
   highlight! link packerHash Dimmed
