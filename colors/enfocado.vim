@@ -230,7 +230,7 @@ highlight! link Whitespace NonText
 highlight! link WinBar Text
 highlight! link WinBarNC Dimmed
 highlight! link WinSeparator VertSplit
-if has('nvim')
+if enfocado#nvim
   highlight! FloatShadow term=NONE cterm=NONE ctermbg=16 ctermfg=16 guibg=#000000 gui=NONE guifg=#000000 blend=50
   highlight! FloatShadowThrough term=NONE cterm=NONE ctermbg=16 ctermfg=16 guibg=#000000 gui=NONE guifg=#000000 blend=100
 endif

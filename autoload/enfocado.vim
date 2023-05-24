@@ -9,6 +9,10 @@
 "              the code and nothing else.
 " -----------------------------------------------------------------------------
 
+" Necessary variables are initialized.
+let s:nvim = has('nvim') ? 1 : 0
+let enfocado#nvim = s:nvim
+
 " A funcref is created to get the color scheme based on the vim background.
 function! enfocado#getColorScheme()
   " Colors are initialized.
@@ -142,11 +146,9 @@ endfunction
 
 " A function is created to check on-demand plugins.
 function enfocado#pluginIsActivated(name, only_nvim)
-  let l:nvim = has('nvim') ? 1 : 0
-
-  if (g:enfocado_plugins == ['none']) || (a:only_nvim && !l:nvim)
+  if (g:enfocado_plugins == ['none']) || (a:only_nvim && !s:nvim)
     return 0
-  elseif (a:only_nvim && l:nvim) || !a:only_nvim
+  elseif (a:only_nvim && s:nvim) || !a:only_nvim
     if g:enfocado_plugins == ['all']
       return 1
     else
