@@ -1052,10 +1052,10 @@ if enfocado#pluginIsActivated('fzf', 0)
           \   'hl': ['fg', 'Match'],
           \   'hl+': ['fg', 'Match'],
           \   'info': ['fg', 'DiagnosticInfo'],
-          \   'marker': ['fg', 'Dimmed'],
-          \   'pointer': ['fg', 'Dimmed'],
-          \   'prompt': ['fg', 'Dimmed'],
-          \   'spinner': ['fg', 'DiagnosticInfo']
+          \   'marker': ['fg', 'Accent'],
+          \   'pointer': ['fg', 'Text'],
+          \   'prompt': ['fg', 'Text'],
+          \   'spinner': ['fg', 'DiagnosticInfo'],
           \ }
   endif
 
