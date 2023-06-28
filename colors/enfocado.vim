@@ -1097,6 +1097,15 @@ if enfocado#pluginIsActivated('dashboard', 0)
   highlight! link DashboardFooter Dimmed
 endif
 " }}}
+" edgy.nvim: {{{
+if enfocado#pluginIsActivated('edgy', 1)
+  call enfocado#highlighter('EdgyTitle', s:bold, s:none, s:dim_0, s:none)
+  highlight! link EdgyIcon Dimmed
+  highlight! link EdgyIconActive EdgyIcon
+  highlight! link EdgyWinBar Winbar
+  highlight! link EdgyNormal Normal
+endif
+" }}}
 " fern.vim: {{{
 if enfocado#pluginIsActivated('fern', 0)
   highlight! link FernSpinner DiagnosticInfo
