@@ -1751,6 +1751,18 @@ if enfocado#pluginIsActivated('ts-rainbow2', 1)
   call enfocado#highlighter('TSRainbowCyan', s:none, s:none, s:br_cyan, s:none)
 endif
 " }}}
+" nvim-ufo: {{{
+if enfocado#pluginIsActivated('ufo', 1)
+  highlight! link UfoFoldedFg None
+  highlight! link UfoFoldedBg Search
+  highlight! link UfoPreviewWinBar Pmenu
+  highlight! link UfoPreviewSbar PmenuSbar
+  highlight! link UfoPreviewCursorLine PmenuSel
+  highlight! link UfoPreviewThumb PmenuThumb
+  highlight! link UfoFoldedEllipsis Dimmed
+  highlight! link UfoCursorFoldedLine Visual
+endif
+" }}}
 " packer.nvim: {{{
 if enfocado#pluginIsActivated('packer', 1)
   highlight! link packerWorking Accent
