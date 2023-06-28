@@ -152,6 +152,7 @@ call enfocado#highlighter('AccentSecondary', s:none, s:none, s:br_accent_1, s:no
 call enfocado#highlighter('Builtin', s:none, s:none, s:br_builtin_0, s:none)
 call enfocado#highlighter('ColorColumn', s:none, s:bg_1, s:none, s:none)
 call enfocado#highlighter('Conceal', s:nocombine, s:none, s:bg_2, s:none)
+call enfocado#highlighter('CurSearch', s:none, s:br_yellow, s:bg_1, s:none)
 call enfocado#highlighter('Cursor', s:none, s:fg_0, s:bg_1, s:none)
 call enfocado#highlighter('CursorColumn', s:none, s:bg_1, s:none, s:none)
 call enfocado#highlighter('CursorLine', s:none, s:bg_1, s:none, s:none)
@@ -207,6 +208,7 @@ call enfocado#highlighter('TabLine', s:nocombine, s:bg_1, s:bg_2, s:none)
 call enfocado#highlighter('TabLineFill', s:nocombine, s:bg_1, s:bg_2, s:none)
 call enfocado#highlighter('TabLineSel', s:nocombine, s:none, s:dim_0, s:none)
 call enfocado#highlighter('TermCursor', s:none, s:fg_0, s:bg_1, s:none)
+call enfocado#highlighter('Text', s:nocombine, s:none, s:fg_0, s:none)
 call enfocado#highlighter('Title', s:bold, s:none, s:fg_1, s:none)
 call enfocado#highlighter('ToolbarButton', s:nocombine, s:accent_0, s:bg_1, s:none)
 call enfocado#highlighter('ToolbarLine', s:nocombine, s:bg_1, s:dim_0, s:none)
@@ -235,55 +237,8 @@ if enfocado#nvim
   highlight! FloatShadowThrough term=NONE cterm=NONE ctermbg=16 ctermfg=16 guibg=#000000 gui=NONE guifg=#000000 blend=100
 endif
 
-" General syntax.
-call enfocado#highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
-call enfocado#highlighter('ConstIdentifier', s:none, s:none, s:yellow, s:none)
-call enfocado#highlighter('Error', s:none, s:none, s:br_red, s:none)
-call enfocado#highlighter('Trace', s:nocombine, s:none, s:br_magenta, s:none)
-call enfocado#highlighter('Exception', s:nocombine, s:none, s:orange, s:none)
-call enfocado#highlighter('Function', s:italic, s:none, s:br_accent_0, s:none)
-call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_builtin_0, s:none)
-call enfocado#highlighter('Identifier', s:nocombine, s:none, s:accent_0, s:none)
-call enfocado#highlighter('IdentifierBuiltin', s:nocombine, s:none, s:builtin_0, s:none)
-call enfocado#highlighter('Link', s:underline, s:none, s:br_cyan, s:br_cyan)
-call enfocado#highlighter('PreProc', s:nocombine, s:none, s:accent_1, s:none)
-call enfocado#highlighter('Special', s:nocombine, s:none, s:br_builtin_1, s:none)
-call enfocado#highlighter('Statement', s:nocombine, s:none, s:accent_1, s:none)
-call enfocado#highlighter('StatementBuiltin', s:nocombine, s:none, s:builtin_1, s:none)
-call enfocado#highlighter('String', s:nocombine, s:none, s:cyan, s:br_cyan)
-call enfocado#highlighter('Text', s:nocombine, s:none, s:fg_0, s:none)
-call enfocado#highlighter('Todo', s:bold, s:br_cyan, s:bg_1, s:none)
-call enfocado#highlighter('Type', s:bold, s:none, s:br_accent_1, s:none)
-call enfocado#highlighter('TypeBuiltin', s:bold, s:none, s:br_builtin_1, s:none)
-highlight! link Boolean StatementBuiltin
-highlight! link Character String
-highlight! link Conditional Statement
-highlight! link Constant Text
-highlight! link Debug Dimmed
-highlight! link Define PreProc
-highlight! link Delimiter Text
-highlight! link Float Number
-highlight! link Include PreProc
-highlight! link Keyword Statement
-highlight! link Label Statement
-highlight! link Macro Define
-highlight! link Method Function
-highlight! link Number Constant
-highlight! link Operator Statement
-highlight! link PreCondit PreProc
-highlight! link Property Type
-highlight! link Repeat Statement
-highlight! link SpecialChar StatementBuiltin
-highlight! link SpecialComment StatementBuiltin
-highlight! link StorageClass Type
-highlight! link Structure Type
-highlight! link Tag Statement
-highlight! link Typedef Type
-highlight! Bold term=bold cterm=bold gui=bold
-highlight! Italic term=italic cterm=italic gui=italic
-highlight! Underlined term=underline cterm=underline gui=underline
-
-" nvim-lsp: {{{
+" General LSP.
+call enfocado#highlighter('LspInlayHint', s:nocombine, s:bg_1, s:dim_0, s:none)
 highlight! link LspCodeLens Dimmed
 highlight! link LspCodeLensSeparator NonText
 highlight! link LspReferenceRead Visual
@@ -292,6 +247,8 @@ highlight! link LspReferenceWrite Visual
 highlight! link LspSignatureActiveParameter Accent
 
 " Diagnostics.
+call enfocado#highlighter('DiagnosticDeprecated', s:strikethrough, s:none, s:none, s:br_red)
+call enfocado#highlighter('DiagnosticUnnecessary', s:nocombine, s:none, s:bg_2, s:none)
 call enfocado#highlighter('DiagnosticError', s:bold, s:none, s:br_red, s:none)
 call enfocado#highlighter('DiagnosticHint', s:bold, s:none, s:br_blue, s:none)
 call enfocado#highlighter('DiagnosticInfo', s:bold, s:none, s:br_yellow, s:none)
@@ -326,12 +283,56 @@ highlight! link DiagnosticSignInfo DiagnosticInfo
 highlight! link DiagnosticSignWarn DiagnosticWarn
 highlight! link DiagnosticSignOk DiagnosticOk
 
-" Other diagnostics.
-call enfocado#highlighter('DiagnosticDeprecated', s:strikethrough, s:none, s:none, s:br_red)
-highlight! link DiagnosticUnnecessary Ignore
+" General syntax.
+call enfocado#highlighter('Comment', s:italic, s:none, s:dim_0, s:none)
+call enfocado#highlighter('ConstIdentifier', s:none, s:none, s:yellow, s:none)
+call enfocado#highlighter('Error', s:none, s:none, s:br_red, s:none)
+call enfocado#highlighter('Trace', s:nocombine, s:none, s:br_magenta, s:none)
+call enfocado#highlighter('Exception', s:nocombine, s:none, s:orange, s:none)
+call enfocado#highlighter('Function', s:italic, s:none, s:br_accent_0, s:none)
+call enfocado#highlighter('FunctionBuiltin', s:italic, s:none, s:br_builtin_0, s:none)
+call enfocado#highlighter('Identifier', s:nocombine, s:none, s:accent_0, s:none)
+call enfocado#highlighter('IdentifierBuiltin', s:nocombine, s:none, s:builtin_0, s:none)
+call enfocado#highlighter('Link', s:underline, s:none, s:br_cyan, s:br_cyan)
+call enfocado#highlighter('PreProc', s:nocombine, s:none, s:accent_1, s:none)
+call enfocado#highlighter('Special', s:nocombine, s:none, s:br_builtin_1, s:none)
+call enfocado#highlighter('Statement', s:nocombine, s:none, s:accent_1, s:none)
+call enfocado#highlighter('StatementBuiltin', s:nocombine, s:none, s:builtin_1, s:none)
+call enfocado#highlighter('String', s:nocombine, s:none, s:cyan, s:none)
+call enfocado#highlighter('Todo', s:bold, s:br_cyan, s:bg_1, s:none)
+call enfocado#highlighter('Type', s:bold, s:none, s:br_accent_1, s:none)
+call enfocado#highlighter('TypeBuiltin', s:bold, s:none, s:br_builtin_1, s:none)
+highlight! link Boolean StatementBuiltin
+highlight! link Character String
+highlight! link Conditional Statement
+highlight! link Constant Text
+highlight! link Debug Dimmed
+highlight! link Define PreProc
+highlight! link Delimiter Text
+highlight! link Float Number
+highlight! link Include PreProc
+highlight! link Keyword Statement
+highlight! link Label Statement
+highlight! link Macro Define
+highlight! link Method Function
+highlight! link Number Constant
+highlight! link Operator Statement
+highlight! link PreCondit PreProc
+highlight! link Property Type
+highlight! link Repeat Statement
+highlight! link SpecialChar StatementBuiltin
+highlight! link SpecialComment StatementBuiltin
+highlight! link StorageClass Type
+highlight! link Structure Type
+highlight! link Tag Statement
+highlight! link Typedef Type
+highlight! Bold term=bold cterm=bold gui=bold
+highlight! Italic term=italic cterm=italic gui=italic
+highlight! Underlined term=underline cterm=underline gui=underline
 
-" Semantic tokens
+" Neovim syntax.
 if enfocado#nvim
+  " LSP Semantic Tokens: {{{
   " Standard token types.
   highlight! link @lsp.type.class Type
   highlight! link @lsp.type.comment Comment
@@ -597,8 +598,95 @@ if enfocado#nvim
   highlight! link @lsp.mod.modification.deprecated @lsp.mod.deprecated
   highlight! link @lsp.mod.static.deprecated @lsp.mod.deprecated
   highlight! link @lsp.mod.defaultLibrary.deprecated @lsp.mod.deprecated
+  " }}}
+
+  " Tree-sitter: {{{
+  " Text.
+  call enfocado#highlighter('@text.danger', s:bold, s:br_red, s:bg_1, s:none)
+  call enfocado#highlighter('@text.note', s:bold, s:br_yellow, s:bg_1, s:none)
+  call enfocado#highlighter('@text.warning', s:bold, s:br_orange, s:bg_1, s:none)
+  call enfocado#highlighter('@text.title', s:nocombine, s:none, s:fg_1, s:none)
+  call enfocado#highlighter('@none', s:none, s:none, s:none, s:none)
+  call enfocado#highlighter('@text.literal', s:italic, s:none, s:fg_0, s:none)
+  highlight! link @text Text
+  highlight! link @text.environment.name StatementBuiltin
+  highlight! link @text.environment Text
+  highlight! link @text.math StatementBuiltin
+  highlight! link @text.reference @text.literal
+  highlight! link @text.uri Link
+  highlight! link @text.todo Todo
+  highlight! @text.emphasis term=italic cterm=italic gui=italic
+  highlight! @text.strike term=strikethrough cterm=strikethrough gui=strikethrough
+  highlight! @text.strong term=bold cterm=bold gui=bold
+  highlight! @text.underline term=underline cterm=underline gui=underline
+
+  " Miscs.
+  highlight! link @comment Comment
+  highlight! link @annotation SpecialComment
+  highlight! link @attribute SpecialComment
+  highlight! link @punctuation Delimiter
+  highlight! link @punctuation.bracket Delimiter
+  highlight! link @punctuation.delimiter Delimiter
+  highlight! link @punctuation.special StatementBuiltin
+
+  " Constants.
+  highlight! link @constant ConstIdentifier
+  highlight! link @constant.builtin ConstIdentifier
+  highlight! link @constant.macro ConstIdentifier
+  highlight! link @define PreProc
+  highlight! link @macro Macro
+  highlight! link @string String
+  highlight! link @string.escape StatementBuiltin
+  highlight! link @string.special StatementBuiltin
+  highlight! link @string.regex StatementBuiltin
+  highlight! link @character Character
+  highlight! link @character.special SpecialChar
+  highlight! link @number Number
+  highlight! link @boolean Boolean
+  highlight! link @float Float
+
+  " Functions.
+  highlight! link @function Function
+  highlight! link @function.builtin FunctionBuiltin
+  highlight! link @function.macro Function
+  highlight! link @function.call Function
+  highlight! link @parameter Identifier
+  highlight! link @parameter.reference Indentifier
+  highlight! link @method Method
+  highlight! link @method.call Method
+  highlight! link @field Property
+  highlight! link @property Property
+  highlight! link @constructor Type
+
+  " Keywords.
+  highlight! link @conditional Conditional
+  highlight! link @repeat Repeat
+  highlight! link @label Label
+  highlight! link @operator Operator
+  highlight! link @keyword Keyword
+  highlight! link @keyword.function Type
+  highlight! link @keyword.operator Operator
+  highlight! link @keyword.return Keyword
+  highlight! link @exception Exception
+  highlight! link @error Error
+
+  highlight! link @variable Identifier
+  highlight! link @variable.builtin IdentifierBuiltin
+  highlight! link @symbol Identifier
+  highlight! link @type Type
+  highlight! link @type.definition PreProc
+  highlight! link @type.builtin TypeBuiltin
+  highlight! link @type.qualifier Type
+  highlight! link @storageclass StorageClass
+  highlight! link @namespace Text
+  highlight! link @include Include
+  highlight! link @preproc PreProc
+  highlight! link @debug Debug
+  highlight! link @tag Tag
+  highlight! link @tag.attribute Identifier
+  highlight! link @tag.delimiter Delimiter
+  " }}}
 endif
-" }}}
 " ------------------------------------------------------------------------------
 " SECTION: Filetypes syntax groups highlighting.
 " ------------------------------------------------------------------------------
@@ -1056,6 +1144,7 @@ if enfocado#pluginIsActivated('fzf', 0)
           \   'pointer': ['fg', 'Text'],
           \   'prompt': ['fg', 'Text'],
           \   'spinner': ['fg', 'DiagnosticInfo'],
+          \   'query': ['fg', 'Text']
           \ }
   endif
 
@@ -1079,24 +1168,24 @@ if enfocado#pluginIsActivated('gitsigns', 1)
   call enfocado#highlighter('GitSignsAddInline', s:none, s:green, s:bg_1, s:none)
   call enfocado#highlighter('GitSignsChangeInline', s:none, s:red, s:bg_1, s:none)
   call enfocado#highlighter('GitSignsDeleteInline', s:none, s:yellow, s:bg_1, s:none)
-  call enfocado#highlighter('GitSignsUntrackedLn', s:none, s:bg_1, s:bg_2, s:none)
   highlight! link GitSignsAdd DiffAdd
   highlight! link GitSignsChange DiffChange
   highlight! link GitSignsDelete DiffDelete
   highlight! link GitSignsChangedelete GitSignsChange
   highlight! link GitSignsTopdelete GitSignsDelete
-  highlight! link GitSignsUntracked Ignore
+  highlight! link GitSignsUntracked GitSignsAdd
   highlight! link GitSignsAddNr GitSignsAdd
   highlight! link GitSignsChangeNr GitSignsChange
   highlight! link GitSignsDeleteNr GitSignsDelete
   highlight! link GitSignsChangedeleteNr GitSignsChangedelete
   highlight! link GitSignsTopdeleteNr GitSignsTopdelete
-  highlight! link GitSignsUntrackedNr GitSignsUntracked
+  highlight! link GitSignsUntrackedNr GitSignsAddNr
   highlight! link GitSignsAddLn GitSignsAddVirtLn
   highlight! link GitSignsChangeLn GitSignsChangeVirtLn
+  highlight! link GitSignsUntrackedLn GitSignsAddLn
   highlight! link GitSignsAddPreview GitSignsAdd
   highlight! link GitSignsDeletePreview GitSignsDelete
-  highlight! link GitSignsCurrentLineBlame Dimmed
+  highlight! link GitSignsCurrentLineBlame Ignore
   highlight! link GitSignsAddLnInline GitSignsAddInline
   highlight! link GitSignsChangeLnInline GitSignsChangeInline
   highlight! link GitSignsDeleteLnInline GitSignsDeleteInline
@@ -1445,7 +1534,7 @@ if enfocado#pluginIsActivated('neo-tree', 1)
   highlight! link NeoTreeGitStaged DiffAdd
   highlight! link NeoTreeHiddenByName Dimmed
   highlight! link NeoTreeIndentMarker NonText
-  highlight! link NeoTreeExpander NonText
+  highlight! link NeoTreeExpander Dimmed
   highlight! link NeoTreeNormal Normal
   highlight! link NeoTreeNormalNC NormalNC
   highlight! link NeoTreeSignColumn SignColumn
@@ -1501,6 +1590,7 @@ if enfocado#pluginIsActivated('notify', 1)
   highlight! link NotifyINFOBody NormalFloat
   highlight! link NotifyTRACEBody NormalFloat
   highlight! link NotifyWARNBody NormalFloat
+  highlight! link NotifyBackground NormalShadow
 endif
 " }}}
 " nvim-scrollview: {{{
@@ -1515,92 +1605,6 @@ endif
 " }}}
 " nvim-treesitter: {{{
 if enfocado#pluginIsActivated('treesitter', 1)
-  " Text.
-  call enfocado#highlighter('@text.danger', s:bold, s:br_red, s:bg_1, s:none)
-  call enfocado#highlighter('@text.note', s:bold, s:br_yellow, s:bg_1, s:none)
-  call enfocado#highlighter('@text.warning', s:bold, s:br_orange, s:bg_1, s:none)
-  call enfocado#highlighter('@text.title', s:nocombine, s:none, s:fg_1, s:none)
-  call enfocado#highlighter('@none', s:none, s:none, s:none, s:none)
-  call enfocado#highlighter('@text.literal', s:italic, s:none, s:fg_0, s:none)
-  highlight! link @text Text
-  highlight! link @text.environment.name StatementBuiltin
-  highlight! link @text.environment Text
-  highlight! link @text.math StatementBuiltin
-  highlight! link @text.reference @text.literal
-  highlight! link @text.uri Link
-  highlight! link @text.todo Todo
-  highlight! @text.emphasis term=italic cterm=italic gui=italic
-  highlight! @text.strike term=strikethrough cterm=strikethrough gui=strikethrough
-  highlight! @text.strong term=bold cterm=bold gui=bold
-  highlight! @text.underline term=underline cterm=underline gui=underline
-
-  " Miscs.
-  highlight! link @comment Comment
-  highlight! link @annotation SpecialComment
-  highlight! link @attribute SpecialComment
-  highlight! link @punctuation Delimiter
-  highlight! link @punctuation.bracket Delimiter
-  highlight! link @punctuation.delimiter Delimiter
-  highlight! link @punctuation.special StatementBuiltin
-
-  " Constants.
-  highlight! link @constant ConstIdentifier
-  highlight! link @constant.builtin ConstIdentifier
-  highlight! link @constant.macro ConstIdentifier
-  highlight! link @define PreProc
-  highlight! link @macro Macro
-  highlight! link @string String
-  highlight! link @string.escape StatementBuiltin
-  highlight! link @string.special StatementBuiltin
-  highlight! link @string.regex StatementBuiltin
-  highlight! link @character Character
-  highlight! link @character.special SpecialChar
-  highlight! link @number Number
-  highlight! link @boolean Boolean
-  highlight! link @float Float
-
-  " Functions.
-  highlight! link @function Function
-  highlight! link @function.builtin FunctionBuiltin
-  highlight! link @function.macro Function
-  highlight! link @function.call Function
-  highlight! link @parameter Identifier
-  highlight! link @parameter.reference Indentifier
-  highlight! link @method Method
-  highlight! link @method.call Method
-  highlight! link @field Property
-  highlight! link @property Property
-  highlight! link @constructor Type
-
-  " Keywords.
-  highlight! link @conditional Conditional
-  highlight! link @repeat Repeat
-  highlight! link @label Label
-  highlight! link @operator Operator
-  highlight! link @keyword Keyword
-  highlight! link @keyword.function Type
-  highlight! link @keyword.operator Operator
-  highlight! link @keyword.return Keyword
-  highlight! link @exception Exception
-  highlight! link @error Error
-
-  highlight! link @variable Identifier
-  highlight! link @variable.builtin IdentifierBuiltin
-  highlight! link @symbol Identifier
-  highlight! link @type Type
-  highlight! link @type.definition PreProc
-  highlight! link @type.builtin TypeBuiltin
-  highlight! link @type.qualifier Type
-  highlight! link @storageclass StorageClass
-  highlight! link @namespace Text
-  highlight! link @include Include
-  highlight! link @preproc PreProc
-  highlight! link @debug Debug
-  highlight! link @tag Tag
-  highlight! link @tag.attribute Identifier
-  highlight! link @tag.delimiter Delimiter
-
-  " TSModule info.
   highlight! link TSModuleInfoGood DiagnosticOk
   highlight! link TSModuleInfoBad DiagnosticError
   highlight! link TSModuleInfoHeader Accent
