@@ -1259,6 +1259,17 @@ if enfocado#pluginIsActivated('indent-blankline', 1)
   call enfocado#highlighter('EnfocadoIndentBlanklineIndent6', s:none, s:none, s:br_accent_0, s:none)
 endif
 " }}}
+" lsp-lens.nvim: {{{
+if enfocado#pluginIsActivated('lsp-lens', 1)
+  highlight! link LspLens LspCodeLens
+endif
+" }}}
+" mini.animate: {{{
+if enfocado#pluginIsActivated('animate', 1)
+  highlight! link MiniAnimateCursor Cursor
+  highlight! link MiniAnimateNormalFloat FloatShadow
+endif
+" }}}
 " nerdtree: {{{
 if enfocado#pluginIsActivated('nerdtree', 0)
   highlight! link NERDTreeBookmark NERDTreeFile
