@@ -1129,6 +1129,15 @@ if enfocado#pluginIsActivated('fern', 0)
   highlight! link FernGitStatusIgnored Ignore
 endif
 " }}}
+" flash.nvim: {{{
+if enfocado#pluginIsActivated('flash', 1)
+  call enfocado#highlighter('FlashLabel', s:bold, s:accent_0, s:bg_1, s:none)
+  highlight! link FlashBackdrop Dimmed
+  highlight! link FlashMatch Search
+  highlight! link FlashCurrent IncSearch
+  highlight! link FlashPromptIcon Text
+endif
+" }}}
 " fold-preview.nvim: {{{
 if enfocado#pluginIsActivated('fold-preview', 1)
   highlight! link FoldPreview NormalFloat
