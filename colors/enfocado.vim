@@ -1602,6 +1602,38 @@ if enfocado#pluginIsActivated('lspconfig', 1)
   highlight! link LspInfoBorder FloatBorder
 endif
 " }}}
+" nvim-navic: {{{
+if enfocado#pluginIsActivated('navic', 1)
+  highlight! link NavicIconsArray Identifier
+  highlight! link NavicIconsBoolean StatementBuiltin
+  highlight! link NavicIconsClass Type
+  highlight! link NavicIconsConstant ConstIdentifier
+  highlight! link NavicIconsConstructor Type
+  highlight! link NavicIconsEnum Type
+  highlight! link NavicIconsEnumMember Property
+  highlight! link NavicIconsEvent Builtin
+  highlight! link NavicIconsField Property
+  highlight! link NavicIconsFile Text
+  highlight! link NavicIconsFunction Accent
+  highlight! link NavicIconsInterface Type
+  highlight! link NavicIconsKey Identifier
+  highlight! link NavicIconsMethod Accent
+  highlight! link NavicIconsModule Text
+  highlight! link NavicIconsNamespace Text
+  highlight! link NavicIconsNull StatementBuiltin
+  highlight! link NavicIconsNumber Number
+  highlight! link NavicIconsObject Type
+  highlight! link NavicIconsOperator Operator
+  highlight! link NavicIconsPackage String
+  highlight! link NavicIconsProperty Property
+  highlight! link NavicIconsString String
+  highlight! link NavicIconsStruct Type
+  highlight! link NavicIconsTypeParameter Type
+  highlight! link NavicIconsVariable Identifier
+  highlight! link NavicText Text
+  highlight! link NavicSeparator Text
+endif
+" }}}
 " nvim-notify: {{{
 if enfocado#pluginIsActivated('notify', 1)
   call enfocado#highlighter('NotifyERRORBorder', s:nocombine, s:bg_1, s:br_red, s:none)
