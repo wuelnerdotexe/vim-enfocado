@@ -1235,6 +1235,11 @@ if enfocado#pluginIsActivated('glyph-palette', 0)
   highlight! link GlyphPaletteDirectory Directory
 endif
 " }}}
+" highlight-undo: {{{
+if enfocado#pluginIsActivated('highlight-undo', 1)
+  highlight! link HighlightUndo Search
+endif
+" }}}
 " indent-blankline: {{{
 if enfocado#pluginIsActivated('indent-blankline', 1)
   call enfocado#highlighter('IndentBlanklineChar', s:none, s:none, s:bg_2, s:none)
