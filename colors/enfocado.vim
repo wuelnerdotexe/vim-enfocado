@@ -1678,6 +1678,14 @@ if enfocado#pluginIsActivated('treesitter', 1)
   highlight! link TSModuleInfoParser Text
 endif
 " }}}
+" nvim-treesitter-context: {{{
+if enfocado#pluginIsActivated('treesitter-context', 1)
+  highlight! link TreesitterContext NormalNC
+  highlight! link TreesitterContextLineNumber LineNr
+  highlight! link TreesitterContextSeparator VertSplit
+  highlight! link TreesitterContextBottom None
+endif
+" }}}
 " nvim-tree.lua: {{{
 if enfocado#pluginIsActivated('tree', 1)
   call enfocado#highlighter('NvimTreeImageFile', s:bold, s:none, s:br_magenta, s:none)
