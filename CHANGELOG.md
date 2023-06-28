@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.1.0] - 2023-06-28
+
+### Added
+
+- Support for the following plugins:
+  - [edgy.nvim](https://github.com/folke/edgy.nvim).
+  - [flash.nvim](https://github.com/folke/flash.nvim).
+  - [highlight-undo.nvim](https://github.com/tzachar/highlight-undo.nvim).
+  - [lsp-lens.nvim](https://github.com/VidocqH/lsp-lens.nvim).
+  - [nvim-navic](https://github.com/SmiteshP/nvim-navic).
+  - [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context).
+  - [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo).
+
+### Changed
+
+- Various improvements are added.
+
 ## [6.0.1] - 2023-06-14
 
 ### Fixed

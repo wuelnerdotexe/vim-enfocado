@@ -113,17 +113,20 @@ If you want to reduce the loading time of **Enfocado**, you can specify the plug
 " NOTE: To see a list of all available plugins, run
 " `:h enfocado-colorscheme` at the vim commandline.
 let g:enfocado_plugins = [
-  \   'aerial',
   \   'bufferline',
   \   'cmp',
   \   'dap-ui',
-  \   'fold-preview',
+  \   'edgy',
+  \   'flash',
   \   'gitsigns',
+  \   'highlight-undo',
   \   'illuminate',
   \   'indent-blankline',
   \   'lazy',
   \   'lspconfig',
+  \   'lsp-lens',
   \   'mason',
+  \   'navic',
   \   'neo-tree',
   \   'noice',
   \   'null-ls',
@@ -131,7 +134,9 @@ let g:enfocado_plugins = [
   \   'surround',
   \   'telescope',
   \   'treesitter',
+  \   'treesitter-context',
   \   'ts-rainbow2',
+  \   'ufo',
   \   'visual-multi',
   \   'yanky'
   \ ]
@@ -244,15 +249,18 @@ The following plugins are supported:
 - [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
+- [edgy.nvim](https://github.com/folke/edgy.nvim).
 - [fern.vim](https://github.com/lambdalisue/fern.vim)
+- [flash.nvim](https://github.com/folke/flash.nvim).
 - [fold-preview.nvim](https://github.com/anuvyklack/fold-preview.nvim)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
+- [highlight-undo.nvim](https://github.com/tzachar/highlight-undo.nvim).
 - [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
-- [lsp-inlayhints.nvim](https://github.com/lvimuser/lsp-inlayhints.nvim)
+- [lsp-lens.nvim](https://github.com/VidocqH/lsp-lens.nvim).
 - [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
 - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
@@ -261,13 +269,16 @@ The following plugins are supported:
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [nvim-navic](https://github.com/SmiteshP/nvim-navic).
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)
 - [nvim-surround](https://github.com/kylechui/nvim-surround)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context).
 - [nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow)
 - [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)
+- [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo).
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [rainbow](https://github.com/luochen1990/rainbow)
 - [SmoothCursor.nvim](https://github.com/gen740/SmoothCursor.nvim)
