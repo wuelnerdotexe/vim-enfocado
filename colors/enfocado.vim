@@ -1427,7 +1427,7 @@ if enfocado#pluginIsActivated('cmp', 1)
   highlight! link CmpItemKindUnit Number
   highlight! link CmpItemKindValue Text
   highlight! link CmpItemKindVariable Identifier
-  highlight! link CmpItemMenu NormalFloat
+  highlight! link CmpItemMenu Text
 
   call enfocado#highlighter('CmpItemKindTabNine', s:nocombine, s:none, s:br_violet, s:none)
 endif
