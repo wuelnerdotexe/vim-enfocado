@@ -1800,6 +1800,17 @@ if enfocado#pluginIsActivated('rainbow', 0)
   endif
 endif
 " }}}
+" rainbow-delimiters.nvim: {{{
+if enfocado#pluginIsActivated('rainbow-delimiters', 1)
+  call enfocado#highlighter('RainbowDelimiterRed', s:none, s:none, s:br_red, s:none)
+  call enfocado#highlighter('RainbowDelimiterYellow', s:none, s:none, s:br_yellow, s:none)
+  call enfocado#highlighter('RainbowDelimiterBlue', s:none, s:none, s:br_blue, s:none)
+  call enfocado#highlighter('RainbowDelimiterOrange', s:none, s:none, s:br_orange, s:none)
+  call enfocado#highlighter('RainbowDelimiterGreen', s:none, s:none, s:br_green, s:none)
+  call enfocado#highlighter('RainbowDelimiterViolet', s:none, s:none, s:br_violet, s:none)
+  call enfocado#highlighter('RainbowDelimiterCyan', s:none, s:none, s:br_cyan, s:none)
+endif
+" }}}
 " SmoothCursor.nvim: {{{
 if enfocado#pluginIsActivated('smoothcursor', 1)
   call enfocado#highlighter('SmoothCursor', s:nocombine, s:none, s:br_accent_0, s:none)

@@ -132,10 +132,10 @@ let g:enfocado_plugins = [
   \   'null-ls',
   \   'substitute',
   \   'surround',
+  \   'rainbow-delimiters',
   \   'telescope',
   \   'treesitter',
   \   'treesitter-context',
-  \   'ts-rainbow2',
   \   'ufo',
   \   'visual-multi',
   \   'yanky'
@@ -281,6 +281,7 @@ The following plugins are supported:
 - [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo).
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [rainbow](https://github.com/luochen1990/rainbow)
+- [rainbow-delimiters.nvim](https://gitlab.com/HiPhish/rainbow-delimiters.nvim)
 - [SmoothCursor.nvim](https://github.com/gen740/SmoothCursor.nvim)
 - [substitute.nvim](https://github.com/gbprod/substitute.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)

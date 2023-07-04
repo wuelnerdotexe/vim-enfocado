@@ -77,6 +77,7 @@ supported plugins so far:
 `  \   'packer',`
 `  \   'plug',`
 `  \   'rainbow',`
+`  \   'rainbow-delimiters',`
 `  \   'scrollview',`
 `  \   'signify'`
 `  \   'smoothcursor'`
