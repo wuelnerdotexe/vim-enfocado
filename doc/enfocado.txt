@@ -43,6 +43,7 @@ supported plugins so far:
 `let g:enfocado_plugins = [`
 `  \   'aerial',`
 `  \   'ale',`
+`  \   'animate',`
 `  \   'bufferline',`
 `  \   'cmp',`
 `  \   'coc',`
@@ -61,6 +62,7 @@ supported plugins so far:
 `  \   'glyph-palette',`
 `  \   'highlight-undo',`
 `  \   'illuminate',`
+`  \   'indentscope',`
 `  \   'indent-blankline',`
 `  \   'lazy',`
 `  \   'lspconfig',`

@@ -1246,7 +1246,7 @@ if enfocado#pluginIsActivated('indent-blankline', 1)
   call enfocado#highlighter('IndentBlanklineSpaceChar', s:none, s:none, s:bg_2, s:none)
   call enfocado#highlighter('IndentBlanklineSpaceCharBlankline', s:none, s:none, s:bg_2, s:none)
   call enfocado#highlighter('IndentBlanklineContextChar', s:none, s:none, s:dim_0, s:none)
-  call enfocado#highlighter('IndentBlanklineCOntextSpaceChar', s:none, s:none, s:bg_2, s:none)
+  call enfocado#highlighter('IndentBlanklineContextSpaceChar', s:none, s:none, s:bg_2, s:none)
   call enfocado#highlighter('IndentBlanklineContextSpaceCharBlankline', s:none, s:none, s:bg_2, s:none)
   call enfocado#highlighter('IndentBlanklineContextStart', s:underline, s:none, s:none, s:dim_0)
 
@@ -1268,6 +1268,13 @@ endif
 if enfocado#pluginIsActivated('animate', 1)
   highlight! link MiniAnimateCursor Cursor
   highlight! link MiniAnimateNormalFloat FloatShadow
+endif
+" }}}
+" mini.indentscope: {{{
+if enfocado#pluginIsActivated('indentscope', 1)
+  call enfocado#highlighter('MiniIndentscopeSymbol', s:none, s:none, s:dim_0, s:none)
+
+  highlight! link MiniIndentscopeSymbolOff MiniIndentscopeSymbol
 endif
 " }}}
 " nerdtree: {{{

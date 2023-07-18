@@ -113,6 +113,7 @@ If you want to reduce the loading time of **Enfocado**, you can specify the plug
 " NOTE: To see a list of all available plugins, run
 " `:h enfocado-colorscheme` at the vim commandline.
 let g:enfocado_plugins = [
+  \   'animate',
   \   'bufferline',
   \   'cmp',
   \   'dap-ui',
@@ -121,6 +122,7 @@ let g:enfocado_plugins = [
   \   'gitsigns',
   \   'highlight-undo',
   \   'illuminate',
+  \   'indentscope',
   \   'indent-blankline',
   \   'lazy',
   \   'lspconfig',
@@ -263,6 +265,8 @@ The following plugins are supported:
 - [lsp-lens.nvim](https://github.com/VidocqH/lsp-lens.nvim).
 - [lualine.nvim](https://github.com/hoob3rt/lualine.nvim)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
+- [mini.indentscope](https://github.com/echasnovski/mini.indentscope).
+- [mini.animate](https://github.com/echasnovski/mini.animate).
 - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [nerdtree](https://github.com/preservim/nerdtree)
 - [noice.nvim](https://github.com/folke/noice.nvim)
