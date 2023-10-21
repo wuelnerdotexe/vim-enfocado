@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.4.0] - 2023-10-20
+
+### Added
+
+- Support for [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim) plugin.
+
+### Changed
+
+- Update `hl-groups` for the following plugins:
+  - `indent-blankline.nvim`.
+  - `flash.nvim`
+
+### Removed
+
+- The following **deprecated** plugins are removed:
+  - `nvim-ts-rainbow`
+  - `nvim-ts-rainbow2`
+
 ## [6.3.0] - 2023-07-18
 
 ### Added

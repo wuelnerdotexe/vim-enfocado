@@ -258,6 +258,7 @@ The following plugins are supported:
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [glyph-palette.vim](https://github.com/lambdalisue/glyph-palette.vim)
+- [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
 - [highlight-undo.nvim](https://github.com/tzachar/highlight-undo.nvim).
 - [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
@@ -280,8 +281,6 @@ The following plugins are supported:
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context).
-- [nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow)
-- [nvim-ts-rainbow2](https://github.com/HiPhish/nvim-ts-rainbow2)
 - [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo).
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [rainbow](https://github.com/luochen1990/rainbow)

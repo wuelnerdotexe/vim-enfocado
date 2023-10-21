@@ -60,6 +60,7 @@ supported plugins so far:
 `  \   'gitgutter',`
 `  \   'gitsigns',`
 `  \   'glyph-palette',`
+`  \   'headlines',`
 `  \   'highlight-undo',`
 `  \   'illuminate',`
 `  \   'indentscope',`
@@ -91,8 +92,6 @@ supported plugins so far:
 `  \   'tree',`
 `  \   'treesitter',`
 `  \   'treesitter-context',`
-`  \   'ts-rainbow',`
-`  \   'ts-rainbow2',`
 `  \   'ufo',`
 `  \   'vista',`
 `  \   'visual-multi',`
