@@ -1135,7 +1135,9 @@ if enfocado#pluginIsActivated('flash', 1)
   highlight! link FlashBackdrop Dimmed
   highlight! link FlashMatch Search
   highlight! link FlashCurrent IncSearch
+  highlight! link FlashPrompt Match
   highlight! link FlashPromptIcon Text
+  highlight! link FlashCursor Cursor
 endif
 " }}}
 " fold-preview.nvim: {{{
