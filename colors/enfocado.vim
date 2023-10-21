@@ -1235,6 +1235,21 @@ if enfocado#pluginIsActivated('glyph-palette', 0)
   highlight! link GlyphPaletteDirectory Directory
 endif
 " }}}
+" headlines.nvim: {{{
+if enfocado#pluginIsActivated('headlines', 1)
+  call enfocado#highlighter('Headline1', s:bold, s:blend_error, s:br_red, s:none)
+  call enfocado#highlighter('Headline2', s:bold, s:blend_info, s:br_yellow, s:none)
+  call enfocado#highlighter('Headline3', s:bold, s:blend_hint, s:br_blue, s:none)
+  call enfocado#highlighter('Headline4', s:bold, s:blend_warn, s:br_orange, s:none)
+  call enfocado#highlighter('Headline5', s:bold, s:blend_ok, s:br_green, s:none)
+  call enfocado#highlighter('Headline6', s:bold, s:blend_error, s:br_red, s:none)
+
+  call enfocado#highlighter('CodeBlock', s:none, s:base, s:none, s:none)
+  call enfocado#highlighter('Dash', s:bold, s:base, s:accent_1, s:none)
+  call enfocado#highlighter('DoubleDash', s:bold, s:base, s:br_accent_0, s:none)
+  call enfocado#highlighter('Quote', s:italic, s:base, s:none, s:none)
+endif
+" }}}
 " highlight-undo: {{{
 if enfocado#pluginIsActivated('highlight-undo', 1)
   highlight! link HighlightUndo Search
