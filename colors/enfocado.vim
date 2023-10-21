@@ -1737,28 +1737,6 @@ if enfocado#pluginIsActivated('tree', 1)
   highlight! link NvimTreeWindowPicker Accent
 endif
 " }}}
-" nvim-ts-rainbow: {{{
-if enfocado#pluginIsActivated('ts-rainbow', 1)
-  call enfocado#highlighter('rainbowcol1', s:none, s:none, s:accent_1, s:none)
-  call enfocado#highlighter('rainbowcol2', s:none, s:none, s:cyan, s:none)
-  call enfocado#highlighter('rainbowcol3', s:none, s:none, s:accent_0, s:none)
-  call enfocado#highlighter('rainbowcol4', s:none, s:none, s:br_accent_1, s:none)
-  call enfocado#highlighter('rainbowcol5', s:none, s:none, s:br_cyan, s:none)
-  call enfocado#highlighter('rainbowcol6', s:none, s:none, s:br_accent_0, s:none)
-  call enfocado#highlighter('rainbowcol7', s:none, s:none, s:accent_1, s:none)
-endif
-" }}}
-" nvim-ts-rainbow2: {{{
-if enfocado#pluginIsActivated('ts-rainbow2', 1)
-  call enfocado#highlighter('TSRainbowRed', s:none, s:none, s:br_red, s:none)
-  call enfocado#highlighter('TSRainbowYellow', s:none, s:none, s:br_yellow, s:none)
-  call enfocado#highlighter('TSRainbowBlue', s:none, s:none, s:br_blue, s:none)
-  call enfocado#highlighter('TSRainbowOrange', s:none, s:none, s:br_orange, s:none)
-  call enfocado#highlighter('TSRainbowGreen', s:none, s:none, s:br_green, s:none)
-  call enfocado#highlighter('TSRainbowViolet', s:none, s:none, s:br_violet, s:none)
-  call enfocado#highlighter('TSRainbowCyan', s:none, s:none, s:br_cyan, s:none)
-endif
-" }}}
 " nvim-ufo: {{{
 if enfocado#pluginIsActivated('ufo', 1)
   highlight! link UfoFoldedFg None
