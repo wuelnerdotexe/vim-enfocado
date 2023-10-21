@@ -1257,21 +1257,10 @@ endif
 " }}}
 " indent-blankline: {{{
 if enfocado#pluginIsActivated('indent-blankline', 1)
-  call enfocado#highlighter('IndentBlanklineChar', s:none, s:none, s:bg_2, s:none)
-  call enfocado#highlighter('IndentBlanklineSpaceChar', s:none, s:none, s:bg_2, s:none)
-  call enfocado#highlighter('IndentBlanklineSpaceCharBlankline', s:none, s:none, s:bg_2, s:none)
-  call enfocado#highlighter('IndentBlanklineContextChar', s:none, s:none, s:dim_0, s:none)
-  call enfocado#highlighter('IndentBlanklineContextSpaceChar', s:none, s:none, s:bg_2, s:none)
-  call enfocado#highlighter('IndentBlanklineContextSpaceCharBlankline', s:none, s:none, s:bg_2, s:none)
-  call enfocado#highlighter('IndentBlanklineContextStart', s:underline, s:none, s:none, s:dim_0)
+  call enfocado#highlighter('IBLIndent', s:none, s:none, s:bg_2, s:none)
+  call enfocado#highlighter('IBLScope', s:none, s:none, s:dim_0, s:none)
 
-  " Enfocado groups.
-  call enfocado#highlighter('EnfocadoIndentBlanklineIndent1', s:none, s:none, s:accent_1, s:none)
-  call enfocado#highlighter('EnfocadoIndentBlanklineIndent2', s:none, s:none, s:cyan, s:none)
-  call enfocado#highlighter('EnfocadoIndentBlanklineIndent3', s:none, s:none, s:accent_0, s:none)
-  call enfocado#highlighter('EnfocadoIndentBlanklineIndent4', s:none, s:none, s:br_accent_1, s:none)
-  call enfocado#highlighter('EnfocadoIndentBlanklineIndent5', s:none, s:none, s:br_cyan, s:none)
-  call enfocado#highlighter('EnfocadoIndentBlanklineIndent6', s:none, s:none, s:br_accent_0, s:none)
+  highlight! link IBLWhitespace Whitespace
 endif
 " }}}
 " lsp-lens.nvim: {{{
